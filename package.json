@@ -14,15 +14,14 @@
   ],
   "scripts": {
     "patch-package": "patch-package",
-    "build": "yarn build-images && yarn patch-package && babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.stories.tsx\" --ignore \"**/*.stories.js\"",
-    "build-images": "yarn svgr --out-dir src/images src/images",
-    "build-storybook": "yarn build-images && yarn patch-package && build-storybook -s .storybook/static",
+    "build": "yarn patch-package && babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.stories.tsx\" --ignore \"**/*.stories.js\"",
+    "build-storybook": "yarn patch-package && build-storybook",
     "clean": "rm -rf dist",
     "lint": "yarn lint:js && yarn lint:package",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:package": "sort-package-json",
     "release": "dotenv yarn build & yarn typescript:generate && auto shipit",
-    "storybook": "yarn patch-package && start-storybook -p 6006 -s .storybook/static",
+    "storybook": "yarn patch-package && start-storybook -p 6006",
     "typescript:check": "tsc --project ./tsconfig.json --noEmit",
     "typescript:generate": "tsc --declaration --emitDeclarationOnly --outDir dist --declarationMap"
   },
@@ -47,7 +46,7 @@
   },
   "dependencies": {
     "@emotion/weak-memoize": "^0.2.5",
-    "@storybook/design-system": "^7.3.9",
+    "@storybook/design-system": "^7.4.0",
     "@storybook/theming": "^6.5.9",
     "human-format": "^0.11.0"
   },
@@ -101,7 +100,7 @@
     ]
   },
   "storybook": {
-    "title": "Storybook Design System",
-    "url": "https://master--5ccbc373887ca40020446347.chromatic.com"
+    "title": "Storybook Components Marketing",
+    "url": "https://main--5ccbc373887ca40020446347.chromatic.com"
   }
 }

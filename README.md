@@ -1,14 +1,16 @@
 # Storybook Marketing Component Library
 
-<img src="src/design-system.png" width="100%" />
+UI components for the Storybook marketing, docs, addons, blog and showcase sites.
 
-[![NPM](https://img.shields.io/npm/v/@storybook/design-system.svg)](https://www.npmjs.com/package/@storybook/design-system) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+<img src="src/components-marketing.png" width="960px" />
+
+[![NPM](https://img.shields.io/npm/v/@storybook/components-marketing.svg)](https://www.npmjs.com/package/@storybook/components-marketing) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Used by
 
 - [Storybook homepage](https://storybook.js.org/)
-- [LearnStorybook.com](https://www.learnstorybook.com/)
-- [Storybook Blog](https://storybook.js.org/blog/)
+- [Tutorials](https://www.learnstorybook.com/)
+- [Blog](https://storybook.js.org/blog/)
 - [Component Encyclopedia](https://storybook.js.org/showcase/)
 
 Note: these components are not used in Storybook's UI.
