@@ -6,46 +6,7 @@ export default {
   component: Eyebrow,
   parameters: {
     chromatic: { viewports: [320, 440, 600, 900] },
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#fff' },
-        { name: 'dark', value: '#171C23' },
-      ],
-    },
     layout: 'fullscreen',
-    viewport: {
-      viewports: {
-        smallMobile: {
-          name: 'Mobile (Small)',
-          styles: {
-            width: '320px',
-            height: '100%',
-          },
-        },
-        mobile: {
-          name: 'Mobile',
-          styles: {
-            width: '440px',
-            height: '100%',
-          },
-        },
-        tablet: {
-          name: 'Tablet',
-          styles: {
-            width: '600px',
-            height: '100%',
-          },
-        },
-        desktop: {
-          name: 'Desktop',
-          styles: {
-            width: '900px',
-            height: '100%',
-          },
-        },
-      },
-    },
   },
 };
 

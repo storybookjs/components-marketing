@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
+import { Link } from '@storybook/design-system';
 
 import { PageFooter } from './PageFooter';
-import { Link } from '../../Link';
 import StorybookLogo from '../../../images/logos/Storybook';
 
 const LogotypeWrapper = styled(Link)`

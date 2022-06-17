@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { Badge } from './Badge';
+import { Badge } from '@storybook/design-system';
 import { text, color, spacing, breakpoints } from './shared/styles';
 import { GithubButton } from './GithubButton';
 

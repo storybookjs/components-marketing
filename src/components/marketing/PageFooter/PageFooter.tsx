@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from '@storybook/design-system';
 
-import { Link } from '../../Link';
 import { Resource } from './Resource';
 import { CommunityLink } from './CommunityLink';
 import { Service } from './Service';

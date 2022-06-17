@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { styled } from '@storybook/theming';
+import { Link, Icon } from '@storybook/design-system';
+
 import { color, breakpoint, typography } from '../shared/styles';
-import { Icon } from '../Icon';
-import { Link } from '../Link';
 
 const BreadcrumbLink = styled(Link)`
   font-size: ${typography.size.s2}px;

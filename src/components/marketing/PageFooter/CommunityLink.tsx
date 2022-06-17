@@ -1,9 +1,5 @@
 import React from 'react';
-
-import { Icon } from '../../Icon';
-import { Link } from '../../Link';
-
-import { icons } from '../../shared/icons';
+import { Icon, Link, icons } from '@storybook/design-system';
 
 export const CommunityLink = ({ href, icon, name }: Props) => (
   <Link tertiary href={href}>

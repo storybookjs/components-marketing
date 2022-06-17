@@ -1,7 +1,5 @@
 import { styled, css } from '@storybook/theming';
-
-import { Link } from '../../Link';
-import { Subheading } from '../../Subheading';
+import { Link, Subheading } from '@storybook/design-system';
 
 import {
   background,

@@ -1,9 +1,8 @@
 import { styled, css } from '@storybook/theming';
-
-import { inlineGlow } from '../../shared/animation';
+import { AvatarList, Cardinal, animation } from '@storybook/design-system';
 import { breakpoint, color, hoverEffect, spacing, typography } from '../../shared/styles';
-import { Cardinal } from '../../Cardinal';
-import { AvatarList } from '../../AvatarList';
+
+const { inlineGlow } = animation;
 
 type CardWrapperProps = {
   orientation: 'vertical' | 'horizontal';

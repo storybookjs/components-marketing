@@ -1,11 +1,8 @@
 import React from 'react';
-
+import { Icon, TooltipMessage, WithTooltip } from '@storybook/design-system';
 import { styled } from '@storybook/theming';
 
 import { color, spacing } from '../shared/styles';
-import { Icon } from '../Icon';
-import { TooltipMessage } from '../tooltip/TooltipMessage';
-import WithTooltip from '../tooltip/WithTooltip';
 
 type VerifiedBadgeIconProps = {
   appearance: 'official' | 'integrators' | 'community';
