@@ -1,0 +1,108 @@
+{
+  "name": "@storybook/marketing-components",
+  "version": "0.1.0",
+  "description": "Storybook marketing component library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/storybookjs/marketing-components.git"
+  },
+  "license": "MIT",
+  "author": "winkerVSbecks",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "patch-package": "patch-package",
+    "build": "yarn build-images && yarn patch-package && babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.stories.tsx\" --ignore \"**/*.stories.js\"",
+    "build-images": "yarn svgr --out-dir src/images src/images",
+    "build-storybook": "yarn build-images && yarn patch-package && build-storybook -s .storybook/static",
+    "clean": "rm -rf dist",
+    "lint": "yarn lint:js && yarn lint:package",
+    "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
+    "lint:package": "sort-package-json",
+    "release": "dotenv yarn build & yarn typescript:generate && auto shipit",
+    "storybook": "yarn patch-package && start-storybook -p 6006 -s .storybook/static",
+    "typescript:check": "tsc --project ./tsconfig.json --noEmit",
+    "typescript:generate": "tsc --declaration --emitDeclarationOnly --outDir dist --declarationMap"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.html": [
+      "yarn lint:js --fix"
+    ],
+    "*.js": [
+      "yarn lint:js --fix"
+    ],
+    "*.ts?(x)": [
+      "yarn lint:js --fix"
+    ],
+    "package.json": [
+      "yarn lint:package"
+    ]
+  },
+  "dependencies": {
+    "@emotion/weak-memoize": "^0.2.5",
+    "@storybook/design-system": "^7.3.9",
+    "@storybook/theming": "^6.5.9",
+    "human-format": "^0.11.0",
+    "polished": "^3.6.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@emotion/babel-plugin": "^11.9.2",
+    "@storybook/addon-a11y": "^6.5.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-docs": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/eslint-config-storybook": "^3.1.2",
+    "@storybook/linter-config": "^3.1.2",
+    "@storybook/react": "^6.5.9",
+    "auto": "^9.50.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "chromatic": "^5.0.0",
+    "cross-env": "^7.0.2",
+    "dotenv-cli": "^3.1.0",
+    "eslint": "^7.1.0",
+    "eslint-plugin-storybook": "^0.5.12",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
+    "patch-package": "^6.4.7",
+    "prettier": "^2.4.0",
+    "react": "17",
+    "react-dom": "17",
+    "sort-package-json": "^1.51.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=5"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "released"
+    ]
+  },
+  "storybook": {
+    "title": "Storybook Design System",
+    "url": "https://master--5ccbc373887ca40020446347.chromatic.com"
+  }
+}
