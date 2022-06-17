@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { FunctionComponent, ComponentProps } from 'react';
 import { Icon, Link, icons } from '@storybook/design-system';
 
-export const CommunityLink = ({ href, icon, name }: Props) => (
+export const CommunityLink = ({ href, icon, name }: CommunityLinkProps) => (
   <Link tertiary href={href}>
     <Icon icon={icon} /> {name}
   </Link>
 );
 
-interface Props {
+interface CommunityLinkProps extends Pick<ComponentProps<typeof Icon>, 'icon'> {
   href: string;
-  icon: keyof typeof icons;
   name: string;
 }
