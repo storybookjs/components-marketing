@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from '@storybook/design-system';
+import { Direction, Repo } from '@storybook/design-system/dist/images/colored-icons';
+import {
+  Netlify,
+  Chromatic,
+  Circleci as CircleCI,
+} from '@storybook/design-system/dist/images/logos';
 
 import { Resource } from './Resource';
 import { CommunityLink } from './CommunityLink';
 import { Service } from './Service';
-
 import {
   Title,
   ResourceAction,
@@ -19,13 +24,6 @@ import {
   Lower,
   FooterWrapper,
 } from './PageFooter.styles';
-
-import { Direction, Repo } from '@storybook/design-system/dist/images/colored-icons';
-import {
-  Netlify,
-  Chromatic,
-  Circleci as CircleCI,
-} from '@storybook/design-system/dist/images/logos';
 
 const coreFrameworks = ['react', 'vue', 'angular', 'web-components'];
 
