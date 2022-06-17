@@ -1,10 +1,10 @@
 {
-  "name": "@storybook/marketing-components",
+  "name": "@storybook/components-marketing",
   "version": "0.1.0",
   "description": "Storybook marketing component library",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/marketing-components.git"
+    "url": "https://github.com/storybookjs/components-marketing.git"
   },
   "license": "MIT",
   "author": "winkerVSbecks",

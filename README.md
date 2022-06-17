@@ -30,7 +30,7 @@ Maintaining the system
 ## Install
 
 ```bash
-npm install --save @storybook/marketing-components
+npm install --save @storybook/components-marketing
 ```
 
 ## Development Scripts
