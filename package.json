@@ -45,10 +45,16 @@
     ]
   },
   "dependencies": {
+    "@docsearch/css": "^3.1.0",
+    "@docsearch/react": "^3.1.0",
     "@emotion/weak-memoize": "^0.2.5",
-    "@storybook/design-system": "^7.4.0",
+    "@floating-ui/react-dom-interactions": "^0.6.5",
+    "@storybook/api": "^6.5.9",
+    "@storybook/design-system": "^7.4.1",
     "@storybook/theming": "^6.5.9",
-    "human-format": "^0.11.0"
+    "framer-motion": "^6.3.15",
+    "human-format": "^0.11.0",
+    "react-merge-refs": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -64,9 +70,12 @@
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-docs": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
     "@storybook/eslint-config-storybook": "^3.1.2",
+    "@storybook/jest": "^0.0.10",
     "@storybook/linter-config": "^3.1.2",
     "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
     "auto": "^9.50.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
@@ -82,6 +91,7 @@
     "react": "17",
     "react-dom": "17",
     "sort-package-json": "^1.51.0",
+    "storybook-addon-pseudo-states": "^1.15.0",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.5"
   },
