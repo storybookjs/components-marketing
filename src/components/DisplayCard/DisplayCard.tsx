@@ -1,7 +1,7 @@
 import React from 'react';
 // @ts-ignore
 import humanFormat from 'human-format';
-import { CustomAddon } from '@storybook/design-system/dist/images/colored-icons';
+import { ColoredIcons } from '@storybook/design-system';
 import { VerifiedBadge } from '../VerifiedBadge';
 
 import {
@@ -44,7 +44,7 @@ export interface DisplayCardProps {
 }
 
 export const DisplayCard = ({
-  image: ImageProp = CustomAddon,
+  image: ImageProp = ColoredIcons.CustomAddon,
   name = '',
   displayName,
   description = '',

@@ -43,6 +43,13 @@ export const parameters = {
           height: '100%',
         },
       },
+      desktopXL: {
+        name: 'DesktopXL',
+        styles: {
+          width: '1200px',
+          height: '100%',
+        },
+      },
     },
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { Controls, Viewports } from '@storybook/design-system/dist/images/marketing/addons';
+import { AddonIcons } from '@storybook/design-system';
 // @ts-ignore
 import ContrastPNG from '../../../.storybook/static/contrast.png';
 import { DisplayCard, DisplayCardProps } from './DisplayCard';
@@ -69,7 +69,7 @@ const Template = (args: DisplayCardProps) => (
 export const OfficialStorybook = Template.bind({});
 OfficialStorybook.args = {
   appearance: 'official',
-  image: Controls,
+  image: AddonIcons.Controls,
   displayName: 'Controls',
   description: 'Interact with component inputs dynamically in the Storybook UI',
   weeklyDownloads: 17143,
@@ -87,7 +87,7 @@ OfficialIntegrator.args = {
 
 export const Community = Template.bind({});
 Community.args = {
-  image: Viewports,
+  image: AddonIcons.Viewports,
   appearance: 'community',
   displayName: 'Mobile UX Hints',
   description:
@@ -134,7 +134,7 @@ export const StatVariations = (args: DisplayCardProps) => (
 StatVariations.args = {
   orientation: 'horizontal',
   appearance: 'official',
-  image: Controls,
+  image: AddonIcons.Controls,
   name: '@storybook/addon-controls',
   displayName: 'Controls',
   description: 'Interact with component inputs dynamically in the Storybook UI',
