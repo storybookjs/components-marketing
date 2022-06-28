@@ -19,6 +19,12 @@ export const {
 
 export const breakpoints = [440, 600, 900];
 
+export const shadows = {
+  tooltip: css`
+    box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
+  `,
+};
+
 export const marketing = {
   hero1: css({
     fontSize: 56,

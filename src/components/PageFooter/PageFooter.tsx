@@ -1,11 +1,5 @@
 import React from 'react';
-import { Link } from '@storybook/design-system';
-import { Direction, Repo } from '@storybook/design-system/dist/images/colored-icons';
-import {
-  Netlify,
-  Chromatic,
-  Circleci as CircleCI,
-} from '@storybook/design-system/dist/images/logos';
+import { Link, ColoredIcons, Logos } from '@storybook/design-system';
 
 import { Resource } from './Resource';
 import { CommunityLink } from './CommunityLink';
@@ -38,7 +32,7 @@ export const PageFooter = ({
     <Upper>
       <UpperColumn>
         <Resource
-          image={<Repo title="Docs" />}
+          image={<ColoredIcons.Repo title="Docs" />}
           title="Documentation"
           description="Add Storybook to your project in less than a minute to build components faster and
           easier."
@@ -55,7 +49,7 @@ export const PageFooter = ({
       </UpperColumn>
       <UpperColumn>
         <Resource
-          image={<Direction title="Tutorial" />}
+          image={<ColoredIcons.Direction title="Tutorial" />}
           title="Tutorials"
           description="Learn Storybook with in-depth tutorials that teaches Storybook best practices.
           Follow along with code samples."
@@ -117,15 +111,19 @@ export const PageFooter = ({
       <Service
         text="Maintained by"
         href="https://www.chromatic.com/"
-        logo={<Chromatic title="Chromatic" />}
+        logo={<Logos.Chromatic title="Chromatic" />}
       />
       <Service
         text="Continuous integration by"
         href="https://circleci.com/"
-        logo={<CircleCI title="CircleCI" />}
+        logo={<Logos.Circleci title="CircleCI" />}
         muteLogo
       />
-      <Service text="Hosting by" href="https://netlify.com" logo={<Netlify title="Netlify" />} />
+      <Service
+        text="Hosting by"
+        href="https://netlify.com"
+        logo={<Logos.Netlify title="Netlify" />}
+      />
     </Services>
   </FooterWrapper>
 );

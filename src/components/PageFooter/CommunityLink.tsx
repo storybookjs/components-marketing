@@ -1,5 +1,5 @@
-import React, { FunctionComponent, ComponentProps } from 'react';
-import { Icon, Link, icons } from '@storybook/design-system';
+import React, { ComponentProps } from 'react';
+import { Icon, Link } from '@storybook/design-system';
 
 export const CommunityLink = ({ href, icon, name }: CommunityLinkProps) => (
   <Link tertiary href={href}>

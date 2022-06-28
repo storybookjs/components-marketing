@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 import { Link } from '@storybook/design-system';
 
 import { PageFooter } from './PageFooter';
-import StorybookLogo from '@storybook/design-system/dist/images/logos/Storybook';
+import { Logos } from '@storybook/design-system';
 
 const LogotypeWrapper = styled(Link)`
   margin-bottom: 1rem;
@@ -53,7 +53,7 @@ export const Default = () => (
     navLinks={navLinks}
     storybookLogoLink={
       <LogotypeWrapper to="/">
-        <StorybookLogo title="Storybook" />
+        <Logos.Storybook title="Storybook" />
       </LogotypeWrapper>
     }
     subscribeForm={<DemoSubscribeForm>SubscribeForm</DemoSubscribeForm>}
