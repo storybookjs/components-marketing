@@ -71,7 +71,7 @@ export const Docs = ({ inverse, navLinks }: Menu) => (
       API
     </NavMenuItem>
     <NavMenuItem
-      icon={<ColoredIcon icon="check" color="green" />}
+      icon={<ColoredIcon icon="verified" color="green" />}
       description="Release notes for all major and minor Storybook versions"
       to={navLinks.changelog.url}
       LinkWrapper={navLinks.changelog.linkWrapper}

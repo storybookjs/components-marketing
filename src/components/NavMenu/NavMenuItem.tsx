@@ -13,9 +13,7 @@ const NavMenuItemDescription = styled.div`
   color: ${color.darkest};
 `;
 
-const PureMenuItem = styled(LinkWithWrapper, {
-  shouldForwardProp: (propName) => propName !== 'hasIcon',
-})<LinkWithWrapperProps & { hasIcon?: boolean }>`
+const PureMenuItem = styled(LinkWithWrapper)<LinkWithWrapperProps>`
   ${text.small};
   color: ${color.darkest};
   text-decoration: none;
@@ -23,10 +21,7 @@ const PureMenuItem = styled(LinkWithWrapper, {
   display: flex;
   align-items: flex-start;
 
-  padding-top: 10px;
-  padding-right: 7px;
-  padding-bottom: 10px;
-  padding-left: ${(props) => (props.hasIcon ? '10px' : '15px')};
+  padding: 12px;
 
   &:hover,
   &:focus,
@@ -63,7 +58,7 @@ export const NavMenuItem = forwardRef<
   HTMLAnchorElement,
   ComponentPropsWithRef<typeof PureMenuItem> & NavMenuItemProps
 >(({ icon, children, description, ...props }, ref) => (
-  <PureMenuItem {...props} hasIcon={!!icon} ref={ref} role="menuitem">
+  <PureMenuItem {...props} ref={ref} role="menuitem">
     {icon}
     <div>
       <NavMenuItemTitle>{children}</NavMenuItemTitle>

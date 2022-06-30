@@ -36,7 +36,7 @@ const PureStackedNavItem = styled(LinkWithWrapper)`
     margin-right: 10px;
   }
 
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   &:last-of-type {
     margin-bottom: 0;
   }
