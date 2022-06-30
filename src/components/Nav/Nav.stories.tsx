@@ -6,7 +6,7 @@ export default {
   title: 'Nav/Nav',
   component: Nav,
   parameters: {
-    chromatic: { viewports: [320, 440, 600, 1038] },
+    chromatic: { viewports: [320, 440, 600, 900] },
     layout: 'fullscreen',
   },
 };

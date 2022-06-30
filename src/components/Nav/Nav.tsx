@@ -9,8 +9,6 @@ import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { NavContext } from './nav-context';
 
-const desktopBreakpoint = 1008;
-
 const GlobalSearch = styled(Search)`
   flex: none;
   width: 160px;
@@ -20,7 +18,17 @@ const GlobalSearch = styled(Search)`
     display: block;
   }
 
-  @media (min-width: ${desktopBreakpoint}px) {
+  @media (min-width: ${breakpoints[1]}px) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: ${breakpoints[2]}px) {
+    position: relative;
+    left: initial;
+    transform: initial;
+
     margin-left: auto;
   }
 `;
@@ -35,8 +43,8 @@ const LogoNavItem = styled(NavItem)`
     outline: 2px solid ${color.secondary};
   }
 
-  @media (min-width: ${desktopBreakpoint}px) {
-    margin-right: 32px;
+  @media (min-width: ${breakpoints[2]}px) {
+    margin-right: 24px;
   }
 `;
 
@@ -61,7 +69,7 @@ const NavContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: ${desktopBreakpoint}px) {
+  @media (min-width: ${breakpoints[2]}px) {
     justify-content: flex-start;
   }
 `;
@@ -74,7 +82,7 @@ const TabletNav = styled(TabletMenu)`
     display: block;
   }
 
-  @media (min-width: ${desktopBreakpoint}px) {
+  @media (min-width: ${breakpoints[2]}px) {
     display: none;
   }
 `;
@@ -100,7 +108,7 @@ const NavLinks = styled.div`
     margin-right: 9px;
   }
 
-  @media (min-width: ${desktopBreakpoint}px) {
+  @media (min-width: ${breakpoints[2]}px) {
     display: flex;
   }
 `;
@@ -138,13 +146,6 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
             LinkWrapper={navLinks.integrations.linkWrapper}
           >
             Integrations
-          </NavItem>
-          <NavItem
-            variant={inverse ? 'inverse' : 'default'}
-            to={navLinks.changelog.url}
-            LinkWrapper={navLinks.changelog.linkWrapper}
-          >
-            Changelog
           </NavItem>
           <Community inverse={inverse} navLinks={navLinks} />
         </NavLinks>

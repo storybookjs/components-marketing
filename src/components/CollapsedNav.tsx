@@ -17,7 +17,6 @@ import {
 import { Icon } from '@storybook/design-system';
 import { styled } from '@storybook/theming';
 import { mergeRefs } from 'react-merge-refs';
-import { motion, AnimatePresence } from 'framer-motion';
 import { shadows, color } from './shared/styles';
 import { StackedNav, StackedNavItem } from './StackedNav';
 import { IconButton } from './IconButton';
@@ -63,8 +62,6 @@ interface CollapsedNavProps {
   inverse?: boolean;
   groups: MenuGroup[];
 }
-
-const AnimatedCollapsedNavPanel = motion(CollapsedNavPanel);
 
 export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<HTMLButtonElement>>(
   ({ groups, children, label, inverse, ...props }, ref) => {
@@ -144,60 +141,53 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
           )}
         </IconButton>
         <FloatingPortal>
-          <AnimatePresence initial={false}>
-            {/* Menu Panel */}
-            {open && (
-              <FloatingFocusManager
-                context={context}
-                modal
-                // Touch-based screen readers will be able to navigate back to the
-                // reference and click it to dismiss the menu without clicking an item.
-                // This acts as a touch-based `Esc` key. A visually-hidden dismiss button
-                // is an alternative.
-                order={['reference', 'content']}
+          {/* Menu Panel */}
+          {open && (
+            <FloatingFocusManager
+              context={context}
+              modal
+              // Touch-based screen readers will be able to navigate back to the
+              // reference and click it to dismiss the menu without clicking an item.
+              // This acts as a touch-based `Esc` key. A visually-hidden dismiss button
+              // is an alternative.
+              order={['reference', 'content']}
+            >
+              <CollapsedNavPanel
+                {...getFloatingProps({
+                  ref: floating,
+                  style: {
+                    position: strategy,
+                    top: y ?? 0,
+                    left: x ?? 0,
+                  },
+                })}
               >
-                <AnimatedCollapsedNavPanel
-                  {...getFloatingProps({
-                    ref: floating,
-                    style: {
-                      position: strategy,
-                      top: y ?? 0,
-                      left: x ?? 0,
-                      transformOrigin: 'top right',
-                    },
-                  })}
-                  initial={{ opacity: 0, y: 50, scale: 0.3 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
-                  transition={{ type: 'tween', duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
-                >
-                  {menuGroups.map((group) => (
-                    <StackedNav key={group.label} label={group.label}>
-                      {group.items.map((item) => (
-                        <StackedNavItem
-                          key={item.label}
-                          to={item.link.url}
-                          LinkWrapper={item.link.linkWrapper}
-                          icon={item.icon}
-                          {...getItemProps({
-                            role: 'menuitem',
-                            ref(node: HTMLButtonElement) {
-                              listItemsRef.current[item.id] = node;
-                            },
-                            onClick() {
-                              setOpen(false);
-                            },
-                          })}
-                        >
-                          {item.label}
-                        </StackedNavItem>
-                      ))}
-                    </StackedNav>
-                  ))}
-                </AnimatedCollapsedNavPanel>
-              </FloatingFocusManager>
-            )}
-          </AnimatePresence>
+                {menuGroups.map((group) => (
+                  <StackedNav key={group.label} label={group.label}>
+                    {group.items.map((item) => (
+                      <StackedNavItem
+                        key={item.label}
+                        to={item.link.url}
+                        LinkWrapper={item.link.linkWrapper}
+                        icon={item.icon}
+                        {...getItemProps({
+                          role: 'menuitem',
+                          ref(node: HTMLButtonElement) {
+                            listItemsRef.current[item.id] = node;
+                          },
+                          onClick() {
+                            setOpen(false);
+                          },
+                        })}
+                      >
+                        {item.label}
+                      </StackedNavItem>
+                    ))}
+                  </StackedNav>
+                ))}
+              </CollapsedNavPanel>
+            </FloatingFocusManager>
+          )}
         </FloatingPortal>
       </>
     );

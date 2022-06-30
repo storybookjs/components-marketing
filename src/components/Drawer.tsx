@@ -60,7 +60,7 @@ export const Drawer = ({ label, open, setOpen, children }: DrawerProps) => {
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ type: 'tween', duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
           >
             <FloatingFocusManager context={context}>
               <DialogBody
