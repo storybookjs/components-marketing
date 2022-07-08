@@ -20,13 +20,9 @@ export default {
 const Template = ({ items, ...args }) => (
   <NavMenu label="Why" {...args}>
     {items.map((item) => (
-      <NavMenuItem
-        key={item.href}
-        icon={item.icon}
-        title={item.title}
-        description={item.description}
-        href={item.href}
-      />
+      <NavMenuItem key={item.href} icon={item.icon} description={item.description} to={item.href}>
+        {item.title}
+      </NavMenuItem>
     ))}
   </NavMenu>
 );

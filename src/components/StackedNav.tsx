@@ -5,7 +5,7 @@ import { color, subheading, typography } from './shared/styles';
 import { LinkWithWrapper, LinkWithWrapperProps } from './LinkWithWrapper';
 
 const StackedNavLabel = styled.div`
-  ${subheading.small}
+  ${subheading.small};
   color: ${color.dark};
   text-transform: uppercase;
   margin-bottom: 16px;
