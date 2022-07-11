@@ -2710,10 +2710,10 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/design-system@^7.4.1":
-  version "7.4.1"
-  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.4.1.tgz#32795bc5058eed68c28b822d152f5d1971202e6e"
-  integrity sha512-F/9GhLgocK9kOCG7C0JN0fWyEtiPixgwHZTgO85fsP9HkNq/7wtwSyhqPJE4wh2lOgQcN06aRffEU3WG4gEyng==
+"@storybook/design-system@^7.7.4":
+  version "7.7.4"
+  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.7.4.tgz#7228023c0ed8aa3d4e7a0d6de683e76dee6c42de"
+  integrity sha512-D9W+Zqjh1sQFdHpG/uaXIHAKMZp7YzkWsz4xiZuYvnN9VIuOF1GqEahXj2LPU5oEUKLpk8WjdSyVKkLYtp6ecg==
   dependencies:
     "@emotion/weak-memoize" "^0.2.5"
     "@storybook/theming" "^6.5.9"

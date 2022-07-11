@@ -52,7 +52,7 @@ export const NavMenuButton = forwardRef<HTMLButtonElement, NavMenuButtonProps>(
   ({ inverse, children, ...props }, ref) => (
     <PureNavMenuButton inverse={inverse} ref={ref} {...props}>
       {children}
-      <ExpandableIcon icon="chevrondown" />
+      <ExpandableIcon icon="arrowdown" />
     </PureNavMenuButton>
   )
 );

@@ -20,7 +20,7 @@ export default {
 const Template = ({ items, ...args }) => (
   <NavMenu label="Why" {...args}>
     {items.map((item) => (
-      <NavMenuItem key={item.href} icon={item.icon} description={item.description} to={item.href}>
+      <NavMenuItem key={item.to} icon={item.icon} description={item.description} to={item.to}>
         {item.title}
       </NavMenuItem>
     ))}
@@ -33,19 +33,19 @@ Default.args = {
     {
       title: 'Why Storybook?',
       description: 'Learn why frontend devs use Storybook to ship UIs.',
-      href: '/why-storybook',
+      to: '/why-storybook',
     },
 
     {
       title: 'Use cases',
       description: 'Learn why frontend devs use Storybook to ship UIs.',
-      href: '/use-cases',
+      to: '/use-cases',
     },
 
     {
       title: 'Case studies',
       description: 'Learn why frontend devs use Storybook to ship UIs.',
-      href: 'case-studies',
+      to: 'case-studies',
     },
   ],
 };
@@ -63,19 +63,19 @@ WithIcon.args = {
       icon: <Logos.StorybookIcon />,
       title: 'Why Storybook?',
       description: 'Learn why frontend devs use Storybook to ship UIs.',
-      href: '/why-storybook',
+      to: '/why-storybook',
     },
     {
       icon: <ColoredIcon icon="lightning" color="gold" />,
       title: 'Use cases',
       description: 'Learn why frontend devs use Storybook to ship UIs.',
-      href: '/use-cases',
+      to: '/use-cases',
     },
     {
       icon: <ColoredIcon icon="graphline" color="green" />,
       title: 'Case studies',
       description: 'Learn why frontend devs use Storybook to ship UIs.',
-      href: 'case-studies',
+      to: 'case-studies',
     },
   ],
 };
