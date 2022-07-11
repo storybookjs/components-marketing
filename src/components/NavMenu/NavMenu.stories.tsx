@@ -18,13 +18,15 @@ export default {
 };
 
 const Template = ({ items, ...args }) => (
-  <NavMenu label="Why" {...args}>
-    {items.map((item) => (
-      <NavMenuItem key={item.to} icon={item.icon} description={item.description} to={item.to}>
-        {item.title}
-      </NavMenuItem>
-    ))}
-  </NavMenu>
+  <div style={{ height: 400 }}>
+    <NavMenu label="Why" {...args}>
+      {items.map((item) => (
+        <NavMenuItem key={item.to} icon={item.icon} description={item.description} to={item.to}>
+          {item.title}
+        </NavMenuItem>
+      ))}
+    </NavMenu>
+  </div>
 );
 
 export const Default = Template.bind({});
