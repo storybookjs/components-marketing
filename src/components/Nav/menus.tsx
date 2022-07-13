@@ -12,7 +12,7 @@ export const Why = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="storybook" color="primary" />}
       description="Learn why frontend devs use Storybook to ship UIs."
-      to={navLinks.whyStorybook.url}
+      href={navLinks.whyStorybook.url}
       LinkWrapper={navLinks.whyStorybook.linkWrapper}
     >
       Why Storybook?
@@ -20,7 +20,7 @@ export const Why = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="lightning" color="gold" />}
       description="Learn why frontend devs use Storybook to ship UIs."
-      to={navLinks.useCases.url}
+      href={navLinks.useCases.url}
       LinkWrapper={navLinks.useCases.linkWrapper}
     >
       Use cases
@@ -28,7 +28,7 @@ export const Why = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="graphline" color="green" />}
       description="Learn why frontend devs use Storybook to ship UIs."
-      to={navLinks.caseStudies.url}
+      href={navLinks.caseStudies.url}
       LinkWrapper={navLinks.caseStudies.linkWrapper}
     >
       Case studies
@@ -41,7 +41,7 @@ export const Docs = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="globe" color="secondary" />}
       description="How to develop, test, and document UIs with Storybook"
-      to={navLinks.getStarted.url}
+      href={navLinks.getStarted.url}
       LinkWrapper={navLinks.getStarted.linkWrapper}
     >
       Get started
@@ -49,7 +49,7 @@ export const Docs = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="book" color="green" />}
       description="Learn everything you need to know to use Storybook"
-      to={navLinks.guides.url}
+      href={navLinks.guides.url}
       LinkWrapper={navLinks.guides.linkWrapper}
     >
       Guides
@@ -57,7 +57,7 @@ export const Docs = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="compass" color="gold" />}
       description="Follow guided walkthroughs on for Storybook’s key workflows"
-      to={navLinks.tutorials.url}
+      href={navLinks.tutorials.url}
       LinkWrapper={navLinks.tutorials.linkWrapper}
     >
       Tutorials
@@ -65,7 +65,7 @@ export const Docs = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="location" color="seafoam" />}
       description="Reference every object and method in Storybook’s API"
-      to={navLinks.api.url}
+      href={navLinks.api.url}
       LinkWrapper={navLinks.api.linkWrapper}
     >
       API
@@ -73,7 +73,7 @@ export const Docs = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="verified" color="green" />}
       description="Release notes for all major and minor Storybook versions"
-      to={navLinks.changelog.url}
+      href={navLinks.changelog.url}
       LinkWrapper={navLinks.changelog.linkWrapper}
     >
       Changelog
@@ -86,7 +86,7 @@ export const Community = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="starhollow" color="gold" />}
       description="Join thousands of frontend devs to learn and share"
-      to={navLinks.getInvolved.url}
+      href={navLinks.getInvolved.url}
       LinkWrapper={navLinks.getInvolved.linkWrapper}
     >
       Get involved
@@ -94,7 +94,7 @@ export const Community = ({ inverse, navLinks }: Menu) => (
     <NavMenuItem
       icon={<ColoredIcon icon="rss" color="purple" />}
       description="News and updates from the Storybook team"
-      to={navLinks.blog.url}
+      href={navLinks.blog.url}
       LinkWrapper={navLinks.blog.linkWrapper}
     >
       Blog and updates

@@ -9,16 +9,16 @@ export default {
 
 export const Default = () => (
   <StackedNav label="Why">
-    <StackedNavItem to="/why" icon={<Icon icon="storybook" />}>
+    <StackedNavItem href="/why" icon={<Icon icon="storybook" />}>
       Why Storybook
     </StackedNavItem>
-    <StackedNavItem to="/use-cases" icon={<Icon icon="lightning" />}>
+    <StackedNavItem href="/use-cases" icon={<Icon icon="lightning" />}>
       Use cases
     </StackedNavItem>
-    <StackedNavItem to="/case-studies" icon={<Icon icon="graphline" />}>
+    <StackedNavItem href="/case-studies" icon={<Icon icon="graphline" />}>
       Case studies
     </StackedNavItem>
-    <StackedNavItem to="/cdd" icon={<Icon icon="componentdriven" />}>
+    <StackedNavItem href="/cdd" icon={<Icon icon="componentdriven" />}>
       Component-driven UI
     </StackedNavItem>
   </StackedNav>

@@ -167,7 +167,7 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
                     {group.items.map((item) => (
                       <StackedNavItem
                         key={item.label}
-                        to={item.link.url}
+                        href={item.link.url}
                         LinkWrapper={item.link.linkWrapper}
                         icon={item.icon}
                         {...getItemProps({

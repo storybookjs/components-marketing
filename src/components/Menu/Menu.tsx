@@ -32,7 +32,7 @@ export const MenuPanel = styled.ul`
 `;
 
 interface Item extends MenuIemProps {
-  title: string;
+  label: string;
 }
 
 interface MenuProps {
@@ -119,9 +119,9 @@ export const Menu = forwardRef<HTMLButtonElement, MenuProps>(
                   },
                 })}
               >
-                {items.map(({ title, ...itemProps }, index) => (
+                {items.map(({ label: itemLabel, ...itemProps }, index) => (
                   <MenuItem
-                    key={title}
+                    key={itemLabel}
                     {...itemProps}
                     {...getItemProps({
                       role: 'menuitem',
@@ -133,7 +133,7 @@ export const Menu = forwardRef<HTMLButtonElement, MenuProps>(
                       },
                     })}
                   >
-                    {title}
+                    {itemLabel}
                   </MenuItem>
                 ))}
               </MenuPanel>

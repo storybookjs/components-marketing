@@ -25,18 +25,16 @@ export const Default = Template.bind({});
 Default.args = {
   items: [
     {
-      title: 'Copy canvas link',
-      to: '/why-storybook',
+      label: 'Copy canvas link',
+      href: '/why-storybook',
     },
-
     {
-      title: 'Open canvas in new tab',
-      to: '/use-cases',
+      label: 'Open canvas in new tab',
+      href: '/use-cases',
     },
-
     {
-      title: 'Wrapped Text Item Wrapped Text Item Wrapped Text Item',
-      to: 'case-studies',
+      label: 'Wrapped Text Item Wrapped Text Item Wrapped Text Item',
+      href: 'case-studies',
     },
   ],
 };
@@ -52,18 +50,18 @@ WithIcon.args = {
   items: [
     {
       icon: <Icon icon="copy" />,
-      title: 'Copy canvas link',
-      to: '/why-storybook',
+      label: 'Copy canvas link',
+      href: '/why-storybook',
     },
     {
       icon: <Icon icon="sharealt" />,
-      title: 'Open canvas in new tab',
-      to: '/use-cases',
+      label: 'Open canvas in new tab',
+      href: '/use-cases',
     },
     {
       icon: <Icon icon="expand" />,
-      title: 'Wrapped Text Item Wrapped Text Item Wrapped Text Item',
-      to: 'case-studies',
+      label: 'Wrapped Text Item Wrapped Text Item Wrapped Text Item',
+      href: 'case-studies',
     },
   ],
 };
