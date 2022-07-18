@@ -48,11 +48,11 @@ const MenuItemTitle = styled.span`
   text-overflow: ellipsis;
 `;
 
-export interface MenuIemProps extends LinkWithWrapperProps {
+export interface MenuItemProps extends LinkWithWrapperProps {
   icon?: ReactNode;
 }
 
-export const MenuItem = forwardRef<HTMLAnchorElement, MenuIemProps>(
+export const MenuItem = forwardRef<HTMLAnchorElement, MenuItemProps>(
   ({ icon, children, ...props }, ref) => (
     <PureMenuItem hasIcon={!!icon} ref={ref} {...props}>
       {icon}

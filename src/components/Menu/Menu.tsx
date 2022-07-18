@@ -18,7 +18,7 @@ import { styled } from '@storybook/theming';
 import { mergeRefs } from 'react-merge-refs';
 import { color } from '../shared/styles';
 import { MenuButton } from './MenuButton';
-import { MenuItem, MenuIemProps } from './MenuItem';
+import { MenuItem, MenuItemProps } from './MenuItem';
 
 export const MenuPanel = styled.ul`
   padding: 0;
@@ -31,7 +31,7 @@ export const MenuPanel = styled.ul`
   box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
 `;
 
-interface Item extends MenuIemProps {
+interface Item extends MenuItemProps {
   label: string;
 }
 
