@@ -38,6 +38,10 @@ export const SubNavBreadcrumb = styled(Link)`
   ${text.regularBold};
   margin-top: 10px;
   margin-bottom: 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 SubNavBreadcrumb.defaultProps = {
   tertiary: true,

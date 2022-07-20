@@ -159,7 +159,10 @@ export const BreadcrumbMenuLinklist = () => (
       Back to Visual Testing Handbook
     </SubNavBreadcrumb>
     <SubNavDivider />
-    <div>Framework: React Language: English</div>
+    <SubNavSelects>
+      <FrameworkSelect />
+      <VersionSelect />
+    </SubNavSelects>
     <SubNavRightAddon>
       <SubNavLinkList label="Get support:" items={supportItems} />
     </SubNavRightAddon>
