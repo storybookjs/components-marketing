@@ -1,10 +1,10 @@
 import React, { ComponentProps } from 'react';
 import { NavMenu, NavMenuItem } from '../NavMenu';
 import { ColoredIcon } from '../ColoredIcon';
-import { NavLinks } from './nav-context';
+import { Links } from '../links-context';
 
 interface Menu extends ComponentProps<typeof NavMenu> {
-  navLinks: NavLinks;
+  navLinks: Links;
 }
 
 export const Why = ({ inverse, navLinks }: Menu) => (
@@ -102,29 +102,29 @@ export const Community = ({ inverse, navLinks }: Menu) => (
   </NavMenu>
 );
 
-export const mobileGroups = (navLinks: NavLinks) => [
+export const mobileGroups = (links: Links) => [
   {
     label: 'Why',
     items: [
       {
         label: 'Why Storybook',
-        link: navLinks.whyStorybook,
+        link: links.whyStorybook,
         icon: <ColoredIcon icon="storybook" color="primary" />,
       },
 
       {
         label: 'Use cases',
-        link: navLinks.useCases,
+        link: links.useCases,
         icon: <ColoredIcon icon="lightning" color="gold" />,
       },
       {
         label: 'Case studies',
-        link: navLinks.caseStudies,
+        link: links.caseStudies,
         icon: <ColoredIcon icon="graphline" color="green" />,
       },
       {
         label: 'Component-driven UI',
-        link: navLinks.componentDriven,
+        link: links.componentDriven,
         icon: <ColoredIcon icon="componentdriven" color="purple" />,
       },
     ],
@@ -134,30 +134,30 @@ export const mobileGroups = (navLinks: NavLinks) => [
     items: [
       {
         label: 'Get started',
-        link: navLinks.getStarted,
+        link: links.getStarted,
         icon: <ColoredIcon icon="globe" color="secondary" />,
       },
       {
         label: 'Guides',
-        link: navLinks.guides,
+        link: links.guides,
         icon: <ColoredIcon icon="book" color="green" />,
       },
 
       {
         label: 'Tutorials',
-        link: navLinks.tutorials,
+        link: links.tutorials,
         icon: <ColoredIcon icon="compass" color="gold" />,
       },
 
       {
         label: 'API',
-        link: navLinks.api,
+        link: links.api,
         icon: <ColoredIcon icon="location" color="seafoam" />,
       },
 
       {
         label: 'Changelog',
-        link: navLinks.changelog,
+        link: links.changelog,
         icon: <ColoredIcon icon="check" color="green" />,
       },
     ],
@@ -167,18 +167,18 @@ export const mobileGroups = (navLinks: NavLinks) => [
     items: [
       {
         label: 'Explore',
-        link: navLinks.showcase,
+        link: links.showcase,
         icon: <ColoredIcon icon="admin" color="green" />,
       },
       {
         label: 'Projects',
-        link: navLinks.projects,
+        link: links.projects,
         icon: <ColoredIcon icon="book" color="primary" />,
       },
 
       {
         label: 'Component glossary',
-        link: navLinks.componentGlossary,
+        link: links.componentGlossary,
         icon: <ColoredIcon icon="component" color="secondary" />,
       },
     ],
@@ -188,18 +188,18 @@ export const mobileGroups = (navLinks: NavLinks) => [
     items: [
       {
         label: 'Integrations',
-        link: navLinks.integrations,
+        link: links.integrations,
         icon: <ColoredIcon icon="grid" color="seafoam" />,
       },
       {
         label: 'Get involved',
-        link: navLinks.getInvolved,
+        link: links.getInvolved,
         icon: <ColoredIcon icon="starhollow" color="gold" />,
       },
 
       {
         label: 'Blog',
-        link: navLinks.blog,
+        link: links.blog,
         icon: <ColoredIcon icon="rss" color="purple" />,
       },
     ],
