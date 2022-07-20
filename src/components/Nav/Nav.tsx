@@ -7,7 +7,7 @@ import { Search } from '../Search';
 import { Why, Docs, Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
-import { NavContext } from './nav-context';
+import { LinksContext } from '../links-context';
 
 const GlobalSearch = styled(Search)`
   flex: none;
@@ -114,7 +114,7 @@ const NavLinks = styled.div`
 `;
 
 export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
-  const navLinks = useContext(NavContext);
+  const navLinks = useContext(LinksContext);
 
   return (
     <Wrapper inverse={inverse}>

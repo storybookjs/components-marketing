@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Nav } from './Nav';
-import { NavContextProvider } from './nav-context';
+import { LinksContextProvider } from '../links-context';
 
 export default {
   title: 'Nav/Nav',
@@ -31,18 +31,20 @@ const navLinks = {
   tutorials: { url: 'https://storybook.js.org/tutorials' },
   api: { url: '/docs/api', linkWrapper: FakeGatsbyLink },
   changelog: { url: '/changelog', linkWrapper: FakeGatsbyLink },
+  telemetry: { url: '/telemetry', linkWrapper: FakeGatsbyLink },
   showcase: { url: 'https://storybook.js.org/showcase' },
   projects: { url: 'https://storybook.js.org/showcase/projects' },
   componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
   integrations: { url: '/integrations', linkWrapper: FakeGatsbyLink },
   getInvolved: { url: '/get-involved', linkWrapper: FakeGatsbyLink },
   blog: { url: 'https://storybook.js.org/blog' },
+  hiring: { url: 'https://www.chromatic.com/company/jobs' },
 };
 
 const Template = (args) => (
-  <NavContextProvider value={navLinks}>
+  <LinksContextProvider value={navLinks}>
     <Nav {...args} />
-  </NavContextProvider>
+  </LinksContextProvider>
 );
 
 export const Default = Template.bind({});

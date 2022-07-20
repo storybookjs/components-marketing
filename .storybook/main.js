@@ -17,6 +17,10 @@ module.exports = {
       type: 'javascript/auto',
     });
 
+    config.resolve.alias['./useMailingListForm'] = require.resolve(
+      '../src/__mocks__/useMailingListForm.mock.js'
+    );
+
     return config;
   },
 };

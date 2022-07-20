@@ -1,10 +1,10 @@
 import React, { ComponentProps } from 'react';
 import { NavMenu, NavMenuItem } from '../NavMenu';
 import { ColoredIcon } from '../ColoredIcon';
-import { NavLinks } from './nav-context';
+import { Links } from '../links-context';
 
 interface Menu extends ComponentProps<typeof NavMenu> {
-  navLinks: NavLinks;
+  navLinks: Links;
 }
 
 export const Why = ({ inverse, navLinks }: Menu) => (

@@ -1,62 +1,59 @@
-import React from 'react';
-import { styled } from '@storybook/theming';
-import { Link } from '@storybook/design-system';
-
+import React, { forwardRef } from 'react';
 import { PageFooter } from './PageFooter';
-import { Logos } from '@storybook/design-system';
-
-const LogotypeWrapper = styled(Link)`
-  margin-bottom: 1rem;
-  display: block;
-
-  svg {
-    height: 28px;
-    width: auto;
-    display: block;
-    position: static;
-
-    transition: all 150ms ease-out;
-    transform: translate3d(0, 0, 0);
-    &:hover {
-      transform: translate3d(0, -1px, 0);
-    }
-    &:active {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-`;
-
-const DemoSubscribeForm = styled.div`
-  outline: 1px dotted;
-  padding: 1rem;
-`;
-
-const navLinksData = [
-  { title: 'Docs', href: '/' },
-  { title: 'Tutorials', href: '/' },
-  { title: 'Releases', href: '/' },
-];
-
-const navLinks = navLinksData.map(({ title, href }) => (
-  <Link tertiary key={title} href={href}>
-    {title}
-  </Link>
-));
+import { LinksContextProvider } from '../links-context';
 
 export default {
   title: 'PageFooter',
   component: PageFooter,
+  parameters: {
+    chromatic: { viewports: [320, 440, 600, 900] },
+    layout: 'fullscreen',
+  },
+  args: {
+    subscriberCount: 5363,
+  },
 };
 
-export const Default = () => (
-  <PageFooter
-    navLinks={navLinks}
-    storybookLogoLink={
-      <LogotypeWrapper to="/">
-        <Logos.Storybook title="Storybook" />
-      </LogotypeWrapper>
-    }
-    subscribeForm={<DemoSubscribeForm>SubscribeForm</DemoSubscribeForm>}
-    tutorialsLink="/"
-  />
+const FakeGatsbyLink = forwardRef<HTMLAnchorElement, { to: string }>(
+  ({ children, to, ...props }, ref) => (
+    <a href={to} ref={ref} {...props}>
+      {children}
+    </a>
+  )
 );
+FakeGatsbyLink.displayName = 'FakeGatsbyLink';
+
+const links = {
+  home: { url: '/', linkWrapper: FakeGatsbyLink },
+  whyStorybook: { url: '/why', linkWrapper: FakeGatsbyLink },
+  useCases: { url: '/use-cases', linkWrapper: FakeGatsbyLink },
+  caseStudies: { url: '/case-studies', linkWrapper: FakeGatsbyLink },
+  componentDriven: { url: 'https://componentdriven.org' },
+  getStarted: { url: '/docs', linkWrapper: FakeGatsbyLink },
+  guides: { url: '/docs/guides', linkWrapper: FakeGatsbyLink },
+  tutorials: { url: 'https://storybook.js.org/tutorials' },
+  api: { url: '/docs/api', linkWrapper: FakeGatsbyLink },
+  changelog: { url: '/changelog', linkWrapper: FakeGatsbyLink },
+  telemetry: { url: '/telemetry', linkWrapper: FakeGatsbyLink },
+  showcase: { url: 'https://storybook.js.org/showcase' },
+  projects: { url: 'https://storybook.js.org/showcase/projects' },
+  componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
+  integrations: { url: '/integrations', linkWrapper: FakeGatsbyLink },
+  getInvolved: { url: '/get-involved', linkWrapper: FakeGatsbyLink },
+  blog: { url: 'https://storybook.js.org/blog' },
+  hiring: { url: 'https://www.chromatic.com/company/jobs' },
+};
+
+const Template = (args) => (
+  <LinksContextProvider value={links}>
+    <PageFooter {...args} />
+  </LinksContextProvider>
+);
+
+export const Default = Template.bind({});
+
+export const Inverse = Template.bind({});
+Inverse.args = { inverse: true };
+Inverse.parameters = {
+  backgrounds: { default: 'dark' },
+};
