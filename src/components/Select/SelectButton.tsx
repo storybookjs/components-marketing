@@ -12,7 +12,7 @@ const ExpandableIcon = styled(Icon)`
 `;
 
 const PureSelectButton = styled.button<{ primary?: boolean; open?: boolean }>`
-  ${text.regularBold};
+  ${text.regular};
   display: inline-flex;
   align-items: center;
   text-align: center;

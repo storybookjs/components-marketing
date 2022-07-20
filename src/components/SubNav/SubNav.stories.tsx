@@ -1,8 +1,17 @@
 import React from 'react';
-import { LinkTabs, Icon } from '@storybook/design-system';
-import { SubNav, SubNavDivider, SubNavBreadcrumb, SubNavCTA, SubNavRightAddon } from './SubNav';
+import { Icon } from '@storybook/design-system';
+import {
+  SubNav,
+  SubNavDivider,
+  SubNavBreadcrumb,
+  SubNavCTA,
+  SubNavRightAddon,
+  SubNavSelects,
+} from './SubNav';
 import { SubNavLinkList, SubNavLinkItem } from './SubNavLinkList';
 import { SubNavTabs } from './SubNavTabs';
+import { Select, Option, OptionGroup } from '../Select';
+import { WithLabel, WithValue } from '../Select/Select.stories';
 
 export default {
   title: 'SubNav/SubNav',
@@ -17,14 +26,14 @@ const docsItems = [
   { key: '1', label: 'Get started', href: '/activity' },
   { key: '2', label: 'Guides', href: '/components', isActive: true },
   { key: '3', label: 'Tutorials', href: '/changes' },
-  { key: '3', label: 'API', href: '/changes' },
+  { key: '4', label: 'API', href: '/changes' },
 ];
 
 const catalogItems = [
   { key: '1', label: 'Overview', href: '/overview' },
   { key: '2', label: 'Projects', href: '/projects' },
   { key: '3', label: 'Glossary', href: '/glossary' },
-  { key: '3', label: 'About', href: '/about', isActive: true },
+  { key: '4', label: 'About', href: '/about', isActive: true },
 ];
 
 const supportItems: SubNavLinkItem[] = [
@@ -54,6 +63,33 @@ const communityItems: SubNavLinkItem[] = [
   },
 ];
 
+const frameworkOptions = WithLabel.args.options;
+const versionOptions = WithValue.args.options;
+
+const FrameworkSelect = () => (
+  <Select label="Framework:" value="React" showLabel primary onChange={() => {}}>
+    {Object.keys(frameworkOptions).map((type) => (
+      <OptionGroup key={type} label={type}>
+        {frameworkOptions[type].map(({ name, icon }) => (
+          <Option key={name} label={name} value={name} icon={icon} />
+        ))}
+      </OptionGroup>
+    ))}
+  </Select>
+);
+
+const VersionSelect = () => (
+  <Select label="Version:" value="6.5 (latest)" showLabel primary onChange={() => {}}>
+    {Object.keys(versionOptions).map((type) => (
+      <OptionGroup key={type} label={type}>
+        {versionOptions[type].map(({ name, icon }) => (
+          <Option key={name} label={name} value={name} icon={icon} />
+        ))}
+      </OptionGroup>
+    ))}
+  </Select>
+);
+
 export const TabLinklist = () => (
   <SubNav>
     <SubNavTabs label="Docs nav" items={docsItems} />
@@ -79,7 +115,10 @@ export const TabMenusLinklist = () => (
   <SubNav>
     <SubNavTabs label="Docs nav" items={docsItems} />
     <SubNavDivider />
-    <div>Framework: React Version: 7.0 (latest)</div>
+    <SubNavSelects>
+      <FrameworkSelect />
+      <VersionSelect />
+    </SubNavSelects>
     <SubNavRightAddon>
       <SubNavLinkList label="Get support:" items={supportItems} />
     </SubNavRightAddon>

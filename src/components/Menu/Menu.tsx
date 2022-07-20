@@ -31,7 +31,7 @@ export const MenuPanel = styled.ul`
   box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
 `;
 
-interface Item extends MenuItemProps {
+interface Item extends Omit<MenuItemProps, 'children'> {
   label: string;
 }
 

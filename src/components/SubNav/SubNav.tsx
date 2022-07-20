@@ -49,7 +49,19 @@ export const SubNavCTA = styled(Link)`
   margin-bottom: 10px;
 `;
 
+export const SubNavSelects = styled.div`
+  flex: none;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+
+  & > * {
+    margin-right: 12px;
+  }
+`;
+
 export const SubNavRightAddon = styled.div`
+  flex: none;
   display: none;
   margin-left: auto;
 

@@ -65,8 +65,8 @@ const versionsType = {
   'pre-release': [{ name: '7.0 (future)' }],
 };
 
-const Template = ({ value, options, ...args }) => (
-  <Select value={value} onChange={() => {}} {...args}>
+const Template = ({ label, value, options, ...args }) => (
+  <Select label={label} value={value} onChange={() => {}} {...args}>
     {Object.keys(options).map((type) => (
       <OptionGroup key={type} label={type}>
         {options[type].map(({ name, icon }) => (
@@ -78,7 +78,7 @@ const Template = ({ value, options, ...args }) => (
 );
 
 export const Default = () => (
-  <Select value="" onChange={() => {}}>
+  <Select label="Section" value="" onChange={() => {}}>
     <Option label="Get Started" value="get-started" />
     <Option label="Tutorials" value="tutorials" />
     <Option label="API" value="api" />
@@ -91,7 +91,7 @@ Default.play = async ({ canvasElement }) => {
 };
 
 export const WithIcon = () => (
-  <Select value="" onChange={() => {}}>
+  <Select label="Section" value="" onChange={() => {}}>
     <Option label="Get Started" value="get-started" icon={<Icon icon="globe" />} />
     <Option label="Tutorials" value="tutorials" icon={<Icon icon="compass" />} />
     <Option label="API" value="api" icon={<Icon icon="location" />} />
@@ -101,26 +101,37 @@ WithIcon.play = Default.play;
 
 export const OptionGroups = Template.bind({});
 OptionGroups.args = {
+  label: 'Version:',
   options: versionsType,
 };
 OptionGroups.play = Default.play;
 
 export const WithValue = Template.bind({});
 WithValue.args = {
+  label: 'Version:',
   value: '6.4',
   options: versionsType,
 };
-WithValue.play = Default.play;
 
 export const OptionGroupsWithIcon = Template.bind({});
 OptionGroupsWithIcon.args = {
+  label: 'Framework:',
   options: frameworksByType,
 };
 OptionGroupsWithIcon.play = Default.play;
 
 export const Primary = Template.bind({});
 Primary.args = {
+  label: 'Framework:',
   options: frameworksByType,
   primary: true,
 };
 Primary.play = Default.play;
+
+export const WithLabel = Template.bind({});
+WithLabel.args = {
+  label: 'Framework:',
+  options: frameworksByType,
+  showLabel: true,
+};
+WithLabel.play = Default.play;
