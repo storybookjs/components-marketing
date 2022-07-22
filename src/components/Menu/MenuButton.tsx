@@ -1,12 +1,12 @@
 import React, { ComponentProps, forwardRef } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Icon } from '@storybook/design-system';
-import { darken } from 'polished';
 import { text, spacing, color } from '../shared/styles';
 
 const ExpandableIcon = styled(Icon)`
   margin-left: 5px;
   margin-right: 0;
+  margin-top: 2px;
   width: 10px;
   height: 10px;
 `;
@@ -25,22 +25,24 @@ const PureMenuButton = styled.button<{ primary?: boolean; open?: boolean }>`
   outline: 0;
   border: 0;
 
-  &:hover,
-  &:focus-visible {
-    cursor: pointer;
-    transform: translateY(-1px);
-    color: ${(props) => darken(0.07, props.primary ? color.secondary : color.dark)};
-  }
-  &:active {
-    transform: translateY(0);
-    color: ${(props) => darken(0.1, props.primary ? color.secondary : color.dark)};
-  }
-
   ${(props) =>
     props.open &&
     css`
-      color: ${darken(0.1, props.primary ? color.secondary : color.dark)};
+      color: ${color.secondary};
+      background-color: rgba(30, 167, 253, 0.14);
     `};
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    color: ${color.secondary};
+    background-color: rgba(30, 167, 253, 0.14);
+  }
+
+  &:active {
+    color: ${color.secondary};
+    background-color: rgba(30, 167, 253, 0.07);
+  }
 `;
 
 type MenuButtonProps = ComponentProps<typeof PureMenuButton> & {

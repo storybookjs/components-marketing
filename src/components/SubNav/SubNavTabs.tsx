@@ -2,31 +2,27 @@ import React, { ComponentProps, FunctionComponent, useMemo } from 'react';
 import { styled } from '@storybook/theming';
 import { LinkTabs } from '@storybook/design-system';
 import { breakpoints } from '../shared/styles';
-import { Select, Option } from '../Select';
 import { Menu } from '../Menu';
 
 const Tabs = styled(LinkTabs)`
   display: none;
 
-  @media (min-width: ${breakpoints[1]}px) {
-    display: flex;
+  @media (min-width: ${breakpoints[2]}px) and (max-width: ${breakpoints[2] + 25}px) {
+    a {
+      padding: 10px;
+    }
   }
-`;
 
-const TabsSelect = styled(Select)`
-  flex: none;
-  display: block;
-
-  @media (min-width: ${breakpoints[1]}px) {
-    display: none;
+  @media (min-width: ${breakpoints[2]}px) {
+    display: flex;
   }
 `;
 
 const TabsMenu = styled(Menu)`
   flex: none;
-  display: block;
+  display: inline-flex;
 
-  @media (min-width: ${breakpoints[1]}px) {
+  @media (min-width: ${breakpoints[2]}px) {
     display: none;
   }
 `;
@@ -39,7 +35,7 @@ interface SubNavTabsProps {
 export const SubNavTabs: FunctionComponent<SubNavTabsProps> = ({ label, items }) => {
   const activeItem = useMemo(() => items.find((item) => item.isActive), [items]);
   const menuItems = useMemo(
-    () => items.map((item) => ({ label: item.label, href: item.href })),
+    () => items.map((item) => ({ label: item.label, link: { url: item.href } })),
     [items]
   );
 

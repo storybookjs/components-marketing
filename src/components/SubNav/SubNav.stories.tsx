@@ -5,13 +5,14 @@ import {
   SubNavDivider,
   SubNavBreadcrumb,
   SubNavCTA,
-  SubNavRightAddon,
-  SubNavSelects,
+  SubNavRight,
+  SubNavMenus,
+  SubNavMenuLabel,
 } from './SubNav';
 import { SubNavLinkList, SubNavLinkItem } from './SubNavLinkList';
 import { SubNavTabs } from './SubNavTabs';
-import { Select, Option, OptionGroup } from '../Select';
-import { WithLabel, WithValue } from '../Select/Select.stories';
+import { Menu } from '../Menu';
+import { Grouped } from '../Menu/Menu.stories';
 
 export default {
   title: 'SubNav/SubNav',
@@ -63,51 +64,57 @@ const communityItems: SubNavLinkItem[] = [
   },
 ];
 
-const frameworkOptions = WithLabel.args.options;
-const versionOptions = WithValue.args.options;
+const frameworkOptions = Grouped.args.items;
+const versionOptions = [
+  {
+    label: 'stable',
+    items: [
+      { label: '6.5', link: { url: '/6-5' } },
+      { label: '6.4', link: { url: '/6-4' } },
+      { label: '6.3', link: { url: '/6-3' } },
+      { label: '6.2', link: { url: '/6-2' } },
+      { label: '6.1', link: { url: '/6-1' } },
+      { label: '6.0', link: { url: '/6-0' } },
+    ],
+  },
+  {
+    label: 'pre-release',
+    items: [{ label: '7.0 (future)', link: { url: '/7-0' } }],
+  },
+];
 
 const FrameworkSelect = () => (
-  <Select label="Framework:" value="React" showLabel primary onChange={() => {}}>
-    {Object.keys(frameworkOptions).map((type) => (
-      <OptionGroup key={type} label={type}>
-        {frameworkOptions[type].map(({ name, icon }) => (
-          <Option key={name} label={name} value={name} icon={icon} />
-        ))}
-      </OptionGroup>
-    ))}
-  </Select>
+  <>
+    <SubNavMenuLabel>Framework:</SubNavMenuLabel>
+    <Menu label={frameworkOptions[0].items[0].label} items={frameworkOptions} primary />
+  </>
 );
 
 const VersionSelect = () => (
-  <Select label="Version:" value="6.5 (latest)" showLabel primary onChange={() => {}}>
-    {Object.keys(versionOptions).map((type) => (
-      <OptionGroup key={type} label={type}>
-        {versionOptions[type].map(({ name, icon }) => (
-          <Option key={name} label={name} value={name} icon={icon} />
-        ))}
-      </OptionGroup>
-    ))}
-  </Select>
+  <>
+    <SubNavMenuLabel>Version:</SubNavMenuLabel>
+    <Menu label={versionOptions[0].items[0].label} items={versionOptions} primary />
+  </>
 );
 
 export const TabLinklist = () => (
   <SubNav>
     <SubNavTabs label="Docs nav" items={docsItems} />
-    <SubNavRightAddon>
+    <SubNavRight>
       <SubNavLinkList label="Get support:" items={supportItems} />
-    </SubNavRightAddon>
+    </SubNavRight>
   </SubNav>
 );
 
 export const TabCTA = () => (
   <SubNav>
     <SubNavTabs label="Addon catalog nav" items={catalogItems} />
-    <SubNavRightAddon>
+    <SubNavRight>
       <SubNavCTA href="/back">
         <Icon icon="add" />
         Add your project
       </SubNavCTA>
-    </SubNavRightAddon>
+    </SubNavRight>
   </SubNav>
 );
 
@@ -115,13 +122,13 @@ export const TabMenusLinklist = () => (
   <SubNav>
     <SubNavTabs label="Docs nav" items={docsItems} />
     <SubNavDivider />
-    <SubNavSelects>
+    <SubNavMenus>
       <FrameworkSelect />
       <VersionSelect />
-    </SubNavSelects>
-    <SubNavRightAddon>
+    </SubNavMenus>
+    <SubNavRight>
       <SubNavLinkList label="Get support:" items={supportItems} />
-    </SubNavRightAddon>
+    </SubNavRight>
   </SubNav>
 );
 
@@ -131,9 +138,9 @@ export const BreadcrumbLinklist = () => (
       <Icon icon="arrowleft" />
       Back to blog
     </SubNavBreadcrumb>
-    <SubNavRightAddon>
+    <SubNavRight>
       <SubNavLinkList label="Join the community:" items={communityItems} />
-    </SubNavRightAddon>
+    </SubNavRight>
   </SubNav>
 );
 
@@ -143,12 +150,12 @@ export const BreadcrumbCTA = () => (
       <Icon icon="arrowleft" />
       Back to integrations
     </SubNavBreadcrumb>
-    <SubNavRightAddon>
+    <SubNavRight>
       <SubNavCTA href="/back">
         <Icon icon="add" />
         Add your integration
       </SubNavCTA>
-    </SubNavRightAddon>
+    </SubNavRight>
   </SubNav>
 );
 
@@ -159,13 +166,13 @@ export const BreadcrumbMenuLinklist = () => (
       Back to Visual Testing Handbook
     </SubNavBreadcrumb>
     <SubNavDivider />
-    <SubNavSelects>
+    <SubNavMenus>
       <FrameworkSelect />
       <VersionSelect />
-    </SubNavSelects>
-    <SubNavRightAddon>
+    </SubNavMenus>
+    <SubNavRight>
       <SubNavLinkList label="Get support:" items={supportItems} />
-    </SubNavRightAddon>
+    </SubNavRight>
   </SubNav>
 );
 

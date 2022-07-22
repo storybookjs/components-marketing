@@ -1,7 +1,7 @@
 import React, { FunctionComponent, ReactNode } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, css } from '@storybook/theming';
 import { Link } from '@storybook/design-system';
-import { text, pageMargins, color, breakpoints } from '../shared/styles';
+import { typography, text, pageMargins, color, breakpoints } from '../shared/styles';
 
 const NavContainer = styled.div`
   ${pageMargins}
@@ -53,18 +53,31 @@ export const SubNavCTA = styled(Link)`
   margin-bottom: 10px;
 `;
 
-export const SubNavSelects = styled.div`
+export const SubNavMenus = styled.div`
   flex: none;
   display: flex;
   align-items: center;
-  margin-left: 15px;
 
-  & > * {
+  @media (min-width: ${breakpoints[2]}px) {
+    margin-left: 15px;
+  }
+
+  & > button {
     margin-right: 12px;
   }
 `;
+export const SubNavMenuLabel = styled.div<{ hidden?: boolean }>`
+  font-size: ${typography.size.s2}px;
+  line-height: 20px;
+  color: ${color.dark};
+  display: none;
 
-export const SubNavRightAddon = styled.div`
+  @media (min-width: ${breakpoints[2]}px) {
+    display: block;
+  }
+`;
+
+export const SubNavRight = styled.div`
   flex: none;
   display: none;
   margin-left: auto;

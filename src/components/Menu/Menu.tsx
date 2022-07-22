@@ -1,4 +1,4 @@
-import React, { forwardRef, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, useMemo, useRef, useState, ReactNode, ElementType } from 'react';
 import {
   useFloating,
   offset,
@@ -17,11 +17,11 @@ import {
 import { styled } from '@storybook/theming';
 import { mergeRefs } from 'react-merge-refs';
 import { color } from '../shared/styles';
+import { StackedNav, StackedNavItem } from '../StackedNav';
 import { MenuButton } from './MenuButton';
-import { MenuItem, MenuItemProps } from './MenuItem';
 
-export const MenuPanel = styled.ul`
-  padding: 0;
+export const MenuPanel = styled.div`
+  padding: 20px;
   width: 200px;
   margin: 0;
 
@@ -31,19 +31,38 @@ export const MenuPanel = styled.ul`
   box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
 `;
 
-interface Item extends Omit<MenuItemProps, 'children'> {
+interface MenuItem {
+  icon?: ReactNode;
+  link: {
+    url: string;
+    linkWrapper?: ElementType;
+  };
   label: string;
 }
 
-interface MenuProps {
-  label?: string;
-  children?: React.ReactNode;
-  primary?: boolean;
-  items: Item[];
+interface MenuGroup {
+  label: string;
+  items: MenuItem[];
 }
 
-export const Menu = forwardRef<HTMLButtonElement, MenuProps>(
-  ({ children, label, primary, items, ...props }, ref) => {
+interface MenuItemWithId extends MenuItem {
+  id: number;
+}
+
+interface MenuGroupWithId {
+  label: string;
+  items: MenuItemWithId[];
+}
+
+interface MenuProps {
+  label: string;
+  children?: React.ReactNode;
+  primary?: boolean;
+  items: (MenuItem | MenuGroup)[];
+}
+
+export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElement>>(
+  ({ items, children, label, primary, ...props }, ref) => {
     const [open, setOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -54,7 +73,7 @@ export const Menu = forwardRef<HTMLButtonElement, MenuProps>(
     const { x, y, reference, floating, strategy, context } = useFloating<HTMLButtonElement>({
       open,
       onOpenChange: setOpen,
-      middleware: [offset({ mainAxis: 16, alignmentAxis: 0 }), flip(), shift()],
+      middleware: [offset({ mainAxis: 4, alignmentAxis: 0 }), flip(), shift()],
       placement: 'bottom-start',
       nodeId,
       whileElementsMounted: autoUpdate,
@@ -73,18 +92,43 @@ export const Menu = forwardRef<HTMLButtonElement, MenuProps>(
         activeIndex,
         onNavigate: setActiveIndex,
         loop: true,
+        focusItemOnOpen: false,
         openOnArrowKeyDown: true,
       }),
     ]);
 
     const mergedReferenceRef = useMemo(() => mergeRefs([ref, reference]), [reference, ref]);
 
+    // Attach ids to each item within the groups
+    // Even though the items are nested within groups,
+    // we need to attach ids based on a the top counter
+    const options = useMemo(() => {
+      let index = 0;
+      return items.reduce((acc: (MenuItemWithId | MenuGroupWithId)[], item) => {
+        if ('items' in item) {
+          const itemsWithId = item.items.map((childItem) => {
+            const itemWithId = {
+              ...childItem,
+              id: index,
+            };
+            index += 1;
+            return itemWithId;
+          });
+
+          return acc.concat({ ...item, items: itemsWithId });
+        }
+
+        index += 1;
+        return acc.concat({ ...item, id: index });
+      }, []);
+    }, [items]);
+
     return (
       <>
         {/* Trigger */}
         <MenuButton
-          primary={primary}
           open={open}
+          primary={primary}
           {...getReferenceProps({
             ...props,
             ref: mergedReferenceRef,
@@ -115,27 +159,52 @@ export const Menu = forwardRef<HTMLButtonElement, MenuProps>(
                     position: strategy,
                     top: y ?? 0,
                     left: x ?? 0,
-                    transformOrigin: 'top left',
                   },
                 })}
               >
-                {items.map(({ label: itemLabel, ...itemProps }, index) => (
-                  <MenuItem
-                    key={itemLabel}
-                    {...itemProps}
-                    {...getItemProps({
-                      role: 'menuitem',
-                      ref(node: HTMLButtonElement) {
-                        listItemsRef.current[index] = node;
-                      },
-                      onClick() {
-                        setOpen(false);
-                      },
-                    })}
-                  >
-                    {itemLabel}
-                  </MenuItem>
-                ))}
+                {options.map((option) => {
+                  return 'items' in option ? (
+                    <StackedNav key={option.label} label={option.label}>
+                      {option.items.map((item) => (
+                        <StackedNavItem
+                          key={item.label}
+                          href={item.link.url}
+                          LinkWrapper={item.link.linkWrapper}
+                          icon={item.icon}
+                          {...getItemProps({
+                            role: 'menuitem',
+                            ref(node: HTMLButtonElement) {
+                              listItemsRef.current[item.id] = node;
+                            },
+                            onClick() {
+                              setOpen(false);
+                            },
+                          })}
+                        >
+                          {item.label}
+                        </StackedNavItem>
+                      ))}
+                    </StackedNav>
+                  ) : (
+                    <StackedNavItem
+                      key={option.label}
+                      href={option.link.url}
+                      LinkWrapper={option.link.linkWrapper}
+                      icon={option.icon}
+                      {...getItemProps({
+                        role: 'menuitem',
+                        ref(node: HTMLButtonElement) {
+                          listItemsRef.current[option.id] = node;
+                        },
+                        onClick() {
+                          setOpen(false);
+                        },
+                      })}
+                    >
+                      {option.label}
+                    </StackedNavItem>
+                  );
+                })}
               </MenuPanel>
             </FloatingFocusManager>
           )}
