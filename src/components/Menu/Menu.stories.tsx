@@ -29,7 +29,7 @@ export default {
 const ImgIcon = ({ src }) => <img src={src} alt="" style={{ width: 12, height: 12 }} />;
 
 const Template = (args) => (
-  <div style={{ height: 200 }}>
+  <div style={{ height: 600 }}>
     <Menu label="Why" {...args} />
   </div>
 );
