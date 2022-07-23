@@ -6,6 +6,7 @@ import { text, spacing, color } from '../shared/styles';
 const ExpandableIcon = styled(Icon)`
   margin-left: 5px;
   margin-right: 0;
+  margin-top: 2px;
   width: 10px;
   height: 10px;
 `;
@@ -49,10 +50,10 @@ type NavMenuButtonProps = ComponentProps<typeof PureNavMenuButton> & {
 };
 
 export const NavMenuButton = forwardRef<HTMLButtonElement, NavMenuButtonProps>(
-  ({ inverse, children, ...props }, ref) => (
-    <PureNavMenuButton inverse={inverse} ref={ref} {...props}>
+  ({ inverse, open, children, ...props }, ref) => (
+    <PureNavMenuButton inverse={inverse} ref={ref} open={open} {...props}>
       {children}
-      <ExpandableIcon icon="arrowdown" />
+      {open ? <ExpandableIcon icon="arrowup" /> : <ExpandableIcon icon="arrowdown" />}
     </PureNavMenuButton>
   )
 );

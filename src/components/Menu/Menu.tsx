@@ -17,11 +17,10 @@ import {
 import { styled } from '@storybook/theming';
 import { mergeRefs } from 'react-merge-refs';
 import { color } from '../shared/styles';
-import { StackedNav, StackedNavItem } from '../StackedNav';
 import { MenuButton } from './MenuButton';
+import { MenuGroup, MenuItem } from './MenuItem';
 
 export const MenuPanel = styled.div`
-  padding: 20px;
   width: 200px;
   margin: 0;
 
@@ -31,7 +30,7 @@ export const MenuPanel = styled.div`
   box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
 `;
 
-interface MenuItem {
+interface MenuItemProps {
   icon?: ReactNode;
   link: {
     url: string;
@@ -40,12 +39,12 @@ interface MenuItem {
   label: string;
 }
 
-interface MenuGroup {
+interface MenuGroupProps {
   label: string;
-  items: MenuItem[];
+  items: MenuItemProps[];
 }
 
-interface MenuItemWithId extends MenuItem {
+interface MenuItemWithId extends MenuItemProps {
   id: number;
 }
 
@@ -58,7 +57,7 @@ interface MenuProps {
   label: string;
   children?: React.ReactNode;
   primary?: boolean;
-  items: (MenuItem | MenuGroup)[];
+  items: (MenuItemProps | MenuGroupProps)[];
 }
 
 export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElement>>(
@@ -164,9 +163,9 @@ export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElemen
               >
                 {options.map((option) => {
                   return 'items' in option ? (
-                    <StackedNav key={option.label} label={option.label}>
+                    <MenuGroup key={option.label} label={option.label}>
                       {option.items.map((item) => (
-                        <StackedNavItem
+                        <MenuItem
                           key={item.label}
                           href={item.link.url}
                           LinkWrapper={item.link.linkWrapper}
@@ -182,11 +181,11 @@ export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElemen
                           })}
                         >
                           {item.label}
-                        </StackedNavItem>
+                        </MenuItem>
                       ))}
-                    </StackedNav>
+                    </MenuGroup>
                   ) : (
-                    <StackedNavItem
+                    <MenuItem
                       key={option.label}
                       href={option.link.url}
                       LinkWrapper={option.link.linkWrapper}
@@ -202,7 +201,7 @@ export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElemen
                       })}
                     >
                       {option.label}
-                    </StackedNavItem>
+                    </MenuItem>
                   );
                 })}
               </MenuPanel>
