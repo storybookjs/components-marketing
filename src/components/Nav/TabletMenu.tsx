@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import { CollapsedNav } from '../CollapsedNav';
 import { mobileGroups } from './menus';
-import { NavLinks } from './nav-context';
+import { Links } from '../links-context';
 
 interface TabletMenuProps {
   className?: string;
-  navLinks: NavLinks;
+  navLinks: Links;
 }
 
 export const TabletMenu = ({ className, navLinks }: TabletMenuProps) => {

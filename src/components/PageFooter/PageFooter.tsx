@@ -1,140 +1,159 @@
-import React from 'react';
-import { Link, ColoredIcons, Logos } from '@storybook/design-system';
-
-import { Resource } from './Resource';
-import { CommunityLink } from './CommunityLink';
-import { Service } from './Service';
+import React, { FC, useContext, useMemo } from 'react';
+import { Button, Icon } from '@storybook/design-system';
 import {
   Title,
-  ResourceAction,
-  UpperColumn,
   Upper,
-  Text,
-  Colophon,
-  Column,
   Subscribe,
-  HrWrapper,
-  Services,
-  Lower,
   FooterWrapper,
+  IconLink,
+  SocialLinks,
+  Column,
+  Lower,
+  FooterLink,
 } from './PageFooter.styles';
+import { Services } from './Services';
+import { MailingListSignup, MailingListSubscriberCount } from '../MailingList';
+import { LinksContext, Links } from '../links-context';
 
-const coreFrameworks = ['react', 'vue', 'angular', 'web-components'];
+const footerGroups = (links: Links) => ({
+  why: [
+    { label: 'Why Storybook', link: links.whyStorybook },
+    { label: 'Use cases', link: links.useCases },
+    { label: 'Case studies', link: links.caseStudies },
+    { label: 'Component-driven UI', link: links.componentDriven },
+  ],
+  docs: [
+    { label: 'Get started', link: links.getStarted },
+    { label: 'Guides', link: links.guides },
+    { label: 'Tutorials', link: links.tutorials },
+    { label: 'API', link: links.api },
+    { label: 'Changelog', link: links.changelog },
+    { label: 'Telemetry', link: links.telemetry },
+  ],
+  community: [
+    { label: 'Integrations', link: links.integrations },
+    { label: 'Get involved', link: links.getInvolved },
+    { label: 'Blog', link: links.blog },
+    { label: "We're hiring", link: links.hiring },
+  ],
+  showcase: [
+    { label: 'Explore', link: links.showcase },
+    { label: 'Projects', link: links.projects },
+    { label: 'Component glossary', link: links.componentGlossary },
+  ],
+});
 
-export const PageFooter = ({
-  navLinks,
-  storybookLogoLink,
-  subscribeForm,
-  tutorialsLink,
-  ...props
-}: Props) => (
-  <FooterWrapper {...props}>
-    <Upper>
-      <UpperColumn>
-        <Resource
-          image={<ColoredIcons.Repo title="Docs" />}
-          title="Documentation"
-          description="Add Storybook to your project in less than a minute to build components faster and
-          easier."
-          links={coreFrameworks.map((framework) => (
-            <ResourceAction
-              withArrow
-              key={framework}
-              href={`/docs/${framework}/get-started/introduction`}
-            >
-              {framework}
-            </ResourceAction>
-          ))}
-        />
-      </UpperColumn>
-      <UpperColumn>
-        <Resource
-          image={<ColoredIcons.Direction title="Tutorial" />}
-          title="Tutorials"
-          description="Learn Storybook with in-depth tutorials that teaches Storybook best practices.
-          Follow along with code samples."
-          links={
-            <Link withArrow href={tutorialsLink}>
-              Learn Storybook now
-            </Link>
-          }
-        />
-      </UpperColumn>
-    </Upper>
-    <Lower>
-      <Colophon>
-        {storybookLogoLink}
-        <Text>
-          The MIT License (MIT). Website design by{' '}
-          <Link tertiary href="https://twitter.com/domyen" target="_blank">
-            <b>@domyen</b>
-          </Link>{' '}
-          and the awesome Storybook community.
-        </Text>
-      </Colophon>
-      <Column>
-        <Title>Storybook</Title>
-        {navLinks}
-      </Column>
-      <Column>
-        <Title>Community</Title>
-        <CommunityLink
-          href="https://github.com/storybookjs/storybook"
-          icon="github"
-          name="GitHub"
-        />
-        <CommunityLink href="https://twitter.com/storybookjs" icon="twitter" name="Twitter" />
-        <CommunityLink href="https://discord.com/invite/storybook" icon="discord" name="Discord" />
-        <CommunityLink
-          href="https://www.youtube.com/channel/UCr7Quur3eIyA_oe8FNYexfg"
-          icon="youtube"
-          name="Youtube"
-        />
-        <CommunityLink
-          href="https://componentdriven.org/"
-          icon="componentdriven"
-          name="Component Driven UIs"
-        />
-      </Column>
-      {subscribeForm && (
-        <Subscribe>
-          <Title>Subscribe</Title>
-          <Text>Get news, free tutorials, and Storybook tips emailed to you.</Text>
-          {subscribeForm}
-        </Subscribe>
-      )}
-    </Lower>
-    <HrWrapper>
-      <hr />
-    </HrWrapper>
-    <Services>
-      <Service
-        text="Maintained by"
-        href="https://www.chromatic.com/"
-        logo={<Logos.Chromatic title="Chromatic" />}
-      />
-      <Service
-        text="Continuous integration by"
-        href="https://circleci.com/"
-        logo={<Logos.Circleci title="CircleCI" />}
-        muteLogo
-      />
-      <Service
-        text="Hosting by"
-        href="https://netlify.com"
-        logo={<Logos.Netlify title="Netlify" />}
-      />
-    </Services>
-  </FooterWrapper>
-);
-
-interface Props {
-  /** Pass a component that generates the links for the Storybook column */
-  navLinks: React.ReactNode;
-  /** Pass the storybook logo with the appropriate link */
-  storybookLogoLink: React.ReactNode;
-  /** Newsletter subscribe form */
-  subscribeForm?: React.ReactNode;
-  /** Link to tutorials */
-  tutorialsLink: string;
+interface PageFooterProps {
+  inverse?: boolean;
+  subscriberCount?: number;
+  onSubscribe?: () => void;
 }
+
+export const PageFooter: FC<PageFooterProps> = ({
+  onSubscribe,
+  subscriberCount,
+  inverse,
+  ...props
+}) => {
+  const links = useContext(LinksContext);
+  const footerGroupsWithLinks = useMemo(() => footerGroups(links), [links]);
+
+  return (
+    <FooterWrapper inverse={inverse} {...props}>
+      <Upper>
+        <div>
+          <Title>Join the community</Title>
+          <Subscribe>
+            <MailingListSignup onSubscribe={onSubscribe} />
+            <MailingListSubscriberCount inverse={inverse} count={subscriberCount} />
+          </Subscribe>
+        </div>
+        <SocialLinks>
+          <IconLink
+            appearance={inverse ? 'inverseOutline' : 'outline'}
+            href="http://github.com/storybookjs"
+          >
+            <Icon aria-label="Github" icon="github" />
+          </IconLink>
+          <IconLink
+            appearance={inverse ? 'inverseOutline' : 'outline'}
+            href="https://discord.gg/storybook"
+          >
+            <Icon aria-label="Twitter" icon="twitter" />
+          </IconLink>
+          <IconLink
+            appearance={inverse ? 'inverseOutline' : 'outline'}
+            href="https://discord.gg/storybook"
+          >
+            <Icon aria-label="Discord" icon="discord" />
+          </IconLink>
+          <IconLink
+            appearance={inverse ? 'inverseOutline' : 'outline'}
+            href="https://www.youtube.com/channel/UCr7Quur3eIyA_oe8FNYexfg"
+          >
+            <Icon aria-label="YouTube" icon="youtube" />
+          </IconLink>
+        </SocialLinks>
+      </Upper>
+      <Lower>
+        <Column>
+          <Title>Why</Title>
+          {footerGroupsWithLinks.why.map(({ label, link }) => (
+            <FooterLink
+              key={label}
+              inverse={inverse}
+              tertiary
+              href={link.url}
+              LinkWrapper={link.linkWrapper}
+            >
+              {label}
+            </FooterLink>
+          ))}
+        </Column>
+        <Column>
+          <Title>Docs</Title>
+          {footerGroupsWithLinks.docs.map(({ label, link }) => (
+            <FooterLink
+              key={label}
+              inverse={inverse}
+              tertiary
+              href={link.url}
+              LinkWrapper={link.linkWrapper}
+            >
+              {label}
+            </FooterLink>
+          ))}
+        </Column>
+        <Column>
+          <Title>Community</Title>
+          {footerGroupsWithLinks.community.map(({ label, link }) => (
+            <FooterLink
+              key={label}
+              inverse={inverse}
+              tertiary
+              href={link.url}
+              LinkWrapper={link.linkWrapper}
+            >
+              {label}
+            </FooterLink>
+          ))}
+        </Column>
+        <Column>
+          <Title>Showcase</Title>
+          {footerGroupsWithLinks.showcase.map(({ label, link }) => (
+            <FooterLink
+              key={label}
+              inverse={inverse}
+              tertiary
+              href={link.url}
+              LinkWrapper={link.linkWrapper}
+            >
+              {label}
+            </FooterLink>
+          ))}
+        </Column>
+      </Lower>
+      <Services inverse={inverse} />
+    </FooterWrapper>
+  );
+};

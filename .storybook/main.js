@@ -1,5 +1,6 @@
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.(tsx|js)'],
+  staticDirs: ['./static'],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-a11y',
@@ -15,6 +16,10 @@ module.exports = {
       include: /node_modules/,
       type: 'javascript/auto',
     });
+
+    config.resolve.alias['./useMailingListForm'] = require.resolve(
+      '../src/__mocks__/useMailingListForm.mock.js'
+    );
 
     return config;
   },

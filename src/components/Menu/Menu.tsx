@@ -14,27 +14,24 @@ import {
   useFloatingNodeId,
   FloatingFocusManager,
 } from '@floating-ui/react-dom-interactions';
-import { Icon } from '@storybook/design-system';
 import { styled } from '@storybook/theming';
 import { mergeRefs } from 'react-merge-refs';
-import { shadows, color } from './shared/styles';
-import { StackedNav, StackedNavItem } from './StackedNav';
-import { IconButton } from './IconButton';
+import { color } from '../shared/styles';
+import { MenuButton } from './MenuButton';
+import { MenuGroup, MenuItem } from './MenuItem';
 
-export const CollapsedNavPanel = styled.div`
-  padding: 20px 20px 20px 24px;
-  width: 280px;
+export const MenuPanel = styled.div`
+  width: 200px;
+  margin: 0;
 
   background: ${color.lightest};
-  border-radius: 5px;
+  border-radius: 4px;
 
-  outline: 0;
-
-  ${shadows.tooltip}
+  box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
 `;
 
-interface MenuItem {
-  icon: ReactNode;
+interface MenuItemProps {
+  icon?: ReactNode;
   link: {
     url: string;
     linkWrapper?: ElementType;
@@ -42,12 +39,12 @@ interface MenuItem {
   label: string;
 }
 
-interface MenuGroup {
+interface MenuGroupProps {
   label: string;
-  items: MenuItem[];
+  items: MenuItemProps[];
 }
 
-interface MenuItemWithId extends MenuItem {
+interface MenuItemWithId extends MenuItemProps {
   id: number;
 }
 
@@ -56,15 +53,15 @@ interface MenuGroupWithId {
   items: MenuItemWithId[];
 }
 
-interface CollapsedNavProps {
-  label?: string;
+interface MenuProps {
+  label: string;
   children?: React.ReactNode;
-  inverse?: boolean;
-  groups: MenuGroup[];
+  primary?: boolean;
+  items: (MenuItemProps | MenuGroupProps)[];
 }
 
-export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<HTMLButtonElement>>(
-  ({ groups, children, label, inverse, ...props }, ref) => {
+export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElement>>(
+  ({ items, children, label, primary, ...props }, ref) => {
     const [open, setOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -104,27 +101,33 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
     // Attach ids to each item within the groups
     // Even though the items are nested within groups,
     // we need to attach ids based on a the top counter
-    const menuGroups = useMemo(() => {
+    const options = useMemo(() => {
       let index = 0;
-      return groups.reduce((acc: MenuGroupWithId[], group) => {
-        const itemsWithId = group.items.map((item) => {
-          const itemWithId = {
-            ...item,
-            id: index,
-          };
-          index += 1;
-          return itemWithId;
-        });
+      return items.reduce((acc: (MenuItemWithId | MenuGroupWithId)[], item) => {
+        if ('items' in item) {
+          const itemsWithId = item.items.map((childItem) => {
+            const itemWithId = {
+              ...childItem,
+              id: index,
+            };
+            index += 1;
+            return itemWithId;
+          });
 
-        return acc.concat({ ...group, items: itemsWithId });
+          return acc.concat({ ...item, items: itemsWithId });
+        }
+
+        index += 1;
+        return acc.concat({ ...item, id: index });
       }, []);
-    }, [groups]);
+    }, [items]);
 
     return (
       <>
         {/* Trigger */}
-        <IconButton
-          inverse={inverse}
+        <MenuButton
+          open={open}
+          primary={primary}
           {...getReferenceProps({
             ...props,
             ref: mergedReferenceRef,
@@ -134,12 +137,8 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
             },
           })}
         >
-          {open ? (
-            <Icon icon="closeAlt" aria-label="Close nav menu" />
-          ) : (
-            <Icon icon="menualt" aria-label="Open nav menu" />
-          )}
-        </IconButton>
+          {label}
+        </MenuButton>
         <FloatingPortal>
           {/* Menu Panel */}
           {open && (
@@ -152,7 +151,7 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
               // is an alternative.
               order={['reference', 'content']}
             >
-              <CollapsedNavPanel
+              <MenuPanel
                 {...getFloatingProps({
                   ref: floating,
                   style: {
@@ -162,30 +161,50 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
                   },
                 })}
               >
-                {menuGroups.map((group) => (
-                  <StackedNav key={group.label} label={group.label}>
-                    {group.items.map((item) => (
-                      <StackedNavItem
-                        key={item.label}
-                        href={item.link.url}
-                        LinkWrapper={item.link.linkWrapper}
-                        icon={item.icon}
-                        {...getItemProps({
-                          role: 'menuitem',
-                          ref(node: HTMLButtonElement) {
-                            listItemsRef.current[item.id] = node;
-                          },
-                          onClick() {
-                            setOpen(false);
-                          },
-                        })}
-                      >
-                        {item.label}
-                      </StackedNavItem>
-                    ))}
-                  </StackedNav>
-                ))}
-              </CollapsedNavPanel>
+                {options.map((option) => {
+                  return 'items' in option ? (
+                    <MenuGroup key={option.label} label={option.label}>
+                      {option.items.map((item) => (
+                        <MenuItem
+                          key={item.label}
+                          href={item.link.url}
+                          LinkWrapper={item.link.linkWrapper}
+                          icon={item.icon}
+                          {...getItemProps({
+                            role: 'menuitem',
+                            ref(node: HTMLButtonElement) {
+                              listItemsRef.current[item.id] = node;
+                            },
+                            onClick() {
+                              setOpen(false);
+                            },
+                          })}
+                        >
+                          {item.label}
+                        </MenuItem>
+                      ))}
+                    </MenuGroup>
+                  ) : (
+                    <MenuItem
+                      key={option.label}
+                      href={option.link.url}
+                      LinkWrapper={option.link.linkWrapper}
+                      icon={option.icon}
+                      {...getItemProps({
+                        role: 'menuitem',
+                        ref(node: HTMLButtonElement) {
+                          listItemsRef.current[option.id] = node;
+                        },
+                        onClick() {
+                          setOpen(false);
+                        },
+                      })}
+                    >
+                      {option.label}
+                    </MenuItem>
+                  );
+                })}
+              </MenuPanel>
             </FloatingFocusManager>
           )}
         </FloatingPortal>
@@ -193,4 +212,4 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
     );
   }
 );
-CollapsedNav.displayName = 'CollapsedNav';
+Menu.displayName = 'Menu';

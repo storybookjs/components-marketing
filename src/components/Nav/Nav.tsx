@@ -7,7 +7,7 @@ import { Search } from '../Search';
 import { Why, Docs, Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
-import { NavContext } from './nav-context';
+import { LinksContext } from '../links-context';
 
 const GlobalSearch = styled(Search)`
   flex: none;
@@ -114,14 +114,14 @@ const NavLinks = styled.div`
 `;
 
 export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
-  const navLinks = useContext(NavContext);
+  const navLinks = useContext(LinksContext);
 
   return (
     <Wrapper inverse={inverse}>
       <NavContainer>
         <LogoNavItem
           aria-label="home"
-          to={navLinks.home.url}
+          href={navLinks.home.url}
           LinkWrapper={navLinks.home.linkWrapper}
         >
           {inverse ? (
@@ -134,7 +134,7 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
           <Why inverse={inverse} navLinks={navLinks} />
           <NavItem
             variant={inverse ? 'inverse' : 'default'}
-            to={navLinks.showcase.url}
+            href={navLinks.showcase.url}
             LinkWrapper={navLinks.showcase.linkWrapper}
           >
             Showcase
@@ -142,7 +142,7 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
           <Docs inverse={inverse} navLinks={navLinks} />
           <NavItem
             variant={inverse ? 'inverse' : 'default'}
-            to={navLinks.integrations.url}
+            href={navLinks.integrations.url}
             LinkWrapper={navLinks.integrations.linkWrapper}
           >
             Integrations

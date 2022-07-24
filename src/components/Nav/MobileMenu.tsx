@@ -6,7 +6,7 @@ import { Search } from '../Search';
 import { mobileGroups } from './menus';
 import { StackedNav, StackedNavItem } from '../StackedNav';
 import { IconButton } from '../IconButton';
-import { NavLinks } from './nav-context';
+import { Links } from '../links-context';
 
 const GlobalSearch = styled(Search)`
   margin-bottom: 24px;
@@ -14,7 +14,7 @@ const GlobalSearch = styled(Search)`
 
 interface MobileMenuProps {
   className?: string;
-  navLinks: NavLinks;
+  navLinks: Links;
 }
 
 export const MobileMenu = ({ className, navLinks }: MobileMenuProps) => {
@@ -34,7 +34,7 @@ export const MobileMenu = ({ className, navLinks }: MobileMenuProps) => {
               <StackedNavItem
                 key={item.label}
                 icon={item.icon}
-                to={item.link.url}
+                href={item.link.url}
                 LinkWrapper={item.link.linkWrapper}
               >
                 {item.label}
