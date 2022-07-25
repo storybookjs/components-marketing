@@ -58,10 +58,6 @@ export const SubNavMenus = styled.div`
   display: flex;
   align-items: center;
 
-  @media (min-width: ${breakpoints[2]}px) {
-    margin-left: 15px;
-  }
-
   & > button {
     margin-right: 12px;
   }

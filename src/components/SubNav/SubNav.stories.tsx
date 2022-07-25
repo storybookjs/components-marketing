@@ -7,7 +7,6 @@ import {
   SubNavCTA,
   SubNavRight,
   SubNavMenus,
-  SubNavMenuLabel,
 } from './SubNav';
 import { SubNavLinkList, SubNavLinkItem } from './SubNavLinkList';
 import { SubNavTabs } from './SubNavTabs';
@@ -84,17 +83,11 @@ const versionOptions = [
 ];
 
 const FrameworkSelect = () => (
-  <>
-    <SubNavMenuLabel>Framework:</SubNavMenuLabel>
-    <Menu label={frameworkOptions[0].items[0].label} items={frameworkOptions} primary />
-  </>
+  <Menu label={frameworkOptions[0].items[0].label} items={frameworkOptions} primary />
 );
 
 const VersionSelect = () => (
-  <>
-    <SubNavMenuLabel>Version:</SubNavMenuLabel>
-    <Menu label={versionOptions[0].items[0].label} items={versionOptions} primary />
-  </>
+  <Menu label={versionOptions[0].items[0].label} items={versionOptions} primary />
 );
 
 export const TabLinklist = () => (
