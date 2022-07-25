@@ -6,7 +6,6 @@ import { text, spacing, color } from '../shared/styles';
 const ExpandableIcon = styled(Icon)`
   margin-left: 5px;
   margin-right: 0;
-  margin-top: 2px;
   width: 10px;
   height: 10px;
 `;

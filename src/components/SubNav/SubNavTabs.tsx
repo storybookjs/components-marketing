@@ -21,6 +21,8 @@ const Tabs = styled(LinkTabs)`
 const TabsMenu = styled(Menu)`
   flex: none;
   display: inline-flex;
+  margin-top: 4px;
+  margin-bottom: 4px;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: none;

@@ -6,6 +6,7 @@ import { LinkWithWrapper, LinkWithWrapperProps } from '../LinkWithWrapper';
 
 const MenuGroupLabel = styled.div`
   ${subheading.small};
+  line-height: 20px;
   background-color: ${background.app};
   color: ${color.dark};
   text-transform: uppercase;
