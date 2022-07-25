@@ -7,12 +7,6 @@ import { Menu } from '../Menu';
 const Tabs = styled(LinkTabs)`
   display: none;
 
-  @media (min-width: ${breakpoints[2]}px) and (max-width: ${breakpoints[2] + 25}px) {
-    a {
-      padding: 10px;
-    }
-  }
-
   @media (min-width: ${breakpoints[2]}px) {
     display: flex;
   }

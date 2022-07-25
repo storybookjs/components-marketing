@@ -23,6 +23,7 @@ const PureMenuButton = styled.button<{ primary?: boolean; open?: boolean }>`
   transition: transform 150ms ease-out, color 150ms ease-out;
   outline: 0;
   border: 0;
+  cursor: pointer;
 
   ${(props) =>
     props.open &&
