@@ -19,6 +19,14 @@ const GroupContainer = styled.div`
   }
 `;
 
+const StackedNavItemLabel = styled.div`
+  white-space: nowrap;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  min-width: 0;
+`;
+
 const PureStackedNavItem = styled(LinkWithWrapper)`
   display: flex;
   align-items: center;
@@ -30,7 +38,9 @@ const PureStackedNavItem = styled(LinkWithWrapper)`
   transition: color 150ms ease-out;
   outline: 0;
 
-  svg {
+  svg,
+  img {
+    flex: none;
     width: 14px;
     height: 14px;
     margin-right: 10px;
@@ -63,7 +73,7 @@ export const StackedNavItem = forwardRef<HTMLAnchorElement, StackedNavItemProps>
   ({ icon, children, ...props }, ref) => (
     <PureStackedNavItem {...props} ref={ref} role="menuitem">
       {icon}
-      {children}
+      <StackedNavItemLabel>{children}</StackedNavItemLabel>
     </PureStackedNavItem>
   )
 );
