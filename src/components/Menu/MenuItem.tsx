@@ -35,6 +35,10 @@ const PureMenuItem = styled(LinkWithWrapper)`
   outline: 0;
   padding: 10px 15px;
 
+  svg {
+    color: ${color.dark};
+  }
+
   svg,
   img {
     flex: none;

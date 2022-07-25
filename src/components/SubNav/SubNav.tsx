@@ -61,6 +61,16 @@ export const SubNavMenus = styled.div`
   & > button {
     margin-right: 12px;
   }
+
+  & > button:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: ${breakpoints[1]}px) {
+    & > button:last-child {
+      margin-right: 12px;
+    }
+  }
 `;
 export const SubNavMenuLabel = styled.div<{ hidden?: boolean }>`
   font-size: ${typography.size.s2}px;
