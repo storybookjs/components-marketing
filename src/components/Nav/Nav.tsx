@@ -121,7 +121,7 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
       <NavContainer>
         <LogoNavItem
           aria-label="home"
-          to={navLinks.home.url}
+          href={navLinks.home.url}
           LinkWrapper={navLinks.home.linkWrapper}
         >
           {inverse ? (
@@ -134,7 +134,7 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
           <Why inverse={inverse} navLinks={navLinks} />
           <NavItem
             variant={inverse ? 'inverse' : 'default'}
-            to={navLinks.showcase.url}
+            href={navLinks.showcase.url}
             LinkWrapper={navLinks.showcase.linkWrapper}
           >
             Showcase
@@ -142,7 +142,7 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
           <Docs inverse={inverse} navLinks={navLinks} />
           <NavItem
             variant={inverse ? 'inverse' : 'default'}
-            to={navLinks.integrations.url}
+            href={navLinks.integrations.url}
             LinkWrapper={navLinks.integrations.linkWrapper}
           >
             Integrations

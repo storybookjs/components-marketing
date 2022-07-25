@@ -34,7 +34,7 @@ export const MobileMenu = ({ className, navLinks }: MobileMenuProps) => {
               <StackedNavItem
                 key={item.label}
                 icon={item.icon}
-                to={item.link.url}
+                href={item.link.url}
                 LinkWrapper={item.link.linkWrapper}
               >
                 {item.label}

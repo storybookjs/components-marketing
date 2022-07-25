@@ -10,19 +10,20 @@ const ExpandableIcon = styled(Icon)`
   height: 10px;
 `;
 
-const PureNavMenuButton = styled.button<{ inverse?: boolean; open?: boolean }>`
+const PureMenuButton = styled.button<{ primary?: boolean; open?: boolean }>`
   ${text.regularBold};
   display: inline-flex;
   align-items: center;
   text-align: center;
   padding: 6px 8px;
-  color: ${(props) => (props.inverse ? color.lightest : color.dark)};
+  color: ${(props) => (props.primary ? color.secondary : color.dark)};
   text-decoration: none;
   border-radius: ${spacing.borderRadius.small}px;
   background-color: transparent;
-  transition: background-color 150ms ease-out, color 150ms ease-out;
+  transition: transform 150ms ease-out, color 150ms ease-out;
   outline: 0;
   border: 0;
+  cursor: pointer;
 
   ${(props) =>
     props.open &&
@@ -44,16 +45,16 @@ const PureNavMenuButton = styled.button<{ inverse?: boolean; open?: boolean }>`
   }
 `;
 
-type NavMenuButtonProps = ComponentProps<typeof PureNavMenuButton> & {
-  inverse?: boolean;
+type MenuButtonProps = ComponentProps<typeof PureMenuButton> & {
+  primary?: boolean;
 };
 
-export const NavMenuButton = forwardRef<HTMLButtonElement, NavMenuButtonProps>(
-  ({ inverse, open, children, ...props }, ref) => (
-    <PureNavMenuButton inverse={inverse} ref={ref} open={open} {...props}>
+export const MenuButton = forwardRef<HTMLButtonElement, MenuButtonProps>(
+  ({ primary, open, children, ...props }, ref) => (
+    <PureMenuButton primary={primary} ref={ref} open={open} {...props}>
       {children}
       {open ? <ExpandableIcon icon="arrowup" /> : <ExpandableIcon icon="arrowdown" />}
-    </PureNavMenuButton>
+    </PureMenuButton>
   )
 );
-NavMenuButton.displayName = 'NavMenuButton';
+MenuButton.displayName = 'MenuButton';
