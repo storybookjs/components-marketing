@@ -1,8 +1,6 @@
 import React from 'react';
 import { Testimonial } from './Testimonial';
 
-// import ChromaticLogoSVG from '../../images/logos/user/logo-chromatic.svg';
-
 export default {
   title: 'Testimonial',
   component: Testimonial,
