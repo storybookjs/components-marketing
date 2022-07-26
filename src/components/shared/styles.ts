@@ -34,6 +34,7 @@ export const marketing = {
     fontSize: 56,
     fontWeight: typography.weight.bold,
     lineHeight: '70px',
+    letterSpacing: '-0.579px',
   }),
   hero2: css({
     fontSize: typography.size.l2, // 40
