@@ -1,66 +1,11 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
 import { Avatar } from '@storybook/design-system';
-import { color, spacing, typography, pageMargin, pageMargins, breakpoint } from './shared/styles';
+import { color, typography, pageMargins, breakpoint, breakpoints } from './shared/styles';
 
-const Quote = styled.div`
-  font-weight: ${typography.weight.bold};
-  font-size: ${typography.size.s3}px;
-  line-height: 1.5;
-  color: ${color.dark};
-
-  @media (min-width: ${breakpoint * 1}px) {
-    color: ${color.darkest};
-    font-weight: ${typography.weight.regular};
-    font-size: ${typography.size.m1}px;
-    line-height: ${typography.size.m3}px;
-  }
-  margin-bottom: 1.5rem;
-  max-width: 480px;
-  text-align: center;
-`;
-
-const Name = styled.div`
-  font-size: ${typography.size.s2}px;
-  font-weight: ${typography.weight.bold};
-`;
-
-const JobTitle = styled.div`
-  font-size: ${typography.size.s1}px;
-  color: ${color.mediumdark};
-`;
-
-const Meta = styled.div`
-  margin-left: 10px;
-`;
-const Author = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Logo = styled.div`
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-  margin-left: 20px;
-  padding-left: 20px;
-  img {
-    display: inline-block;
-    width: auto;
-    max-height: 24px;
-  }
-`;
-const Attribution = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const HrWrapper = styled.div`
+const Wrapper = styled.figure`
   ${pageMargins};
-`;
-
-const Hr = styled.hr`
   margin: 0;
-  display: block;
 `;
 
 const Inner = styled.div`
@@ -70,17 +15,70 @@ const Inner = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  padding: 3rem ${spacing.padding.medium}px;
-  @media (min-width: ${breakpoint * 1}px) {
-    margin: 0 ${pageMargin * 3}%;
-    padding-bottom: 5rem;
-  }
-  @media (min-width: ${breakpoint * 2}px) {
-    margin: 0 ${pageMargin * 4}%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 `;
 
-const Wrapper = styled.div``;
+const Quote = styled.blockquote<{ inverse?: boolean }>`
+  font-size: ${typography.size.m1}px;
+  line-height: 32px;
+  color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 2rem;
+  max-width: 590px;
+  text-align: center;
+`;
+
+const Cite = styled.cite`
+  display: flex;
+  align-items: stretch;
+  font-style: normal;
+`;
+
+const Meta = styled.div`
+  margin-left: 12px;
+`;
+
+const Author = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Name = styled.div<{ inverse?: boolean }>`
+  font-size: ${typography.size.s2}px;
+  font-weight: ${typography.weight.bold};
+  color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
+`;
+
+const JobTitle = styled.div`
+  font-size: ${typography.size.s1}px;
+  color: ${color.mediumdark};
+`;
+
+const Logo = styled.div<{ inverse?: boolean }>`
+  border-left: 1px solid
+    ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)')};
+  margin-left: 20px;
+  padding-left: 20px;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    margin-left: 50px;
+    padding-left: 40px;
+  }
+
+  img {
+    display: inline-block;
+    width: auto;
+    max-height: 30px;
+  }
+`;
 
 interface TestimonialProps {
   text: React.ReactNode;
@@ -88,9 +86,11 @@ interface TestimonialProps {
   name: string;
   jobTitle: string;
   logo: string;
+  inverse?: boolean;
 }
 
 export const Testimonial = ({
+  inverse,
   text,
   avatarUrl,
   name,
@@ -99,23 +99,20 @@ export const Testimonial = ({
   ...props
 }: TestimonialProps) => (
   <Wrapper {...props}>
-    <HrWrapper>
-      <Hr />
-    </HrWrapper>
     <Inner>
-      <Quote>{text}</Quote>
-      <Attribution>
+      <Quote inverse={inverse}>{text}</Quote>
+      <Cite>
         <Author>
           <Avatar size="large" username={name} src={avatarUrl} />
           <Meta>
-            <Name>{name}</Name>
+            <Name inverse={inverse}>{name}</Name>
             <JobTitle>{jobTitle}</JobTitle>
           </Meta>
         </Author>
-        <Logo>
+        <Logo inverse={inverse}>
           <img src={logo} alt="company logo" />
         </Logo>
-      </Attribution>
+      </Cite>
     </Inner>
   </Wrapper>
 );

@@ -8,35 +8,28 @@ export default {
   component: Testimonial,
 };
 
-export const Default = () => (
-  <Testimonial
-    text={
-      <span>
-        “Storybook is an absolutely fantastic app that helps to keep us organized and our customers
-        happy.”
-      </span>
-    }
-    avatarUrl="https://avatars1.githubusercontent.com/u/263385?s=88&v=4"
-    name="Dominic Nguyen"
-    jobTitle="Product designer"
-    logo="./air-bnb.svg"
-  />
-);
+const Template = (args) => <Testimonial {...args} />;
 
-export const Inverse = () => (
-  <Testimonial
-    text={
-      <span>
-        “Storybook is an absolutely fantastic app that helps to keep us organized and our customers
-        happy.”
-      </span>
-    }
-    avatarUrl="https://avatars1.githubusercontent.com/u/263385?s=88&v=4"
-    name="Dominic Nguyen"
-    jobTitle="Product designer"
-    logo="./air-bnb.svg"
-  />
-);
+export const Default = Template.bind({});
+Default.args = {
+  text: (
+    <span>
+      “Storybook is an absolutely fantastic app that helps to keep us organized and our customers
+      happy.”
+    </span>
+  ),
+  avatarUrl: 'https://avatars1.githubusercontent.com/u/263385?s=88&v=4',
+  name: 'John Doe',
+  jobTitle: 'Job title',
+  logo: './atomic-design.svg',
+};
+
+export const Inverse = Template.bind({});
+Inverse.args = {
+  ...Default.args,
+  inverse: true,
+  logo: './air-bnb.svg',
+};
 Inverse.parameters = {
   backgrounds: { default: 'dark' },
 };
