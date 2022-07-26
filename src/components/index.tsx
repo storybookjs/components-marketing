@@ -7,6 +7,6 @@ export * from './DisplayCard/DisplayCard';
 export * from './Eyebrow';
 export * from './GithubButton';
 export * from './Heading';
-export * from './PageFooter/PageFooter';
+export * from './Footer/Footer';
 export * from './Title';
 export * from './VerifiedBadge';

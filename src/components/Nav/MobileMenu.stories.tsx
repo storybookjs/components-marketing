@@ -1,10 +1,10 @@
 import React from 'react';
 import { MobileMenu } from './MobileMenu';
-import { defaultNavLinks } from './nav-context';
+import { defaultLinks } from '../links-context';
 
 export default {
   title: 'Nav/MobileMenu',
   component: MobileMenu,
 };
 
-export const Default = () => <MobileMenu navLinks={defaultNavLinks} />;
+export const Default = () => <MobileMenu navLinks={defaultLinks} />;

@@ -1,9 +1,8 @@
 import { styles } from '@storybook/design-system';
-import { css } from '@storybook/theming';
+import { css, styled } from '@storybook/theming';
 
 export const {
   background,
-  color,
   spacing,
   typography,
   breakpoint,
@@ -16,6 +15,11 @@ export const {
   text,
   code,
 } = styles;
+
+export const color = {
+  midnight: '#171C23',
+  ...styles.color,
+};
 
 export const breakpoints = [440, 600, 900];
 

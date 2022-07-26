@@ -1,13 +1,16 @@
 import React, { forwardRef } from 'react';
-import { Nav } from './Nav';
+import { Footer } from './Footer';
 import { LinksContextProvider } from '../links-context';
 
 export default {
-  title: 'Nav/Nav',
-  component: Nav,
+  title: 'Footer/Footer',
+  component: Footer,
   parameters: {
     chromatic: { viewports: [320, 440, 600, 900] },
     layout: 'fullscreen',
+  },
+  args: {
+    subscriberCount: 5363,
   },
 };
 
@@ -20,7 +23,7 @@ const FakeGatsbyLink = forwardRef<HTMLAnchorElement, { to: string }>(
 );
 FakeGatsbyLink.displayName = 'FakeGatsbyLink';
 
-const navLinks = {
+const links = {
   home: { url: '/', linkWrapper: FakeGatsbyLink },
   whyStorybook: { url: '/why', linkWrapper: FakeGatsbyLink },
   useCases: { url: '/use-cases', linkWrapper: FakeGatsbyLink },
@@ -42,8 +45,8 @@ const navLinks = {
 };
 
 const Template = (args) => (
-  <LinksContextProvider value={navLinks}>
-    <Nav {...args} />
+  <LinksContextProvider value={links}>
+    <Footer {...args} />
   </LinksContextProvider>
 );
 
