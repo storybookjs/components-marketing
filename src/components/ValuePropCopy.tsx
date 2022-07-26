@@ -1,10 +1,9 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { color, typography, pageMargins, breakpoints, marketing, text } from './shared/styles';
+import { color, pageMargins, marketing, text } from './shared/styles';
 
-const Wrapper = styled.figure`
+const Wrapper = styled.div`
   ${pageMargins};
-  margin: 0;
   max-width: 320px;
 `;
 
