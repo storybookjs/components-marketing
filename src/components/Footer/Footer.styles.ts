@@ -15,8 +15,13 @@ const inverseBorder = 'rgba(255, 255, 255, 0.1)';
 export const FooterWrapper = styled.footer<{ inverse?: boolean }>`
   background-color: ${(props) => (props.inverse ? color.midnight : background.app)};
   border-top: 1px solid ${(props) => (props.inverse ? inverseBorder : color.border)};
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @media (min-width: ${breakpoints[2]}px) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 `;
 
 export const Upper = styled.div`
@@ -35,6 +40,7 @@ export const Upper = styled.div`
 
 export const Title = styled(Subheading)`
   ${subheading.regular};
+  line-height: 20px;
   display: block;
   color: ${color.mediumdark};
   margin-bottom: 16px;
@@ -103,6 +109,7 @@ export const SocialLinks = styled.div`
 
 export const Column = styled.div`
   > a {
+    line-height: 20px;
     display: block;
     margin-bottom: 12px;
 
@@ -116,7 +123,6 @@ export const Lower = styled.div`
   ${pageMargins};
   padding-top: 3rem;
 
-  margin-bottom: 24px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
   grid-column-gap: 24px;

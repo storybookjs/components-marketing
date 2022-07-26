@@ -63,8 +63,7 @@ interface ServiceProps {
 
 export const ServicesWrapper = styled.div`
   ${pageMargins};
-  padding-top: 4rem;
-  padding-bottom: 64px;
+  padding-top: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -72,7 +71,7 @@ export const ServicesWrapper = styled.div`
 
   @media (min-width: ${breakpoints[2]}px) {
     flex-direction: row;
-    padding-top: 4.5rem;
+    padding-top: 4rem;
   }
 `;
 
