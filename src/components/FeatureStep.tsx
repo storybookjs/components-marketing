@@ -30,7 +30,7 @@ const StepIconWrapper = styled.div`
   height: 40px;
   border-radius: 100%;
   padding: 10px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   background-color: ${color.green};
   color: ${color.lightest};
 
@@ -55,18 +55,15 @@ export const StepIcon = forwardRef<HTMLDivElement, { icon: IconType }>(
 StepIcon.displayName = 'StepIcon';
 
 const Heading = styled.h3<{ inverse?: boolean }>`
-  font-size: ${typography.size.m2}px;
-  font-weight: ${typography.weight.bold};
-  line-height: 28px;
+  ${marketing.subheading};
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 `;
 
 const Description = styled.div<{ inverse?: boolean }>`
   ${marketing.textLarge};
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
-  letter-spacing: -0.4px;
   text-align: center;
   margin-bottom: 1.25rem;
 `;
