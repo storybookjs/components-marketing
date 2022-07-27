@@ -7,7 +7,7 @@ const MergeIcon = styled(StepIcon)`
   background: linear-gradient(180deg, #cf60ff 0%, #af44ff 100%);
 
   svg {
-    margin-right: -2px;
+    transform: translateX(2px);
   }
 `;
 

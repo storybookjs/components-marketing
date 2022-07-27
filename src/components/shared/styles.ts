@@ -21,7 +21,7 @@ export const color = {
   ...styles.color,
 };
 
-export const breakpoints = [440, 600, 900];
+export const breakpoints = [440, 600, 900, 1200];
 
 export const shadows = {
   tooltip: css`
