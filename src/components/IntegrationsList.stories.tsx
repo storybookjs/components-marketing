@@ -1,4 +1,3 @@
-import { Link } from '@storybook/design-system';
 import React from 'react';
 import { IntegrationsList } from './IntegrationsList';
 

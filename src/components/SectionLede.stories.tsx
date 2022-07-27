@@ -5,6 +5,10 @@ import { SectionLede } from './SectionLede';
 export default {
   title: 'SectionLede',
   component: SectionLede,
+  parameters: {
+    chromatic: { viewports: [320, 440, 600, 900] },
+    layout: 'fullscreen',
+  },
 };
 
 const Template = (args) => <SectionLede {...args} />;
