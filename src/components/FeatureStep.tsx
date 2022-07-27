@@ -55,7 +55,7 @@ export const StepIcon = forwardRef<HTMLDivElement, { icon: IconType }>(
 StepIcon.displayName = 'StepIcon';
 
 const Heading = styled.h3<{ inverse?: boolean }>`
-  font-size: ${typography.size.m2};
+  font-size: ${typography.size.m2}px;
   font-weight: ${typography.weight.bold};
   line-height: 28px;
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
