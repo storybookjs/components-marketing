@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { color, pageMargins, marketing, text } from './shared/styles';
+import { color, pageMargins, breakpoints, marketing, text } from './shared/styles';
 
 const Wrapper = styled.div`
   ${pageMargins};

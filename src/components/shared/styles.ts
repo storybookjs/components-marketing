@@ -34,17 +34,19 @@ export const marketing = {
     fontSize: 56,
     fontWeight: typography.weight.bold,
     lineHeight: '70px',
-    letterSpacing: '-0.579px',
+    letterSpacing: '-0.01em',
   }),
   hero2: css({
     fontSize: typography.size.l2, // 40
     fontWeight: typography.weight.bold,
     lineHeight: '48px',
+    letterSpacing: '-0.01em',
   }),
   heading: css({
     fontSize: typography.size.l1, // 32
     fontWeight: typography.weight.bold,
     lineHeight: '40px',
+    letterSpacing: '-0.01em',
   }),
   subheading: css({
     fontSize: typography.size.m2, // 24

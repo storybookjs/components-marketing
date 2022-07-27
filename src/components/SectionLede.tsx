@@ -10,6 +10,7 @@ const ContentWrapper = styled.div`
   @media (min-width: ${breakpoints[2]}px) {
     flex-direction: row;
     align-items: flex-start;
+    gap: 60px;
   }
 `;
 
@@ -21,16 +22,19 @@ const ContentContainer = styled.div`
 `;
 
 const SectionHeading = styled.h2<{ inverse?: boolean }>`
-  ${marketing.hero2};
+  ${marketing.heading};
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
-  flex: 1 1 auto;
+  flex: 1;
   min-width: 0;
-  max-width: 540px;
+  max-width: 560px;
   text-align: center;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    ${marketing.hero2};
+  }
 
   @media (min-width: ${breakpoints[2]}px) {
     ${marketing.hero1};
-    padding-right: 60px;
     text-align: left;
   }
 `;
@@ -38,18 +42,19 @@ const SectionHeading = styled.h2<{ inverse?: boolean }>`
 const LedeParagraph = styled.p<{ inverse?: boolean }>`
   ${marketing.textLarge};
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
-  margin-top: 0.875rem;
+  margin-top: 1.25rem;
   margin-bottom: 0;
   text-align: center;
 
   @media (min-width: ${breakpoints[2]}px) {
     text-align: left;
+    margin-top: 0.5rem;
   }
 `;
 
 const LedeRight = styled.div`
-  flex: 1 1 auto;
-  max-width: 480px;
+  flex: 1;
+  max-width: 500px;
   min-width: 0;
 
   & > *:not(:last-child) {
