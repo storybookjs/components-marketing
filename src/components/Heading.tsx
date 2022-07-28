@@ -6,14 +6,13 @@ export const StyledHeading = styled.h2`
   color: ${color.darkest};
   font-size: ${typography.size.m3}px;
   font-weight: ${typography.weight.black};
-  letter-spacing: -0.29px;
+  letter-spacing: -0.01em;
   line-height: ${typography.size.l2}px;
   margin-bottom: 4px;
 
   @media (min-width: ${breakpoint * 1}px) {
     font-size: 36px;
     margin-bottom: 8px;
-    letter-spacing: -0.37px;
   }
 `;
 
