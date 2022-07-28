@@ -26,7 +26,7 @@ const SectionHeading = styled.h2<{ inverse?: boolean }>`
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   flex: 1;
   min-width: 0;
-  max-width: 560px;
+  max-width: 500px;
   text-align: center;
 
   @media (min-width: ${breakpoints[1]}px) {
