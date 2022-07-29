@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, css } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
-import { spacing, color, breakpoints, text, typography, pageMargins } from './shared/styles';
+import { spacing, color, breakpoints, typography, pageMargins, pageMargin } from './shared/styles';
 
 const Wrapper = styled.div`
   ${pageMargins};
@@ -9,14 +9,24 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
 
   @media (min-width: ${breakpoints[2]}px) {
-    flex-direction: row;
-    align-items: flex-start;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, minmax(auto, 500px));
+    grid-template-rows: minmax(50vh, max-content);
     gap: 60px;
   }
+
+  /* @media (min-width: ${breakpoints[3]}px) {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(50vh, auto);
+    gap: 60px;
+  } */
 `;
 
 const Title = styled.div<{ inverse?: boolean }>`
@@ -58,8 +68,7 @@ const Feature = styled.button<{ inverse?: boolean }>`
   &:focus {
     border-color: ${color.secondary};
     transform: translate3d(0, -3px, 0);
-    box-shadow: ${(props) => (props.inverse ? 'rgba(255 255 255 / 8%)' : 'rgba(0 0 0 8%)')} 0 3px
-      10px 0;
+    box-shadow: ${(props) => (props.inverse ? 'rgba(0 0 0 / 50%)' : 'rgba(0 0 0 8%)')} 0 3px 10px 0;
   }
 
   &:active,
@@ -75,10 +84,7 @@ const FeatureList = styled.ul`
   gap: 20px;
   padding: 0;
   margin: 0;
-
-  flex: 1;
-  max-width: 500px;
-  min-width: 0;
+  width: 100%;
 
   li {
     list-style: none;
@@ -86,38 +92,39 @@ const FeatureList = styled.ul`
   }
 `;
 
-const FeatureMedia = styled.div`
-  flex: 1;
-  max-width: 500px;
-  min-width: 0;
+const FeatureMedia = styled.div<{ bgColor: string }>`
   border-radius: ${spacing.borderRadius.default}px;
   position: relative;
   overflow: hidden;
 
-  margin-bottom: 20px;
-
   @media (min-width: ${breakpoints[2]}px) {
-    margin-bottom: 0;
-    margin-left: -100px;
+    margin-left: calc(-${pageMargin}vw - 20px);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
 
   @media (min-width: ${breakpoints[3]}px) {
-    margin-left: 0;
+    margin-left: calc(-${pageMargin * 2}vw - 20px);
+    max-height: 640px;
+  }
+
+  @media (min-width: 1416px) {
     border-top-left-radius: ${spacing.borderRadius.default}px;
     border-bottom-left-radius: ${spacing.borderRadius.default}px;
   }
 
+  height: 100%;
+  background-color: ${(props) => props.bgColor};
+
   video {
     display: block;
-    width: 100% !important;
-    height: auto !important;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   a {
-    color: ${color.lightest};
-    background-color: rgba(0 0 0 / 10%);
+    background-color: rgba(0 0 0 / 50%);
     position: absolute;
     top: 20px;
     right: 20px;
@@ -125,8 +132,30 @@ const FeatureMedia = styled.div`
     &:hover,
     &:focus,
     &:active {
-      background-color: rgba(0 0 0 / 10%);
+      background-color: rgba(0 0 0 / 50%);
     }
+
+    svg {
+      margin: 0;
+    }
+  }
+`;
+
+const FeatureMediaLarge = styled(FeatureMedia)`
+  display: none;
+
+  @media (min-width: ${breakpoints[2]}px) {
+    display: block;
+  }
+`;
+
+const FeatureMediaSmall = styled(FeatureMedia)<{ visible?: boolean }>`
+  margin-top: 20px;
+
+  display: ${(props) => (props.visible ? 'block' : 'none')};
+
+  @media (min-width: ${breakpoints[2]}px) {
+    display: none;
   }
 `;
 
@@ -140,17 +169,16 @@ interface FeatureItem {
 
 interface IllustratedFeatureListProps {
   inverse?: boolean;
-  icon?: React.ReactNode;
-  title: React.ReactNode;
-  description: React.ReactNode;
   features: FeatureItem[];
+  bgColor: string;
+  alignment?: 'left' | 'right';
 }
 
 export const IllustratedFeatureList = ({
   inverse,
-  title,
-  description,
   features,
+  bgColor,
+  alignment = 'left',
   ...props
 }: IllustratedFeatureListProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -158,18 +186,19 @@ export const IllustratedFeatureList = ({
 
   return (
     <Wrapper {...props}>
-      <FeatureMedia>
+      {/* Desktop video */}
+      <FeatureMediaLarge bgColor={bgColor}>
         {activeFeature.media}
         <Button
           size="small"
-          appearance="inversePrimary"
+          appearance="inverse"
           href={activeFeature.link.href}
           ButtonWrapper={activeFeature.link.LinkWrapper}
           isLink
         >
           {activeFeature.link.label} <Icon icon="arrowright" />
         </Button>
-      </FeatureMedia>
+      </FeatureMediaLarge>
       <FeatureList>
         {features.map((feature, index) => (
           <li key={feature.title}>
@@ -184,6 +213,19 @@ export const IllustratedFeatureList = ({
                 <Description inverse={inverse}>{feature.description}</Description>
               </div>
             </Feature>
+            {/* mobile video */}
+            <FeatureMediaSmall bgColor={bgColor} visible={index === activeIndex}>
+              {feature.media}
+              <Button
+                size="small"
+                appearance="inverse"
+                href={feature.link.href}
+                ButtonWrapper={feature.link.LinkWrapper}
+                isLink
+              >
+                {feature.link.label} <Icon icon="arrowright" />
+              </Button>
+            </FeatureMediaSmall>
           </li>
         ))}
       </FeatureList>

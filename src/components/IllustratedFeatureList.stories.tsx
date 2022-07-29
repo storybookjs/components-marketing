@@ -16,48 +16,62 @@ const features = [
     title: 'Spot test',
     description: 'Stories are tests you can debug in dev and QA.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: <video src="spot-testing.m4v" autoPlay />,
+    media: <video src="spot-testing.m4v" autoPlay loop />,
   },
   {
     icon: <ColoredIcons.Pixel />,
     title: 'Visual test appearance',
     description: 'Pinpoint UI changes down to the pixel.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: <video src="visual-testing.m4v" autoPlay />,
+    media: <video src="visual-testing.m4v" autoPlay loop />,
   },
   {
     icon: <ColoredIcons.Interact />,
     title: 'Interaction test behavior',
     description: 'Simulate user behavior and assert in the browser.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: <video src="interaction-testing.m4v" autoPlay />,
+    media: <video src="interaction-testing.m4v" autoPlay loop />,
   },
   {
     icon: <ColoredIcons.Accessibility />,
     title: 'Accessibility test',
     description: 'Check stories for WCAG and ARIA issues.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: <video src="accessibility-testing.m4v" autoPlay />,
+    media: <video src="accessibility-testing.m4v" autoPlay loop />,
   },
   {
     icon: <ColoredIcons.Code />,
     title: 'Snapshot test markup',
     description: 'Detect regressions in DOM markup.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: <video src="snapshot-testing.m4v" autoPlay />,
+    media: <video src="snapshot-testing.m4v" autoPlay loop />,
   },
   {
     icon: <ColoredIcons.Projects />,
     title: 'Reuse tests in other test tools',
     description: 'Write stories once to reuse across your test suite.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: <video src="reuse-testing.m4v" autoPlay />,
+    media: <video src="reuse-testing.m4v" autoPlay loop />,
   },
 ];
 
 export const Default = Template.bind({});
 Default.args = {
   features,
+  bgColor: '#fed992',
+};
+
+export const ShortList = Template.bind({});
+ShortList.args = {
+  features: features.slice(0, 3),
+  bgColor: '#fed992',
+};
+
+export const RightAligned = Template.bind({});
+RightAligned.args = {
+  features,
+  bgColor: '#fed992',
+  alignment: 'right',
 };
 
 export const Inverse = Template.bind({});

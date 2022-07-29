@@ -50,7 +50,7 @@
     "@emotion/weak-memoize": "^0.2.5",
     "@floating-ui/react-dom-interactions": "^0.6.5",
     "@storybook/api": "^6.5.9",
-    "@storybook/design-system": "^7.7.10",
+    "@storybook/design-system": "^7.7.11",
     "@storybook/theming": "^6.5.9",
     "formik": "^2.1.5",
     "framer-motion": "^6.3.15",
