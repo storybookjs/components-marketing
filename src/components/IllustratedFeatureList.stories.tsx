@@ -6,6 +6,9 @@ import { IllustratedFeatureList } from './IllustratedFeatureList';
 export default {
   title: 'IllustratedFeatureList',
   component: IllustratedFeatureList,
+  parameters: {
+    chromatic: { viewports: [440, 600, 900, 1200, 1600] },
+  },
 };
 
 const Template = (args) => <IllustratedFeatureList {...args} />;

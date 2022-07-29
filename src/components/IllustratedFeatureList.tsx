@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { styled, css } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
+import { motion, AnimatePresence } from 'framer-motion';
 import { spacing, color, breakpoints, typography, pageMargins, pageMargin } from './shared/styles';
 
 const Wrapper = styled.div`
@@ -19,14 +20,6 @@ const Wrapper = styled.div`
     grid-template-rows: minmax(50vh, max-content);
     gap: 60px;
   }
-
-  /* @media (min-width: ${breakpoints[3]}px) {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(50vh, auto);
-    gap: 60px;
-  } */
 `;
 
 const Title = styled.div<{ inverse?: boolean }>`
@@ -96,24 +89,6 @@ const FeatureMedia = styled.div<{ bgColor: string }>`
   border-radius: ${spacing.borderRadius.default}px;
   position: relative;
   overflow: hidden;
-
-  @media (min-width: ${breakpoints[2]}px) {
-    margin-left: calc(-${pageMargin}vw - 20px);
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  @media (min-width: ${breakpoints[3]}px) {
-    margin-left: calc(-${pageMargin * 2}vw - 20px);
-    max-height: 640px;
-  }
-
-  @media (min-width: 1416px) {
-    border-top-left-radius: ${spacing.borderRadius.default}px;
-    border-bottom-left-radius: ${spacing.borderRadius.default}px;
-  }
-
-  height: 100%;
   background-color: ${(props) => props.bgColor};
 
   video {
@@ -143,16 +118,29 @@ const FeatureMedia = styled.div<{ bgColor: string }>`
 
 const FeatureMediaLarge = styled(FeatureMedia)`
   display: none;
+  height: 100%;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: block;
+    margin-left: calc(-${pageMargin}vw - 20px);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  @media (min-width: ${breakpoints[3]}px) {
+    margin-left: calc(-${pageMargin * 2}vw - 20px);
+    max-height: 640px;
+  }
+
+  @media (min-width: 1416px) {
+    border-top-left-radius: ${spacing.borderRadius.default}px;
+    border-bottom-left-radius: ${spacing.borderRadius.default}px;
   }
 `;
 
-const FeatureMediaSmall = styled(FeatureMedia)<{ visible?: boolean }>`
-  margin-top: 20px;
-
-  display: ${(props) => (props.visible ? 'block' : 'none')};
+const FeatureMediaSmall = styled(FeatureMedia)`
+  display: block;
+  aspect-ratio: 1/1;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: none;
@@ -214,18 +202,36 @@ export const IllustratedFeatureList = ({
               </div>
             </Feature>
             {/* mobile video */}
-            <FeatureMediaSmall bgColor={bgColor} visible={index === activeIndex}>
-              {feature.media}
-              <Button
-                size="small"
-                appearance="inverse"
-                href={feature.link.href}
-                ButtonWrapper={feature.link.LinkWrapper}
-                isLink
-              >
-                {feature.link.label} <Icon icon="arrowright" />
-              </Button>
-            </FeatureMediaSmall>
+            <AnimatePresence initial={false}>
+              {index === activeIndex && (
+                <motion.div
+                  layout
+                  key={feature.title}
+                  initial="collapsed"
+                  animate="open"
+                  exit="collapsed"
+                  style={{ overflow: 'hidden' }}
+                  variants={{
+                    open: { opacity: 1, height: 'auto', marginTop: 20 },
+                    collapsed: { opacity: 0, height: 0, marginTop: 0 },
+                  }}
+                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                >
+                  <FeatureMediaSmall bgColor={bgColor}>
+                    {feature.media}
+                    <Button
+                      size="small"
+                      appearance="inverse"
+                      href={feature.link.href}
+                      ButtonWrapper={feature.link.LinkWrapper}
+                      isLink
+                    >
+                      {feature.link.label} <Icon icon="arrowright" />
+                    </Button>
+                  </FeatureMediaSmall>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </li>
         ))}
       </FeatureList>
