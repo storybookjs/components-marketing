@@ -4,9 +4,9 @@ import { StorybookProject } from './StorybookProject';
 export default {
   title: 'Cards/StorybookProject',
   component: StorybookProject,
-  // parameters: {
-  //   layout: 'padded',
-  // },
+  parameters: {
+    layout: 'padded',
+  },
 };
 
 const Template = (args) => (
