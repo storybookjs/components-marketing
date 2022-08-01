@@ -1,37 +1,28 @@
+import React from 'react';
 import { useId } from '@floating-ui/react-dom-interactions';
 import { styled } from '@storybook/theming';
-import React from 'react';
 
 interface AddressBarProps {
   inverse?: boolean;
   address?: string;
   clipId?: string;
+  https?: boolean;
 }
 
-interface BrowserChromeProps {
+export interface BrowserChromeProps {
   inverse?: boolean;
   address?: string;
   showControls?: boolean;
   image: string;
   expand: 'width' | 'height';
+  https?: boolean;
 }
 
 const SVG = styled.svg`
   display: block;
 `;
 
-const Website = styled.div<{ image: string }>`
-  position: absolute;
-  top: 24.5px;
-  left: 19.5px;
-  width: 93.6%;
-  height: 85.5%;
-  background-image: url(${(props) => props.image});
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const AddressBar = ({ inverse, address, clipId }: AddressBarProps) => (
+const AddressBar = ({ inverse, address, clipId, https = true }: AddressBarProps) => (
   <g>
     <rect
       width="194"
@@ -42,16 +33,28 @@ const AddressBar = ({ inverse, address, clipId }: AddressBarProps) => (
       fillOpacity="0.1"
       rx="5"
     />
-    <g clipPath={`url(#${clipId})`}>
+    {https ? (
+      <g clipPath={`url(#${clipId})`}>
+        <g fill={inverse ? '#fff' : '#333'}>
+          <path d="M598.215 36.716a.715.715 0 01-.357.619v1.167a.357.357 0 01-.715 0v-1.167a.715.715 0 111.072-.619z" />
+          <path
+            fillRule="evenodd"
+            d="M594.643 33.86a2.858 2.858 0 015.715 0v.713h1.071c.197 0 .357.16.357.358v5.714c0 .197-.16.357-.357.357h-7.857a.357.357 0 01-.357-.357V34.93c0-.197.16-.357.357-.357h1.071v-.714zm5 .713v-.714a2.142 2.142 0 10-4.285 0v.714h4.285zm1.429.715h-7.143v5h7.143v-5z"
+            clipRule="evenodd"
+          />
+        </g>
+      </g>
+    ) : (
       <g fill={inverse ? '#fff' : '#333'}>
-        <path d="M598.215 36.716a.715.715 0 01-.357.619v1.167a.357.357 0 01-.715 0v-1.167a.715.715 0 111.072-.619z" />
+        <path d="M597.5 34.2149C597.697 34.2149 597.857 34.3748 597.857 34.572V37.072C597.857 37.2693 597.697 37.4292 597.5 37.4292C597.303 37.4292 597.143 37.2693 597.143 37.072V34.572C597.143 34.3748 597.303 34.2149 597.5 34.2149Z" />
+        <path d="M598.036 38.5006C598.036 38.7965 597.796 39.0363 597.5 39.0363C597.204 39.0363 596.964 38.7965 596.964 38.5006C596.964 38.2047 597.204 37.9649 597.5 37.9649C597.796 37.9649 598.036 38.2047 598.036 38.5006Z" />
         <path
           fillRule="evenodd"
-          d="M594.643 33.86a2.858 2.858 0 015.715 0v.713h1.071c.197 0 .357.16.357.358v5.714c0 .197-.16.357-.357.357h-7.857a.357.357 0 01-.357-.357V34.93c0-.197.16-.357.357-.357h1.071v-.714zm5 .713v-.714a2.142 2.142 0 10-4.285 0v.714h4.285zm1.429.715h-7.143v5h7.143v-5z"
           clipRule="evenodd"
+          d="M597.648 31.7467C597.686 31.7642 597.722 31.7886 597.753 31.8195C597.776 31.8425 597.795 31.8683 597.811 31.896L602.45 39.7475C602.551 39.9173 602.494 40.1363 602.325 40.2367C602.266 40.2715 602.201 40.2875 602.137 40.2863H592.863C592.83 40.2869 592.796 40.2828 592.763 40.2738C592.72 40.2621 592.681 40.2427 592.646 40.2172C592.604 40.1869 592.571 40.1488 592.547 40.1062C592.522 40.0634 592.507 40.015 592.502 39.9634C592.498 39.9208 592.501 39.8773 592.513 39.835C592.522 39.8019 592.535 39.7708 592.553 39.7423L597.189 31.896C597.205 31.8683 597.224 31.8425 597.247 31.8195C597.278 31.7886 597.314 31.7642 597.353 31.7467C597.4 31.7251 597.45 31.7148 597.5 31.7148C597.55 31.7148 597.6 31.7251 597.648 31.7467ZM597.5 32.7741L593.483 39.572H601.517L597.5 32.7741Z"
         />
       </g>
-    </g>
+    )}
     <text
       x="611.884"
       y="40.108"
@@ -101,6 +104,7 @@ export const BrowserChrome = ({
   address,
   image,
   expand = 'height',
+  https,
 }: BrowserChromeProps) => {
   const clip1Id = useId();
   const clip2Id = useId();
@@ -148,7 +152,9 @@ export const BrowserChrome = ({
           <circle cx="94" cy="36" r="5" fill="#66BF3C" />
         </g>
         <path fill={inverse ? '#fff' : '#000'} fillOpacity="0.1" d="M41 51H1239V52H41z" />
-        {showControls && <AddressBar address={address} inverse={inverse} clipId={clip3Id} />}
+        {showControls && (
+          <AddressBar address={address} inverse={inverse} clipId={clip3Id} https={https} />
+        )}
       </g>
       <defs>
         <filter

@@ -30,6 +30,14 @@ WithControls.args = {
   image: '/site-screenshot.png',
 };
 
+export const NoHttps = Template.bind({});
+NoHttps.args = {
+  showControls: true,
+  https: false,
+  address: 'storybook.js.org',
+  image: '/site-screenshot.png',
+};
+
 export const Inverse = Template.bind({});
 Inverse.args = {
   ...Default.args,
@@ -39,5 +47,11 @@ Inverse.args = {
 export const InverseWithControls = Template.bind({});
 InverseWithControls.args = {
   ...WithControls.args,
+  inverse: true,
+};
+
+export const InverseNoHttps = Template.bind({});
+InverseNoHttps.args = {
+  ...NoHttps.args,
   inverse: true,
 };
