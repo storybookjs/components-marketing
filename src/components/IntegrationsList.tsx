@@ -34,6 +34,7 @@ const Integration = styled(Button)<{ inverse?: boolean }>`
     display: block;
     width: 24px;
     height: 24px;
+    object-fit: contain;
   }
 `;
 Integration.defaultProps = {
