@@ -147,6 +147,14 @@ const FeatureMediaSmall = styled(FeatureMedia)`
   }
 `;
 
+const MediaWrapper = styled.div`
+  display: block;
+
+  @media (min-width: ${breakpoints[2]}px) {
+    display: none;
+  }
+`;
+
 interface FeatureItem {
   media: React.ReactNode;
   icon: React.ReactNode;
@@ -202,36 +210,38 @@ export const IllustratedFeatureList = ({
               </div>
             </Feature>
             {/* mobile video */}
-            <AnimatePresence initial={false}>
-              {index === activeIndex && (
-                <motion.div
-                  layout
-                  key={feature.title}
-                  initial="collapsed"
-                  animate="open"
-                  exit="collapsed"
-                  style={{ overflow: 'hidden' }}
-                  variants={{
-                    open: { opacity: 1, height: 'auto', marginTop: 20 },
-                    collapsed: { opacity: 0, height: 0, marginTop: 0 },
-                  }}
-                  transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                >
-                  <FeatureMediaSmall bgColor={bgColor}>
-                    {feature.media}
-                    <Button
-                      size="small"
-                      appearance="inverse"
-                      href={feature.link.href}
-                      ButtonWrapper={feature.link.LinkWrapper}
-                      isLink
-                    >
-                      {feature.link.label} <Icon icon="arrowright" />
-                    </Button>
-                  </FeatureMediaSmall>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <MediaWrapper>
+              <AnimatePresence initial={false}>
+                {index === activeIndex && (
+                  <motion.div
+                    layout
+                    key={feature.title}
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    style={{ overflow: 'hidden' }}
+                    variants={{
+                      open: { opacity: 1, height: 'auto', marginTop: 20 },
+                      collapsed: { opacity: 0, height: 0, marginTop: 0 },
+                    }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                  >
+                    <FeatureMediaSmall bgColor={bgColor}>
+                      {feature.media}
+                      <Button
+                        size="small"
+                        appearance="inverse"
+                        href={feature.link.href}
+                        ButtonWrapper={feature.link.LinkWrapper}
+                        isLink
+                      >
+                        {feature.link.label} <Icon icon="arrowright" />
+                      </Button>
+                    </FeatureMediaSmall>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </MediaWrapper>
           </li>
         ))}
       </FeatureList>
