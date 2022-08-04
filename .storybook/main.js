@@ -10,6 +10,14 @@ module.exports = {
   features: {
     interactionsDebugger: true,
   },
+  core: {
+    builder: {
+      name: 'webpack5',
+      options: {
+        fsCache: true,
+      },
+    },
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.mjs$/,
