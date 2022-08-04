@@ -73,12 +73,14 @@ interface IntegrationsCarouselProps {
   inverse?: boolean;
   integrations: (IntegrationProps & { media: ReactNode })[];
   overflowLabel: string;
+  animationDisabled?: boolean;
 }
 
 export const IntegrationsCarousel = ({
   inverse,
   integrations,
   overflowLabel,
+  animationDisabled = false,
   ...props
 }: IntegrationsCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -87,6 +89,10 @@ export const IntegrationsCarousel = ({
   const progress = useMotionValue(activeIndex);
 
   useEffect(() => {
+    if (animationDisabled) {
+      return () => {};
+    }
+
     animation.current = animate(progress, activeIndex, {
       duration: 2,
       onComplete: () => {
@@ -99,7 +105,7 @@ export const IntegrationsCarousel = ({
     });
 
     return () => animation.current.stop();
-  }, [activeIndex, integrations, progress]);
+  }, [activeIndex, integrations, progress, animationDisabled]);
 
   return (
     <div {...props}>

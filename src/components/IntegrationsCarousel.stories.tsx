@@ -65,6 +65,7 @@ export const Default = Template.bind({});
 Default.args = {
   integrations: 'Default',
   overflowLabel: '+ and more',
+  animationDisabled: true,
 };
 
 export const Inverse = Template.bind({});
