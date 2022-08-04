@@ -64,17 +64,17 @@ Default.args = {
   bgColor: '#fed992',
 };
 
-export const ShortList = Template.bind({});
-ShortList.args = {
-  features: features.slice(0, 3),
-  bgColor: '#fed992',
-};
-
 export const RightAligned = Template.bind({});
 RightAligned.args = {
   features,
   bgColor: '#fed992',
   alignment: 'right',
+};
+
+export const ShortList = Template.bind({});
+ShortList.args = {
+  features: features.slice(0, 3),
+  bgColor: '#fed992',
 };
 
 export const Inverse = Template.bind({});

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, css } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
 import { motion, AnimatePresence } from 'framer-motion';
 import { spacing, color, breakpoints, typography, pageMargins, pageMargin } from './shared/styles';
+
+type Alignment = 'left' | 'right';
 
 const Wrapper = styled.div`
   ${pageMargins};
@@ -71,7 +73,8 @@ const Feature = styled.button<{ inverse?: boolean }>`
   }
 `;
 
-const FeatureList = styled.ul`
+const FeatureList = styled.ul<{ alignment?: Alignment }>`
+  order: ${(props) => (props.alignment === 'left' ? 2 : 1)};
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -116,25 +119,41 @@ const FeatureMedia = styled.div<{ bgColor: string }>`
   }
 `;
 
-const FeatureMediaLarge = styled(FeatureMedia)`
+const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment }>`
+  order: ${(props) => (props.alignment === 'left' ? 1 : 2)};
   display: none;
   height: 100%;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: block;
-    margin-left: calc(-${pageMargin}vw - 20px);
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    ${(props) =>
+      props.alignment === 'left'
+        ? css`
+            margin-left: calc(-${pageMargin}vw - 20px);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          `
+        : css`
+            margin-right: calc(-${pageMargin}vw - 20px);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          `};
   }
 
   @media (min-width: ${breakpoints[3]}px) {
-    margin-left: calc(-${pageMargin * 2}vw - 20px);
+    ${(props) =>
+      props.alignment === 'left'
+        ? css`
+            margin-left: calc(-${pageMargin * 2}vw - 20px);
+          `
+        : css`
+            margin-right: calc(-${pageMargin * 2}vw - 20px);
+          `};
     max-height: 640px;
   }
 
   @media (min-width: 1416px) {
-    border-top-left-radius: ${spacing.borderRadius.default}px;
-    border-bottom-left-radius: ${spacing.borderRadius.default}px;
+    border-radius: ${spacing.borderRadius.default}px;
   }
 `;
 
@@ -167,7 +186,7 @@ interface IllustratedFeatureListProps {
   inverse?: boolean;
   features: FeatureItem[];
   bgColor: string;
-  alignment?: 'left' | 'right';
+  alignment?: Alignment;
 }
 
 export const IllustratedFeatureList = ({
@@ -183,7 +202,7 @@ export const IllustratedFeatureList = ({
   return (
     <Wrapper {...props}>
       {/* Desktop video */}
-      <FeatureMediaLarge bgColor={bgColor}>
+      <FeatureMediaLarge alignment={alignment} bgColor={bgColor}>
         {activeFeature.media}
         <Button
           size="small"
@@ -195,7 +214,7 @@ export const IllustratedFeatureList = ({
           {activeFeature.link.label} <Icon icon="arrowright" />
         </Button>
       </FeatureMediaLarge>
-      <FeatureList>
+      <FeatureList alignment={alignment}>
         {features.map((feature, index) => (
           <li key={feature.title}>
             <Feature
