@@ -122,6 +122,7 @@ PortraitLogo.args = {
 };
 
 export const NoLogo = Template.bind({});
+NoLogo.decorators = Default.decorators;
 NoLogo.args = {
   ...Default.args,
   logoUrl: undefined,
