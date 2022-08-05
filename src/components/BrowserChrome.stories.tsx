@@ -1,4 +1,5 @@
 import React from 'react';
+import { styled } from '@storybook/theming';
 import { BrowserChrome } from './BrowserChrome';
 
 export default {
@@ -9,13 +10,20 @@ export default {
   },
 };
 
+const Wrapper = styled.div`
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+`;
+
 const Template = (args) => (
-  <div style={{ display: 'grid', gap: 20, gridTemplateColumns: '1fr 1fr' }}>
+  <Wrapper>
     <BrowserChrome {...args} image="/storybook-site.png" />
     <BrowserChrome {...args} image="/blog.png" />
     <BrowserChrome {...args} image="/tutorials-site.png" expand="width" />
     <BrowserChrome {...args} image="/componentdriven.png" expand="width" />
-  </div>
+  </Wrapper>
 );
 
 export const Default = Template.bind({});
