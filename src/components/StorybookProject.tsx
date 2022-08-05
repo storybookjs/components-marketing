@@ -14,8 +14,7 @@ const Attribution = styled.div`
   ${text.regularBold};
   display: flex;
   align-items: center;
-  margin-left: 3%;
-  margin-top: -8px;
+  margin-top: 12px;
 `;
 const Logo = styled.img`
   display: block;
@@ -31,10 +30,9 @@ export const StorybookProject = ({
   address,
   showControls,
   image,
-  expand,
   https,
 }: StorybookProjectProps) => {
-  const browserProps = { address, showControls, image, expand, https };
+  const browserProps = { address, showControls, image, https };
 
   return (
     <Wrapper>
