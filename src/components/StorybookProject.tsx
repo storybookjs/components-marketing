@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
 import { BrowserChrome, BrowserChromeProps } from './BrowserChrome';
-import { text } from './shared/styles';
+import { text, color } from './shared/styles';
 
 interface StorybookProjectProps extends BrowserChromeProps {
   logo: string;
@@ -10,11 +10,12 @@ interface StorybookProjectProps extends BrowserChromeProps {
 
 const Wrapper = styled.div``;
 
-const Attribution = styled.div`
+const Attribution = styled.div<{ inverse?: boolean }>`
   ${text.regularBold};
   display: flex;
   align-items: center;
   margin-top: 12px;
+  color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
 `;
 const Logo = styled.img`
   display: block;
@@ -37,7 +38,7 @@ export const StorybookProject = ({
   return (
     <Wrapper>
       <BrowserChrome inverse={inverse} {...browserProps} />
-      <Attribution>
+      <Attribution inverse={inverse}>
         <Logo src={logo} alt="" />
         {name}
       </Attribution>

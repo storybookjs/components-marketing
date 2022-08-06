@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   @media (min-width: ${breakpoints[2]}px) {
     display: grid;
     justify-content: center;
+    align-items: flex-start;
     grid-template-columns: repeat(2, minmax(auto, 500px));
     grid-template-rows: minmax(50vh, max-content);
     gap: 60px;

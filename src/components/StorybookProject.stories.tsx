@@ -34,3 +34,6 @@ Inverse.args = {
   ...Default.args,
   inverse: true,
 };
+Inverse.parameters = {
+  backgrounds: { default: 'dark' },
+};
