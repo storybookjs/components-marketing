@@ -4,14 +4,6 @@ import { Icon } from '@storybook/design-system';
 import { styled } from '@storybook/theming';
 import { color } from './shared/styles';
 
-export interface BrowserChromeProps {
-  inverse?: boolean;
-  address?: string;
-  showControls?: boolean;
-  image: string;
-  https?: boolean;
-}
-
 const Frame = styled.div<{ inverse: boolean }>`
   display: block;
   background: ${(props) => (props.inverse ? 'rgb(29 31 36 / 80%)' : '#efefef')};
@@ -120,7 +112,17 @@ const ToolBar = ({ showControls, inverse, address, https = true }: ToolBarProps)
 
 const Website = styled.img`
   display: block;
+  width: 100%;
+  height: auto;
 `;
+
+export interface BrowserChromeProps {
+  inverse?: boolean;
+  address?: string;
+  showControls?: boolean;
+  image: { width: number; height: number; src: string };
+  https?: boolean;
+}
 
 export const BrowserChrome = ({
   inverse,
@@ -132,7 +134,7 @@ export const BrowserChrome = ({
   return (
     <Frame inverse={inverse}>
       <ToolBar inverse={inverse} address={address} https={https} showControls={showControls} />
-      <Website src={image} alt="" style={{ width: '100%' }} />
+      <Website src={image.src} alt="" width={image.width} height={image.height} />
     </Frame>
   );
 };

@@ -19,10 +19,10 @@ const Wrapper = styled.div`
 
 const Template = (args) => (
   <Wrapper>
-    <BrowserChrome {...args} image="/storybook-site.png" />
-    <BrowserChrome {...args} image="/blog.png" />
-    <BrowserChrome {...args} image="/tutorials-site.png" expand="width" />
-    <BrowserChrome {...args} image="/componentdriven.png" expand="width" />
+    <BrowserChrome {...args} image={{ src: '/storybook-site.png', width: 2840, height: 1710 }} />
+    <BrowserChrome {...args} image={{ src: '/blog.png', width: 2840, height: 1450 }} />
+    <BrowserChrome {...args} image={{ src: '/tutorials-site.png', width: 2042, height: 1710 }} />
+    <BrowserChrome {...args} image={{ src: '/componentdriven.png', width: 1710, height: 1710 }} />
   </Wrapper>
 );
 
