@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -182,8 +182,20 @@ const MediaWrapper = styled.div`
   }
 `;
 
+const BackdropVideo = styled.video`
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: scale(1.25);
+  filter: blur(10px);
+  user-select: none;
+`;
+const Video = styled.video`
+  position: relative;
+`;
+
 interface FeatureItem {
-  media: React.ReactNode;
+  media: string;
   icon: React.ReactNode;
   title: string;
   description: string;
@@ -213,7 +225,8 @@ export const IllustratedFeatureList = ({
     <Wrapper {...props}>
       {/* Desktop video */}
       <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
-        {activeFeature.media}
+        <BackdropVideo src={features[0].media} playsInline />
+        <Video src={activeFeature.media} autoPlay loop playsInline />
         <Button
           size="small"
           appearance="inverse"
@@ -256,7 +269,8 @@ export const IllustratedFeatureList = ({
                     transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                   >
                     <FeatureMediaSmall bgColor={bgColor}>
-                      {feature.media}
+                      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                      <video src={feature.media} autoPlay loop playsInline />
                       <Button
                         size="small"
                         appearance="inverse"
