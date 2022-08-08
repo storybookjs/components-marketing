@@ -19,9 +19,13 @@ const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     align-items: flex-start;
-    grid-template-columns: repeat(2, minmax(auto, 500px));
+    grid-template-columns: repeat(2, minmax(auto, 50%));
     grid-template-rows: minmax(50vh, max-content);
     gap: 60px;
+  }
+
+  @media (min-width: ${breakpoints[3]}px) {
+    grid-template-columns: repeat(2, minmax(auto, 500px));
   }
 `;
 
@@ -120,7 +124,7 @@ const FeatureMedia = styled.div<{ bgColor: string }>`
   }
 `;
 
-const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment }>`
+const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHeight?: number }>`
   order: ${(props) => (props.alignment === 'left' ? 1 : 2)};
   display: none;
   height: 100%;
@@ -150,13 +154,16 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment }>`
         : css`
             margin-right: calc(-${pageMargin * 2}vw - 20px);
           `};
-    max-height: 640px;
+    max-height: ${(props) => props.lockUpHeight}px;
   }
 
   @media (min-width: 1416px) {
     border-radius: ${spacing.borderRadius.default}px;
   }
 `;
+FeatureMediaLarge.defaultProps = {
+  lockUpHeight: 640,
+};
 
 const FeatureMediaSmall = styled(FeatureMedia)`
   display: block;
@@ -188,6 +195,7 @@ interface IllustratedFeatureListProps {
   features: FeatureItem[];
   bgColor: string;
   alignment?: Alignment;
+  lockUpHeight?: number;
 }
 
 export const IllustratedFeatureList = ({
@@ -195,6 +203,7 @@ export const IllustratedFeatureList = ({
   features,
   bgColor,
   alignment = 'left',
+  lockUpHeight,
   ...props
 }: IllustratedFeatureListProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -203,7 +212,7 @@ export const IllustratedFeatureList = ({
   return (
     <Wrapper {...props}>
       {/* Desktop video */}
-      <FeatureMediaLarge alignment={alignment} bgColor={bgColor}>
+      <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
         {activeFeature.media}
         <Button
           size="small"

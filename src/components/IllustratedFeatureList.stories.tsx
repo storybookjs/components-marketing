@@ -64,6 +64,13 @@ Default.args = {
   bgColor: '#fed992',
 };
 
+export const CustomLockUpHeight = Template.bind({});
+CustomLockUpHeight.args = {
+  features,
+  bgColor: '#fed992',
+  lockUpHeight: 800,
+};
+
 export const RightAligned = Template.bind({});
 RightAligned.args = {
   features,
