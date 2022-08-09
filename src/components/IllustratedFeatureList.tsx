@@ -128,6 +128,7 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
   order: ${(props) => (props.alignment === 'left' ? 1 : 2)};
   display: none;
   height: 100%;
+  overflow: hidden;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: block;
@@ -194,6 +195,17 @@ const Video = styled.video`
   position: relative;
 `;
 
+const MotionDivMobile = styled(motion.div)`
+  overflow: hidden;
+`;
+const MotionDivDesktop = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
+
 interface FeatureItem {
   media: string;
   poster: string;
@@ -211,6 +223,20 @@ interface IllustratedFeatureListProps {
   lockUpHeight?: number;
 }
 
+const variants = {
+  enter: (direction: 'up' | 'down') => {
+    return { y: direction === 'up' ? '-5%' : '5%', opacity: 0 };
+  },
+  center: { y: '0%', opacity: 1 },
+  exit: (direction: 'up' | 'down') => {
+    return {
+      zIndex: 0,
+      y: direction === 'up' ? '5%' : '-5%',
+      opacity: 0,
+    };
+  },
+};
+
 export const IllustratedFeatureList = ({
   inverse,
   features,
@@ -221,20 +247,35 @@ export const IllustratedFeatureList = ({
 }: IllustratedFeatureListProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeFeature = features[activeIndex];
+  const [direction, setDirection] = useState('down');
 
   return (
     <Wrapper {...props}>
+      {features.map((feature) => (
+        <link key={feature.title} rel="preload" as="image" href={feature.poster} />
+      ))}
       {/* Desktop video */}
       <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
-        <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
-        <Video
-          src={activeFeature.media}
-          autoPlay
-          loop
-          playsInline
-          preload="auto"
-          poster={activeFeature.poster}
-        />
+        <AnimatePresence initial={false}>
+          <MotionDivDesktop
+            key={activeFeature.title}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            transition={{ duration: 0.4 }}
+          >
+            <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
+            <Video
+              src={activeFeature.media}
+              autoPlay
+              loop
+              playsInline
+              preload="auto"
+              poster={activeFeature.poster}
+            />
+          </MotionDivDesktop>
+        </AnimatePresence>
         <Button
           size="small"
           appearance="inverse"
@@ -251,7 +292,10 @@ export const IllustratedFeatureList = ({
             <Feature
               aria-pressed={index === activeIndex ? 'true' : 'false'}
               inverse={inverse}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => {
+                setActiveIndex(index);
+                setDirection(index > activeIndex ? 'down' : 'up');
+              }}
             >
               <IconWrapper>{feature.icon}</IconWrapper>
               <div>
@@ -263,13 +307,12 @@ export const IllustratedFeatureList = ({
             <MediaWrapper>
               <AnimatePresence initial={false}>
                 {index === activeIndex && (
-                  <motion.div
+                  <MotionDivMobile
                     layout
                     key={feature.title}
                     initial="collapsed"
                     animate="open"
                     exit="collapsed"
-                    style={{ overflow: 'hidden' }}
                     variants={{
                       open: { opacity: 1, height: 'auto', marginTop: 20 },
                       collapsed: { opacity: 0, height: 0, marginTop: 0 },
@@ -296,7 +339,7 @@ export const IllustratedFeatureList = ({
                         {feature.link.label} <Icon icon="arrowright" />
                       </Button>
                     </FeatureMediaSmall>
-                  </motion.div>
+                  </MotionDivMobile>
                 )}
               </AnimatePresence>
             </MediaWrapper>
