@@ -1,0 +1,2 @@
+export const getPlaceholderImgUrl = (width: number, height: number): string =>
+  `data:image/svg+xml,%3Csvg width='${width}' height='${height}' viewBox='0 0 ${width} ${height}' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='${width}' height='${height}' fill='url(%23paint0_linear_1_2)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1_2' x1='0' y1='0' x2='${width}' y2='${height}' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2369EDBD'/%3E%3Cstop offset='1' stop-color='%23C660F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E`;
