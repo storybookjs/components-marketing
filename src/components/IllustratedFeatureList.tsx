@@ -223,19 +223,39 @@ interface IllustratedFeatureListProps {
   lockUpHeight?: number;
 }
 
+// const variants = {
+//   enter: {
+//     y: '-5%',
+//     opacity: 0,
+//     // transition: { y: { delay: 2 } },
+//   },
+//   center: { y: '0%', opacity: 1 },
+//   exit: {
+//     y: '5%',
+//     opacity: 0,
+//   },
+// };
+
+const duration = 0.3;
+
 const variants = {
-  enter: (direction: 'up' | 'down') => {
-    return { y: direction === 'up' ? '-5%' : '5%', opacity: 0 };
-  },
-  center: { y: '0%', opacity: 1 },
-  exit: (direction: 'up' | 'down') => {
-    return {
-      zIndex: 0,
-      y: direction === 'up' ? '5%' : '-5%',
-      opacity: 0,
-    };
-  },
+  enter: (direction: 'up' | 'down') => ({
+    y: direction === 'up' ? '-5%' : '5%',
+    opacity: 0,
+    transition: { duration },
+  }),
+  center: { y: '0%', opacity: 1, zIndex: 1, transition: { duration, delay: 0.2 } },
+  exit: (direction: 'up' | 'down') => ({
+    zIndex: 0,
+    y: direction === 'up' ? '5%' : '-5%',
+    opacity: 0,
+    transition: { duration },
+  }),
 };
+
+const LinkButton = styled(Button)`
+  z-index: 3;
+`;
 
 export const IllustratedFeatureList = ({
   inverse,
@@ -256,14 +276,14 @@ export const IllustratedFeatureList = ({
       ))}
       {/* Desktop video */}
       <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} custom={direction}>
           <MotionDivDesktop
             key={activeFeature.title}
             custom={direction}
             variants={variants}
             initial="enter"
             animate="center"
-            transition={{ duration: 0.4 }}
+            exit="exit"
           >
             <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
             <Video
@@ -276,7 +296,7 @@ export const IllustratedFeatureList = ({
             />
           </MotionDivDesktop>
         </AnimatePresence>
-        <Button
+        <LinkButton
           size="small"
           appearance="inverse"
           href={activeFeature.link.href}
@@ -284,7 +304,7 @@ export const IllustratedFeatureList = ({
           isLink
         >
           {activeFeature.link.label} <Icon icon="arrowright" />
-        </Button>
+        </LinkButton>
       </FeatureMediaLarge>
       <FeatureList alignment={alignment}>
         {features.map((feature, index) => (
@@ -293,8 +313,8 @@ export const IllustratedFeatureList = ({
               aria-pressed={index === activeIndex ? 'true' : 'false'}
               inverse={inverse}
               onClick={() => {
-                setActiveIndex(index);
                 setDirection(index > activeIndex ? 'down' : 'up');
+                setActiveIndex(index);
               }}
             >
               <IconWrapper>{feature.icon}</IconWrapper>
