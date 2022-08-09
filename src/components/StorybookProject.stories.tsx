@@ -11,20 +11,23 @@ export default {
 
 const Template = (args) => (
   <div style={{ display: 'grid', gap: 20, gridTemplateColumns: '1fr 1fr' }}>
-    <StorybookProject {...args} name="D2IQ" logo="d2iq.png" image="d2iq-sb.png" expand="width" />
+    <StorybookProject
+      {...args}
+      name="D2IQ"
+      logo="d2iq.png"
+      image={{ src: '/d2iq-sb.png', width: 957, height: 681 }}
+    />
     <StorybookProject
       {...args}
       name="Microsoft"
       logo="/microsoft.png"
-      image="/fluent-sb.png"
-      expand="width"
+      image={{ src: '/fluent-sb.png', width: 956, height: 692 }}
     />
   </div>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  image: '/site-screenshot.png',
   name: 'Microsoft',
   logo: '/microsoft-logo.png',
 };
