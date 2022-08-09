@@ -78,7 +78,7 @@
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/react": "^6.5.9",
     "@storybook/testing-library": "^0.0.13",
-    "auto": "^9.50.1",
+    "auto": "^10.37.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "chromatic": "^5.0.0",
@@ -108,6 +108,7 @@
     "npm": ">=5"
   },
   "auto": {
+    "baseBranch": "main",
     "plugins": [
       "npm",
       "released"
