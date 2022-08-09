@@ -18,7 +18,8 @@ const features = [
     title: 'Spot test',
     description: 'Stories are tests you can debug in dev and QA.',
     link: { label: 'Learn about UI Tests', href: '#' },
-    media: 'accessibility-testing.mp4',
+    media: 'spot-testing.m4v',
+    poster: 'spot-testing.png',
   },
   {
     icon: <ColoredIcons.Pixel />,
@@ -26,6 +27,7 @@ const features = [
     description: 'Pinpoint UI changes down to the pixel.',
     link: { label: 'Learn about UI Tests', href: '#' },
     media: 'visual-testing.m4v',
+    poster: 'visual-testing.png',
   },
   {
     icon: <ColoredIcons.Interact />,
@@ -33,6 +35,7 @@ const features = [
     description: 'Simulate user behavior and assert in the browser.',
     link: { label: 'Learn about UI Tests', href: '#' },
     media: 'interaction-testing.m4v',
+    poster: 'interaction-testing.png',
   },
   {
     icon: <ColoredIcons.Accessibility />,
@@ -40,6 +43,7 @@ const features = [
     description: 'Check stories for WCAG and ARIA issues.',
     link: { label: 'Learn about UI Tests', href: '#' },
     media: 'accessibility-testing.mp4',
+    poster: 'accessibility-testing.png',
   },
   {
     icon: <ColoredIcons.Code />,
@@ -47,6 +51,7 @@ const features = [
     description: 'Detect regressions in DOM markup.',
     link: { label: 'Learn about UI Tests', href: '#' },
     media: 'snapshot-testing.m4v',
+    poster: 'snapshot-testing.png',
   },
   {
     icon: <ColoredIcons.Projects />,
@@ -54,6 +59,7 @@ const features = [
     description: 'Write stories once to reuse across your test suite.',
     link: { label: 'Learn about UI Tests', href: '#' },
     media: 'reuse-testing.m4v',
+    poster: 'reuse-testing.png',
   },
 ];
 

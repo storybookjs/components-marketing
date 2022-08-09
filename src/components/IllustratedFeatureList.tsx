@@ -196,6 +196,7 @@ const Video = styled.video`
 
 interface FeatureItem {
   media: string;
+  poster: string;
   icon: React.ReactNode;
   title: string;
   description: string;
@@ -225,8 +226,15 @@ export const IllustratedFeatureList = ({
     <Wrapper {...props}>
       {/* Desktop video */}
       <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
-        <BackdropVideo src={features[0].media} playsInline />
-        <Video src={activeFeature.media} autoPlay loop playsInline />
+        <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
+        <Video
+          src={activeFeature.media}
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+          poster={activeFeature.poster}
+        />
         <Button
           size="small"
           appearance="inverse"
@@ -270,7 +278,14 @@ export const IllustratedFeatureList = ({
                   >
                     <FeatureMediaSmall bgColor={bgColor}>
                       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                      <video src={feature.media} autoPlay loop playsInline />
+                      <video
+                        src={feature.media}
+                        autoPlay
+                        loop
+                        playsInline
+                        preload="auto"
+                        poster={activeFeature.poster}
+                      />
                       <Button
                         size="small"
                         appearance="inverse"
