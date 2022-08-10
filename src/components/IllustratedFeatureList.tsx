@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -183,14 +183,6 @@ const MediaWrapper = styled.div`
   }
 `;
 
-const BackdropVideo = styled.video`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  transform: scale(1.25);
-  filter: blur(10px);
-  user-select: none;
-`;
 const Video = styled.video`
   position: relative;
 `;
@@ -204,6 +196,7 @@ const MotionDivDesktop = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
+  mask-image: linear-gradient(to bottom, transparent 10%, black 25%, black 75%, transparent 90%);
 `;
 
 interface FeatureItem {
@@ -222,19 +215,6 @@ interface IllustratedFeatureListProps {
   alignment?: Alignment;
   lockUpHeight?: number;
 }
-
-// const variants = {
-//   enter: {
-//     y: '-5%',
-//     opacity: 0,
-//     // transition: { y: { delay: 2 } },
-//   },
-//   center: { y: '0%', opacity: 1 },
-//   exit: {
-//     y: '5%',
-//     opacity: 0,
-//   },
-// };
 
 const duration = 0.3;
 
@@ -285,7 +265,6 @@ export const IllustratedFeatureList = ({
             animate="center"
             exit="exit"
           >
-            <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
             <Video
               src={activeFeature.media}
               autoPlay
