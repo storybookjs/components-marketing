@@ -19,6 +19,12 @@ Default.args = {
   copy: 'Stories capture the “known good” states of UI components. They’re a pragmatic, reproducible way to keep track of UI edge cases. Reuse stories to power automated tests.',
 };
 
+export const HeadingLevel = Template.bind({});
+HeadingLevel.args = {
+  ...Default.args,
+  headingWrapper: 'h1',
+};
+
 export const WithActions = Template.bind({});
 WithActions.args = {
   heading: 'Build UIs without the grunt work',
