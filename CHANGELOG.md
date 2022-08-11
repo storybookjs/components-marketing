@@ -1,3 +1,15 @@
+# v2.0.1 (Thu Aug 11 2022)
+
+#### 🐛 Bug Fix
+
+- add heading wrapper to SectionLede and remove page margins from Value… [#16](https://github.com/storybookjs/components-marketing/pull/16) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.0 (Tue Aug 09 2022)
 
 #### 💥 Breaking Change
