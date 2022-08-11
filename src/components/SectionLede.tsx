@@ -21,7 +21,10 @@ const ContentContainer = styled.div`
   flex-direction: column;
 `;
 
-const SectionHeading = styled.h2<{ inverse?: boolean }>`
+const SectionHeading = styled.h2<{
+  inverse?: boolean;
+  as?: React.ComponentType | string;
+}>`
   ${marketing.heading};
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   flex: 1;
@@ -82,6 +85,7 @@ interface SectionLedeProps {
   actions?: React.ReactNode;
   meta?: React.ReactNode;
   inverse?: boolean;
+  headingWrapper?: React.ComponentType | string;
 }
 
 export const SectionLede = ({
@@ -90,11 +94,14 @@ export const SectionLede = ({
   heading,
   copy,
   actions,
+  headingWrapper,
   ...props
 }: SectionLedeProps) => (
   <ContentContainer {...props}>
     <ContentWrapper>
-      <SectionHeading inverse={inverse}>{heading}</SectionHeading>
+      <SectionHeading inverse={inverse} as={headingWrapper}>
+        {heading}
+      </SectionHeading>
       <LedeRight>
         <LedeParagraph inverse={inverse}>{copy}</LedeParagraph>
         {actions && <Actions>{actions}</Actions>}

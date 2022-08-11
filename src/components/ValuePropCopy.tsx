@@ -3,7 +3,6 @@ import { styled } from '@storybook/theming';
 import { color, pageMargins, breakpoints, marketing, text } from './shared/styles';
 
 const Wrapper = styled.div`
-  ${pageMargins};
   max-width: 320px;
 `;
 
