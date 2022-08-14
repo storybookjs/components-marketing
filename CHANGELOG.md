@@ -1,3 +1,15 @@
+# v2.0.2 (Sun Aug 14 2022)
+
+#### 🐛 Bug Fix
+
+- tweaks to illustrated list, section lede and testimonial components [#17](https://github.com/storybookjs/components-marketing/pull/17) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.1 (Thu Aug 11 2022)
 
 #### 🐛 Bug Fix
