@@ -30,7 +30,6 @@ const SectionHeading = styled.h2<{
   flex: 1;
   min-width: 0;
   max-width: 500px;
-  text-align: center;
 
   @media (min-width: ${breakpoints[1]}px) {
     ${marketing.hero2};
@@ -47,7 +46,6 @@ const LedeParagraph = styled.p<{ inverse?: boolean }>`
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   margin-top: 1.25rem;
   margin-bottom: 0;
-  text-align: center;
 
   @media (min-width: ${breakpoints[2]}px) {
     text-align: left;
@@ -68,11 +66,6 @@ const LedeRight = styled.div`
 const Actions = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  @media (min-width: ${breakpoints[2]}px) {
-    justify-content: flex-start;
-  }
 
   & > *:not(:last-child) {
     margin-right: 20px;

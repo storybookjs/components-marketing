@@ -1,9 +1,9 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
 import { Avatar } from '@storybook/design-system';
-import { color, typography, pageMargins, breakpoint, breakpoints } from './shared/styles';
+import { color, typography, pageMargins, breakpoints } from './shared/styles';
 
-const Wrapper = styled.figure`
+const Wrapper = styled.div`
   ${pageMargins};
   margin: 0;
 `;
@@ -67,6 +67,8 @@ const Logo = styled.div<{ inverse?: boolean }>`
     ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)')};
   margin-left: 20px;
   padding-left: 20px;
+  display: flex;
+  align-items: center;
 
   @media (min-width: ${breakpoints[1]}px) {
     margin-left: 50px;
