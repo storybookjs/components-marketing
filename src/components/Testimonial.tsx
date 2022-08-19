@@ -89,6 +89,7 @@ interface TestimonialProps {
   jobTitle: string;
   logo: string;
   inverse?: boolean;
+  companyName?: string;
 }
 
 export const Testimonial = ({
@@ -98,6 +99,7 @@ export const Testimonial = ({
   name,
   jobTitle,
   logo,
+  companyName,
   ...props
 }: TestimonialProps) => (
   <Wrapper {...props}>
@@ -112,7 +114,7 @@ export const Testimonial = ({
           </Meta>
         </Author>
         <Logo inverse={inverse}>
-          <img src={logo} alt="company logo" />
+          <img src={logo} alt={companyName} />
         </Logo>
       </Cite>
     </Inner>

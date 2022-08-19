@@ -157,6 +157,10 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
             margin-right: calc(-${pageMargin * 2}vw - 20px);
           `};
     max-height: ${(props) => props.lockUpHeight}px;
+
+    video {
+      object-fit: cover;
+    }
   }
 
   @media (min-width: 1416px) {
@@ -225,19 +229,6 @@ interface IllustratedFeatureListProps {
   lockUpHeight?: number;
 }
 
-// const variants = {
-//   enter: {
-//     y: '-5%',
-//     opacity: 0,
-//     // transition: { y: { delay: 2 } },
-//   },
-//   center: { y: '0%', opacity: 1 },
-//   exit: {
-//     y: '5%',
-//     opacity: 0,
-//   },
-// };
-
 const duration = 0.3;
 
 const variants = {
@@ -273,9 +264,6 @@ export const IllustratedFeatureList = ({
 
   return (
     <Wrapper {...props}>
-      {features.map((feature) => (
-        <link key={feature.title} rel="preload" as="image" href={feature.poster} />
-      ))}
       {/* Desktop video */}
       <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
         <AnimatePresence initial={false} custom={direction}>
@@ -287,13 +275,12 @@ export const IllustratedFeatureList = ({
             animate="center"
             exit="exit"
           >
-            <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
+            <BackdropVideo src={activeFeature.media} playsInline />
             <Video
               src={activeFeature.media}
               autoPlay
               loop
               playsInline
-              preload="auto"
               poster={activeFeature.poster}
             />
           </MotionDivDesktop>
