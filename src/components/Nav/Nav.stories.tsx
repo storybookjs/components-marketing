@@ -54,3 +54,17 @@ Inverse.args = { inverse: true };
 Inverse.parameters = {
   backgrounds: { default: 'dark' },
 };
+
+export const InverseCustomBG = Template.bind({});
+InverseCustomBG.args = { inverse: true };
+InverseCustomBG.parameters = {
+  backgrounds: {
+    default: 'custom',
+    values: [
+      {
+        name: 'custom',
+        value: '#339F00',
+      },
+    ],
+  },
+};
