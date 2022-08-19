@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -144,6 +144,10 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
             margin-right: calc(-${pageMargin}vw - 20px);
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            a {
+              left: 20px;
+              right: unset;
+            }
           `};
   }
 
@@ -237,7 +241,12 @@ const variants = {
     opacity: 0,
     transition: { duration },
   }),
-  center: { y: '0%', opacity: 1, zIndex: 1, transition: { duration, delay: 0.2 } },
+  center: {
+    y: '0%',
+    opacity: 1,
+    zIndex: 1,
+    transition: { duration, delay: 0.2 },
+  },
   exit: (direction: 'up' | 'down') => ({
     zIndex: 0,
     y: direction === 'up' ? '5%' : '-5%',
@@ -332,11 +341,11 @@ export const IllustratedFeatureList = ({
                       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                       <video
                         src={feature.media}
-                        autoPlay
+                        // autoPlay
                         loop
                         playsInline
                         preload="auto"
-                        poster={activeFeature.poster}
+                        poster={feature.poster}
                       />
                       <Button
                         size="small"
