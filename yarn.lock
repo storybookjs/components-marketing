@@ -3070,10 +3070,10 @@
   dependencies:
     lodash "^4.17.15"
 
-"@storybook/design-system@^7.7.11":
-  version "7.7.11"
-  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.7.11.tgz#e89bcc0232874072d56b913fe1ef568e511a4b83"
-  integrity sha512-6ZdrHvTuApDMuA135yOYdlyVBJ7Ypo+8/8QfaMpbb6cbFEl5RrVRWXWnKQWZMkTgpkdwdD8Nw7Tm1Y5FL/aZfg==
+"@storybook/design-system@^7.8.2":
+  version "7.8.2"
+  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.8.2.tgz#cc13ef4f233e0b0317ff2e6db6eb0a5e168adb96"
+  integrity sha512-cUTLsDZmLQ2kqEcM8boSVrZHyes96aqikAyP80JzXsjLeVE9eK+JEUiuk5nISRgwQFjChfIAjGxc0HpcC+mkUA==
   dependencies:
     "@emotion/weak-memoize" "^0.2.5"
     "@storybook/theming" "^6.5.9"

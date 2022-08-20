@@ -39,7 +39,7 @@ export const StorybookProject = ({
     <Wrapper>
       <BrowserChrome inverse={inverse} {...browserProps} />
       <Attribution inverse={inverse}>
-        <Logo src={logo} alt="" />
+        <Logo src={logo} alt="" loading="lazy" />
         {name}
       </Attribution>
     </Wrapper>

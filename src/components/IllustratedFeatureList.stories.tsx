@@ -63,6 +63,41 @@ const features = [
   },
 ];
 
+const shortFeatures = [
+  {
+    icon: <ColoredIcons.Search />,
+    title: 'Find any component or page in your app',
+    description: 'Storybook is a single source of truth for UI.',
+    link: { label: 'Learn about search', href: '#' },
+    media: 'homepage-search-stories-lg.mp4',
+    poster: 'homepage-search-stories-poster-lg.jpg',
+  },
+  {
+    icon: <ColoredIcons.Document />,
+    title: 'Generate UI docs automatically',
+    description: 'Write Markdown and build custom docs.',
+    link: { label: 'Learn about docs addon', href: '#' },
+    media: 'homepage-component-document-lg.mp4',
+    poster: 'homepage-component-document-poster-lg.jpg',
+  },
+  {
+    icon: <ColoredIcons.Overlap />,
+    title: 'Reuse components across pages and apps',
+    description: 'Every story is a use case that you can reuse.',
+    link: { label: 'Learn about reuse', href: '#' },
+    media: 'homepage-reuse-components-across-apps-lg.mp4',
+    poster: 'homepage-reuse-components-across-apps-poster-lg.jpg',
+  },
+  {
+    icon: <ColoredIcons.Branch />,
+    title: 'Track component history and versions',
+    description: 'QA unexpected bugs by going back in time.',
+    link: { label: 'Learn about versioning', href: '#' },
+    media: 'homepage-component-history-lg.mp4',
+    poster: 'homepage-component-history-poster-lg.jpg',
+  },
+];
+
 export const Default = Template.bind({});
 Default.args = {
   features,
@@ -78,15 +113,19 @@ CustomLockUpHeight.args = {
 
 export const RightAligned = Template.bind({});
 RightAligned.args = {
-  features,
-  bgColor: '#FDDD9C',
+  features: shortFeatures,
+  bgColor: '#c3eeaf',
   alignment: 'right',
+  inverse: true,
+};
+RightAligned.parameters = {
+  backgrounds: { default: 'dark' },
 };
 
 export const ShortList = Template.bind({});
 ShortList.args = {
-  features: features.slice(0, 3),
-  bgColor: '#FDDD9C',
+  features: shortFeatures,
+  bgColor: '#c3eeaf',
 };
 
 export const Inverse = Template.bind({});

@@ -29,17 +29,6 @@ const LinkButton = styled(Button)`
 
 const Stat = styled(Cardinal)<{ inverse?: boolean }>`
   padding: 0;
-  ${(props) =>
-    props.inverse &&
-    css`
-      & > div:nth-child(1) {
-        color: rgba(255 255 255 / 70%);
-      }
-
-      & > div:nth-child(2) {
-        color: rgba(255 255 255 / 50%);
-      }
-    `};
 `;
 
 interface SocialCardProps {
@@ -76,12 +65,11 @@ export const SocialCard = ({
       {link.label}
     </LinkButton>
     <Stat
-      inverse={inverse}
       size="small"
       count={stat.count}
       text={stat.label}
       noPlural
-      status="neutral"
+      status={inverse ? 'inverse' : 'neutral'}
     />
   </Wrapper>
 );

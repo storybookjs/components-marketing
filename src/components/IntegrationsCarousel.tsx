@@ -1,7 +1,7 @@
 import React, { useState, ComponentProps, ReactNode, useEffect, useRef } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button } from '@storybook/design-system';
-import { animate, useMotionValue } from 'framer-motion';
+import { AnimatePresence, useInView, motion } from 'framer-motion';
 import { color, spacing, text } from './shared/styles';
 
 const IntegrationsWrapper = styled.div`
@@ -11,7 +11,11 @@ const IntegrationsWrapper = styled.div`
   margin-top: 20px;
 `;
 
-const Media = styled.figure`
+const MediaWrapper = styled.div`
+  overflow: hidden;
+`;
+
+const Media = styled(motion.figure)`
   margin: 0;
 `;
 
@@ -76,6 +80,12 @@ interface IntegrationsCarouselProps {
   animationDisabled?: boolean;
 }
 
+const mediaVariants = {
+  initial: (direction: 1 | -1) => ({ x: direction === 1 ? '5%' : '-5%', opacity: 0 }),
+  animate: { x: 0, opacity: 1 },
+  exit: (direction: 1 | -1) => ({ x: direction === 1 ? '-5%' : '5%', opacity: 0 }),
+};
+
 export const IntegrationsCarousel = ({
   inverse,
   integrations,
@@ -83,33 +93,45 @@ export const IntegrationsCarousel = ({
   animationDisabled = false,
   ...props
 }: IntegrationsCarouselProps) => {
+  const [animate, setAnimate] = useState(!animationDisabled);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const activeIntegration = integrations[activeIndex];
-  const animation = useRef(null);
-  const progress = useMotionValue(activeIndex);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
-    if (animationDisabled) {
+    if (!animate || !isInView) {
       return () => {};
     }
 
-    animation.current = animate(progress, activeIndex, {
-      duration: 2,
-      onComplete: () => {
-        if (activeIndex === integrations.length - 1) {
-          setActiveIndex(0);
-        } else {
-          setActiveIndex(activeIndex + 1);
-        }
-      },
-    });
+    const id = setTimeout(() => {
+      const nextIndex = activeIndex === integrations.length - 1 ? 0 : activeIndex + 1;
+      setActiveIndex(nextIndex);
+    }, 4000);
 
-    return () => animation.current.stop();
-  }, [activeIndex, integrations, progress, animationDisabled]);
+    return () => {
+      clearTimeout(id);
+    };
+  }, [activeIndex, integrations, animate, isInView]);
 
   return (
-    <div {...props}>
-      <Media>{activeIntegration.media}</Media>
+    <div ref={ref} {...props}>
+      <MediaWrapper>
+        <AnimatePresence initial={false} exitBeforeEnter custom={direction}>
+          <Media
+            key={activeIntegration.name}
+            custom={direction}
+            variants={mediaVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={{ duration: 0.4, ease: [0.6, 0.2, 0.1, 0.9] }}
+          >
+            {activeIntegration.media}
+          </Media>
+        </AnimatePresence>
+      </MediaWrapper>
       <IntegrationsWrapper>
         {integrations.map(({ media, name, image, ...integration }, index) => (
           <Integration
@@ -117,10 +139,9 @@ export const IntegrationsCarousel = ({
             key={name}
             active={name === activeIntegration.name}
             onClick={() => {
+              setDirection(index > activeIndex ? 1 : -1);
               setActiveIndex(index);
-              if (animation.current.isAnimating()) {
-                animation.current.stop();
-              }
+              setAnimate(false);
             }}
             {...integration}
           >

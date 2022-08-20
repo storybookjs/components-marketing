@@ -50,7 +50,7 @@
     "@emotion/weak-memoize": "^0.2.5",
     "@floating-ui/react-dom-interactions": "^0.6.5",
     "@storybook/api": "^6.5.9",
-    "@storybook/design-system": "^7.7.11",
+    "@storybook/design-system": "^7.8.2",
     "@storybook/theming": "^6.5.9",
     "formik": "^2.1.5",
     "human-format": "^0.11.0",
@@ -99,6 +99,7 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
+    "@storybook/theming": "^6.5.9",
     "framer-motion": "^7.0.0",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
     "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"

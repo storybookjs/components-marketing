@@ -65,7 +65,7 @@ export const ProjectCard = ({
   ...restProps
 }: ProjectCardProps) => {
   let image = logoUrl ? (
-    <img src={logoUrl} alt={logoAlt} />
+    <img src={logoUrl} alt={logoAlt} loading="lazy" />
   ) : (
     <Logotype size={size}>{logoAlt}</Logotype>
   );

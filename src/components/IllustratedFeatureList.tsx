@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button, Icon } from '@storybook/design-system';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -144,6 +144,10 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
             margin-right: calc(-${pageMargin}vw - 20px);
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            a {
+              left: 20px;
+              right: unset;
+            }
           `};
   }
 
@@ -157,6 +161,10 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
             margin-right: calc(-${pageMargin * 2}vw - 20px);
           `};
     max-height: ${(props) => props.lockUpHeight}px;
+
+    video {
+      object-fit: cover;
+    }
   }
 
   @media (min-width: 1416px) {
@@ -225,19 +233,6 @@ interface IllustratedFeatureListProps {
   lockUpHeight?: number;
 }
 
-// const variants = {
-//   enter: {
-//     y: '-5%',
-//     opacity: 0,
-//     // transition: { y: { delay: 2 } },
-//   },
-//   center: { y: '0%', opacity: 1 },
-//   exit: {
-//     y: '5%',
-//     opacity: 0,
-//   },
-// };
-
 const duration = 0.3;
 
 const variants = {
@@ -246,7 +241,12 @@ const variants = {
     opacity: 0,
     transition: { duration },
   }),
-  center: { y: '0%', opacity: 1, zIndex: 1, transition: { duration, delay: 0.2 } },
+  center: {
+    y: '0%',
+    opacity: 1,
+    zIndex: 1,
+    transition: { duration, delay: 0.2 },
+  },
   exit: (direction: 'up' | 'down') => ({
     zIndex: 0,
     y: direction === 'up' ? '5%' : '-5%',
@@ -273,9 +273,6 @@ export const IllustratedFeatureList = ({
 
   return (
     <Wrapper {...props}>
-      {features.map((feature) => (
-        <link key={feature.title} rel="preload" as="image" href={feature.poster} />
-      ))}
       {/* Desktop video */}
       <FeatureMediaLarge alignment={alignment} bgColor={bgColor} lockUpHeight={lockUpHeight}>
         <AnimatePresence initial={false} custom={direction}>
@@ -287,13 +284,12 @@ export const IllustratedFeatureList = ({
             animate="center"
             exit="exit"
           >
-            <BackdropVideo src={activeFeature.media} playsInline preload="auto" />
+            <BackdropVideo src={activeFeature.media} playsInline />
             <Video
               src={activeFeature.media}
               autoPlay
               loop
               playsInline
-              preload="auto"
               poster={activeFeature.poster}
             />
           </MotionDivDesktop>
@@ -345,11 +341,11 @@ export const IllustratedFeatureList = ({
                       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                       <video
                         src={feature.media}
-                        autoPlay
+                        // autoPlay
                         loop
                         playsInline
                         preload="auto"
-                        poster={activeFeature.poster}
+                        poster={feature.poster}
                       />
                       <Button
                         size="small"

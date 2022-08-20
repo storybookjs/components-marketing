@@ -134,7 +134,7 @@ export const BrowserChrome = ({
   return (
     <Frame inverse={inverse}>
       <ToolBar inverse={inverse} address={address} https={https} showControls={showControls} />
-      <Website src={image.src} alt="" width={image.width} height={image.height} />
+      <Website src={image.src} alt="" width={image.width} height={image.height} loading="lazy" />
     </Frame>
   );
 };

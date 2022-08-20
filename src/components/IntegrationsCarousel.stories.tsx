@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { IntegrationsCarousel } from './IntegrationsCarousel';
 
-const IntegrationDemo = styled.div`
+const IntegrationDemo = styled.div<{ bg: string }>`
   width: 400px;
   height: 300px;
   border: 1px dashed #999;
@@ -10,6 +10,7 @@ const IntegrationDemo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${(props) => props.bg};
 `;
 
 const integrations = [
@@ -17,31 +18,31 @@ const integrations = [
     name: 'Jest',
     image: '/jest.png',
     color: '#99424F',
-    media: <IntegrationDemo>Jest</IntegrationDemo>,
+    media: <IntegrationDemo bg="#99424F">Jest</IntegrationDemo>,
   },
   {
     name: 'Testing Library',
     image: '/testing-library.png',
     color: '#E3F3FF',
-    media: <IntegrationDemo>Testing Library</IntegrationDemo>,
+    media: <IntegrationDemo bg="#E3F3FF">Testing Library</IntegrationDemo>,
   },
   {
     name: 'Playwright',
     image: '/playwright.png',
     color: '#2D3751',
-    media: <IntegrationDemo>Playwright</IntegrationDemo>,
+    media: <IntegrationDemo bg="#2D3751">Playwright</IntegrationDemo>,
   },
   {
     name: 'Cypress',
     image: '/cypress.png',
     color: '#3C3C3C',
-    media: <IntegrationDemo>Cypress</IntegrationDemo>,
+    media: <IntegrationDemo bg="#3C3C3C">Cypress</IntegrationDemo>,
   },
   {
     name: 'Jasmine',
     image: '/jasmine.png',
     color: '#8A4182',
-    media: <IntegrationDemo>Jasmine</IntegrationDemo>,
+    media: <IntegrationDemo bg="#8A4182">Jasmine</IntegrationDemo>,
   },
 ];
 
