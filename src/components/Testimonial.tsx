@@ -114,7 +114,7 @@ export const Testimonial = ({
           </Meta>
         </Author>
         <Logo inverse={inverse}>
-          <img src={logo} alt={companyName} />
+          <img src={logo} alt={companyName} loading="lazy" />
         </Logo>
       </Cite>
     </Inner>
