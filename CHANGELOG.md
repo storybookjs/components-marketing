@@ -1,3 +1,15 @@
+# v2.0.3 (Sat Aug 20 2022)
+
+#### 🐛 Bug Fix
+
+- Img loading [#18](https://github.com/storybookjs/components-marketing/pull/18) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.2 (Sun Aug 14 2022)
 
 #### 🐛 Bug Fix
