@@ -1,3 +1,15 @@
+# v2.0.4 (Sun Aug 21 2022)
+
+#### 🐛 Bug Fix
+
+- add aspect ratio to IntegrationsCarousel [#19](https://github.com/storybookjs/components-marketing/pull/19) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.3 (Sat Aug 20 2022)
 
 #### 🐛 Bug Fix
