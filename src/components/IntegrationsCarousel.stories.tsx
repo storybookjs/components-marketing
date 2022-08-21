@@ -2,15 +2,13 @@ import React from 'react';
 import { styled } from '@storybook/theming';
 import { IntegrationsCarousel } from './IntegrationsCarousel';
 
-const IntegrationDemo = styled.div<{ bg: string }>`
-  width: 400px;
-  height: 300px;
-  border: 1px dashed #999;
-  color: #999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${(props) => props.bg};
+const Wrapper = styled.div`
+  max-width: 600px;
+`;
+
+const Pane = styled.img`
+  display: block;
+  width: 100%;
 `;
 
 const integrations = [
@@ -18,31 +16,25 @@ const integrations = [
     name: 'Jest',
     image: '/jest.png',
     color: '#99424F',
-    media: <IntegrationDemo bg="#99424F">Jest</IntegrationDemo>,
+    media: <Pane src="figma.svg" alt="" />,
   },
   {
     name: 'Testing Library',
     image: '/testing-library.png',
     color: '#E3F3FF',
-    media: <IntegrationDemo bg="#E3F3FF">Testing Library</IntegrationDemo>,
+    media: <Pane src="medium.svg" alt="" />,
   },
   {
     name: 'Playwright',
     image: '/playwright.png',
     color: '#2D3751',
-    media: <IntegrationDemo bg="#2D3751">Playwright</IntegrationDemo>,
+    media: <Pane src="next.svg" alt="" />,
   },
   {
     name: 'Cypress',
     image: '/cypress.png',
     color: '#3C3C3C',
-    media: <IntegrationDemo bg="#3C3C3C">Cypress</IntegrationDemo>,
-  },
-  {
-    name: 'Jasmine',
-    image: '/jasmine.png',
-    color: '#8A4182',
-    media: <IntegrationDemo bg="#8A4182">Jasmine</IntegrationDemo>,
+    media: <Pane src="notion.svg" alt="" />,
   },
 ];
 
@@ -60,12 +52,17 @@ export default {
   },
 };
 
-const Template = (args) => <IntegrationsCarousel {...args} />;
+const Template = (args) => (
+  <Wrapper>
+    <IntegrationsCarousel {...args} />
+  </Wrapper>
+);
 
 export const Default = Template.bind({});
 Default.args = {
   integrations: 'Default',
   overflowLabel: '+ and more',
+  aspectRatio: 1202 / 910,
 };
 Default.parameters = {
   chromatic: { disableSnapshot: true },

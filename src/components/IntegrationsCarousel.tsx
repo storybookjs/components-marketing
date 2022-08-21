@@ -11,12 +11,19 @@ const IntegrationsWrapper = styled.div`
   margin-top: 20px;
 `;
 
-const MediaWrapper = styled.div`
-  overflow: hidden;
+const MediaWrapper = styled.div<{ aspectRatio: number }>`
+  position: relative;
+  height: 100%;
+  padding-bottom: ${(props) => 100 / props.aspectRatio}%;
 `;
 
 const Media = styled(motion.figure)`
   margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 
 const Integration = styled(Button)<{ inverse?: boolean; active?: boolean; color: string }>`
@@ -78,12 +85,13 @@ interface IntegrationsCarouselProps {
   integrations: (IntegrationProps & { media: ReactNode })[];
   overflowLabel: string;
   animationDisabled?: boolean;
+  aspectRatio?: number;
 }
 
 const mediaVariants = {
-  initial: (direction: 1 | -1) => ({ x: direction === 1 ? '5%' : '-5%', opacity: 0 }),
+  initial: (direction: 1 | -1) => ({ x: direction === 1 ? '10%' : '-10%', opacity: 0 }),
   animate: { x: 0, opacity: 1 },
-  exit: (direction: 1 | -1) => ({ x: direction === 1 ? '-5%' : '5%', opacity: 0 }),
+  exit: (direction: 1 | -1) => ({ x: direction === 1 ? '-10%' : '10%', opacity: 0 }),
 };
 
 export const IntegrationsCarousel = ({
@@ -91,6 +99,7 @@ export const IntegrationsCarousel = ({
   integrations,
   overflowLabel,
   animationDisabled = false,
+  aspectRatio = 1,
   ...props
 }: IntegrationsCarouselProps) => {
   const [animate, setAnimate] = useState(!animationDisabled);
@@ -117,8 +126,8 @@ export const IntegrationsCarousel = ({
 
   return (
     <div ref={ref} {...props}>
-      <MediaWrapper>
-        <AnimatePresence initial={false} exitBeforeEnter custom={direction}>
+      <MediaWrapper aspectRatio={aspectRatio}>
+        <AnimatePresence initial={false} custom={direction}>
           <Media
             key={activeIntegration.name}
             custom={direction}
