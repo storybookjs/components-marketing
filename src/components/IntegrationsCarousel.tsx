@@ -13,7 +13,7 @@ const IntegrationsWrapper = styled.div`
 
 const MediaWrapper = styled.div<{ aspectRatio: number }>`
   position: relative;
-  height: 100%;
+  height: 0;
   padding-bottom: ${(props) => 100 / props.aspectRatio}%;
 `;
 
