@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
 import { IntegrationsCarousel } from './IntegrationsCarousel';
+import { AspectRatio } from './AspectRatio';
 
 const Wrapper = styled.div`
   max-width: 600px;
@@ -16,25 +17,41 @@ const integrations = [
     name: 'Jest',
     image: '/jest.png',
     color: '#99424F',
-    media: <Pane src="figma.svg" alt="" />,
+    media: (
+      <AspectRatio ratio={`${1202} / ${910}`}>
+        <Pane src="figma.svg" alt="" />
+      </AspectRatio>
+    ),
   },
   {
     name: 'Testing Library',
     image: '/testing-library.png',
     color: '#E3F3FF',
-    media: <Pane src="medium.svg" alt="" />,
+    media: (
+      <AspectRatio ratio={`${1202} / ${910}`}>
+        <Pane src="medium.svg" alt="" />
+      </AspectRatio>
+    ),
   },
   {
     name: 'Playwright',
     image: '/playwright.png',
     color: '#2D3751',
-    media: <Pane src="next.svg" alt="" />,
+    media: (
+      <AspectRatio ratio={`${1202} / ${910}`}>
+        <Pane src="next.svg" alt="" />
+      </AspectRatio>
+    ),
   },
   {
     name: 'Cypress',
     image: '/cypress.png',
     color: '#3C3C3C',
-    media: <Pane src="notion.svg" alt="" />,
+    media: (
+      <AspectRatio ratio={`${1202} / ${910}`}>
+        <Pane src="notion.svg" alt="" />
+      </AspectRatio>
+    ),
   },
 ];
 
