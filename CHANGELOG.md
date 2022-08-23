@@ -1,3 +1,15 @@
+# v2.0.6 (Tue Aug 23 2022)
+
+#### 🐛 Bug Fix
+
+- go back to free form sizing of the integration carousel [#21](https://github.com/storybookjs/components-marketing/pull/21) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.5 (Sun Aug 21 2022)
 
 #### 🐛 Bug Fix
