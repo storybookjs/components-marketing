@@ -35,6 +35,32 @@ Maintaining the system
 npm install --save @storybook/components-marketing
 ```
 
+Install peer dependencies:
+
+- `framer-motion`
+- `@storybook/theming`
+
+## Usage — global header and footer
+
+The page header comprises of three parts: [Eyerbrow](src/components/Eyebrow.tsx), [Nav](src/components/Nav) and [SubNav](src/components/SubNav/)
+
+`Eyerbrow`, `Nav` and [Footer](src/components/Footer/) usually live at the shared layout level whereas the `SubNav` is specific to each page. The SubNav can be configured in several different ways, check out its [stories file](src/components/SubNav/SubNav.stories.tsx) for examples.
+
+All these components support an `inverse` variant.
+
+### Sourcing data
+
+Source shared DX data from https://storybook-dx.netlify.app/.netlify/functions/dx-data
+
+- Eyerbrow requires `latestPost`
+- Footer requires `subscriberCount`
+
+### Configuring links
+
+The Nav and Footer links are configured via the [LinksContextProvider](src/components/links-context.ts). It comes with a default set of [links](src/components/links-context.ts#L29)
+
+https://storybook-dx.netlify.app/.netlify/functions/dx-data
+
 ## Development Scripts
 
 #### `yarn release`
