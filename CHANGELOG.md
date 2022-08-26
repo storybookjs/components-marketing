@@ -1,3 +1,15 @@
+# v2.0.7 (Fri Aug 26 2022)
+
+#### ⚠️ Pushed to `main`
+
+- update README ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.6 (Tue Aug 23 2022)
 
 #### 🐛 Bug Fix
