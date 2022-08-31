@@ -3,7 +3,6 @@ import { controlOrMetaKey, shortcutToHumanString } from '@storybook/api/shortcut
 import { css, Global, styled } from '@storybook/theming';
 import { styles } from '@storybook/design-system';
 import { DocSearch } from '@docsearch/react';
-import '@docsearch/css';
 
 // const ALGOLIA_API_KEY = process.env.GATSBY_ALGOLIA_API_KEY;
 const ALGOLIA_API_KEY = 'process.env.GATSBY_ALGOLIA_API_KEY';

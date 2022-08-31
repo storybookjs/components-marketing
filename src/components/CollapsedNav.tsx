@@ -16,7 +16,7 @@ import {
 } from '@floating-ui/react-dom-interactions';
 import { Icon } from '@storybook/design-system';
 import { styled } from '@storybook/theming';
-import { mergeRefs } from 'react-merge-refs';
+import mergeRefs from 'react-merge-refs';
 import { shadows, color } from './shared/styles';
 import { StackedNav, StackedNavItem } from './StackedNav';
 import { IconButton } from './IconButton';

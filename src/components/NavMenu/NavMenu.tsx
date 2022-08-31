@@ -24,7 +24,7 @@ import {
   FloatingFocusManager,
 } from '@floating-ui/react-dom-interactions';
 import { styled } from '@storybook/theming';
-import { mergeRefs } from 'react-merge-refs';
+import mergeRefs from 'react-merge-refs';
 import { color, shadows } from '../shared/styles';
 import { NavMenuButton } from './NavMenuButton';
 
