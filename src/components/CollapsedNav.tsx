@@ -60,11 +60,12 @@ interface CollapsedNavProps {
   label?: string;
   children?: React.ReactNode;
   inverse?: boolean;
+  monochrome?: boolean;
   groups: MenuGroup[];
 }
 
 export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<HTMLButtonElement>>(
-  ({ groups, children, label, inverse, ...props }, ref) => {
+  ({ groups, children, label, inverse, monochrome, ...props }, ref) => {
     const [open, setOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -125,6 +126,7 @@ export const CollapsedNav = forwardRef<any, CollapsedNavProps & React.HTMLProps<
         {/* Trigger */}
         <IconButton
           inverse={inverse}
+          monochrome={monochrome}
           {...getReferenceProps({
             ...props,
             ref: mergedReferenceRef,

@@ -55,9 +55,9 @@ Inverse.parameters = {
   backgrounds: { default: 'dark' },
 };
 
-export const InverseCustomBG = Template.bind({});
-InverseCustomBG.args = { inverse: true };
-InverseCustomBG.parameters = {
+export const Monochrome = Template.bind({});
+Monochrome.args = { inverse: true, monochrome: true };
+Monochrome.parameters = {
   backgrounds: {
     default: 'custom',
     values: [

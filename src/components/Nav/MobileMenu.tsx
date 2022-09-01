@@ -15,15 +15,23 @@ const GlobalSearch = styled(Search)`
 interface MobileMenuProps {
   className?: string;
   navLinks: Links;
+  inverse?: boolean;
+  monochrome?: boolean;
 }
 
-export const MobileMenu = ({ className, navLinks }: MobileMenuProps) => {
+export const MobileMenu = ({ className, navLinks, inverse, monochrome }: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const mobileGroupsWithLinks = useMemo(() => mobileGroups(navLinks), [navLinks]);
 
   return (
     <>
-      <IconButton aria-label="Open site nav" onClick={() => setOpen(true)} className={className}>
+      <IconButton
+        inverse={inverse}
+        monochrome={monochrome}
+        aria-label="Open site nav"
+        onClick={() => setOpen(true)}
+        className={className}
+      >
         <Icon icon="menualt" />
       </IconButton>
       <Drawer open={open} setOpen={setOpen} label="nav links">

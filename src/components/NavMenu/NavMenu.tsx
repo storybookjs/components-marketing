@@ -42,10 +42,11 @@ interface NavMenuProps {
   label?: string;
   children?: React.ReactNode;
   inverse?: boolean;
+  monochrome?: boolean;
 }
 
 export const NavMenu = forwardRef<HTMLButtonElement, NavMenuProps>(
-  ({ children, label, inverse, ...props }, ref) => {
+  ({ children, label, inverse, monochrome, ...props }, ref) => {
     const [open, setOpen] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -96,6 +97,7 @@ export const NavMenu = forwardRef<HTMLButtonElement, NavMenuProps>(
         {/* Trigger */}
         <NavMenuButton
           inverse={inverse}
+          monochrome={monochrome}
           open={open}
           {...getReferenceProps({
             ...props,

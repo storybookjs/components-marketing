@@ -1,4 +1,4 @@
-import { styled } from '@storybook/theming';
+import { styled, css } from '@storybook/theming';
 import { text, spacing, color } from '../shared/styles';
 import { LinkWithWrapper, LinkWithWrapperProps } from '../LinkWithWrapper';
 
@@ -10,7 +10,9 @@ const colorMap = {
   inverse: color.lightest,
 };
 
-export const NavItem = styled(LinkWithWrapper)<LinkWithWrapperProps & { variant?: NavItemVariant }>`
+export const NavItem = styled(LinkWithWrapper)<
+  LinkWithWrapperProps & { variant?: NavItemVariant; monochrome?: boolean }
+>`
   ${text.regularBold};
   display: inline-flex;
   align-items: center;
@@ -22,16 +24,32 @@ export const NavItem = styled(LinkWithWrapper)<LinkWithWrapperProps & { variant?
   transition: background-color 150ms ease-out, color 150ms ease-out;
   outline: 0;
 
-  &:hover,
-  &:focus {
-    color: ${color.secondary};
-    background-color: rgba(30, 167, 253, 0.14);
-  }
+  ${(props) =>
+    props.monochrome
+      ? css`
+          &:hover,
+          &:focus {
+            color: ${color.lightest};
+            background-color: rgba(255, 255, 255, 0.14);
+          }
 
-  &:active {
-    color: ${color.secondary};
-    background-color: rgba(30, 167, 253, 0.07);
-  }
+          &:active {
+            color: ${color.lightest};
+            background-color: rgba(255, 255, 255, 0.07);
+          }
+        `
+      : css`
+          &:hover,
+          &:focus {
+            color: ${color.secondary};
+            background-color: rgba(30, 167, 253, 0.14);
+          }
+
+          &:active {
+            color: ${color.secondary};
+            background-color: rgba(30, 167, 253, 0.07);
+          }
+        `}
 `;
 NavItem.defaultProps = {
   variant: 'default',

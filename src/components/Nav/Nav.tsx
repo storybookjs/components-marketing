@@ -98,6 +98,7 @@ const MobileNav = styled(MobileMenu)`
 
 interface NavProps {
   inverse?: boolean;
+  monochrome?: boolean;
 }
 
 const NavLinks = styled.div`
@@ -113,7 +114,7 @@ const NavLinks = styled.div`
   }
 `;
 
-export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
+export const Nav: FunctionComponent<NavProps> = ({ inverse, monochrome }) => {
   const navLinks = useContext(LinksContext);
 
   return (
@@ -131,28 +132,30 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse }) => {
           )}
         </LogoNavItem>
         <NavLinks>
-          <Why inverse={inverse} navLinks={navLinks} />
+          <Why inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
           <NavItem
+            monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
             href={navLinks.showcase.url}
             LinkWrapper={navLinks.showcase.linkWrapper}
           >
             Showcase
           </NavItem>
-          <Docs inverse={inverse} navLinks={navLinks} />
+          <Docs inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
           <NavItem
+            monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
             href={navLinks.integrations.url}
             LinkWrapper={navLinks.integrations.linkWrapper}
           >
             Integrations
           </NavItem>
-          <Community inverse={inverse} navLinks={navLinks} />
+          <Community inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
         </NavLinks>
         <GlobalSearch framework="react" version={6.5} inverse={inverse} />
         {/* Collapsed navs for tablet and mobile */}
-        <TabletNav navLinks={navLinks} />
-        <MobileNav navLinks={navLinks} />
+        <TabletNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
+        <MobileNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
       </NavContainer>
     </Wrapper>
   );
