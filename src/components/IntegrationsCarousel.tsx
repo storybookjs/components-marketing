@@ -1,7 +1,7 @@
 import React, { useState, ComponentProps, ReactNode, useEffect, useRef } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button } from '@storybook/design-system';
-import { AnimatePresence, useInView, motion } from 'framer-motion';
+import { useInView, motion } from 'framer-motion';
 import { color, spacing, text } from './shared/styles';
 
 const IntegrationsWrapper = styled.div`
@@ -76,12 +76,6 @@ interface IntegrationsCarouselProps {
   animationDisabled?: boolean;
 }
 
-const mediaVariants = {
-  initial: (direction: 1 | -1) => ({ x: direction === 1 ? '10%' : '-10%', opacity: 0 }),
-  animate: { x: 0, opacity: 1 },
-  exit: (direction: 1 | -1) => ({ x: direction === 1 ? '-10%' : '10%', opacity: 0 }),
-};
-
 export const IntegrationsCarousel = ({
   inverse,
   integrations,
@@ -91,7 +85,6 @@ export const IntegrationsCarousel = ({
 }: IntegrationsCarouselProps) => {
   const [animate, setAnimate] = useState(!animationDisabled);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
   const activeIntegration = integrations[activeIndex];
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -113,19 +106,7 @@ export const IntegrationsCarousel = ({
 
   return (
     <div ref={ref} {...props}>
-      <AnimatePresence initial={false} custom={direction} exitBeforeEnter>
-        <Media
-          key={activeIntegration.name}
-          custom={direction}
-          variants={mediaVariants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          transition={{ duration: 0.4, ease: [0.6, 0.2, 0.1, 0.9] }}
-        >
-          {activeIntegration.media}
-        </Media>
-      </AnimatePresence>
+      <Media>{activeIntegration.media}</Media>
       <IntegrationsWrapper>
         {integrations.map(({ media, name, image, ...integration }, index) => (
           <Integration
@@ -133,7 +114,6 @@ export const IntegrationsCarousel = ({
             key={name}
             active={name === activeIntegration.name}
             onClick={() => {
-              setDirection(index > activeIndex ? 1 : -1);
               setActiveIndex(index);
               setAnimate(false);
             }}

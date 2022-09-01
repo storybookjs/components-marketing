@@ -43,7 +43,7 @@ const navLinks = {
 
 const Template = (args) => (
   <LinksContextProvider value={navLinks}>
-    <Nav {...args} />
+    <Nav apiKey="ALGOLIA_API_KEY" {...args} />
   </LinksContextProvider>
 );
 
@@ -55,9 +55,9 @@ Inverse.parameters = {
   backgrounds: { default: 'dark' },
 };
 
-export const InverseCustomBG = Template.bind({});
-InverseCustomBG.args = { inverse: true };
-InverseCustomBG.parameters = {
+export const Monochrome = Template.bind({});
+Monochrome.args = { inverse: true, monochrome: true };
+Monochrome.parameters = {
   backgrounds: {
     default: 'custom',
     values: [

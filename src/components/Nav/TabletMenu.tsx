@@ -6,10 +6,19 @@ import { Links } from '../links-context';
 interface TabletMenuProps {
   className?: string;
   navLinks: Links;
+  inverse?: boolean;
+  monochrome?: boolean;
 }
 
-export const TabletMenu = ({ className, navLinks }: TabletMenuProps) => {
+export const TabletMenu = ({ className, inverse, monochrome, navLinks }: TabletMenuProps) => {
   const mobileGroupsWithLinks = useMemo(() => mobileGroups(navLinks), [navLinks]);
 
-  return <CollapsedNav className={className} groups={mobileGroupsWithLinks} />;
+  return (
+    <CollapsedNav
+      inverse={inverse}
+      monochrome={monochrome}
+      className={className}
+      groups={mobileGroupsWithLinks}
+    />
+  );
 };

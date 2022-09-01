@@ -1,15 +1,25 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { color, pageMargins, breakpoints, marketing, text } from './shared/styles';
+import { color, typography, breakpoints, marketing, text } from './shared/styles';
 
 const Wrapper = styled.div`
-  max-width: 320px;
+  @media (min-width: ${breakpoints[1]}px) {
+    max-width: 320px;
+  }
 `;
 
 const Heading = styled.h3<{ inverse?: boolean }>`
-  ${marketing.subheading};
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   margin: 0;
+
+  font-size: ${typography.size.m1}px;
+  font-weight: ${typography.weight.bold};
+  line-height: 28px;
+
+  @media (min-width: ${breakpoints[2]}px) {
+    max-width: 320px;
+    ${marketing.subheading};
+  }
 `;
 
 const Description = styled.p<{ inverse?: boolean }>`

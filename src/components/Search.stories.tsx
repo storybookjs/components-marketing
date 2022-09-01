@@ -25,6 +25,7 @@ export const Default = Template.bind({});
 Default.args = {
   framework: 'react',
   version: 6.5,
+  apiKey: 'ALGOLIA_API_KEY',
 };
 
 export const Inverse = Template.bind({});

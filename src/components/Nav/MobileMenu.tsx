@@ -15,19 +15,38 @@ const GlobalSearch = styled(Search)`
 interface MobileMenuProps {
   className?: string;
   navLinks: Links;
+  inverse?: boolean;
+  monochrome?: boolean;
+  framework: string;
+  version: number;
+  apiKey: string;
 }
 
-export const MobileMenu = ({ className, navLinks }: MobileMenuProps) => {
+export const MobileMenu = ({
+  className,
+  navLinks,
+  inverse,
+  monochrome,
+  framework,
+  version,
+  apiKey,
+}: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const mobileGroupsWithLinks = useMemo(() => mobileGroups(navLinks), [navLinks]);
 
   return (
     <>
-      <IconButton aria-label="Open site nav" onClick={() => setOpen(true)} className={className}>
+      <IconButton
+        inverse={inverse}
+        monochrome={monochrome}
+        aria-label="Open site nav"
+        onClick={() => setOpen(true)}
+        className={className}
+      >
         <Icon icon="menualt" />
       </IconButton>
       <Drawer open={open} setOpen={setOpen} label="nav links">
-        <GlobalSearch framework="react" version={6.5} />
+        <GlobalSearch apiKey={apiKey} version={version} framework={framework} />
         {mobileGroupsWithLinks.map((group) => (
           <StackedNav key={group.label} label={group.label}>
             {group.items.map((item) => (
