@@ -18,7 +18,7 @@ interface MobileMenuProps {
   inverse?: boolean;
   monochrome?: boolean;
   framework: string;
-  version: number;
+  version: string;
   apiKey: string;
 }
 

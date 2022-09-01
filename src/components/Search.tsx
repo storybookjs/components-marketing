@@ -11,7 +11,7 @@ const algoliaDocSearchConfig = {
 
 interface SearchProps {
   framework: string;
-  version: number;
+  version: string;
   className?: string | undefined;
   inverse?: boolean;
   apiKey: string;
