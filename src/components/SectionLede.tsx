@@ -29,7 +29,6 @@ const SectionHeading = styled.h2<{
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   flex: 1;
   min-width: 0;
-  max-width: 500px;
 
   @media (min-width: ${breakpoints[1]}px) {
     ${marketing.hero2};
@@ -55,7 +54,6 @@ const LedeParagraph = styled.p<{ inverse?: boolean }>`
 
 const LedeRight = styled.div`
   flex: 1;
-  max-width: 500px;
   min-width: 0;
 
   & > *:not(:last-child) {

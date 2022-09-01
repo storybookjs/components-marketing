@@ -4,8 +4,6 @@ import { css, Global, styled } from '@storybook/theming';
 import { styles } from '@storybook/design-system';
 import { DocSearch } from '@docsearch/react';
 
-// const ALGOLIA_API_KEY = process.env.GATSBY_ALGOLIA_API_KEY;
-const ALGOLIA_API_KEY = 'process.env.GATSBY_ALGOLIA_API_KEY';
 const algoliaDocSearchConfig = {
   appId: '6L6UWBTLCK',
   indexName: 'storybook-js',
@@ -16,6 +14,7 @@ interface SearchProps {
   version: number;
   className?: string | undefined;
   inverse?: boolean;
+  apiKey: string;
 }
 
 const Wrapper = styled.div<{ inverse?: boolean }>`
@@ -148,14 +147,15 @@ export const Search: FunctionComponent<SearchProps> = ({
   version,
   inverse,
   className,
+  apiKey,
 }) => (
   <>
     {/* <GlobalStyle />  why do we need this? */}
     <Global styles={docSearchStyles} />
-    {ALGOLIA_API_KEY ? (
+    {apiKey ? (
       <Wrapper className={className} inverse={inverse}>
         <DocSearch
-          apiKey={ALGOLIA_API_KEY}
+          apiKey={apiKey}
           {...algoliaDocSearchConfig}
           placeholder={label}
           searchParameters={{

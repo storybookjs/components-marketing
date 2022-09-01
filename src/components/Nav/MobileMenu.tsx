@@ -17,9 +17,20 @@ interface MobileMenuProps {
   navLinks: Links;
   inverse?: boolean;
   monochrome?: boolean;
+  framework: string;
+  version: number;
+  apiKey: string;
 }
 
-export const MobileMenu = ({ className, navLinks, inverse, monochrome }: MobileMenuProps) => {
+export const MobileMenu = ({
+  className,
+  navLinks,
+  inverse,
+  monochrome,
+  framework,
+  version,
+  apiKey,
+}: MobileMenuProps) => {
   const [open, setOpen] = useState(false);
   const mobileGroupsWithLinks = useMemo(() => mobileGroups(navLinks), [navLinks]);
 
@@ -35,7 +46,7 @@ export const MobileMenu = ({ className, navLinks, inverse, monochrome }: MobileM
         <Icon icon="menualt" />
       </IconButton>
       <Drawer open={open} setOpen={setOpen} label="nav links">
-        <GlobalSearch framework="react" version={6.5} />
+        <GlobalSearch apiKey={apiKey} version={version} framework={framework} />
         {mobileGroupsWithLinks.map((group) => (
           <StackedNav key={group.label} label={group.label}>
             {group.items.map((item) => (

@@ -43,7 +43,7 @@ const navLinks = {
 
 const Template = (args) => (
   <LinksContextProvider value={navLinks}>
-    <Nav {...args} />
+    <Nav apiKey="ALGOLIA_API_KEY" {...args} />
   </LinksContextProvider>
 );
 

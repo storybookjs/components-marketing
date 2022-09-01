@@ -9,7 +9,9 @@ import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
 
-const GlobalSearch = styled(Search)`
+const GlobalSearch = styled(Search)<{ monochrome?: boolean }>`
+  ${(props) => props.monochrome && ` --search-keys-bg: rgba(255, 255, 255, 0.1);`}
+
   flex: none;
   width: 160px;
   display: none;
@@ -99,6 +101,9 @@ const MobileNav = styled(MobileMenu)`
 interface NavProps {
   inverse?: boolean;
   monochrome?: boolean;
+  framework: string;
+  version: number;
+  apiKey: string;
 }
 
 const NavLinks = styled.div`
@@ -114,7 +119,13 @@ const NavLinks = styled.div`
   }
 `;
 
-export const Nav: FunctionComponent<NavProps> = ({ inverse, monochrome }) => {
+export const Nav: FunctionComponent<NavProps> = ({
+  inverse,
+  monochrome,
+  framework = 'react',
+  version = 6.5,
+  apiKey,
+}) => {
   const navLinks = useContext(LinksContext);
 
   return (
@@ -152,10 +163,23 @@ export const Nav: FunctionComponent<NavProps> = ({ inverse, monochrome }) => {
           </NavItem>
           <Community inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
         </NavLinks>
-        <GlobalSearch framework="react" version={6.5} inverse={inverse} />
+        <GlobalSearch
+          monochrome={monochrome}
+          framework={framework}
+          apiKey={apiKey}
+          version={version}
+          inverse={inverse}
+        />
         {/* Collapsed navs for tablet and mobile */}
         <TabletNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
-        <MobileNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
+        <MobileNav
+          navLinks={navLinks}
+          inverse={inverse}
+          monochrome={monochrome}
+          apiKey={apiKey}
+          version={version}
+          framework={framework}
+        />
       </NavContainer>
     </Wrapper>
   );
