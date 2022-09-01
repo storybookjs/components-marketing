@@ -1,3 +1,15 @@
+# v2.0.9 (Thu Sep 01 2022)
+
+#### 🐛 Bug Fix
+
+- Nav updates [#23](https://github.com/storybookjs/components-marketing/pull/23) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.8 (Thu Sep 01 2022)
 
 #### 🐛 Bug Fix
