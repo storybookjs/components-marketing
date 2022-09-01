@@ -1,3 +1,15 @@
+# v2.0.10 (Thu Sep 01 2022)
+
+#### 🐛 Bug Fix
+
+- Fix type of `version` prop for Search [#24](https://github.com/storybookjs/components-marketing/pull/24) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.0.9 (Thu Sep 01 2022)
 
 #### 🐛 Bug Fix
