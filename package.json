@@ -45,7 +45,6 @@
     ]
   },
   "dependencies": {
-    "@docsearch/css": "^3.1.0",
     "@docsearch/react": "^3.1.0",
     "@emotion/weak-memoize": "^0.2.5",
     "@floating-ui/react-dom-interactions": "^0.6.5",
@@ -54,7 +53,7 @@
     "@storybook/theming": "^6.5.9",
     "formik": "^2.1.5",
     "human-format": "^0.11.0",
-    "react-merge-refs": "^2.0.0"
+    "react-merge-refs": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -99,6 +98,7 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
+    "@docsearch/css": "^3.1.0",
     "@storybook/theming": "^6.5.9",
     "framer-motion": "^7.0.0",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0",

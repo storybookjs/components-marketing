@@ -1637,7 +1637,7 @@
   resolved "https://registry.npmjs.org/@discoveryjs/json-ext/-/json-ext-0.5.3.tgz#90420f9f9c6d3987f176a19a7d8e764271a2f55d"
   integrity sha512-Fxt+AfXgjMoin2maPIYzFZnQjAXjAL0PHscM5pRTtatFqB+vZxAM9tLp2Optnuw3QOQC40jTNeGYFOMvyf7v9g==
 
-"@docsearch/css@3.1.0", "@docsearch/css@^3.1.0":
+"@docsearch/css@3.1.0":
   version "3.1.0"
   resolved "https://registry.npmjs.org/@docsearch/css/-/css-3.1.0.tgz#6781cad43fc2e034d012ee44beddf8f93ba21f19"
   integrity sha512-bh5IskwkkodbvC0FzSg1AxMykfDl95hebEKwxNoq4e5QaGzOXSBgW8+jnMFZ7JU4sTBiB04vZWoUSzNrPboLZA==
@@ -12059,15 +12059,10 @@ react-lifecycles-compat@^3.0.0:
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-merge-refs@^1.0.0:
+react-merge-refs@^1.0.0, react-merge-refs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-1.1.0.tgz#73d88b892c6c68cbb7a66e0800faa374f4c38b06"
   integrity sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==
-
-react-merge-refs@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/react-merge-refs/-/react-merge-refs-2.0.0.tgz#4bca0d1bc67bc33723369b5800bb8d3fd75b7b10"
-  integrity sha512-r4oyTTJrwvjNUbbCaKKf4jeOGeQ7o8zwDvqX2u4/iN6w3ooKXFduv5dh2pLNAc7sZ7jLJL/CpsTD7lZVpjPZ7w==
 
 react-modal@^3.11.2:
   version "3.14.3"

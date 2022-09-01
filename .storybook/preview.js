@@ -1,5 +1,6 @@
 import React from 'react';
 import { global as designSystemGlobal, loadFontsForStorybook } from '@storybook/design-system';
+import '@docsearch/css';
 
 const { GlobalStyle: StorybookDSGlobalStyle } = designSystemGlobal;
 

@@ -37,14 +37,15 @@ npm install --save @storybook/components-marketing
 
 Install peer dependencies:
 
-- `framer-motion`
-- `@storybook/theming`
+```bash
+npm install --save @docsearch/css @storybook/theming framer-motion
+```
 
 ## Usage — global header and footer
 
-The page header comprises of three parts: [Eyerbrow](src/components/Eyebrow.tsx), [Nav](src/components/Nav) and [SubNav](src/components/SubNav/)
+The page header comprises of three parts: [Eyerbrow](https://main--62acb38c42e6ab9f79be20d5.chromatic.com/?path=/story/eyebrow--default), [Nav](https://main--62acb38c42e6ab9f79be20d5.chromatic.com/?path=/story/nav-nav--default), and [SubNav](https://main--62acb38c42e6ab9f79be20d5.chromatic.com/?path=/story/subnav-subnav--tab-linklist)
 
-`Eyerbrow`, `Nav` and [Footer](src/components/Footer/) usually live at the shared layout level whereas the `SubNav` is specific to each page. The SubNav can be configured in several different ways, check out its [stories file](src/components/SubNav/SubNav.stories.tsx) for examples.
+`Eyebrow`, `Nav`, and [Footer](https://main--62acb38c42e6ab9f79be20d5.chromatic.com/?path=/story/footer-footer--default) usually live at the shared layout level whereas the `SubNav` is specific to each page. The SubNav can be configured in several different ways, check out its [stories file](src/components/SubNav/SubNav.stories.tsx) for examples.
 
 All these components support an `inverse` variant.
 
@@ -60,6 +61,14 @@ Source shared DX data from https://storybook-dx.netlify.app/.netlify/functions/d
 The Nav and Footer links are configured via the [LinksContextProvider](src/components/links-context.ts). It comes with a default set of [links](src/components/links-context.ts#L29)
 
 https://storybook-dx.netlify.app/.netlify/functions/dx-data
+
+### Styling
+
+`Eyebrow` contains a `Search` component which depends on `@docsearch/css`. You need to load these styles in your app, probably at the top-most, global, level:
+
+```js
+import '@docsearch/css';
+```
 
 ## Development Scripts
 
