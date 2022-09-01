@@ -1,3 +1,15 @@
+# v2.0.8 (Thu Sep 01 2022)
+
+#### 🐛 Bug Fix
+
+- [Do not merge] Fixes for integration [#22](https://github.com/storybookjs/components-marketing/pull/22) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.0.7 (Fri Aug 26 2022)
 
 #### ⚠️ Pushed to `main`
