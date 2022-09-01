@@ -102,7 +102,7 @@ interface NavProps {
   inverse?: boolean;
   monochrome?: boolean;
   framework: string;
-  version: number;
+  version: string;
   apiKey: string;
 }
 
@@ -123,7 +123,7 @@ export const Nav: FunctionComponent<NavProps> = ({
   inverse,
   monochrome,
   framework = 'react',
-  version = 6.5,
+  version = '6.5',
   apiKey,
 }) => {
   const navLinks = useContext(LinksContext);
