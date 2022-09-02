@@ -4,7 +4,7 @@ import { Logos } from '@storybook/design-system';
 import { pageMargins, spacing, color, breakpoints } from '../shared/styles';
 import { NavItem } from './NavItem';
 import { Search } from '../Search';
-import { Why, Docs, Community } from './menus';
+import { Docs, Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
@@ -144,7 +144,14 @@ export const Nav: FunctionComponent<NavProps> = ({
           )}
         </LogoNavItem>
         <NavLinks>
-          <Why inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
+          <NavItem
+            monochrome={monochrome}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.whyStorybook.url}
+            LinkWrapper={navLinks.whyStorybook.linkWrapper}
+          >
+            Why
+          </NavItem>
           <NavItem
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}

@@ -18,12 +18,9 @@ import { LinksContext, Links } from '../links-context';
 const footerGroups = (links: Links) => ({
   why: [
     { label: 'Why Storybook', link: links.whyStorybook },
-    { label: 'Use cases', link: links.useCases },
-    { label: 'Case studies', link: links.caseStudies },
     { label: 'Component-driven UI', link: links.componentDriven },
   ],
   docs: [
-    { label: 'Get started', link: links.getStarted },
     { label: 'Guides', link: links.guides },
     { label: 'Tutorials', link: links.tutorials },
     { label: 'API', link: links.api },

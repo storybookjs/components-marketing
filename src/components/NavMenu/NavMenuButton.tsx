@@ -27,6 +27,7 @@ const PureNavMenuButton = styled.button<{
   transition: background-color 150ms ease-out, color 150ms ease-out;
   outline: 0;
   border: 0;
+  cursor: pointer;
 
   ${(props) =>
     props.open &&
