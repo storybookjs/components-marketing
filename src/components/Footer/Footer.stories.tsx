@@ -26,11 +26,8 @@ FakeGatsbyLink.displayName = 'FakeGatsbyLink';
 const links = {
   home: { url: '/', linkWrapper: FakeGatsbyLink },
   whyStorybook: { url: '/why', linkWrapper: FakeGatsbyLink },
-  useCases: { url: '/use-cases', linkWrapper: FakeGatsbyLink },
-  caseStudies: { url: '/case-studies', linkWrapper: FakeGatsbyLink },
   componentDriven: { url: 'https://componentdriven.org' },
-  getStarted: { url: '/docs', linkWrapper: FakeGatsbyLink },
-  guides: { url: '/docs/guides', linkWrapper: FakeGatsbyLink },
+  guides: { url: '/docs', linkWrapper: FakeGatsbyLink },
   tutorials: { url: 'https://storybook.js.org/tutorials' },
   api: { url: '/docs/api', linkWrapper: FakeGatsbyLink },
   changelog: { url: '/changelog', linkWrapper: FakeGatsbyLink },

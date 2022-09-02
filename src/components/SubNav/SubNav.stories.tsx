@@ -168,20 +168,3 @@ export const BreadcrumbMenuLinklist = () => (
     </SubNavRight>
   </SubNav>
 );
-
-// type=tab, area=docs, dropdowns=true, inverse=false, tabExpanded=false, viewport=desktop
-// type=tab, area=docs, dropdowns=true, inverse=false, viewport=tablet, tabExpanded=false
-// type=tab, area=docs, dropdowns=true, inverse=false, tabExpanded=true, viewport=mobile
-// type=tab, area=docs, dropdowns=true, inverse=false, tabExpanded=false, viewport=mobile
-
-// type=tab, area=cta, dropdowns=false, inverse=true, tabExpanded=false, viewport=desktop
-// type=tab, area=cta, dropdowns=false, inverse=false, tabExpanded=false, viewport=desktop
-
-// type=breadcrumb, area=cta, dropdowns=false, inverse=false, tabExpanded=false, viewport=desktop
-
-// type=tab, area=community, dropdowns=false, inverse=false, tabExpanded=false, viewport=desktop
-// type=breadcrumb, area=community, dropdowns=false, inverse=false, tabExpanded=false, viewport=desktop
-
-// type=breadcrumb, area=docs, dropdowns=false, inverse=true, tabExpanded=false, viewport=desktop
-// type=breadcrumb, area=docs, dropdowns=false, inverse=false, tabExpanded=false, viewport=desktop
-// type=breadcrumb, area=docs, dropdowns=true, inverse=false, tabExpanded=false, viewport=desktop

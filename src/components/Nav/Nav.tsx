@@ -4,7 +4,7 @@ import { Logos } from '@storybook/design-system';
 import { pageMargins, spacing, color, breakpoints } from '../shared/styles';
 import { NavItem } from './NavItem';
 import { Search } from '../Search';
-import { Why, Docs, Community } from './menus';
+import { Docs, Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
@@ -60,7 +60,8 @@ const StorybookLogoInverse = styled(Logos.StorybookInverted)`
 `;
 
 const Wrapper = styled.div<{ inverse?: boolean }>`
-  border-bottom: 1px solid ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)};
+  box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 0 0 1px
+    inset;
   padding-top: ${spacing.padding.medium}px;
   padding-bottom: ${spacing.padding.medium}px;
 `;
@@ -143,7 +144,14 @@ export const Nav: FunctionComponent<NavProps> = ({
           )}
         </LogoNavItem>
         <NavLinks>
-          <Why inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
+          <NavItem
+            monochrome={monochrome}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.whyStorybook.url}
+            LinkWrapper={navLinks.whyStorybook.linkWrapper}
+          >
+            Why
+          </NavItem>
           <NavItem
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}

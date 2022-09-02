@@ -10,7 +10,8 @@ const NavContainer = styled.div`
 `;
 
 const Wrapper = styled.div<{ inverse?: boolean }>`
-  border-bottom: 1px solid ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)};
+  box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 0 0 1px
+    inset;
 `;
 
 interface SubNavProps {

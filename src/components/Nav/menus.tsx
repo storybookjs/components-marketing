@@ -7,45 +7,8 @@ interface Menu extends ComponentProps<typeof NavMenu> {
   navLinks: Links;
 }
 
-export const Why = ({ inverse, monochrome, navLinks }: Menu) => (
-  <NavMenu label="Why" inverse={inverse} monochrome={monochrome}>
-    <NavMenuItem
-      icon={<ColoredIcon icon="storybook" color="primary" />}
-      description="Learn why frontend devs use Storybook to ship UIs."
-      href={navLinks.whyStorybook.url}
-      LinkWrapper={navLinks.whyStorybook.linkWrapper}
-    >
-      Why Storybook?
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="lightning" color="gold" />}
-      description="Learn why frontend devs use Storybook to ship UIs."
-      href={navLinks.useCases.url}
-      LinkWrapper={navLinks.useCases.linkWrapper}
-    >
-      Use cases
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="graphline" color="green" />}
-      description="Learn why frontend devs use Storybook to ship UIs."
-      href={navLinks.caseStudies.url}
-      LinkWrapper={navLinks.caseStudies.linkWrapper}
-    >
-      Case studies
-    </NavMenuItem>
-  </NavMenu>
-);
-
 export const Docs = ({ inverse, monochrome, navLinks }: Menu) => (
   <NavMenu label="Docs" inverse={inverse} monochrome={monochrome}>
-    <NavMenuItem
-      icon={<ColoredIcon icon="globe" color="secondary" />}
-      description="How to develop, test, and document UIs with Storybook"
-      href={navLinks.getStarted.url}
-      LinkWrapper={navLinks.getStarted.linkWrapper}
-    >
-      Get started
-    </NavMenuItem>
     <NavMenuItem
       icon={<ColoredIcon icon="book" color="green" />}
       description="Learn everything you need to know to use Storybook"
@@ -61,14 +24,6 @@ export const Docs = ({ inverse, monochrome, navLinks }: Menu) => (
       LinkWrapper={navLinks.tutorials.linkWrapper}
     >
       Tutorials
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="location" color="seafoam" />}
-      description="Reference every object and method in Storybook’s API"
-      href={navLinks.api.url}
-      LinkWrapper={navLinks.api.linkWrapper}
-    >
-      API
     </NavMenuItem>
     <NavMenuItem
       icon={<ColoredIcon icon="verified" color="green" />}
@@ -111,17 +66,6 @@ export const mobileGroups = (links: Links) => [
         link: links.whyStorybook,
         icon: <ColoredIcon icon="storybook" color="primary" />,
       },
-
-      {
-        label: 'Use cases',
-        link: links.useCases,
-        icon: <ColoredIcon icon="lightning" color="gold" />,
-      },
-      {
-        label: 'Case studies',
-        link: links.caseStudies,
-        icon: <ColoredIcon icon="graphline" color="green" />,
-      },
       {
         label: 'Component-driven UI',
         link: links.componentDriven,
@@ -133,28 +77,15 @@ export const mobileGroups = (links: Links) => [
     label: 'Docs',
     items: [
       {
-        label: 'Get started',
-        link: links.getStarted,
-        icon: <ColoredIcon icon="globe" color="secondary" />,
-      },
-      {
         label: 'Guides',
         link: links.guides,
         icon: <ColoredIcon icon="book" color="green" />,
       },
-
       {
         label: 'Tutorials',
         link: links.tutorials,
         icon: <ColoredIcon icon="compass" color="gold" />,
       },
-
-      {
-        label: 'API',
-        link: links.api,
-        icon: <ColoredIcon icon="location" color="seafoam" />,
-      },
-
       {
         label: 'Changelog',
         link: links.changelog,
@@ -175,7 +106,6 @@ export const mobileGroups = (links: Links) => [
         link: links.projects,
         icon: <ColoredIcon icon="book" color="primary" />,
       },
-
       {
         label: 'Component glossary',
         link: links.componentGlossary,
@@ -196,7 +126,6 @@ export const mobileGroups = (links: Links) => [
         link: links.getInvolved,
         icon: <ColoredIcon icon="starhollow" color="gold" />,
       },
-
       {
         label: 'Blog',
         link: links.blog,

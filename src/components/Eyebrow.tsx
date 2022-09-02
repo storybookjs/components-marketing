@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { Badge } from '@storybook/design-system';
+import { Badge, Link } from '@storybook/design-system';
 import { text, color, spacing, breakpoints } from './shared/styles';
 import { GithubButton } from './GithubButton';
 
@@ -9,23 +9,11 @@ const GithubButtonWrapper = styled.div`
   flex: none;
 `;
 
-const EyebrowLink = styled.a<{ inverse?: boolean }>`
+const EyebrowLink = styled(Link)<{ inverse?: boolean }>`
   ${text.storybookMedium}
-  transition: transform 150ms ease-out;
-  text-decoration: none;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  &:hover,
-  &:focus-visible {
-    cursor: pointer;
-    transform: translateY(-1px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
 
   ${(props) => ({
     color: props.inverse ? color.lightest : color.darker,
@@ -56,6 +44,8 @@ const EyebrowContainer = styled.div<{
   align-items: center;
   padding: ${spacing.padding.small}px ${spacing.padding.medium}px;
   background-color: ${(props) => (props.inverse ? 'rgba(0, 0, 0, 0.3)' : color.blueLight)};
+  box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 0 0 1px
+    inset;
 
   ${EyebrowLink} {
     margin-left: ${spacing.padding.small}px;
@@ -87,8 +77,8 @@ interface EyebrowProps {
 export const Eyebrow = ({ label, link, inverse }: EyebrowProps) => (
   <EyebrowContainer inverse={inverse}>
     <Badge status="positive">New</Badge>
-    <EyebrowLink inverse={inverse} href={link}>
-      {label} »
+    <EyebrowLink inverse={inverse} secondary={!inverse} href={link} withArrow>
+      {label}
     </EyebrowLink>
     <EyebrowCallout inverse={inverse} href="https://www.chromatic.com/">
       Automate with Chromatic
