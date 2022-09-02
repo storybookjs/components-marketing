@@ -93,6 +93,10 @@ const Count = styled.a`
   }
 `;
 
+const Wrapper = styled.div`
+  display: flex;
+`;
+
 export const GithubButton = () => {
   const [starCount, setStarCount] = useState('');
 
@@ -108,7 +112,7 @@ export const GithubButton = () => {
   });
 
   return (
-    <div className="chromatic-ignore">
+    <Wrapper className="chromatic-ignore">
       <Star
         href="https://github.com/storybookjs/storybook"
         rel="noopener"
@@ -137,6 +141,6 @@ export const GithubButton = () => {
       >
         {starCount.toLocaleString()}
       </Count>
-    </div>
+    </Wrapper>
   );
 };
