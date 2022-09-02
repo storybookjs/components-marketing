@@ -11,21 +11,9 @@ const GithubButtonWrapper = styled.div`
 
 const EyebrowLink = styled(Link)<{ inverse?: boolean }>`
   ${text.storybookMedium}
-  /* transition: transform 150ms ease-out;
-  text-decoration: none;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  &:hover,
-  &:focus-visible {
-    cursor: pointer;
-    transform: translateY(-1px);
-  }
-  &:active {
-    transform: translateY(0);
-  } */
 
   ${(props) => ({
     color: props.inverse ? color.lightest : color.darker,
