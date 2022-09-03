@@ -1,6 +1,9 @@
 import React, { forwardRef } from 'react';
+import { Icon } from '@storybook/design-system';
 import { Nav } from './Nav';
 import { LinksContextProvider } from '../links-context';
+import { Eyebrow } from '../Eyebrow';
+import { SubNav, SubNavBreadcrumb, SubNavRight, SubNavCTA } from '../SubNav';
 
 export default {
   title: 'Nav/Nav',
@@ -65,3 +68,25 @@ Monochrome.parameters = {
     ],
   },
 };
+
+export const FullStack = () => (
+  <LinksContextProvider value={navLinks}>
+    <Eyebrow
+      label="Storybook Lazy Compilation for Webpack"
+      link="https://storybook.js.org/blog/storybook-lazy-compilation-for-webpack/"
+    />
+    <Nav apiKey="ALGOLIA_API_KEY" framework="react" version="6.5" />
+    <SubNav>
+      <SubNavBreadcrumb tertiary href="/back">
+        <Icon icon="arrowleft" />
+        Back to blog
+      </SubNavBreadcrumb>
+      <SubNavRight>
+        <SubNavCTA href="/back">
+          <Icon icon="add" />
+          Add your integration
+        </SubNavCTA>
+      </SubNavRight>
+    </SubNav>
+  </LinksContextProvider>
+);
