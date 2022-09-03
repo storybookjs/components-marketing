@@ -27,6 +27,10 @@ const Wrapper = styled.div`
   @media (min-width: ${breakpoints[3]}px) {
     grid-template-columns: repeat(2, minmax(auto, 500px));
   }
+
+  @media (min-width: 1416px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const Title = styled.div<{ inverse?: boolean }>`
@@ -168,6 +172,8 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
   }
 
   @media (min-width: 1416px) {
+    margin-left: 0;
+    margin-right: 0;
     border-radius: ${spacing.borderRadius.default}px;
   }
 `;
