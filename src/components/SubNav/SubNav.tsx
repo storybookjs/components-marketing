@@ -10,7 +10,7 @@ const NavContainer = styled.div`
 `;
 
 const Wrapper = styled.div<{ inverse?: boolean }>`
-  box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 0 0 1px
+  box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 -1px 0px 0px
     inset;
 `;
 
