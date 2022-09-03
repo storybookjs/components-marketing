@@ -1,3 +1,15 @@
+# v2.0.12 (Sat Sep 03 2022)
+
+#### 🐛 Bug Fix
+
+- Fix nav borders [#26](https://github.com/storybookjs/components-marketing/pull/26) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.11 (Fri Sep 02 2022)
 
 #### 🐛 Bug Fix
