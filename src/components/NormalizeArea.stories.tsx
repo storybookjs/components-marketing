@@ -58,6 +58,21 @@ export const LargerIdealArea = {
   },
 };
 
+export const CSSVarIdealArea = {
+  render: (args) => (
+    <div style={{ '--ideal-area': 2000, display: 'contents' } as React.CSSProperties}>
+      {projects.map(({ height, logoAlt, logoUrl, width }) => (
+        <NormalizeArea key={logoAlt} {...args} height={height} width={width}>
+          <img src={logoUrl} alt={logoAlt} />
+        </NormalizeArea>
+      ))}
+    </div>
+  ),
+  args: {
+    idealArea: 20000,
+  },
+};
+
 export const None = {
   render: () => (
     <>

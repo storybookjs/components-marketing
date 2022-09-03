@@ -27,9 +27,8 @@ export const NormalizeArea = styled('div', {
   & > * {
     --width: ${(props) => props.width};
     --height: ${(props) => props.height};
-    --ideal-area: ${(props) => props.idealArea};
     --area: calc(var(--width) * var(--height));
-    --ratio: calc(var(--ideal-area) / var(--area));
+    --ratio: ${(props) => `calc(var(--ideal-area, ${props.idealArea}) / var(--area))`};
     --pass01: calc(calc(var(--ratio) + calc(var(--ratio) / var(--ratio))) / 2);
     --pass02: calc(calc(var(--pass01) + calc(var(--ratio) / var(--pass01))) / 2);
     --pass03: calc(calc(var(--pass02) + calc(var(--ratio) / var(--pass02))) / 2);
