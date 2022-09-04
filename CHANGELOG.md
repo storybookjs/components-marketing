@@ -1,3 +1,15 @@
+# v2.0.14 (Sun Sep 04 2022)
+
+#### 🐛 Bug Fix
+
+- fix LinkWithWrapper and fetch github stars from dx-data fn [#28](https://github.com/storybookjs/components-marketing/pull/28) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.13 (Sat Sep 03 2022)
 
 #### 🐛 Bug Fix
