@@ -79,7 +79,6 @@ export const Default = Template.bind({});
 Default.args = {
   integrations: 'Default',
   overflowLabel: '+ and more',
-  aspectRatio: 1202 / 910,
 };
 Default.parameters = {
   chromatic: { disableSnapshot: true },

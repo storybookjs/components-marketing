@@ -71,10 +71,11 @@ const EyebrowContainer = styled.div<{
 interface EyebrowProps {
   label: string;
   link: string;
+  githubStarCount: number;
   inverse?: boolean;
 }
 
-export const Eyebrow = ({ label, link, inverse }: EyebrowProps) => (
+export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps) => (
   <EyebrowContainer inverse={inverse}>
     <Badge status="positive">New</Badge>
     <EyebrowLink inverse={inverse} secondary={!inverse} href={link} withArrow>
@@ -84,7 +85,7 @@ export const Eyebrow = ({ label, link, inverse }: EyebrowProps) => (
       Automate with Chromatic
     </EyebrowCallout>
     <GithubButtonWrapper>
-      <GithubButton />
+      <GithubButton starCount={githubStarCount} />
     </GithubButtonWrapper>
   </EyebrowContainer>
 );

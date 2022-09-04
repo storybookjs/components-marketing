@@ -6,4 +6,4 @@ export default {
   component: GithubButton,
 };
 
-export const Basic = (args) => <GithubButton {...args} />;
+export const Basic = (args) => <GithubButton starCount={73724} />;

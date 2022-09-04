@@ -29,7 +29,6 @@ const links = {
   componentDriven: { url: 'https://componentdriven.org' },
   guides: { url: '/docs', linkWrapper: FakeGatsbyLink },
   tutorials: { url: 'https://storybook.js.org/tutorials' },
-  api: { url: '/docs/api', linkWrapper: FakeGatsbyLink },
   changelog: { url: '/changelog', linkWrapper: FakeGatsbyLink },
   telemetry: { url: '/telemetry', linkWrapper: FakeGatsbyLink },
   showcase: { url: 'https://storybook.js.org/showcase' },

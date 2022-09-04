@@ -11,7 +11,6 @@ export interface Links {
   componentDriven: LinkItem;
   guides: LinkItem;
   tutorials: LinkItem;
-  api: LinkItem;
   changelog: LinkItem;
   telemetry: LinkItem;
   showcase: LinkItem;
@@ -29,7 +28,6 @@ export const defaultLinks = {
   componentDriven: { url: 'https://componentdriven.org' },
   guides: { url: '/docs' },
   tutorials: { url: 'https://storybook.js.org/tutorials' },
-  api: { url: '/docs/api' },
   changelog: { url: 'https://storybook.js.org/changelog' },
   telemetry: { url: 'https://storybook.js.org/telemetry' },
   showcase: { url: 'https://storybook.js.org/showcase' },

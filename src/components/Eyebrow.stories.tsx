@@ -16,6 +16,7 @@ export const Default = Template.bind({});
 Default.args = {
   label: 'Storybook Lazy Compilation for Webpack',
   link: 'https://storybook.js.org/blog/storybook-lazy-compilation-for-webpack/',
+  githubStarCount: 73724,
 };
 
 export const Inverse = Template.bind({});
