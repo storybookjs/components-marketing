@@ -23,7 +23,6 @@ const footerGroups = (links: Links) => ({
   docs: [
     { label: 'Guides', link: links.guides },
     { label: 'Tutorials', link: links.tutorials },
-    { label: 'API', link: links.api },
     { label: 'Changelog', link: links.changelog },
     { label: 'Telemetry', link: links.telemetry },
   ],

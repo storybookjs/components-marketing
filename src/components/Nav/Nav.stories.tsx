@@ -29,7 +29,6 @@ const navLinks = {
   componentDriven: { url: 'https://componentdriven.org' },
   guides: { url: '/docs', linkWrapper: FakeGatsbyLink },
   tutorials: { url: 'https://storybook.js.org/tutorials' },
-  api: { url: '/docs/api', linkWrapper: FakeGatsbyLink },
   changelog: { url: '/changelog', linkWrapper: FakeGatsbyLink },
   telemetry: { url: '/telemetry', linkWrapper: FakeGatsbyLink },
   showcase: { url: 'https://storybook.js.org/showcase' },
@@ -74,6 +73,7 @@ export const FullStack = () => (
     <Eyebrow
       label="Storybook Lazy Compilation for Webpack"
       link="https://storybook.js.org/blog/storybook-lazy-compilation-for-webpack/"
+      githubStarCount={73724}
     />
     <Nav apiKey="ALGOLIA_API_KEY" framework="react" version="6.5" />
     <SubNav>

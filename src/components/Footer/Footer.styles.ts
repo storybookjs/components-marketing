@@ -1,6 +1,5 @@
 import { styled } from '@storybook/theming';
 import { Button, Link, Subheading } from '@storybook/design-system';
-import { ComponentProps } from 'react';
 import {
   background,
   color,

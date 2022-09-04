@@ -14,7 +14,7 @@ export const LinkWithWrapper = forwardRef<HTMLAnchorElement, LinkWithWrapperProp
   ({ children, href, LinkWrapper, ...props }, ref) => {
     if (LinkWrapper) {
       return (
-        <LinkWrapper to={href} ref={ref} {...props}>
+        <LinkWrapper href={href} ref={ref} {...props}>
           {children}
         </LinkWrapper>
       );
