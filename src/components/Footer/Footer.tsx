@@ -68,7 +68,7 @@ export const Footer: FC<FooterProps> = ({ onSubscribe, subscriberCount, inverse,
           </IconLink>
           <IconLink
             appearance={inverse ? 'inverseOutline' : 'outline'}
-            href="https://discord.gg/storybook"
+            href="https://twitter.com/storybookjs"
           >
             <Icon aria-label="Twitter" icon="twitter" />
           </IconLink>
