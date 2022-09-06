@@ -1,3 +1,15 @@
+# v2.0.15 (Tue Sep 06 2022)
+
+#### 🐛 Bug Fix
+
+- fix twitter link in footer [#29](https://github.com/storybookjs/components-marketing/pull/29) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.14 (Sun Sep 04 2022)
 
 #### 🐛 Bug Fix
