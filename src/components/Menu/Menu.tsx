@@ -23,6 +23,7 @@ import { MenuGroup, MenuItem } from './MenuItem';
 export const MenuPanel = styled.div`
   width: 200px;
   margin: 0;
+  z-index: 999;
 
   background: ${color.lightest};
   border-radius: 4px;
@@ -81,7 +82,6 @@ export const Menu = forwardRef<any, MenuProps & React.HTMLProps<HTMLButtonElemen
     const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions([
       useClick(context, {
         toggle: true,
-        pointerDown: true,
         ignoreMouse: false,
       }),
       useRole(context, { role: 'menu' }),

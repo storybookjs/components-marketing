@@ -71,7 +71,6 @@ export const NavMenu = forwardRef<HTMLButtonElement, NavMenuProps>(
     const { getReferenceProps, getFloatingProps, getItemProps } = useInteractions([
       useClick(context, {
         toggle: true,
-        pointerDown: true,
         ignoreMouse: false,
       }),
       useRole(context, { role: 'menu' }),
