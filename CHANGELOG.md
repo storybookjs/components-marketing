@@ -1,3 +1,15 @@
+# v2.0.17 (Thu Sep 08 2022)
+
+#### 🐛 Bug Fix
+
+- better defaults for links-context [#31](https://github.com/storybookjs/components-marketing/pull/31) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.16 (Tue Sep 06 2022)
 
 #### 🐛 Bug Fix
