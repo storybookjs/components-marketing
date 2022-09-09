@@ -1,3 +1,15 @@
+# v2.0.23 (Fri Sep 09 2022)
+
+#### 🐛 Bug Fix
+
+- IntegrationsCarousel remove auto animation [#37](https://github.com/storybookjs/components-marketing/pull/37) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.22 (Fri Sep 09 2022)
 
 #### 🐛 Bug Fix
