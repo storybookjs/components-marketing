@@ -1,3 +1,15 @@
+# v2.0.21 (Fri Sep 09 2022)
+
+#### 🐛 Bug Fix
+
+- Add `inverse` support to SubNavLinkList [#35](https://github.com/storybookjs/components-marketing/pull/35) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.0.20 (Fri Sep 09 2022)
 
 #### 🐛 Bug Fix
