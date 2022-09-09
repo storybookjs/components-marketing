@@ -8,7 +8,7 @@ const SubNavLinkListContainer = styled('nav', {
   shouldForwardProp: (prop) => !['inverse'].includes(prop),
 })<Pick<SubNavLinkListProps, 'inverse'>>`
   ${text.regular};
-  color: ${(props) => (props.inverse ? color.medium : color.dark)};
+  color: ${(props) => (props.inverse ? color.light : color.dark)};
   display: flex;
   align-items: center;
   margin-top: 10px;

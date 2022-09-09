@@ -730,6 +730,7 @@ export const PuzzlePieces = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       animate={rippleControls}
+      data-chromatic="ignore"
     >
       {shapes.map(({ id, x, y, path, color }, index) => (
         <Shape
