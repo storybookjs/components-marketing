@@ -137,6 +137,21 @@ export const BreadcrumbLinklist = () => (
   </SubNav>
 );
 
+export const BreadcrumbLinklistInverse = () => (
+  <SubNav inverse>
+    <SubNavBreadcrumb tertiary href="/back" inverse>
+      <Icon icon="arrowleft" />
+      Back to blog
+    </SubNavBreadcrumb>
+    <SubNavRight>
+      <SubNavLinkList label="Join the community:" items={communityItems} inverse />
+    </SubNavRight>
+  </SubNav>
+);
+BreadcrumbLinklistInverse.parameters = {
+  backgrounds: { default: 'dark' },
+};
+
 export const BreadcrumbCTA = () => (
   <SubNav>
     <SubNavBreadcrumb tertiary href="/back">

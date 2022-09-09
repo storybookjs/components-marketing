@@ -4,9 +4,11 @@ import { styled } from '@storybook/theming';
 import { Link, LinkProps, Icon } from '@storybook/design-system';
 import { text, color } from '../shared/styles';
 
-const SubNavLinkListContainer = styled.nav`
+const SubNavLinkListContainer = styled('nav', {
+  shouldForwardProp: (prop) => !['inverse'].includes(prop),
+})<Pick<SubNavLinkListProps, 'inverse'>>`
   ${text.regular};
-  color: ${color.dark};
+  color: ${(props) => (props.inverse ? color.medium : color.dark)};
   display: flex;
   align-items: center;
   margin-top: 10px;
@@ -16,6 +18,12 @@ const SubNavLinkListContainer = styled.nav`
   a {
     margin-left: 10px;
   }
+`;
+
+const StyledIcon = styled(Icon, {
+  shouldForwardProp: (prop) => !['inverse'].includes(prop),
+})<Pick<SubNavLinkListProps, 'inverse'>>`
+  color: ${(props) => (props.inverse ? color.light : color.dark)};
 `;
 
 export type SubNavLinkItem = {
@@ -28,17 +36,22 @@ export type SubNavLinkItem = {
 interface SubNavLinkListProps {
   label: string;
   items: SubNavLinkItem[];
+  inverse?: boolean;
 }
 
-export const SubNavLinkList: FunctionComponent<SubNavLinkListProps> = ({ label, items }) => {
+export const SubNavLinkList: FunctionComponent<SubNavLinkListProps> = ({
+  label,
+  items,
+  inverse,
+}) => {
   const id = useId();
 
   return (
-    <SubNavLinkListContainer aria-labelledby={id}>
+    <SubNavLinkListContainer aria-labelledby={id} inverse={inverse}>
       <div id={id}>{label}</div>
       {items.map((item) => (
         <Link key={item.label} tertiary containsIcon href={item.href} aria-label={item.label}>
-          <Icon icon={item.icon} aria-hidden />
+          <StyledIcon icon={item.icon} aria-hidden inverse={inverse} />
         </Link>
       ))}
     </SubNavLinkListContainer>
