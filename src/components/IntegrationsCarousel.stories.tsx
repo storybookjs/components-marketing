@@ -80,9 +80,6 @@ Default.args = {
   integrations: 'Default',
   overflowLabel: '+ and more',
 };
-Default.parameters = {
-  chromatic: { disableSnapshot: true },
-};
 
 export const Inverse = Template.bind({});
 Inverse.args = {
@@ -92,10 +89,4 @@ Inverse.args = {
 Inverse.parameters = {
   backgrounds: { default: 'dark' },
   chromatic: { disableSnapshot: true },
-};
-
-export const AnimationDisabled = Template.bind({});
-AnimationDisabled.args = {
-  ...Default.args,
-  animationDisabled: true,
 };

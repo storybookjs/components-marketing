@@ -1,7 +1,6 @@
 import React, { useState, ComponentProps, ReactNode, useEffect, useRef } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button } from '@storybook/design-system';
-import { useInView, motion } from 'framer-motion';
 import { color, spacing, text } from './shared/styles';
 
 const IntegrationsWrapper = styled.div`
@@ -11,7 +10,7 @@ const IntegrationsWrapper = styled.div`
   margin-top: 20px;
 `;
 
-const Media = styled(motion.figure)`
+const Media = styled.figure`
   margin: 0;
 `;
 
@@ -80,29 +79,11 @@ export const IntegrationsCarousel = ({
   inverse,
   integrations,
   overflowLabel,
-  animationDisabled = false,
   ...props
 }: IntegrationsCarouselProps) => {
-  const [animate, setAnimate] = useState(!animationDisabled);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeIntegration = integrations[activeIndex];
   const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  useEffect(() => {
-    if (!animate || !isInView) {
-      return () => {};
-    }
-
-    const id = setTimeout(() => {
-      const nextIndex = activeIndex === integrations.length - 1 ? 0 : activeIndex + 1;
-      setActiveIndex(nextIndex);
-    }, 4000);
-
-    return () => {
-      clearTimeout(id);
-    };
-  }, [activeIndex, integrations, animate, isInView]);
 
   return (
     <div ref={ref} {...props}>
@@ -115,7 +96,6 @@ export const IntegrationsCarousel = ({
             active={name === activeIntegration.name}
             onClick={() => {
               setActiveIndex(index);
-              setAnimate(false);
             }}
             {...integration}
           >

@@ -11,18 +11,27 @@ const colorMap = {
 };
 
 export const NavItem = styled(LinkWithWrapper)<
-  LinkWithWrapperProps & { variant?: NavItemVariant; monochrome?: boolean }
+  LinkWithWrapperProps & { variant?: NavItemVariant; monochrome?: boolean; active?: boolean }
 >`
   ${text.regularBold};
   display: inline-flex;
   align-items: center;
   text-align: center;
   padding: 6px 8px;
-  color: ${(props) => colorMap[props.variant]};
+  color: ${(props) => (props.monochrome ? color.lightest : colorMap[props.variant])};
   text-decoration: none;
   border-radius: ${spacing.borderRadius.small}px;
   transition: background-color 150ms ease-out, color 150ms ease-out;
   outline: 0;
+
+  ${(props) =>
+    props.active &&
+    css`
+      color: ${props.monochrome ? color.lightest : color.secondary};
+      background-color: ${props.monochrome
+        ? 'rgba(255, 255, 255, 0.14)'
+        : 'rgba(30, 167, 253, 0.07)'};
+    `};
 
   ${(props) =>
     props.monochrome
