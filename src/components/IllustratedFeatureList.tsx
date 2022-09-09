@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(2, minmax(auto, 50%));
     grid-template-rows: minmax(50vh, max-content);
     gap: 60px;
+    padding-top: 4rem;
   }
 
   @media (min-width: ${breakpoints[3]}px) {

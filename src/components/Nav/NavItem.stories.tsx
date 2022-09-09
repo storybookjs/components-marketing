@@ -18,6 +18,18 @@ Inverse.parameters = {
   backgrounds: { default: 'dark' },
 };
 
+export const Monochrome = Template.bind({});
+Monochrome.args = { monochrome: true };
+Monochrome.parameters = Inverse.parameters;
+
+export const ActiveRoute = Template.bind({});
+ActiveRoute.args = { active: true };
+ActiveRoute.parameters = Inverse.parameters;
+
+export const MonoChromeActiveRoute = Template.bind({});
+MonoChromeActiveRoute.args = { active: true, monochrome: true };
+MonoChromeActiveRoute.parameters = Inverse.parameters;
+
 export const Hover = Template.bind({});
 Hover.parameters = { pseudo: { hover: true } };
 
