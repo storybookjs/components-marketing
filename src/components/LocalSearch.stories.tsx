@@ -1,4 +1,5 @@
 import React from 'react';
+import { within, userEvent } from '@storybook/testing-library';
 import { LocalSearch } from './LocalSearch';
 
 export default {
@@ -40,4 +41,11 @@ export const Default = () => {
     }));
 
   return <LocalSearch inputValue={inputValue} onInputChange={setInputValue} results={results} />;
+};
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const input = canvas.getByPlaceholderText('Search');
+  await userEvent.click(input);
+  await userEvent.keyboard('ap');
+  await userEvent.keyboard('{arrowdown}');
 };
