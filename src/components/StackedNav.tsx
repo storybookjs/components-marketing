@@ -1,5 +1,5 @@
 import React, { forwardRef, ReactNode } from 'react';
-import { styled } from '@storybook/theming';
+import { styled, css } from '@storybook/theming';
 import { useId } from '@floating-ui/react-dom-interactions';
 import { color, subheading, typography } from './shared/styles';
 import { LinkWithWrapper, LinkWithWrapperProps } from './LinkWithWrapper';
@@ -27,7 +27,9 @@ const StackedNavItemLabel = styled.div`
   min-width: 0;
 `;
 
-const PureStackedNavItem = styled(LinkWithWrapper)`
+const PureStackedNavItem = styled(LinkWithWrapper, {
+  shouldForwardProp: (prop) => prop !== 'active',
+})<{ active?: boolean }>`
   display: flex;
   align-items: center;
   font-weight: ${typography.weight.regular};
@@ -62,11 +64,20 @@ const PureStackedNavItem = styled(LinkWithWrapper)`
     outline-offset: 4px;
     border-radius: 2px;
   }
+
+  ${(props) =>
+    props.active &&
+    css`
+      outline: 2px solid ${color.secondary};
+      outline-offset: 4px;
+      border-radius: 2px;
+    `}
 `;
 
 interface StackedNavItemProps extends LinkWithWrapperProps {
   icon: ReactNode;
   children: ReactNode;
+  active?: boolean;
 }
 
 export const StackedNavItem = forwardRef<HTMLAnchorElement, StackedNavItemProps>(
