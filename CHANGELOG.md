@@ -1,3 +1,15 @@
+# v2.0.20 (Fri Sep 09 2022)
+
+#### 🐛 Bug Fix
+
+- Remove local search and export NotFoundScreen [#34](https://github.com/storybookjs/components-marketing/pull/34) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.19 (Fri Sep 09 2022)
 
 #### 🐛 Bug Fix
