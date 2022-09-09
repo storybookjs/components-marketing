@@ -24,6 +24,7 @@ export * from './MailingList';
 export * from './Menu';
 export * from './Nav';
 export * from './NavMenu';
+export * from './NotFoundScreen/NotFoundScreen';
 export * from './NormalizeArea';
 export * from './ProjectCard';
 export * from './Search';
