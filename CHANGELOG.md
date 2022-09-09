@@ -1,3 +1,15 @@
+# v2.0.18 (Fri Sep 09 2022)
+
+#### 🐛 Bug Fix
+
+- Local search [#32](https://github.com/storybookjs/components-marketing/pull/32) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.17 (Thu Sep 08 2022)
 
 #### 🐛 Bug Fix
