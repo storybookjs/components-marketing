@@ -4,12 +4,11 @@ import { color, marketing, breakpoints, pageMargins } from './shared/styles';
 
 const ContentWrapper = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: flex-start;
 
   @media (min-width: ${breakpoints[2]}px) {
     flex-direction: row;
-    align-items: flex-start;
     gap: 60px;
   }
 `;
