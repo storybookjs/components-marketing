@@ -10,7 +10,7 @@ const colorMap = {
   inverse: color.lightest,
 };
 
-export const NavItem = styled(LinkWithWrapper)<
+export const NavItem = styled(LinkWithWrapper, { shouldForwardProp: (prop) => prop !== 'active' })<
   LinkWithWrapperProps & { variant?: NavItemVariant; monochrome?: boolean; active?: boolean }
 >`
   ${text.regularBold};
