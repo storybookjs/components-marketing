@@ -16,6 +16,7 @@ export const IconButton = styled.button<{ inverse?: boolean; monochrome?: boolea
     width: 14px;
     height: 14px;
     display: block;
+    margin: 0 auto;
   }
 
   ${(props) =>
