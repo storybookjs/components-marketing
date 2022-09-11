@@ -8,8 +8,8 @@ export const IconButton = styled.button<{ inverse?: boolean; monochrome?: boolea
   outline: 0;
   background-color: transparent;
   transition: background-color 150ms ease-out, color 150ms ease-out;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   padding: 5px;
 
   svg {

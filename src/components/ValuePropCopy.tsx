@@ -3,7 +3,7 @@ import { styled } from '@storybook/theming';
 import { color, typography, breakpoints, marketing, text } from './shared/styles';
 
 const Wrapper = styled.div`
-  @media (min-width: ${breakpoints[1]}px) {
+  @media (min-width: ${breakpoints[2]}px) {
     max-width: 320px;
   }
 `;
