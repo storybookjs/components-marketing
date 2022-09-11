@@ -166,10 +166,6 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
             margin-right: calc(-${pageMargin * 2}vw - 20px);
           `};
     max-height: ${(props) => props.lockUpHeight}px;
-
-    video {
-      object-fit: cover;
-    }
   }
 
   @media (min-width: 1416px) {
