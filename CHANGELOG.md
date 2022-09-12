@@ -1,3 +1,15 @@
+# v2.0.26 (Mon Sep 12 2022)
+
+#### 🐛 Bug Fix
+
+- Misc updates [#40](https://github.com/storybookjs/components-marketing/pull/40) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.25 (Sun Sep 11 2022)
 
 #### 🐛 Bug Fix
