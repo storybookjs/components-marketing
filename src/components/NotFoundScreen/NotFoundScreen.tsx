@@ -1,6 +1,6 @@
 import React from 'react';
 import { css, styled } from '@storybook/theming';
-import { Link, Icon } from '@storybook/design-system';
+import { Link, Icon, ColoredIcons } from '@storybook/design-system';
 import { Search } from '../Search';
 import { breakpoints, marketing, text, color, spacing, pageMargins } from '../shared/styles';
 import { PuzzlePieces } from './PuzzlePieces';
@@ -65,17 +65,21 @@ const SearchFeature = styled(SupportFeature)`
 const StyledSearch = styled(Search)`
   button {
     border-radius: ${spacing.borderRadius.small}px;
+    height: 40px !important;
+
+    &:hover,
+    &:active,
+    &:focus {
+      height: 40px;
+    }
   }
 `;
 
 const DiscordIcon = styled(Icon)`
-  color: '#5A65EA';
-`;
-const SearchIcon = styled(Icon)`
-  color: '#FFC445';
+  color: #5a65ea;
 `;
 const GithubIcon = styled(Icon)`
-  color: '#333333';
+  color: #333333;
 `;
 
 interface NotFoundScreenProps {
@@ -107,7 +111,7 @@ export function NotFoundScreen({
 
       <SupportOptions>
         <SearchFeature
-          image={<SearchIcon icon="search" aria-label="search" />}
+          image={<ColoredIcons.Search aria-label="search" />}
           title="Search the docs"
           desc="There’s probably an article for your issue already."
           layout="horizontal"

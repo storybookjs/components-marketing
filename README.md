@@ -38,7 +38,7 @@ npm install --save @storybook/components-marketing
 Install peer dependencies:
 
 ```bash
-npm install --save @docsearch/css @storybook/theming framer-motion
+npm install --save @docsearch/css @storybook/theming framer-motion@7.0.0
 ```
 
 ## Usage — global header and footer
