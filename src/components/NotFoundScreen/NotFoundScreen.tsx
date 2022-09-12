@@ -76,10 +76,10 @@ const StyledSearch = styled(Search)`
 `;
 
 const DiscordIcon = styled(Icon)`
-  color: '#5A65EA';
+  color: #5a65ea;
 `;
 const GithubIcon = styled(Icon)`
-  color: '#333333';
+  color: #333333;
 `;
 
 interface NotFoundScreenProps {
