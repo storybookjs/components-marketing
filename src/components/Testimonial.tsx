@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
 import { Avatar } from '@storybook/design-system';
-import { color, typography, pageMargins, breakpoints } from './shared/styles';
+import { color, typography, pageMargins, breakpoints, marketing } from './shared/styles';
 
 const Wrapper = styled.div`
   ${pageMargins};
@@ -25,8 +25,12 @@ const Inner = styled.div`
 `;
 
 const Quote = styled.blockquote<{ inverse?: boolean }>`
-  font-size: ${typography.size.m1}px;
-  line-height: 32px;
+  ${marketing.textLarge};
+
+  @media (min-width: ${breakpoints[1]}px) {
+    font-size: ${typography.size.m1}px;
+    line-height: 32px;
+  }
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
   margin-top: 0;
   margin-right: 0;
