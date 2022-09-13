@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { styled } from '@storybook/theming';
 import { Icon, IconType } from '@storybook/design-system';
-import { color, marketing, text, typography } from './shared/styles';
+import { color, marketing, text } from './shared/styles';
 
 const Wrapper = styled.div`
   display: flex;
