@@ -1,3 +1,15 @@
+# v2.0.27 (Tue Sep 13 2022)
+
+#### 🐛 Bug Fix
+
+- Update `whyStorybook` URL [#41](https://github.com/storybookjs/components-marketing/pull/41) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.0.26 (Mon Sep 12 2022)
 
 #### 🐛 Bug Fix
