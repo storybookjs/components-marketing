@@ -344,7 +344,7 @@ export const IllustratedFeatureList = ({
                       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                       <video
                         src={feature.media}
-                        // autoPlay
+                        autoPlay
                         loop
                         playsInline
                         preload="auto"
