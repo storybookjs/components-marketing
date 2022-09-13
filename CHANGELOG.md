@@ -1,3 +1,15 @@
+# v2.0.28 (Tue Sep 13 2022)
+
+#### 🐛 Bug Fix
+
+- Shrink the Testimonial quote on mobile [#42](https://github.com/storybookjs/components-marketing/pull/42) ([@domyen](https://github.com/domyen))
+
+#### Authors: 1
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+
+---
+
 # v2.0.27 (Tue Sep 13 2022)
 
 #### 🐛 Bug Fix
