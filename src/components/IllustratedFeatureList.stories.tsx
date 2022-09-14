@@ -1,6 +1,7 @@
 import React from 'react';
 import { ColoredIcons } from '@storybook/design-system';
 import { IllustratedFeatureList } from './IllustratedFeatureList';
+import { SectionLede } from './SectionLede';
 
 export default {
   title: 'IllustratedFeatureList',
@@ -135,4 +136,24 @@ Inverse.args = {
 };
 Inverse.parameters = {
   backgrounds: { default: 'dark' },
+};
+
+export const SectionLayout = (args) => (
+  <div>
+    <SectionLede
+      // eslint-disable-next-line react/destructuring-assignment
+      inverse={args.inverse}
+      heading="Test UIs with less effort and no flake"
+      copy="Stories capture the “known good” states of UI components. They’re a pragmatic, reproducible way to keep track of UI edge cases. Reuse stories to power automated tests."
+    />
+    <IllustratedFeatureList {...args} />
+  </div>
+);
+SectionLayout.args = {
+  ...Default.args,
+  inverse: true,
+};
+SectionLayout.parameters = {
+  backgrounds: { default: 'dark' },
+  chromatic: { disableSnapshot: true },
 };

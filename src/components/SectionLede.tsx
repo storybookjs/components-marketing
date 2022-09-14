@@ -9,7 +9,7 @@ const ContentWrapper = styled.div`
 
   @media (min-width: ${breakpoints[2]}px) {
     flex-direction: row;
-    gap: 60px;
+    gap: 80px;
   }
 `;
 

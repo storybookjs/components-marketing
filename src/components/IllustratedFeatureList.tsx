@@ -23,14 +23,14 @@ const Wrapper = styled.div`
     display: grid;
     justify-content: center;
     align-items: flex-start;
-    grid-template-columns: repeat(2, minmax(auto, 50%));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
     grid-template-rows: minmax(50vh, max-content);
-    gap: 60px;
+    gap: 80px;
     padding-top: 7rem;
   }
 
   @media (min-width: ${breakpoints[3]}px) {
-    grid-template-columns: repeat(2, minmax(auto, 500px));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
   }
 
   @media (min-width: 1416px) {
@@ -95,6 +95,7 @@ const FeatureList = styled.ul<{ alignment?: Alignment }>`
   padding: 0;
   margin: 0;
   width: 100%;
+  min-width: 0;
 
   li {
     list-style: none;
