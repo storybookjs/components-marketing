@@ -55,6 +55,9 @@ export const MobileMenu = ({
                 icon={item.icon}
                 href={item.link.url}
                 LinkWrapper={item.link.linkWrapper}
+                onClick={() => {
+                  setOpen(false);
+                }}
               >
                 {item.label}
               </StackedNavItem>
