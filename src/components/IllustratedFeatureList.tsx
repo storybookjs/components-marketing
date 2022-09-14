@@ -12,21 +12,25 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
+  padding-bottom: 0;
   padding-top: 3rem;
-  padding-bottom: 4rem;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    padding-top: 5rem;
+  }
 
   @media (min-width: ${breakpoints[2]}px) {
     display: grid;
     justify-content: center;
     align-items: flex-start;
-    grid-template-columns: repeat(2, minmax(auto, 50%));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
     grid-template-rows: minmax(50vh, max-content);
-    gap: 60px;
-    padding-top: 4rem;
+    gap: 80px;
+    padding-top: 7rem;
   }
 
   @media (min-width: ${breakpoints[3]}px) {
-    grid-template-columns: repeat(2, minmax(auto, 500px));
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
   }
 
   @media (min-width: 1416px) {
@@ -91,6 +95,7 @@ const FeatureList = styled.ul<{ alignment?: Alignment }>`
   padding: 0;
   margin: 0;
   width: 100%;
+  min-width: 0;
 
   li {
     list-style: none;
@@ -344,7 +349,7 @@ export const IllustratedFeatureList = ({
                       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                       <video
                         src={feature.media}
-                        // autoPlay
+                        autoPlay
                         loop
                         playsInline
                         preload="auto"

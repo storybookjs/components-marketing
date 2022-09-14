@@ -117,7 +117,7 @@ export const Services: FC<{ inverse?: boolean }> = ({ inverse }) => (
       <Service
         inverse={inverse}
         label="Maintained by"
-        href="https://www.chromatic.com/"
+        href="https://www.chromatic.com?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook"
         logo={
           inverse ? (
             <Logos.ChromaticInverted title="Chromatic" />

@@ -81,7 +81,10 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
     <EyebrowLink inverse={inverse} secondary={!inverse} href={link} withArrow>
       {label}
     </EyebrowLink>
-    <EyebrowCallout inverse={inverse} href="https://www.chromatic.com/">
+    <EyebrowCallout
+      inverse={inverse}
+      href="https://www.chromatic.com?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook"
+    >
       Automate with Chromatic
     </EyebrowCallout>
     <GithubButtonWrapper>
