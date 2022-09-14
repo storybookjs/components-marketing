@@ -1,3 +1,15 @@
+# v2.0.29 (Wed Sep 14 2022)
+
+#### 🐛 Bug Fix
+
+- Visual tweak of social card button + cardinal spacing [#43](https://github.com/storybookjs/components-marketing/pull/43) ([@domyen](https://github.com/domyen))
+
+#### Authors: 1
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+
+---
+
 # v2.0.28 (Tue Sep 13 2022)
 
 #### 🐛 Bug Fix
