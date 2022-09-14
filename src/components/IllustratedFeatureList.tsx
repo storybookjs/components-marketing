@@ -12,8 +12,12 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
+  padding-bottom: 0;
   padding-top: 3rem;
-  padding-bottom: 4rem;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    padding-top: 5rem;
+  }
 
   @media (min-width: ${breakpoints[2]}px) {
     display: grid;
@@ -22,7 +26,7 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(2, minmax(auto, 50%));
     grid-template-rows: minmax(50vh, max-content);
     gap: 60px;
-    padding-top: 4rem;
+    padding-top: 7rem;
   }
 
   @media (min-width: ${breakpoints[3]}px) {
