@@ -24,7 +24,7 @@ const Description = styled.p<{ inverse?: boolean }>`
 `;
 
 const LinkButton = styled(Button)`
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 `;
 
 const Stat = styled(Cardinal)<{ inverse?: boolean }>`
