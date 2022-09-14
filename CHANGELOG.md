@@ -1,3 +1,15 @@
+# v2.0.31 (Wed Sep 14 2022)
+
+#### 🐛 Bug Fix
+
+- close mobile menu on click [#45](https://github.com/storybookjs/components-marketing/pull/45) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.30 (Wed Sep 14 2022)
 
 #### 🐛 Bug Fix
