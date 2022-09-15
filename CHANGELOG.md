@@ -1,3 +1,15 @@
+# v2.0.32 (Thu Sep 15 2022)
+
+#### 🐛 Bug Fix
+
+- Drawer fix [#46](https://github.com/storybookjs/components-marketing/pull/46) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.31 (Wed Sep 14 2022)
 
 #### 🐛 Bug Fix
