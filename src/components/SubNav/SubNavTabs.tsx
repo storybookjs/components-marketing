@@ -31,7 +31,11 @@ interface SubNavTabsProps {
 export const SubNavTabs: FunctionComponent<SubNavTabsProps> = ({ label, items }) => {
   const activeItem = useMemo(() => items.find((item) => item.isActive), [items]);
   const menuItems = useMemo(
-    () => items.map((item) => ({ label: item.label, link: { url: item.href } })),
+    () =>
+      items.map((item) => ({
+        label: item.label,
+        link: { url: item.href, linkWrapper: item.LinkWrapper },
+      })),
     [items]
   );
 
