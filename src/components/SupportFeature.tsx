@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { css, styled } from '@storybook/theming';
-import { breakpoints, text, color, spacing } from '../shared/styles';
+import { breakpoints, text, color, spacing } from './shared/styles';
 
 const Image = styled.div`
   margin-right: 20px;
@@ -49,6 +49,8 @@ const ChildrenWrapper = styled.div<{ horizontal?: boolean }>`
         `
       : css`
           margin-top: 0.5rem;
+          display: flex;
+          gap: 16px;
         `}
 `;
 
@@ -90,3 +92,15 @@ export const SupportFeature: FC<SupportFeatureProps> = ({
     </Wrapper>
   );
 };
+
+export const SupportFeatureGrid = styled.div`
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media (min-width: ${breakpoints[2]}px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
