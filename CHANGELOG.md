@@ -1,3 +1,15 @@
+# v2.0.33 (Thu Sep 22 2022)
+
+#### 🐛 Bug Fix
+
+- SupportFeature and SearchBlock [#47](https://github.com/storybookjs/components-marketing/pull/47) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.32 (Thu Sep 15 2022)
 
 #### 🐛 Bug Fix
