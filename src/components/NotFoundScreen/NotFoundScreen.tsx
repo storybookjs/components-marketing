@@ -1,10 +1,10 @@
 import React from 'react';
 import { css, styled } from '@storybook/theming';
-import { Link, Icon, ColoredIcons } from '@storybook/design-system';
-import { Search } from '../Search';
-import { breakpoints, marketing, text, color, spacing, pageMargins } from '../shared/styles';
+import { Link, Icon } from '@storybook/design-system';
+import { marketing, text, color, pageMargins } from '../shared/styles';
 import { PuzzlePieces } from './PuzzlePieces';
-import { SupportFeature } from './SupportFeature';
+import { SupportFeature, SupportFeatureGrid } from '../SupportFeature';
+import { SearchBlock } from '../SearchBlock';
 
 const Content = styled.div<{ includeSpacing?: boolean }>`
   ${(props) =>
@@ -45,36 +45,6 @@ const Description = styled.p`
   color: ${color.darker};
 `;
 
-const SupportOptions = styled.div`
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr;
-  max-width: 800px;
-  margin: 0 auto;
-
-  @media (min-width: ${breakpoints[2]}px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`;
-
-const SearchFeature = styled(SupportFeature)`
-  @media (min-width: ${breakpoints[2]}px) {
-    grid-column: 1 / span 2;
-  }
-`;
-const StyledSearch = styled(Search)`
-  button {
-    border-radius: ${spacing.borderRadius.small}px;
-    height: 40px !important;
-
-    &:hover,
-    &:active,
-    &:focus {
-      height: 40px;
-    }
-  }
-`;
-
 const DiscordIcon = styled(Icon)`
   color: #5a65ea;
 `;
@@ -109,15 +79,8 @@ export function NotFoundScreen({
         </Copy>
       </Hero>
 
-      <SupportOptions>
-        <SearchFeature
-          image={<ColoredIcons.Search aria-label="search" />}
-          title="Search the docs"
-          desc="There’s probably an article for your issue already."
-          layout="horizontal"
-        >
-          <StyledSearch framework="react" version={latestVersionString} apiKey={apiKey} />
-        </SearchFeature>
+      <SupportFeatureGrid>
+        <SearchBlock version={latestVersionString} apiKey={apiKey} />
         <SupportFeature
           image={<DiscordIcon icon="discord" aria-label="Discord" />}
           title="Ask a question in #support chat"
@@ -136,7 +99,7 @@ export function NotFoundScreen({
             View GitHub issues
           </Link>
         </SupportFeature>
-      </SupportOptions>
+      </SupportFeatureGrid>
     </Content>
   );
 }
