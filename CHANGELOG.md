@@ -1,3 +1,15 @@
+# v2.0.35 (Fri Sep 23 2022)
+
+#### 🐛 Bug Fix
+
+- remove max width from SupportFeatureGrid [#49](https://github.com/storybookjs/components-marketing/pull/49) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.34 (Fri Sep 23 2022)
 
 #### 🐛 Bug Fix
