@@ -1,3 +1,15 @@
+# v2.0.34 (Fri Sep 23 2022)
+
+#### 🐛 Bug Fix
+
+- export community components [#48](https://github.com/storybookjs/components-marketing/pull/48) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.33 (Thu Sep 22 2022)
 
 #### 🐛 Bug Fix
