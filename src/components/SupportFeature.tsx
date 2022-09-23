@@ -97,7 +97,6 @@ export const SupportFeatureGrid = styled.div`
   display: grid;
   gap: 30px;
   grid-template-columns: 1fr;
-  max-width: 800px;
   margin: 0 auto;
 
   @media (min-width: ${breakpoints[2]}px) {

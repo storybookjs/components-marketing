@@ -52,6 +52,10 @@ const GithubIcon = styled(Icon)`
   color: #333333;
 `;
 
+const StyledSupportFeatureGrid = styled(SupportFeatureGrid)`
+  max-width: 800px;
+`;
+
 interface NotFoundScreenProps {
   repoUrl: string;
   latestVersionString: string;
@@ -79,7 +83,7 @@ export function NotFoundScreen({
         </Copy>
       </Hero>
 
-      <SupportFeatureGrid>
+      <StyledSupportFeatureGrid>
         <SearchBlock version={latestVersionString} apiKey={apiKey} />
         <SupportFeature
           image={<DiscordIcon icon="discord" aria-label="Discord" />}
@@ -99,7 +103,7 @@ export function NotFoundScreen({
             View GitHub issues
           </Link>
         </SupportFeature>
-      </SupportFeatureGrid>
+      </StyledSupportFeatureGrid>
     </Content>
   );
 }
