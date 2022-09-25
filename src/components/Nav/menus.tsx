@@ -7,8 +7,8 @@ interface Menu extends ComponentProps<typeof NavMenu> {
   navLinks: Links;
 }
 
-export const Docs = ({ inverse, monochrome, navLinks }: Menu) => (
-  <NavMenu label="Docs" inverse={inverse} monochrome={monochrome}>
+export const Docs = ({ active, inverse, monochrome, navLinks }: Menu) => (
+  <NavMenu label="Docs" inverse={inverse} monochrome={monochrome} active={active}>
     <NavMenuItem
       icon={<ColoredIcon icon="book" color="green" />}
       description="Learn everything you need to know to use Storybook"
@@ -36,8 +36,8 @@ export const Docs = ({ inverse, monochrome, navLinks }: Menu) => (
   </NavMenu>
 );
 
-export const Community = ({ inverse, monochrome, navLinks }: Menu) => (
-  <NavMenu label="Community" inverse={inverse} monochrome={monochrome}>
+export const Community = ({ active, inverse, monochrome, navLinks }: Menu) => (
+  <NavMenu label="Community" inverse={inverse} monochrome={monochrome} active={active}>
     <NavMenuItem
       icon={<ColoredIcon icon="starhollow" color="gold" />}
       description="Join thousands of frontend devs to learn and share"
