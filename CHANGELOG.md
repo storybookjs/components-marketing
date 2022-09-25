@@ -1,3 +1,15 @@
+# v2.0.36 (Sun Sep 25 2022)
+
+#### 🐛 Bug Fix
+
+- add active state to nav [#50](https://github.com/storybookjs/components-marketing/pull/50) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.35 (Fri Sep 23 2022)
 
 #### 🐛 Bug Fix
