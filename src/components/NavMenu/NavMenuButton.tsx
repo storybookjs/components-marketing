@@ -14,6 +14,7 @@ const PureNavMenuButton = styled.button<{
   inverse?: boolean;
   monochrome?: boolean;
   open?: boolean;
+  active?: boolean;
 }>`
   ${text.regularBold};
   display: inline-flex;
@@ -28,6 +29,15 @@ const PureNavMenuButton = styled.button<{
   outline: 0;
   border: 0;
   cursor: pointer;
+
+  ${(props) =>
+    props.active &&
+    css`
+      color: ${props.monochrome ? color.lightest : color.secondary};
+      background-color: ${props.monochrome
+        ? 'rgba(255, 255, 255, 0.14)'
+        : 'rgba(30, 167, 253, 0.07)'};
+    `};
 
   ${(props) =>
     props.open &&
@@ -77,12 +87,20 @@ const PureNavMenuButton = styled.button<{
 
 type NavMenuButtonProps = ComponentProps<typeof PureNavMenuButton> & {
   inverse?: boolean;
+  active?: boolean;
   monochrome?: boolean;
 };
 
 export const NavMenuButton = forwardRef<HTMLButtonElement, NavMenuButtonProps>(
-  ({ inverse, monochrome, open, children, ...props }, ref) => (
-    <PureNavMenuButton inverse={inverse} monochrome={monochrome} ref={ref} open={open} {...props}>
+  ({ active, inverse, monochrome, open, children, ...props }, ref) => (
+    <PureNavMenuButton
+      active={active}
+      inverse={inverse}
+      monochrome={monochrome}
+      ref={ref}
+      open={open}
+      {...props}
+    >
       {children}
       {open ? <ExpandableIcon icon="arrowup" /> : <ExpandableIcon icon="arrowdown" />}
     </PureNavMenuButton>

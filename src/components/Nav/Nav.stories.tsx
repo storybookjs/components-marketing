@@ -49,13 +49,19 @@ const Template = (args) => (
 export const Default = Template.bind({});
 
 export const Inverse = Template.bind({});
-Inverse.args = { inverse: true };
+Inverse.args = { inverse: true, activeSection: 'integrations' };
 Inverse.parameters = {
   backgrounds: { default: 'dark' },
 };
 
+export const ActiveItem = Template.bind({});
+ActiveItem.args = { activeSection: 'why' };
+
+export const ActiveMenu = Template.bind({});
+ActiveMenu.args = { activeSection: 'docs' };
+
 export const Monochrome = Template.bind({});
-Monochrome.args = { inverse: true, monochrome: true };
+Monochrome.args = { inverse: true, monochrome: true, activeSection: 'community' };
 Monochrome.parameters = {
   backgrounds: {
     default: 'custom',
@@ -75,7 +81,7 @@ export const FullStack = () => (
       link="https://storybook.js.org/blog/storybook-lazy-compilation-for-webpack/"
       githubStarCount={73724}
     />
-    <Nav apiKey="ALGOLIA_API_KEY" framework="react" version="6.5" />
+    <Nav apiKey="ALGOLIA_API_KEY" framework="react" version="6.5" activeSection="showcase" />
     <SubNav>
       <SubNavBreadcrumb tertiary href="/back">
         <Icon icon="arrowleft" />

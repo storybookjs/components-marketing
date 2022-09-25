@@ -105,6 +105,7 @@ interface NavProps {
   framework: string;
   version: string;
   apiKey: string;
+  activeSection?: 'home' | 'why' | 'docs' | 'integrations' | 'showcase' | 'community';
 }
 
 const NavLinks = styled.div`
@@ -126,6 +127,7 @@ export const Nav: FunctionComponent<NavProps> = ({
   framework = 'react',
   version = '6.5',
   apiKey,
+  activeSection = 'home',
 }) => {
   const navLinks = useContext(LinksContext);
 
@@ -145,6 +147,7 @@ export const Nav: FunctionComponent<NavProps> = ({
         </LogoNavItem>
         <NavLinks>
           <NavItem
+            active={activeSection === 'why'}
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
             href={navLinks.whyStorybook.url}
@@ -153,6 +156,7 @@ export const Nav: FunctionComponent<NavProps> = ({
             Why
           </NavItem>
           <NavItem
+            active={activeSection === 'showcase'}
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
             href={navLinks.showcase.url}
@@ -160,8 +164,14 @@ export const Nav: FunctionComponent<NavProps> = ({
           >
             Showcase
           </NavItem>
-          <Docs inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
+          <Docs
+            inverse={inverse}
+            monochrome={monochrome}
+            navLinks={navLinks}
+            active={activeSection === 'docs'}
+          />
           <NavItem
+            active={activeSection === 'integrations'}
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
             href={navLinks.integrations.url}
@@ -169,7 +179,12 @@ export const Nav: FunctionComponent<NavProps> = ({
           >
             Integrations
           </NavItem>
-          <Community inverse={inverse} monochrome={monochrome} navLinks={navLinks} />
+          <Community
+            inverse={inverse}
+            monochrome={monochrome}
+            navLinks={navLinks}
+            active={activeSection === 'community'}
+          />
         </NavLinks>
         <GlobalSearch
           monochrome={monochrome}
