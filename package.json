@@ -49,7 +49,7 @@
     "@emotion/weak-memoize": "^0.2.5",
     "@floating-ui/react-dom-interactions": "^0.6.5",
     "@storybook/api": "^6.5.9",
-    "@storybook/design-system": "^7.8.2",
+    "@storybook/design-system": "^7.8.6",
     "@storybook/theming": "^6.5.9",
     "formik": "^2.1.5",
     "human-format": "^0.11.0",
