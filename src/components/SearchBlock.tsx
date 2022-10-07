@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   }
 `;
 
-export const SupportFeatureGrid = styled.div`
+const SupportFeatureGrid = styled.div`
   display: grid;
   gap: 30px;
   grid-template-columns: 1fr;

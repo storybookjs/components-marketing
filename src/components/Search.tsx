@@ -24,7 +24,7 @@ const Wrapper = styled.div<{ inverse?: boolean }>`
     css`
       --search-button-border: ${props.inverse ? 'rgba(255, 255, 255, 0.2)' : styles.color.border};
       --search-button-color: ${props.inverse ? styles.color.lightest : styles.color.dark};
-      --search-keys-bg: ${props.inverse ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.05)'};
+      --search-keys-bg: ${props.inverse ? 'rgba(0, 0, 0, 0.1)' : 'rgba(0, 0, 0, 0.05)'};
       --search-keys-color: ${props.inverse ? styles.color.lightest : styles.color.dark};
     `}
 `;

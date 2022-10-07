@@ -32,6 +32,7 @@ interface MailingListFormUIProps {
   handleChange: (e: React.ChangeEvent<any>) => void;
   isSubmitting?: boolean;
   value: string;
+  placeholder?: string;
 }
 
 const MailingListFormUI: FC<MailingListFormUIProps> = ({
@@ -39,6 +40,7 @@ const MailingListFormUI: FC<MailingListFormUIProps> = ({
   handleChange,
   isSubmitting,
   value = '',
+  placeholder = 'Get news emailed to you',
   ...rest
 }) => {
   const id = useId();
@@ -51,7 +53,7 @@ const MailingListFormUI: FC<MailingListFormUIProps> = ({
         type="email"
         name="email"
         value={value}
-        placeholder="Your email"
+        placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
         autoCapitalize="off"
@@ -61,7 +63,7 @@ const MailingListFormUI: FC<MailingListFormUIProps> = ({
       />
 
       <SendButton appearance="secondary" type="submit" isUnclickable={isSubmitting}>
-        Send
+        Subscribe
       </SendButton>
     </MailingListFormUIWrapper>
   );
@@ -83,7 +85,7 @@ const MailingListConfirm = styled.div`
 `;
 
 const FormWrapper = styled.form`
-  max-width: 300px;
+  max-width: 320px;
   position: relative;
 `;
 
@@ -97,6 +99,7 @@ const validateForm = (values: FormikValues) => {
 
 interface MailingListSignupProps {
   onSubscribe: () => void;
+  placeholder?: string;
 }
 
 export const MailingListSignup = ({ onSubscribe, ...props }: MailingListSignupProps) => {
