@@ -15,9 +15,11 @@ const EyebrowLink = styled(Link)<{ inverse?: boolean }>`
   overflow: hidden;
   text-overflow: ellipsis;
 
-  ${(props) => ({
-    color: props.inverse ? color.lightest : color.darker,
-  })}
+  && {
+    ${(props) => ({
+      color: props.inverse ? color.lightest : color.darker,
+    })}
+  }
 `;
 
 const EyebrowCallout = styled.a<{ inverse?: boolean }>`
