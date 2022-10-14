@@ -1,3 +1,15 @@
+# v2.0.39 (Fri Oct 14 2022)
+
+#### 🐛 Bug Fix
+
+- fix eyebrow link styling [#53](https://github.com/storybookjs/components-marketing/pull/53) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.38 (Fri Oct 14 2022)
 
 #### 🐛 Bug Fix
