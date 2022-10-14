@@ -1,9 +1,9 @@
 import React from 'react';
-import { styled, css } from '@storybook/theming';
+import { styled } from '@storybook/theming';
 import { Button, Cardinal } from '@storybook/design-system';
-import { color, marketing } from './shared/styles';
+import { color, marketing, breakpoints, spacing } from './shared/styles';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ inverse?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -12,6 +12,16 @@ const Wrapper = styled.div`
     display: block;
     width: 48px;
     height: 48px;
+  }
+
+  border: 1px solid ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.border)};
+  border-radius: ${spacing.borderRadius.small}px;
+  padding: ${spacing.padding.medium}px;
+
+  @media (min-width: ${breakpoints[1]}px) {
+    border: none;
+    border-radius: 0;
+    padding: 0;
   }
 `;
 
@@ -53,7 +63,7 @@ export const SocialCard = ({
   stat,
   ...props
 }: SocialCardProps) => (
-  <Wrapper {...props}>
+  <Wrapper inverse={inverse} {...props}>
     {icon}
     <Description inverse={inverse}>{description}</Description>
     <LinkButton
