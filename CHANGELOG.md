@@ -1,3 +1,15 @@
+# v2.0.38 (Fri Oct 14 2022)
+
+#### 🐛 Bug Fix
+
+- adjust social card styling on mobile [#52](https://github.com/storybookjs/components-marketing/pull/52) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.37 (Fri Oct 07 2022)
 
 #### 🐛 Bug Fix
