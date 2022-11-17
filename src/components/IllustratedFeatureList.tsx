@@ -298,6 +298,7 @@ export const IllustratedFeatureList = ({
               autoPlay
               loop
               playsInline
+              muted
               poster={activeFeature.poster}
             />
           </MotionDivDesktop>
