@@ -1,3 +1,15 @@
+# v2.0.40 (Thu Nov 17 2022)
+
+#### 🐛 Bug Fix
+
+- Fix autoplay for videos [#54](https://github.com/storybookjs/components-marketing/pull/54) ([@domyen](https://github.com/domyen))
+
+#### Authors: 1
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+
+---
+
 # v2.0.39 (Fri Oct 14 2022)
 
 #### 🐛 Bug Fix
