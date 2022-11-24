@@ -33,7 +33,7 @@ export const defaultLinks = {
   showcase: { url: 'https://storybook.js.org/showcase' },
   projects: { url: 'https://storybook.js.org/showcase/projects' },
   componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
-  integrations: { url: 'https://storybook.js.org/addons' },
+  integrations: { url: 'https://storybook.js.org/integrations' },
   getInvolved: { url: 'https://storybook.js.org/community' },
   blog: { url: 'https://storybook.js.org/blog' },
   hiring: { url: 'https://www.chromatic.com/company/jobs' },
