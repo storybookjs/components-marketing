@@ -1,3 +1,15 @@
+# v2.0.41 (Thu Nov 24 2022)
+
+#### 🐛 Bug Fix
+
+- Update default links [#55](https://github.com/storybookjs/components-marketing/pull/55) ([@Integrayshaun](https://github.com/Integrayshaun))
+
+#### Authors: 1
+
+- Shaun Evening ([@Integrayshaun](https://github.com/Integrayshaun))
+
+---
+
 # v2.0.40 (Thu Nov 17 2022)
 
 #### 🐛 Bug Fix
