@@ -48,7 +48,7 @@
     "@docsearch/react": "^3.1.0",
     "@emotion/weak-memoize": "^0.2.5",
     "@floating-ui/react-dom-interactions": "^0.6.5",
-    "@storybook/design-system": "^7.9.1",
+    "@storybook/design-system": "^7.9.2",
     "@storybook/manager-api": "^7.0.0-alpha.54",
     "@storybook/theming": "^7.0.0-alpha.54",
     "formik": "^2.1.5",

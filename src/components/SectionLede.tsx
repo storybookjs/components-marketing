@@ -75,7 +75,7 @@ interface SectionLedeProps {
   actions?: React.ReactNode;
   meta?: React.ReactNode;
   inverse?: boolean;
-  headingWrapper?: React.ComponentType | string;
+  headingWrapper?: React.ElementType<any> & (string | React.ComponentType);
 }
 
 export const SectionLede = ({

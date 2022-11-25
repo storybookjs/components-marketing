@@ -7,7 +7,6 @@ export * from './Breadcrumb';
 export * from './BrowserChrome';
 export * from './CollapsedNav';
 export * from './ColoredIcon';
-export * from './DisplayCard/DisplayCard';
 export * from './Drawer';
 export * from './Eyebrow';
 export * from './FeatureStep';

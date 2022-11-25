@@ -3575,10 +3575,10 @@
     lodash "^4.17.15"
     type-fest "^2.19.0"
 
-"@storybook/design-system@^7.9.1":
-  version "7.9.1"
-  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.9.1.tgz#bbc247f2c3ebbd5f79ac17e198767b6abe98f614"
-  integrity sha512-3zPDT5oK9Gh0ooynLE9kaIf8AUl8tsGfH2SMP5mIrLMy6GWQ5PH8f5RQpZJpjKf7+PtYSEiZ6chh6BucBSPkiA==
+"@storybook/design-system@^7.9.2":
+  version "7.9.2"
+  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.9.2.tgz#50c8dc85cf8ad6caf6dfe6949baa57a8723c70af"
+  integrity sha512-m1JR0kHlJMsynxSEAynL/XdKu5/ryj/mWipsXmUV8oPq6vP22BKwSO7bH/gXx6iR6f0qDqBY44eahv/p6x70dQ==
   dependencies:
     "@emotion/weak-memoize" "^0.2.5"
     "@storybook/theming" "^6.5.9"
