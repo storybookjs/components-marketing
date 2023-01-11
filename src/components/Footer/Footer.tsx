@@ -25,6 +25,7 @@ const footerGroups = (links: Links) => ({
     { label: 'Tutorials', link: links.tutorials },
     { label: 'Changelog', link: links.changelog },
     { label: 'Telemetry', link: links.telemetry },
+    { label: 'Status', link: links.status },
   ],
   community: [
     { label: 'Integrations', link: links.integrations },

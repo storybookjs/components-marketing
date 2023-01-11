@@ -31,6 +31,7 @@ const links = {
   tutorials: { url: 'https://storybook.js.org/tutorials' },
   changelog: { url: '/releases', linkWrapper: FakeGatsbyLink },
   telemetry: { url: '/telemetry', linkWrapper: FakeGatsbyLink },
+  status: { url: 'https://storybook.js.org/status' },
   showcase: { url: 'https://storybook.js.org/showcase' },
   projects: { url: 'https://storybook.js.org/showcase/projects' },
   componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
