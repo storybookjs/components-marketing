@@ -1,3 +1,15 @@
+# v2.0.42 (Wed Jan 11 2023)
+
+#### 🐛 Bug Fix
+
+- Add `/status` link to Footer [#58](https://github.com/storybookjs/components-marketing/pull/58) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.0.41 (Thu Nov 24 2022)
 
 #### 🐛 Bug Fix
