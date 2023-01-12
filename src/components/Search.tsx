@@ -161,6 +161,11 @@ export const Search: FunctionComponent<SearchProps> = ({
           searchParameters={{
             // prettier-ignore
             facetFilters: [
+                {/*
+                    Used to allow recipes to come through global search
+                    along with docs. Values inside an array act as an OR
+                    between the containing values
+                */}
                 ['tags:docs', 'tags:recipes'],
                 [`framework:${framework}`, 'framework:agnostic'],
                 [`version:${version}, 'version:agnostic']`
