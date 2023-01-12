@@ -161,9 +161,9 @@ export const Search: FunctionComponent<SearchProps> = ({
           searchParameters={{
             // prettier-ignore
             facetFilters: [
-                'tags:docs',
-                `framework:${framework}`,
-                `version:${version}`
+                ['tags:docs', 'tags:recipes'],
+                [`framework:${framework}`, 'framework:agnostic'],
+                [`version:${version}, 'version:agnostic']`
               ],
           }}
           translations={{
