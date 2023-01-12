@@ -168,7 +168,7 @@ export const Search: FunctionComponent<SearchProps> = ({
                 */}
                 [`tags:docs`, `tags:recipes`],
                 [`framework:${framework}`, `framework:agnostic`],
-                [`version:${version}, `version:agnostic`]`
+                [`version:${version}`, `version:agnostic`],
               ],
           }}
           translations={{
