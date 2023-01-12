@@ -166,9 +166,9 @@ export const Search: FunctionComponent<SearchProps> = ({
                     along with docs. Values inside an array act as an OR
                     between the containing values
                 */}
-                ['tags:docs', 'tags:recipes'],
-                [`framework:${framework}`, 'framework:agnostic'],
-                [`version:${version}, 'version:agnostic']`
+                [`tags:docs`, `tags:recipes`],
+                [`framework:${framework}`, `framework:agnostic`],
+                [`version:${version}, `version:agnostic`]`
               ],
           }}
           translations={{
