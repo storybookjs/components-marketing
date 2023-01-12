@@ -1,3 +1,15 @@
+# v2.0.43 (Thu Jan 12 2023)
+
+#### 🐛 Bug Fix
+
+- Add recipe values for doc search facets [#59](https://github.com/storybookjs/components-marketing/pull/59) ([@Integrayshaun](https://github.com/Integrayshaun))
+
+#### Authors: 1
+
+- Shaun Evening ([@Integrayshaun](https://github.com/Integrayshaun))
+
+---
+
 # v2.0.42 (Wed Jan 11 2023)
 
 #### 🐛 Bug Fix
