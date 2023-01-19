@@ -39,6 +39,27 @@ const EyebrowCallout = styled.a<{ inverse?: boolean }>`
   ${(props) => ({ color: props.inverse ? color.lightest : color.dark })}
 `;
 
+const StorybookDayLink = styled.a`
+  margin-left: ${spacing.padding.medium}px;
+  line-height: 1;
+  transition: transform 150ms ease-out;
+  text-decoration: none;
+  display: none;
+
+  &:hover,
+  &:focus-visible {
+    cursor: pointer;
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (min-width: ${breakpoints[2]}px) {
+    display: block;
+  }
+`;
+
 const EyebrowContainer = styled.div<{
   inverse?: boolean;
 }>`
@@ -89,6 +110,9 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
     >
       Automate with Chromatic
     </EyebrowCallout>
+    <StorybookDayLink href="https://storybook.js.org/day">
+      <Badge status="selected">Storybook Day 2023</Badge>
+    </StorybookDayLink>
     <GithubButtonWrapper>
       <GithubButton starCount={githubStarCount} />
     </GithubButtonWrapper>
