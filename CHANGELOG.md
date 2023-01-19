@@ -1,3 +1,15 @@
+# v2.0.44 (Thu Jan 19 2023)
+
+#### 🐛 Bug Fix
+
+- Add Storybook Day link to eyebrow [#60](https://github.com/storybookjs/components-marketing/pull/60) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.43 (Thu Jan 12 2023)
 
 #### 🐛 Bug Fix
