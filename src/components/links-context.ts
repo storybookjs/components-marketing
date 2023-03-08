@@ -25,7 +25,7 @@ export interface Links {
 
 export const defaultLinks = {
   home: { url: 'https://storybook.js.org/' },
-  whyStorybook: { url: 'https://storybook.js.org/docs/react/why-storybook' },
+  whyStorybook: { url: 'https://storybook.js.org/docs/react/get-started/why-storybook' },
   componentDriven: { url: 'https://componentdriven.org' },
   guides: { url: 'https://storybook.js.org/docs' },
   tutorials: { url: 'https://storybook.js.org/tutorials' },
