@@ -1,3 +1,15 @@
+# v2.0.46 (Wed Mar 08 2023)
+
+#### 🐛 Bug Fix
+
+- Fix NavMenu styles [#62](https://github.com/storybookjs/components-marketing/pull/62) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.0.45 (Wed Mar 08 2023)
 
 #### 🐛 Bug Fix
