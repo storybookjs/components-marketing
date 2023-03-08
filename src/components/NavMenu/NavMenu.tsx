@@ -25,17 +25,14 @@ import {
 } from '@floating-ui/react-dom-interactions';
 import { styled } from '@storybook/theming';
 import mergeRefs from 'react-merge-refs';
-import { color, shadows } from '../shared/styles';
+import { MenuPanel } from '../Menu/Menu';
 import { NavMenuButton } from './NavMenuButton';
 
-export const NavMenuPanel = styled.div`
+export const NavMenuPanel = styled(MenuPanel)`
   padding: 12px;
   width: 288px;
 
-  background: ${color.lightest};
   border-radius: 5px;
-
-  ${shadows.tooltip};
 `;
 
 interface NavMenuProps {
