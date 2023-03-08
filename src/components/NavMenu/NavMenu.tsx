@@ -31,8 +31,6 @@ import { NavMenuButton } from './NavMenuButton';
 export const NavMenuPanel = styled(MenuPanel)`
   padding: 12px;
   width: 288px;
-
-  border-radius: 5px;
 `;
 
 interface NavMenuProps {
