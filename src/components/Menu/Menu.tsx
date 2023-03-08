@@ -16,7 +16,7 @@ import {
 } from '@floating-ui/react-dom-interactions';
 import { styled } from '@storybook/theming';
 import mergeRefs from 'react-merge-refs';
-import { color } from '../shared/styles';
+import { color, shadows } from '../shared/styles';
 import { MenuButton } from './MenuButton';
 import { MenuGroup, MenuItem } from './MenuItem';
 
@@ -28,7 +28,7 @@ export const MenuPanel = styled.div`
   background: ${color.lightest};
   border-radius: 4px;
 
-  box-shadow: 0px 0px 15px ${color.tr5}, 0px 1px 2px ${color.tr10};
+  ${shadows.tooltip};
 `;
 
 interface MenuItemProps {
