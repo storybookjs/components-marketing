@@ -114,6 +114,7 @@ const docSearchStyles = css`
 
   ${classNames.PLACEHOLDER} {
     font-size: 1em;
+    white-space: nowrap;
     padding: 0;
     display: block;
   }
