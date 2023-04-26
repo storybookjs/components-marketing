@@ -23,7 +23,6 @@ import { MenuGroup, MenuItem } from './MenuItem';
 export const MenuPanel = styled.div`
   width: 200px;
   margin: 0;
-  z-index: 999;
 
   background: ${color.lightest};
   border-radius: 4px;
