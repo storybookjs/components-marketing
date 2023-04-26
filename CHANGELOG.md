@@ -1,3 +1,15 @@
+# v2.0.47 (Wed Apr 26 2023)
+
+#### 🐛 Bug Fix
+
+- reduce z-index for drawer to show search on mobile [#65](https://github.com/storybookjs/components-marketing/pull/65) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.0.46 (Wed Mar 08 2023)
 
 #### 🐛 Bug Fix
