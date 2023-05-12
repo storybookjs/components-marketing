@@ -108,11 +108,8 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
       inverse={inverse}
       href="https://www.chromatic.com?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook"
     >
-      Automate with Chromatic
+      Visual test with Chromatic
     </EyebrowCallout>
-    <StorybookDayLink href="https://storybook.js.org/day">
-      <Badge status="selected">Storybook Day 2023</Badge>
-    </StorybookDayLink>
     <GithubButtonWrapper>
       <GithubButton starCount={githubStarCount} />
     </GithubButtonWrapper>
