@@ -1,3 +1,15 @@
+# v2.1.0 (Fri May 12 2023)
+
+#### 🚀 Enhancement
+
+- Tweak header, remove SB Day [#66](https://github.com/storybookjs/components-marketing/pull/66) ([@domyen](https://github.com/domyen))
+
+#### Authors: 1
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+
+---
+
 # v2.0.47 (Wed Apr 26 2023)
 
 #### 🐛 Bug Fix
