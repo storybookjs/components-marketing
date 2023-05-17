@@ -25,7 +25,9 @@ const EyebrowLink = styled(Link)<{ inverse?: boolean }>`
 const EyebrowCallout = styled(Link)<{ inverse?: boolean }>`
   ${text.storybookMedium}
 
-  ${(props) => ({ color: props.inverse ? color.lightest : color.dark })}
+  && {
+    ${(props) => ({ color: props.inverse ? color.lightest : color.dark })}
+  }
 `;
 
 const EyebrowContainer = styled.div<{
