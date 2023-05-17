@@ -133,4 +133,19 @@ export const mobileGroups = (links: Links) => [
       },
     ],
   },
+  {
+    label: 'Chromatic',
+    items: [
+      {
+        label: 'Visual testing',
+        link: links.chromatic,
+        icon: <ColoredIcon icon="chromatic" color="orange" />,
+      },
+      {
+        label: 'Enterprise',
+        link: links.enterprise,
+        icon: <ColoredIcon icon="admin" color="midnight" />,
+      },
+    ],
+  },
 ];
