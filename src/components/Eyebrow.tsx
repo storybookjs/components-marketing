@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@storybook/theming';
-import { Badge, Link } from '@storybook/design-system';
+import { Badge, Icon, Link } from '@storybook/design-system';
 import { text, color, spacing, breakpoints } from './shared/styles';
 import { GithubButton } from './GithubButton';
 
@@ -26,6 +26,13 @@ const EyebrowCallout = styled.a<{ inverse?: boolean }>`
   ${text.storybookMedium}
   transition: transform 150ms ease-out;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    display: block;
+    margin-right: 5px;
+  }
 
   &:hover,
   &:focus-visible {
@@ -37,27 +44,6 @@ const EyebrowCallout = styled.a<{ inverse?: boolean }>`
   }
 
   ${(props) => ({ color: props.inverse ? color.lightest : color.dark })}
-`;
-
-const StorybookDayLink = styled.a`
-  margin-left: ${spacing.padding.medium}px;
-  line-height: 1;
-  transition: transform 150ms ease-out;
-  text-decoration: none;
-  display: none;
-
-  &:hover,
-  &:focus-visible {
-    cursor: pointer;
-    transform: translateY(-1px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
-
-  @media (min-width: ${breakpoints[2]}px) {
-    display: block;
-  }
 `;
 
 const EyebrowContainer = styled.div<{
@@ -86,7 +72,7 @@ const EyebrowContainer = styled.div<{
 
   @media (min-width: ${breakpoints[2]}px) {
     ${EyebrowCallout} {
-      display: inline-block;
+      display: inline-flex;
     }
   }
 `;
@@ -108,7 +94,7 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
       inverse={inverse}
       href="https://www.chromatic.com?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook"
     >
-      Visual test with Chromatic
+      <Icon icon="chromatic" aria-hidden /> Visual test with Chromatic
     </EyebrowCallout>
     <GithubButtonWrapper>
       <GithubButton starCount={githubStarCount} />
