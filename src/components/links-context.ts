@@ -21,6 +21,8 @@ export interface Links {
   getInvolved: LinkItem;
   blog: LinkItem;
   hiring: LinkItem;
+  enterprise: LinkItem;
+  chromatic: LinkItem;
 }
 
 export const defaultLinks = {
@@ -39,6 +41,12 @@ export const defaultLinks = {
   getInvolved: { url: 'https://storybook.js.org/community' },
   blog: { url: 'https://storybook.js.org/blog' },
   hiring: { url: 'https://www.chromatic.com/company/jobs' },
+  enterprise: {
+    url: 'https://www.chromatic.com/sales?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
+  },
+  chromatic: {
+    url: 'https://www.chromatic.com/?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
+  },
 };
 
 export const LinksContext = createContext<Links>(defaultLinks);

@@ -9,6 +9,12 @@ import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
 
+const navBreakpoints = {
+  desktop: 978,
+  tablet: breakpoints[1],
+  mobile: breakpoints[0],
+};
+
 const GlobalSearch = styled(Search)<{ monochrome?: boolean }>`
   ${(props) => props.monochrome && ` --search-keys-bg: rgba(255, 255, 255, 0.1);`}
 
@@ -16,17 +22,17 @@ const GlobalSearch = styled(Search)<{ monochrome?: boolean }>`
   width: 160px;
   display: none;
 
-  @media (min-width: ${breakpoints[1]}px) {
+  @media (min-width: ${navBreakpoints.tablet}px) {
     display: block;
   }
 
-  @media (min-width: ${breakpoints[1]}px) {
+  @media (min-width: ${navBreakpoints.tablet}px) {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  @media (min-width: ${breakpoints[2]}px) {
+  @media (min-width: ${navBreakpoints.desktop}px) {
     position: relative;
     left: initial;
     transform: initial;
@@ -45,7 +51,7 @@ const LogoNavItem = styled(NavItem)`
     outline: 2px solid ${color.secondary};
   }
 
-  @media (min-width: ${breakpoints[2]}px) {
+  @media (min-width: ${navBreakpoints.desktop}px) {
     margin-right: 24px;
   }
 `;
@@ -72,7 +78,7 @@ const NavContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: ${breakpoints[2]}px) {
+  @media (min-width: ${navBreakpoints.desktop}px) {
     justify-content: flex-start;
   }
 `;
@@ -81,11 +87,11 @@ const NavContainer = styled.nav`
 const TabletNav = styled(TabletMenu)`
   display: none;
 
-  @media (min-width: ${breakpoints[1]}px) {
+  @media (min-width: ${navBreakpoints.tablet}px) {
     display: block;
   }
 
-  @media (min-width: ${breakpoints[2]}px) {
+  @media (min-width: ${navBreakpoints.desktop}px) {
     display: none;
   }
 `;
@@ -94,7 +100,7 @@ const TabletNav = styled(TabletMenu)`
 const MobileNav = styled(MobileMenu)`
   display: block;
 
-  @media (min-width: ${breakpoints[1]}px) {
+  @media (min-width: ${navBreakpoints.tablet}px) {
     display: none;
   }
 `;
@@ -116,7 +122,7 @@ const NavLinks = styled.div`
     margin-right: 9px;
   }
 
-  @media (min-width: ${breakpoints[2]}px) {
+  @media (min-width: ${navBreakpoints.desktop}px) {
     display: flex;
   }
 `;
@@ -185,6 +191,14 @@ export const Nav: FunctionComponent<NavProps> = ({
             navLinks={navLinks}
             active={activeSection === 'community'}
           />
+          <NavItem
+            monochrome={monochrome}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.enterprise.url}
+            LinkWrapper={navLinks.enterprise.linkWrapper}
+          >
+            Enterprise
+          </NavItem>
         </NavLinks>
         <GlobalSearch
           monochrome={monochrome}

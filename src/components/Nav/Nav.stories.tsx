@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Icon } from '@storybook/design-system';
 import { Nav } from './Nav';
-import { LinksContextProvider } from '../links-context';
+import { LinksContextProvider, defaultLinks } from '../links-context';
 import { Eyebrow } from '../Eyebrow';
 import { SubNav, SubNavBreadcrumb, SubNavRight, SubNavCTA } from '../SubNav';
 
@@ -24,6 +24,7 @@ const FakeGatsbyLink = forwardRef<HTMLAnchorElement, { to: string }>(
 FakeGatsbyLink.displayName = 'FakeGatsbyLink';
 
 const navLinks = {
+  ...defaultLinks,
   home: { url: '/', linkWrapper: FakeGatsbyLink },
   whyStorybook: { url: '/why', linkWrapper: FakeGatsbyLink },
   componentDriven: { url: 'https://componentdriven.org' },
