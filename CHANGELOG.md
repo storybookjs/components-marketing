@@ -1,3 +1,16 @@
+# v2.1.1 (Wed May 17 2023)
+
+#### 🐛 Bug Fix
+
+- Add enterprise link in nav [#67](https://github.com/storybookjs/components-marketing/pull/67) ([@winkerVSbecks](https://github.com/winkerVSbecks) [@domyen](https://github.com/domyen))
+
+#### Authors: 2
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v2.1.0 (Fri May 12 2023)
 
 #### 🚀 Enhancement
