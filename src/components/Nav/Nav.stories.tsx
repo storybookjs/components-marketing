@@ -9,7 +9,7 @@ export default {
   title: 'Nav/Nav',
   component: Nav,
   parameters: {
-    chromatic: { viewports: [320, 440, 600, 900] },
+    chromatic: { viewports: [320, 440, 600, 1000] },
     layout: 'fullscreen',
   },
 };
