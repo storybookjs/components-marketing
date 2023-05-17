@@ -22,26 +22,8 @@ const EyebrowLink = styled(Link)<{ inverse?: boolean }>`
   }
 `;
 
-const EyebrowCallout = styled.a<{ inverse?: boolean }>`
+const EyebrowCallout = styled(Link)<{ inverse?: boolean }>`
   ${text.storybookMedium}
-  transition: transform 150ms ease-out;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-
-  svg {
-    display: block;
-    margin-right: 5px;
-  }
-
-  &:hover,
-  &:focus-visible {
-    cursor: pointer;
-    transform: translateY(-1px);
-  }
-  &:active {
-    transform: translateY(0);
-  }
 
   ${(props) => ({ color: props.inverse ? color.lightest : color.dark })}
 `;
@@ -92,9 +74,11 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
     </EyebrowLink>
     <EyebrowCallout
       inverse={inverse}
+      secondary={!inverse}
       href="https://www.chromatic.com?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook"
     >
-      <Icon icon="chromatic" aria-hidden /> Visual test with Chromatic
+      <Icon icon="chromatic" aria-hidden />
+      Visual test with Chromatic
     </EyebrowCallout>
     <GithubButtonWrapper>
       <GithubButton starCount={githubStarCount} />
