@@ -15,6 +15,12 @@ export default {
       },
     },
   },
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/u803uHFxLcfNG3DsdV0qVc/Storybook-Growth?type=design&node-id=1-21419&t=3I3TYwDWUOxuzA1n-4',
+    },
+  },
 };
 
 const Template = ({ items, ...args }) => (
