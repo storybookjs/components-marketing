@@ -4109,10 +4109,10 @@
   dependencies:
     type-fest "^2.19.0"
 
-"@storybook/design-system@^7.15.10":
-  version "7.15.10"
-  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.15.10.tgz#531c3c252f33f251c6a58bbefb96182c15085075"
-  integrity sha512-PQwvBny6a2gJFjIUTUGv4kQR4cUXTbR9jzth8sCF7gf8e0sC6vnPzrp5kMea/IRcxZt9Uo9xbho4j4NqALd4jg==
+"@storybook/design-system@^7.15.11":
+  version "7.15.11"
+  resolved "https://registry.npmjs.org/@storybook/design-system/-/design-system-7.15.11.tgz#db40ecb721fc418a7eec0793c4608b9b14106af0"
+  integrity sha512-larB2fXnQbXHbnE08xh2kxqX7EEEl/0C7xBFOeAYBIlWjQRptmXQ1fVKVRk+m7pejbXVi5nYvWzY/W5wp+Ug9Q==
   dependencies:
     "@emotion/weak-memoize" "^0.3.0"
     "@storybook/theming" "^7.0.2"
