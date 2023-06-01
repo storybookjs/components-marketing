@@ -1,6 +1,6 @@
 import React, { ComponentProps, FunctionComponent, useMemo } from 'react';
 import { styled } from '@storybook/theming';
-import { LinkTabs } from '@storybook/design-system';
+import { LinkProps, LinkTabs } from '@storybook/design-system';
 import { breakpoints } from '../shared/styles';
 import { Menu } from '../Menu';
 
@@ -23,8 +23,11 @@ const TabsMenu = styled(Menu)`
   }
 `;
 
+type Unpacked<T> = T extends (infer U)[] ? U : T;
+type Item = Unpacked<ComponentProps<typeof LinkTabs>['items']> & LinkProps;
+
 interface SubNavTabsProps {
-  items: ComponentProps<typeof LinkTabs>['items'];
+  items: Item[];
   label: string;
 }
 
