@@ -1,3 +1,15 @@
+# v2.1.3 (Tue Aug 22 2023)
+
+#### 🐛 Bug Fix
+
+- fix(search): component breaks while loading font [#63](https://github.com/storybookjs/components-marketing/pull/63) ([@nnnnoel](https://github.com/nnnnoel))
+
+#### Authors: 1
+
+- Noel Kim (김민혁) ([@nnnnoel](https://github.com/nnnnoel))
+
+---
+
 # v2.1.2 (Tue Aug 22 2023)
 
 #### 🐛 Bug Fix
