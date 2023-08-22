@@ -1,3 +1,15 @@
+# v2.1.2 (Tue Aug 22 2023)
+
+#### 🐛 Bug Fix
+
+- Add conference and jobs board to header and footer [#69](https://github.com/storybookjs/components-marketing/pull/69) ([@domyen](https://github.com/domyen))
+
+#### Authors: 1
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+
+---
+
 # v2.1.1 (Wed May 17 2023)
 
 #### 🐛 Bug Fix
