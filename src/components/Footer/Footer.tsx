@@ -31,7 +31,8 @@ const footerGroups = (links: Links) => ({
     { label: 'Integrations', link: links.integrations },
     { label: 'Get involved', link: links.getInvolved },
     { label: 'Blog', link: links.blog },
-    { label: "We're hiring", link: links.hiring },
+    { label: 'Find jobs', link: links.jobsBoard },
+    { label: 'Speak at conferences', link: links.conferenceBoard },
   ],
   showcase: [
     { label: 'Explore', link: links.showcase },

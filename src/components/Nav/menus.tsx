@@ -54,6 +54,22 @@ export const Community = ({ active, inverse, monochrome, navLinks }: Menu) => (
     >
       Blog and updates
     </NavMenuItem>
+    <NavMenuItem
+      icon={<ColoredIcon icon="bookmarkhollow" color="seafoam" />}
+      description="Browse job board for roles that use Storybook"
+      href={navLinks.jobsBoard.url}
+      LinkWrapper={navLinks.jobsBoard.linkWrapper}
+    >
+      Find jobs
+    </NavMenuItem>
+    <NavMenuItem
+      icon={<ColoredIcon icon="globe" color="secondary" />}
+      description="Submit talks to conferences about Storybook"
+      href={navLinks.conferenceBoard.url}
+      LinkWrapper={navLinks.conferenceBoard.linkWrapper}
+    >
+      Speak at conferences
+    </NavMenuItem>
   </NavMenu>
 );
 
@@ -130,6 +146,16 @@ export const mobileGroups = (links: Links) => [
         label: 'Blog',
         link: links.blog,
         icon: <ColoredIcon icon="rss" color="purple" />,
+      },
+      {
+        label: 'Jobs board',
+        link: links.jobsBoard,
+        icon: <ColoredIcon icon="bookmarkhollow" color="seafoam" />,
+      },
+      {
+        label: 'Conference board',
+        link: links.conferenceBoard,
+        icon: <ColoredIcon icon="globe" color="secondary" />,
       },
     ],
   },
