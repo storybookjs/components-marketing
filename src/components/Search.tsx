@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { controlOrMetaKey, shortcutToHumanString } from '@storybook/api/shortcut';
+import { controlOrMetaKey, shortcutToHumanString } from '@storybook/manager-api';
 import { css, Global, styled } from '@storybook/theming';
 import { styles } from '@storybook/design-system';
 import { DocSearch } from '@docsearch/react';
