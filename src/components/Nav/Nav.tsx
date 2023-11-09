@@ -108,7 +108,6 @@ const MobileNav = styled(MobileMenu)`
 interface NavProps {
   inverse?: boolean;
   monochrome?: boolean;
-  framework: string;
   version: string;
   apiKey: string;
   activeSection?: 'home' | 'why' | 'docs' | 'integrations' | 'showcase' | 'community';
@@ -130,7 +129,6 @@ const NavLinks = styled.div`
 export const Nav: FunctionComponent<NavProps> = ({
   inverse,
   monochrome,
-  framework = 'react',
   version = '6.5',
   apiKey,
   activeSection = 'home',
@@ -200,13 +198,7 @@ export const Nav: FunctionComponent<NavProps> = ({
             Enterprise
           </NavItem>
         </NavLinks>
-        <GlobalSearch
-          monochrome={monochrome}
-          framework={framework}
-          apiKey={apiKey}
-          version={version}
-          inverse={inverse}
-        />
+        <GlobalSearch monochrome={monochrome} apiKey={apiKey} version={version} inverse={inverse} />
         {/* Collapsed navs for tablet and mobile */}
         <TabletNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
         <MobileNav
@@ -215,7 +207,6 @@ export const Nav: FunctionComponent<NavProps> = ({
           monochrome={monochrome}
           apiKey={apiKey}
           version={version}
-          framework={framework}
         />
       </NavContainer>
     </Wrapper>

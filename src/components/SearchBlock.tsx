@@ -98,7 +98,7 @@ export const SearchBlock: FC<SearchBlockProps> = ({ version, apiKey }) => {
           <Desc>There’s probably an article for your issue already.</Desc>
         </div>
         <SearchWrapper>
-          <StyledSearch framework="react" version={version} apiKey={apiKey} />
+          <StyledSearch version={version} apiKey={apiKey} />
         </SearchWrapper>
       </Meta>
     </Wrapper>

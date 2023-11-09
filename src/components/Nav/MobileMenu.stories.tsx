@@ -7,6 +7,4 @@ export default {
   component: MobileMenu,
 };
 
-export const Default = () => (
-  <MobileMenu navLinks={defaultLinks} framework="react" version="6.5" apiKey="api_key" />
-);
+export const Default = () => <MobileMenu navLinks={defaultLinks} version="6.5" apiKey="api_key" />;
