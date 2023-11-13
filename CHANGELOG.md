@@ -1,3 +1,15 @@
+# v2.1.4 (Mon Nov 13 2023)
+
+#### 🐛 Bug Fix
+
+- Add z-index to mobile nav to make sure it always sit on top. [#72](https://github.com/storybookjs/components-marketing/pull/72) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
 # v2.1.3 (Tue Aug 22 2023)
 
 #### 🐛 Bug Fix
