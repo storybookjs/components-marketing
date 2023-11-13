@@ -18,7 +18,7 @@ interface ProjectCardProps
 const Logotype = styled.span<Pick<ProjectCardProps, 'size'>>`
   font-size: ${(props) =>
     props.size === 'jumbo' ? styles.typography.size.l2 : styles.typography.size.m2}px;
-  font-weight: ${styles.typography.weight.black};
+  font-weight: 900;
 `;
 
 const Thumb = styled.div<

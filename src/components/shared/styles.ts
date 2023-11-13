@@ -1,5 +1,5 @@
 import { styles } from '@storybook/design-system';
-import { css, styled } from '@storybook/theming';
+import { css } from '@storybook/theming';
 
 export const {
   background,
@@ -14,7 +14,7 @@ export const {
   subheading,
   text,
   code,
-} = styles;
+} = styles as any;
 
 export const color = {
   midnight: '#171C23',

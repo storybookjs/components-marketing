@@ -98,11 +98,12 @@ const validateForm = (values: FormikValues) => {
 };
 
 interface MailingListSignupProps {
-  onSubscribe: () => void;
+  onSubscribe?: () => void;
   placeholder?: string;
+  ctaText?: string;
 }
 
-export const MailingListSignup = ({ onSubscribe, ...props }: MailingListSignupProps) => {
+export const MailingListSignup = ({ onSubscribe, ctaText, ...props }: MailingListSignupProps) => {
   const formRef = useRef(null);
   const [hasSubmitted, onSubmitForm] = useMailingListForm(onSubscribe);
 

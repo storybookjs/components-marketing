@@ -1,8 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import { controlOrMetaKey, shortcutToHumanString } from '@storybook/api/shortcut';
+import { shortcutToHumanString } from '@storybook/manager-api';
 import { css, Global, styled } from '@storybook/theming';
 import { styles } from '@storybook/design-system';
 import { DocSearch } from '@docsearch/react';
+
+export const isMacLike = () =>
+  navigator && navigator.platform ? !!navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) : false;
+export const controlOrMetaKey = () => (isMacLike() ? 'meta' : 'control');
 
 const algoliaDocSearchConfig = {
   appId: '6L6UWBTLCK',
