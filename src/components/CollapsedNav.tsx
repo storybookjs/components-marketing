@@ -31,6 +31,8 @@ export const CollapsedNavPanel = styled.div`
   outline: 0;
 
   ${shadows.tooltip}
+
+  z-index: 20;
 `;
 
 interface MenuItem {
