@@ -4,7 +4,7 @@ import { Logos } from '@storybook/design-system';
 import { pageMargins, spacing, color, breakpoints } from '../shared/styles';
 import { NavItem } from './NavItem';
 import { Search } from '../Search';
-import { Docs, Community } from './menus';
+import { Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
@@ -168,12 +168,15 @@ export const Nav: FunctionComponent<NavProps> = ({
           >
             Showcase
           </NavItem>
-          <Docs
-            inverse={inverse}
-            monochrome={monochrome}
-            navLinks={navLinks}
+          <NavItem
             active={activeSection === 'docs'}
-          />
+            monochrome={monochrome}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.guides.url}
+            LinkWrapper={navLinks.showcase.linkWrapper}
+          >
+            Docs
+          </NavItem>
           <NavItem
             active={activeSection === 'integrations'}
             monochrome={monochrome}

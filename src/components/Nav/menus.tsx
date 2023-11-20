@@ -7,35 +7,6 @@ interface Menu extends ComponentProps<typeof NavMenu> {
   navLinks: Links;
 }
 
-export const Docs = ({ active, inverse, monochrome, navLinks }: Menu) => (
-  <NavMenu label="Docs" inverse={inverse} monochrome={monochrome} active={active}>
-    <NavMenuItem
-      icon={<ColoredIcon icon="book" color="green" />}
-      description="Learn everything you need to know to use Storybook"
-      href={navLinks.guides.url}
-      LinkWrapper={navLinks.guides.linkWrapper}
-    >
-      Guides
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="compass" color="gold" />}
-      description="Follow guided walkthroughs on for Storybook’s key workflows"
-      href={navLinks.tutorials.url}
-      LinkWrapper={navLinks.tutorials.linkWrapper}
-    >
-      Tutorials
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="verified" color="green" />}
-      description="Release notes for all major and minor Storybook versions"
-      href={navLinks.changelog.url}
-      LinkWrapper={navLinks.changelog.linkWrapper}
-    >
-      Changelog
-    </NavMenuItem>
-  </NavMenu>
-);
-
 export const Community = ({ active, inverse, monochrome, navLinks }: Menu) => (
   <NavMenu label="Community" inverse={inverse} monochrome={monochrome} active={active}>
     <NavMenuItem
