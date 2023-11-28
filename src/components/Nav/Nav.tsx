@@ -4,7 +4,7 @@ import { Logos } from '@storybook/design-system';
 import { pageMargins, spacing, color, breakpoints } from '../shared/styles';
 import { NavItem } from './NavItem';
 import { Search } from '../Search';
-import { Docs, Community } from './menus';
+import { Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
@@ -108,7 +108,6 @@ const MobileNav = styled(MobileMenu)`
 interface NavProps {
   inverse?: boolean;
   monochrome?: boolean;
-  framework: string;
   version: string;
   apiKey: string;
   activeSection?: 'home' | 'why' | 'docs' | 'integrations' | 'showcase' | 'community';
@@ -130,7 +129,6 @@ const NavLinks = styled.div`
 export const Nav: FunctionComponent<NavProps> = ({
   inverse,
   monochrome,
-  framework = 'react',
   version = '6.5',
   apiKey,
   activeSection = 'home',
@@ -170,12 +168,15 @@ export const Nav: FunctionComponent<NavProps> = ({
           >
             Showcase
           </NavItem>
-          <Docs
-            inverse={inverse}
-            monochrome={monochrome}
-            navLinks={navLinks}
+          <NavItem
             active={activeSection === 'docs'}
-          />
+            monochrome={monochrome}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.guides.url}
+            LinkWrapper={navLinks.showcase.linkWrapper}
+          >
+            Docs
+          </NavItem>
           <NavItem
             active={activeSection === 'integrations'}
             monochrome={monochrome}
@@ -200,13 +201,7 @@ export const Nav: FunctionComponent<NavProps> = ({
             Enterprise
           </NavItem>
         </NavLinks>
-        <GlobalSearch
-          monochrome={monochrome}
-          framework={framework}
-          apiKey={apiKey}
-          version={version}
-          inverse={inverse}
-        />
+        <GlobalSearch monochrome={monochrome} apiKey={apiKey} version={version} inverse={inverse} />
         {/* Collapsed navs for tablet and mobile */}
         <TabletNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
         <MobileNav
@@ -215,7 +210,6 @@ export const Nav: FunctionComponent<NavProps> = ({
           monochrome={monochrome}
           apiKey={apiKey}
           version={version}
-          framework={framework}
         />
       </NavContainer>
     </Wrapper>

@@ -10,7 +10,6 @@ const algoliaDocSearchConfig = {
 };
 
 interface SearchProps {
-  framework: string;
   version: string;
   className?: string | undefined;
   inverse?: boolean;
@@ -143,13 +142,7 @@ const Shortcut: React.FC<{ keys: string[] }> = ({ keys }) => (
 
 const label = 'Search docs';
 
-export const Search: FunctionComponent<SearchProps> = ({
-  framework,
-  version,
-  inverse,
-  className,
-  apiKey,
-}) => (
+export const Search: FunctionComponent<SearchProps> = ({ version, inverse, className, apiKey }) => (
   <>
     {/* <GlobalStyle />  why do we need this? */}
     <Global styles={docSearchStyles} />
@@ -168,7 +161,6 @@ export const Search: FunctionComponent<SearchProps> = ({
                     between the containing values
                 */
                 [`tags:docs`, `tags:recipes`],
-                [`framework:${framework}`, `framework:agnostic`],
                 [`version:${version}`, `version:agnostic`],
               ],
           }}

@@ -63,7 +63,7 @@ const communityItems: SubNavLinkItem[] = [
   },
 ];
 
-const frameworkOptions = Grouped.args.items;
+const rendererOptions = Grouped.args.items;
 const versionOptions = [
   {
     label: 'stable',
@@ -82,8 +82,8 @@ const versionOptions = [
   },
 ];
 
-const FrameworkSelect = () => (
-  <Menu label={frameworkOptions[0].items[0].label} items={frameworkOptions} primary />
+const RendererSelect = () => (
+  <Menu label={rendererOptions[0].items[0].label} items={rendererOptions} primary />
 );
 
 const VersionSelect = () => (
@@ -116,7 +116,7 @@ export const TabMenusLinklist = () => (
     <SubNavTabs label="Docs nav" items={docsItems} />
     <SubNavDivider />
     <SubNavMenus>
-      <FrameworkSelect />
+      <RendererSelect />
       <VersionSelect />
     </SubNavMenus>
     <SubNavRight>
@@ -175,7 +175,7 @@ export const BreadcrumbMenuLinklist = () => (
     </SubNavBreadcrumb>
     <SubNavDivider />
     <SubNavMenus>
-      <FrameworkSelect />
+      <RendererSelect />
       <VersionSelect />
     </SubNavMenus>
     <SubNavRight>
