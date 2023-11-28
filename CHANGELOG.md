@@ -1,3 +1,15 @@
+# v2.2.0 (Tue Nov 28 2023)
+
+#### 🚀 Enhancement
+
+- DO NOT MERGE: Updates for new docs design [#71](https://github.com/storybookjs/components-marketing/pull/71) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.1.4 (Mon Nov 13 2023)
 
 #### 🐛 Bug Fix
