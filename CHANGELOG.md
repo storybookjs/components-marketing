@@ -1,3 +1,15 @@
+# v2.2.1 (Thu Jan 25 2024)
+
+#### 🐛 Bug Fix
+
+- Remove jobs board and conferences board from Header and Footer [#73](https://github.com/storybookjs/components-marketing/pull/73) ([@domyen](https://github.com/domyen))
+
+#### Authors: 1
+
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+
+---
+
 # v2.2.0 (Tue Nov 28 2023)
 
 #### 🚀 Enhancement
