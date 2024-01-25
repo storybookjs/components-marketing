@@ -7,6 +7,35 @@ interface Menu extends ComponentProps<typeof NavMenu> {
   navLinks: Links;
 }
 
+export const Docs = ({ active, inverse, monochrome, navLinks }: Menu) => (
+  <NavMenu label="Docs" inverse={inverse} monochrome={monochrome} active={active}>
+    <NavMenuItem
+      icon={<ColoredIcon icon="book" color="green" />}
+      description="Learn everything you need to know to use Storybook"
+      href={navLinks.guides.url}
+      LinkWrapper={navLinks.guides.linkWrapper}
+    >
+      Guides
+    </NavMenuItem>
+    <NavMenuItem
+      icon={<ColoredIcon icon="compass" color="gold" />}
+      description="Follow guided walkthroughs on for Storybook’s key workflows"
+      href={navLinks.tutorials.url}
+      LinkWrapper={navLinks.tutorials.linkWrapper}
+    >
+      Tutorials
+    </NavMenuItem>
+    <NavMenuItem
+      icon={<ColoredIcon icon="verified" color="green" />}
+      description="Release notes for all major and minor Storybook versions"
+      href={navLinks.changelog.url}
+      LinkWrapper={navLinks.changelog.linkWrapper}
+    >
+      Changelog
+    </NavMenuItem>
+  </NavMenu>
+);
+
 export const Community = ({ active, inverse, monochrome, navLinks }: Menu) => (
   <NavMenu label="Community" inverse={inverse} monochrome={monochrome} active={active}>
     <NavMenuItem
@@ -24,22 +53,6 @@ export const Community = ({ active, inverse, monochrome, navLinks }: Menu) => (
       LinkWrapper={navLinks.blog.linkWrapper}
     >
       Blog and updates
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="bookmarkhollow" color="seafoam" />}
-      description="Browse job board for roles that use Storybook"
-      href={navLinks.jobsBoard.url}
-      LinkWrapper={navLinks.jobsBoard.linkWrapper}
-    >
-      Find jobs
-    </NavMenuItem>
-    <NavMenuItem
-      icon={<ColoredIcon icon="globe" color="secondary" />}
-      description="Submit talks to conferences about Storybook"
-      href={navLinks.conferenceBoard.url}
-      LinkWrapper={navLinks.conferenceBoard.linkWrapper}
-    >
-      Speak at conferences
     </NavMenuItem>
   </NavMenu>
 );
@@ -117,16 +130,6 @@ export const mobileGroups = (links: Links) => [
         label: 'Blog',
         link: links.blog,
         icon: <ColoredIcon icon="rss" color="purple" />,
-      },
-      {
-        label: 'Jobs board',
-        link: links.jobsBoard,
-        icon: <ColoredIcon icon="bookmarkhollow" color="seafoam" />,
-      },
-      {
-        label: 'Conference board',
-        link: links.conferenceBoard,
-        icon: <ColoredIcon icon="globe" color="secondary" />,
       },
     ],
   },

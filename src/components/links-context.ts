@@ -23,8 +23,6 @@ export interface Links {
   hiring: LinkItem;
   enterprise: LinkItem;
   chromatic: LinkItem;
-  jobsBoard: LinkItem;
-  conferenceBoard: LinkItem;
 }
 
 export const defaultLinks = {
@@ -43,12 +41,6 @@ export const defaultLinks = {
   getInvolved: { url: 'https://storybook.js.org/community' },
   blog: { url: 'https://storybook.js.org/blog' },
   hiring: { url: 'https://www.chromatic.com/company/jobs' },
-  jobsBoard: {
-    url: 'https://chromatic-ui.notion.site/Storybook-Jobs-Board-950e001e4a114a39980a5b09c3a3b3e1?pvs=4',
-  },
-  conferenceBoard: {
-    url: 'https://chromatic-ui.notion.site/Give-a-conference-talk-about-Storybook-e8d8e78d4d0a448a811a8d927194c527?pvs=4',
-  },
   enterprise: {
     url: 'https://www.chromatic.com/sales?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
   },
