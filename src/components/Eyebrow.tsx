@@ -33,6 +33,8 @@ const EyebrowCallout = styled(Link)<{ inverse?: boolean }>`
 const EyebrowContainer = styled.div<{
   inverse?: boolean;
 }>`
+  position: relative;
+  z-index: 20;
   display: none;
   align-items: center;
   padding: ${spacing.padding.small}px ${spacing.padding.medium}px;

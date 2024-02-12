@@ -66,6 +66,8 @@ const StorybookLogoInverse = styled(Logos.StorybookInverted)`
 `;
 
 const Wrapper = styled.div<{ inverse?: boolean }>`
+  position: relative;
+  z-index: 20;
   box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 -1px 0px 0px
     inset;
   padding-top: ${spacing.padding.medium}px;
