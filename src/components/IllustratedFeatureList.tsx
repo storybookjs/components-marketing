@@ -61,7 +61,7 @@ const IconWrapper = styled.div`
 
 const Feature = styled.button<{ inverse?: boolean }>`
   border: 1px solid ${(props) => (props.inverse ? 'rgba(255 255 255 / 10%)' : color.border)};
-  background-color: ${(props) => (props.inverse ? color.midnight : color.lightest)};
+  background-color: ${(props) => (props.inverse ? '#0E0C2A' : color.lightest)};
   border-radius: ${spacing.borderRadius.small}px;
   text-align: left;
   display: flex;

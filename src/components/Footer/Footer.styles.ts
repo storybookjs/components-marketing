@@ -12,7 +12,7 @@ import {
 const inverseBorder = 'rgba(255, 255, 255, 0.1)';
 
 export const FooterWrapper = styled.footer<{ inverse?: boolean }>`
-  background-color: ${(props) => (props.inverse ? color.midnight : background.app)};
+  background-color: ${(props) => (props.inverse ? '#0E0C2A' : background.app)};
   border-top: 1px solid ${(props) => (props.inverse ? inverseBorder : color.border)};
   padding-top: 3rem;
   padding-bottom: 3rem;
