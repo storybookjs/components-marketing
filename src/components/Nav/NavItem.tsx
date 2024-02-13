@@ -60,29 +60,6 @@ export const NavItem = styled(LinkWithWrapper, { shouldForwardProp: (prop) => pr
             background-color: rgba(30, 167, 253, 0.07);
           }
         `}
-
-  ${(props) =>
-    props.active &&
-    props.variant === 'inverse' &&
-    css`
-      color: #fff;
-      background-color: rgba(255, 255, 255, 0.14);
-    `};
-
-  ${(props) =>
-    props.variant === 'inverse' &&
-    css`
-      &:hover,
-      &:focus {
-        color: #fff;
-        background-color: rgba(255, 255, 255, 0.14);
-      }
-
-      &:active {
-        color: #fff;
-        background-color: rgba(255, 255, 255, 0.07);
-      }
-    `};
 `;
 NavItem.defaultProps = {
   variant: 'default',
