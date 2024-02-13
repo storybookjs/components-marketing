@@ -26,7 +26,6 @@ export const NavItem = styled(LinkWithWrapper, { shouldForwardProp: (prop) => pr
 
   ${(props) =>
     props.active &&
-    props.variant !== 'inverse' &&
     css`
       color: ${props.monochrome ? color.lightest : color.secondary};
       background-color: ${props.monochrome
