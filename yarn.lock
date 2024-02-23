@@ -140,17 +140,17 @@
     "@algolia/logger-common" "4.13.1"
     "@algolia/requester-common" "4.13.1"
 
-"@auto-it/bot-list@10.37.4":
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/@auto-it/bot-list/-/bot-list-10.37.4.tgz#bb1ba1d42ef6fed0ceb87279d8b7a80b12f4a163"
-  integrity sha512-Lz981mShjY7VqQpG5mAfiR7py5iH8WbEIbd2/XUQu6EQFgljj0jT6XFA180Hz1tFQJ4o2TqtXaj3gBXURhpggQ==
+"@auto-it/bot-list@11.0.7":
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/@auto-it/bot-list/-/bot-list-11.0.7.tgz#ecc9666ee67d537cdfc453cf6bdaf75e36c6ca6a"
+  integrity sha512-qbzxL5/RYjlz4UbRpVLaVJeMWa9Atl9yUQTqtJlTwMzPTXwkJzvpVo8PsxfvLN02OLMjHDvxfN5yGzLhZ6xtRg==
 
-"@auto-it/core@10.37.4":
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/@auto-it/core/-/core-10.37.4.tgz#8d2979d5cbb3efc8d537caecc12637fc52451219"
-  integrity sha512-QS1z+PAjXUUKuEzx56ujvhpsgLOIgCdfnj/UyNfbpVoIS+5x7ve/fhoIlkF7A2Ogrvile7EOPT0EIVmDTtzYYg==
+"@auto-it/core@11.0.7":
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/@auto-it/core/-/core-11.0.7.tgz#3c092923d2eaebd4276f54b83c9fa2849a7f2bb6"
+  integrity sha512-yN0DpFMOdwDdpyPWODM2qH9rOdAm7RItlA0WiRXqbc9Ysjn7BpkOZss/cGsyfMzOyuHOgKjdpNnWbZaEaeTzeA==
   dependencies:
-    "@auto-it/bot-list" "10.37.4"
+    "@auto-it/bot-list" "11.0.7"
     "@endemolshinegroup/cosmiconfig-typescript-loader" "^3.0.2"
     "@octokit/core" "^3.5.1"
     "@octokit/plugin-enterprise-compatibility" "1.3.0"
@@ -185,19 +185,19 @@
     tapable "^2.2.0"
     terminal-link "^2.1.1"
     tinycolor2 "^1.4.1"
-    ts-node "^9.1.1"
+    ts-node "^10.9.1"
     tslib "2.1.0"
     type-fest "^0.21.1"
     typescript-memoize "^1.0.0-alpha.3"
     url-join "^4.0.0"
 
-"@auto-it/npm@10.37.4":
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/@auto-it/npm/-/npm-10.37.4.tgz#c1ff5f81138375bd3c9fc091f618a50af4df9aa8"
-  integrity sha512-nF/fZOZ6agknEiN2q9g+y+TuOsQp2f8EDRJInA0Vs/vfa22FOjIZhjJP/XAxc4ojfj/0OmKoATCQJug5PVwwYg==
+"@auto-it/npm@11.0.7":
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/@auto-it/npm/-/npm-11.0.7.tgz#e19b25a47c24d8ab263938e844e19e911ab09e38"
+  integrity sha512-WjPLWsxW527cyIcpAWUTXZv9TNY0IHhVSC1l5GiFCGPwog/BL7ulr+K/1HUitMziDRn9Jv+DVlcecPRx9MtBsA==
   dependencies:
-    "@auto-it/core" "10.37.4"
-    "@auto-it/package-json-utils" "10.37.4"
+    "@auto-it/core" "11.0.7"
+    "@auto-it/package-json-utils" "11.0.7"
     await-to-js "^3.0.0"
     endent "^2.1.0"
     env-ci "^5.0.1"
@@ -211,32 +211,32 @@
     url-join "^4.0.0"
     user-home "^2.0.0"
 
-"@auto-it/package-json-utils@10.37.4":
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/@auto-it/package-json-utils/-/package-json-utils-10.37.4.tgz#8ca6209e5a2f217c458d2887ca0a9f52450cd7db"
-  integrity sha512-LLVtEeuAOeDQmhkDEOJyGU9PFdF5i46UcS7vG7BxSLQg2UAhvAolLgD/u6wOTOCDmQnLsBP6hdStSbHjDO8tMg==
+"@auto-it/package-json-utils@11.0.7":
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/@auto-it/package-json-utils/-/package-json-utils-11.0.7.tgz#416a2d4896103b195b121f246184b28a5b9aed62"
+  integrity sha512-gXBRGiga+YBvq8OnHFCxavoe4PNi3sCT9WIcTgUpF7oOmW40kt7qChJ4BNUTjqCDV87HVFBGcIqmyhAqpJvSUA==
   dependencies:
     parse-author "^2.0.0"
     parse-github-url "1.0.2"
 
-"@auto-it/released@10.37.4":
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/@auto-it/released/-/released-10.37.4.tgz#10d82f1faa08f98a7709b76ae23a1e03c6a3b505"
-  integrity sha512-1l4gRs/Cb3G6wsIwlxfoIp8OBl/WyAF2Lj5OmZ5Tbjfr6Mki6wD9xxa95rrXG47vaY+u+jcqNYX2dwP2ROxOhA==
+"@auto-it/released@11.0.7":
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/@auto-it/released/-/released-11.0.7.tgz#484bf35710172fe6cd66f29b5196e888bb471585"
+  integrity sha512-t6mIbF2pqnprJNBishgsON0SQDfesZL6NTEgJwpc2WOaVCHaCFCtfeI7WNwYl7vnu7ycfcMr/Ginm7eJrFRmxA==
   dependencies:
-    "@auto-it/bot-list" "10.37.4"
-    "@auto-it/core" "10.37.4"
+    "@auto-it/bot-list" "11.0.7"
+    "@auto-it/core" "11.0.7"
     deepmerge "^4.0.0"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     tslib "2.1.0"
 
-"@auto-it/version-file@10.37.4":
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/@auto-it/version-file/-/version-file-10.37.4.tgz#51b46f9a7f03d58566c6b47c2a9e8ddeae65088c"
-  integrity sha512-CnYgo6GNgBcMDrkoeeHMG3PRDpYZ84pUZehoqZmXKczGzXEJSulHdedmPvuAW3rEvVAFJhWPRcJ10ByRkIQoBg==
+"@auto-it/version-file@11.0.7":
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/@auto-it/version-file/-/version-file-11.0.7.tgz#0e74b1a888f6b6b913cd73f918603e0598e6e22a"
+  integrity sha512-Euaq7y2eMqOuV5bStItAyu+VE1v5M88+Scn5lcw7O24M1unMxp8puyAGvPqi50zMgRP/gl55T+Hf5ZKIG+GHag==
   dependencies:
-    "@auto-it/core" "10.37.4"
+    "@auto-it/core" "11.0.7"
     fp-ts "^2.5.3"
     io-ts "^2.1.2"
     semver "^7.0.0"
@@ -1586,6 +1586,13 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@cspotcode/source-map-support@^0.8.0":
+  version "0.8.1"
+  resolved "https://registry.npmjs.org/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
+  integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
+  dependencies:
+    "@jridgewell/trace-mapping" "0.3.9"
+
 "@design-systems/utils@2.12.0":
   version "2.12.0"
   resolved "https://registry.npmjs.org/@design-systems/utils/-/utils-2.12.0.tgz#955c108be07cb8f01532207cbfea8f848fa760c9"
@@ -1895,6 +1902,14 @@
   version "1.4.13"
   resolved "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.13.tgz#b6461fb0c2964356c469e115f504c95ad97ab88c"
   integrity sha512-GryiOJmNcWbovBxTfZSF71V/mXbgcV3MewDe3kIMCLyIh5e7SKAeUZs+rMnJ8jkMolZ/4/VsdBmMrw3l+VdZ3w==
+
+"@jridgewell/trace-mapping@0.3.9":
+  version "0.3.9"
+  resolved "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.9.tgz#6534fd5933a53ba7cbf3a17615e273a0d1273ff9"
+  integrity sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==
+  dependencies:
+    "@jridgewell/resolve-uri" "^3.0.3"
+    "@jridgewell/sourcemap-codec" "^1.4.10"
 
 "@jridgewell/trace-mapping@^0.3.7", "@jridgewell/trace-mapping@^0.3.9":
   version "0.3.13"
@@ -3598,6 +3613,26 @@
   dependencies:
     "@babel/runtime" "^7.12.5"
 
+"@tsconfig/node10@^1.0.7":
+  version "1.0.9"
+  resolved "https://registry.npmjs.org/@tsconfig/node10/-/node10-1.0.9.tgz#df4907fc07a886922637b15e02d4cebc4c0021b2"
+  integrity sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==
+
+"@tsconfig/node12@^1.0.7":
+  version "1.0.11"
+  resolved "https://registry.npmjs.org/@tsconfig/node12/-/node12-1.0.11.tgz#ee3def1f27d9ed66dac6e46a295cffb0152e058d"
+  integrity sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==
+
+"@tsconfig/node14@^1.0.0":
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/@tsconfig/node14/-/node14-1.0.3.tgz#e4386316284f00b98435bf40f72f75a09dabf6c1"
+  integrity sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==
+
+"@tsconfig/node16@^1.0.2":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
+  integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
+
 "@types/aria-query@^4.2.0":
   version "4.2.2"
   resolved "https://registry.npmjs.org/@types/aria-query/-/aria-query-4.2.2.tgz#ed4e0ad92306a704f9fb132a0cfcf77486dbe2bc"
@@ -4325,6 +4360,11 @@ acorn-walk@^7.2.0:
   resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-7.2.0.tgz#0de889a601203909b0fbe07b8938dc21d2e967bc"
   integrity sha512-OPdCF6GsMIP+Az+aWfAAOEt2/+iVDKE7oy6lJ098aoe59oAmK76qV6Gw60SbZ8jHuG2wH058GF4pLFbYamYrVA==
 
+acorn-walk@^8.1.1:
+  version "8.3.2"
+  resolved "https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.3.2.tgz#7703af9415f1b6db9315d6895503862e231d34aa"
+  integrity sha512-cjkyv4OtNCIeqhHrfS81QWXoCBPExR/J62oyEqepVw8WaQeSqpW2uhuLPh1m9eWhDuOo/jUXVTlifvesOWp/4A==
+
 acorn@^6.4.1:
   version "6.4.2"
   resolved "https://registry.npmjs.org/acorn/-/acorn-6.4.2.tgz#35866fd710528e92de10cf06016498e47e39e1e6"
@@ -4837,15 +4877,15 @@ author-regex@^1.0.0:
   resolved "https://registry.npmjs.org/author-regex/-/author-regex-1.0.0.tgz#d08885be6b9bbf9439fe087c76287245f0a81450"
   integrity sha1-0IiFvmubv5Q5/gh8dihyRfCoFFA=
 
-auto@^10.37.4:
-  version "10.37.4"
-  resolved "https://registry.npmjs.org/auto/-/auto-10.37.4.tgz#450a9d51166919a97ea85fa06d117ecd94adb9ff"
-  integrity sha512-chspNHfy17DFOPwLbT74xU+fD0NXhtLpWnKZjoLjHUKp0+ZNJSM9jrBHq2ExB4EAP3UXlFVDG+BzrkgZoYLzCw==
+auto@^11.0.7:
+  version "11.0.7"
+  resolved "https://registry.npmjs.org/auto/-/auto-11.0.7.tgz#25fc31d64418714900c5a1519471b5b57f36ca21"
+  integrity sha512-l84ph7oNhf/RR7FVJOpvOB9nqKLYuF0lrQDQaVS4TFE5b9j422sWlsZLVuB7AJnQlowvHIHLmwkib6weI9r6IA==
   dependencies:
-    "@auto-it/core" "10.37.4"
-    "@auto-it/npm" "10.37.4"
-    "@auto-it/released" "10.37.4"
-    "@auto-it/version-file" "10.37.4"
+    "@auto-it/core" "11.0.7"
+    "@auto-it/npm" "11.0.7"
+    "@auto-it/released" "11.0.7"
+    "@auto-it/version-file" "11.0.7"
     await-to-js "^3.0.0"
     chalk "^4.0.0"
     command-line-application "^0.10.1"
@@ -14103,7 +14143,26 @@ ts-loader@^7.0.5:
     micromatch "^4.0.0"
     semver "^6.0.0"
 
-ts-node@^9, ts-node@^9.1.1:
+ts-node@^10.9.1:
+  version "10.9.2"
+  resolved "https://registry.npmjs.org/ts-node/-/ts-node-10.9.2.tgz#70f021c9e185bccdca820e26dc413805c101c71f"
+  integrity sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==
+  dependencies:
+    "@cspotcode/source-map-support" "^0.8.0"
+    "@tsconfig/node10" "^1.0.7"
+    "@tsconfig/node12" "^1.0.7"
+    "@tsconfig/node14" "^1.0.0"
+    "@tsconfig/node16" "^1.0.2"
+    acorn "^8.4.1"
+    acorn-walk "^8.1.1"
+    arg "^4.1.0"
+    create-require "^1.1.0"
+    diff "^4.0.1"
+    make-error "^1.1.1"
+    v8-compile-cache-lib "^3.0.1"
+    yn "3.1.1"
+
+ts-node@^9:
   version "9.1.1"
   resolved "https://registry.npmjs.org/ts-node/-/ts-node-9.1.1.tgz#51a9a450a3e959401bda5f004a72d54b936d376d"
   integrity sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==
@@ -14636,6 +14695,11 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+
+v8-compile-cache-lib@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.npmjs.org/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
+  integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
