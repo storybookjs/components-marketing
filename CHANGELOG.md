@@ -1,3 +1,15 @@
+# v2.3.0 (Fri Feb 23 2024)
+
+#### 🚀 Enhancement
+
+- Update Chromatic links [#75](https://github.com/storybookjs/components-marketing/pull/75) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v2.2.1 (Thu Jan 25 2024)
 
 #### 🐛 Bug Fix
