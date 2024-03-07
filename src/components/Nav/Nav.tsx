@@ -152,7 +152,7 @@ export const Nav: FunctionComponent<NavProps> = ({
           )}
         </LogoNavItem>
         <NavLinks>
-          <NavItem
+          {/* <NavItem
             active={activeSection === 'why'}
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
@@ -160,16 +160,7 @@ export const Nav: FunctionComponent<NavProps> = ({
             LinkWrapper={navLinks.whyStorybook.linkWrapper}
           >
             Why
-          </NavItem>
-          <NavItem
-            active={activeSection === 'showcase'}
-            monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.showcase.url}
-            LinkWrapper={navLinks.showcase.linkWrapper}
-          >
-            Showcase
-          </NavItem>
+          </NavItem> */}
           <NavItem
             active={activeSection === 'docs'}
             monochrome={monochrome}
@@ -180,6 +171,15 @@ export const Nav: FunctionComponent<NavProps> = ({
             Docs
           </NavItem>
           <NavItem
+            active={activeSection === 'showcase'}
+            monochrome={monochrome}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.showcase.url}
+            LinkWrapper={navLinks.showcase.linkWrapper}
+          >
+            Showcase
+          </NavItem>
+          {/* <NavItem
             active={activeSection === 'integrations'}
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
@@ -187,13 +187,13 @@ export const Nav: FunctionComponent<NavProps> = ({
             LinkWrapper={navLinks.integrations.linkWrapper}
           >
             Integrations
-          </NavItem>
-          <Community
+          </NavItem> */}
+          {/* <Community
             inverse={inverse}
             monochrome={monochrome}
             navLinks={navLinks}
             active={activeSection === 'community'}
-          />
+          /> */}
           <NavItem
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
