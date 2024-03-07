@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { styled } from '@storybook/theming';
 import { Logos } from '@storybook/design-system';
+import { ArrowTopRightIcon } from '@storybook/icons';
 import { pageMargins, spacing, color, breakpoints } from '../shared/styles';
 import { NavItem } from './NavItem';
 import { Search } from '../Search';
-import { Community } from './menus';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
@@ -107,12 +107,17 @@ const MobileNav = styled(MobileMenu)`
   }
 `;
 
+const Arrow = styled(ArrowTopRightIcon)`
+  margin-bottom: 8px;
+  margin-left: 6px;
+`;
+
 interface NavProps {
   inverse?: boolean;
   monochrome?: boolean;
   version: string;
   apiKey: string;
-  activeSection?: 'home' | 'why' | 'docs' | 'integrations' | 'showcase' | 'community';
+  activeSection?: 'home' | 'docs' | 'showcase' | 'blog';
 }
 
 const NavLinks = styled.div`
@@ -152,15 +157,6 @@ export const Nav: FunctionComponent<NavProps> = ({
           )}
         </LogoNavItem>
         <NavLinks>
-          {/* <NavItem
-            active={activeSection === 'why'}
-            monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.whyStorybook.url}
-            LinkWrapper={navLinks.whyStorybook.linkWrapper}
-          >
-            Why
-          </NavItem> */}
           <NavItem
             active={activeSection === 'docs'}
             monochrome={monochrome}
@@ -179,21 +175,25 @@ export const Nav: FunctionComponent<NavProps> = ({
           >
             Showcase
           </NavItem>
-          {/* <NavItem
-            active={activeSection === 'integrations'}
+          <NavItem
+            active={activeSection === 'blog'}
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.integrations.url}
-            LinkWrapper={navLinks.integrations.linkWrapper}
+            href={navLinks.blog.url}
+            LinkWrapper={navLinks.blog.linkWrapper}
           >
-            Integrations
-          </NavItem> */}
-          {/* <Community
-            inverse={inverse}
+            Blog
+          </NavItem>
+          <NavItem
+            active={activeSection === 'blog'}
             monochrome={monochrome}
-            navLinks={navLinks}
-            active={activeSection === 'community'}
-          /> */}
+            variant={inverse ? 'inverse' : 'default'}
+            href={navLinks.chromatic.url}
+            LinkWrapper={navLinks.chromatic.linkWrapper}
+          >
+            Visual Test
+            <Arrow size={8} />
+          </NavItem>
           <NavItem
             monochrome={monochrome}
             variant={inverse ? 'inverse' : 'default'}
@@ -201,6 +201,7 @@ export const Nav: FunctionComponent<NavProps> = ({
             LinkWrapper={navLinks.enterprise.linkWrapper}
           >
             Enterprise
+            <Arrow size={8} />
           </NavItem>
         </NavLinks>
         <GlobalSearch monochrome={monochrome} apiKey={apiKey} version={version} inverse={inverse} />
