@@ -12,7 +12,7 @@ const Wrapper = styled.div<{ inverse?: boolean }>`
   border-radius: 64px;
   cursor: pointer;
   gap: 10px;
-  padding: 0 8px;
+  padding: 0 12px;
 `;
 
 const Svg = styled.svg<{ inverse?: boolean }>`
