@@ -6,8 +6,6 @@ const Wrapper = styled.div<{ inverse?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(27, 31, 36, 0.15);
-  /* border: props.inverse ? 'rgba(255, 255, 255, 0.2)' : styles.color.border */
   border: ${(props) =>
     `1px solid ${props.inverse ? 'rgba(255, 255, 255, 0.2)' : styles.color.border}`};
   height: 32px;

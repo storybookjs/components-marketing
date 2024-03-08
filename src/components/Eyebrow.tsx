@@ -85,7 +85,7 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
       Visual test with Chromatic
     </EyebrowCallout>
     <GithubButtonWrapper>
-      <GithubButton starCount={githubStarCount} />
+      <GithubButton starCount={githubStarCount} inverse={inverse} />
     </GithubButtonWrapper>
   </EyebrowContainer>
 );
