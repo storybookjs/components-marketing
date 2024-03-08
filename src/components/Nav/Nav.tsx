@@ -8,6 +8,7 @@ import { Search } from '../Search';
 import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
+import { GithubButton } from '../GithubButton';
 
 const navBreakpoints = {
   desktop: 978,
@@ -76,13 +77,10 @@ const Wrapper = styled.div<{ inverse?: boolean }>`
 
 const NavContainer = styled.nav`
   ${pageMargins}
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  @media (min-width: ${navBreakpoints.desktop}px) {
-    justify-content: flex-start;
-  }
 `;
 
 // Tablet nav 600 - desktop
@@ -118,6 +116,7 @@ interface NavProps {
   version: string;
   apiKey: string;
   activeSection?: 'home' | 'docs' | 'showcase' | 'blog';
+  githubStarCount: number;
 }
 
 const NavLinks = styled.div`
@@ -133,78 +132,115 @@ const NavLinks = styled.div`
   }
 `;
 
+const Left = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+`;
+
+const Right = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+`;
+
+const GithubButtonWrapper = styled.div`
+  margin-left: ${spacing.padding.medium}px;
+  flex: none;
+
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+`;
+
 export const Nav: FunctionComponent<NavProps> = ({
   inverse,
   monochrome,
   version = '6.5',
   apiKey,
   activeSection = 'home',
+  githubStarCount = 8000,
 }) => {
   const navLinks = useContext(LinksContext);
 
   return (
     <Wrapper inverse={inverse}>
       <NavContainer>
-        <LogoNavItem
-          aria-label="home"
-          href={navLinks.home.url}
-          LinkWrapper={navLinks.home.linkWrapper}
-        >
-          {inverse ? (
-            <StorybookLogoInverse role="presentation" />
-          ) : (
-            <StorybookLogo role="presentation" />
-          )}
-        </LogoNavItem>
-        <NavLinks>
-          <NavItem
-            active={activeSection === 'docs'}
-            monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.guides.url}
-            LinkWrapper={navLinks.showcase.linkWrapper}
+        <Left>
+          <LogoNavItem
+            aria-label="home"
+            href={navLinks.home.url}
+            LinkWrapper={navLinks.home.linkWrapper}
           >
-            Docs
-          </NavItem>
-          <NavItem
-            active={activeSection === 'showcase'}
+            {inverse ? (
+              <StorybookLogoInverse role="presentation" />
+            ) : (
+              <StorybookLogo role="presentation" />
+            )}
+          </LogoNavItem>
+          <NavLinks>
+            <NavItem
+              active={activeSection === 'docs'}
+              monochrome={monochrome}
+              variant={inverse ? 'inverse' : 'default'}
+              href={navLinks.guides.url}
+              LinkWrapper={navLinks.showcase.linkWrapper}
+            >
+              Docs
+            </NavItem>
+            <NavItem
+              active={activeSection === 'showcase'}
+              monochrome={monochrome}
+              variant={inverse ? 'inverse' : 'default'}
+              href={navLinks.showcase.url}
+              LinkWrapper={navLinks.showcase.linkWrapper}
+            >
+              Showcase
+            </NavItem>
+            <NavItem
+              active={activeSection === 'blog'}
+              monochrome={monochrome}
+              variant={inverse ? 'inverse' : 'default'}
+              href={navLinks.blog.url}
+              LinkWrapper={navLinks.blog.linkWrapper}
+            >
+              Blog
+            </NavItem>
+            <NavItem
+              active={activeSection === 'blog'}
+              monochrome={monochrome}
+              variant={inverse ? 'inverse' : 'default'}
+              href={navLinks.chromatic.url}
+              LinkWrapper={navLinks.chromatic.linkWrapper}
+            >
+              Visual Test
+              <Arrow size={8} />
+            </NavItem>
+            <NavItem
+              monochrome={monochrome}
+              variant={inverse ? 'inverse' : 'default'}
+              href={navLinks.enterprise.url}
+              LinkWrapper={navLinks.enterprise.linkWrapper}
+            >
+              Enterprise
+              <Arrow size={8} />
+            </NavItem>
+          </NavLinks>
+        </Left>
+        <Right>
+          <GithubButtonWrapper>
+            <GithubButton starCount={githubStarCount} inverse={inverse} />
+          </GithubButtonWrapper>
+          <GlobalSearch
             monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.showcase.url}
-            LinkWrapper={navLinks.showcase.linkWrapper}
-          >
-            Showcase
-          </NavItem>
-          <NavItem
-            active={activeSection === 'blog'}
-            monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.blog.url}
-            LinkWrapper={navLinks.blog.linkWrapper}
-          >
-            Blog
-          </NavItem>
-          <NavItem
-            active={activeSection === 'blog'}
-            monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.chromatic.url}
-            LinkWrapper={navLinks.chromatic.linkWrapper}
-          >
-            Visual Test
-            <Arrow size={8} />
-          </NavItem>
-          <NavItem
-            monochrome={monochrome}
-            variant={inverse ? 'inverse' : 'default'}
-            href={navLinks.enterprise.url}
-            LinkWrapper={navLinks.enterprise.linkWrapper}
-          >
-            Enterprise
-            <Arrow size={8} />
-          </NavItem>
-        </NavLinks>
-        <GlobalSearch monochrome={monochrome} apiKey={apiKey} version={version} inverse={inverse} />
+            apiKey={apiKey}
+            version={version}
+            inverse={inverse}
+          />
+        </Right>
         {/* Collapsed navs for tablet and mobile */}
         <TabletNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
         <MobileNav
