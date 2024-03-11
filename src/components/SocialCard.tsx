@@ -33,12 +33,9 @@ const Description = styled.p<{ inverse?: boolean }>`
   margin-bottom: 20px;
 `;
 
-const LinkButton = styled(Button)`
-  margin-bottom: 24px;
-`;
-
 const Stat = styled(Cardinal)<{ inverse?: boolean }>`
   padding: 0;
+  margin-top: 24px;
 `;
 
 interface SocialCardProps {
@@ -66,14 +63,14 @@ export const SocialCard = ({
   <Wrapper inverse={inverse} {...props}>
     {icon}
     <Description inverse={inverse}>{description}</Description>
-    <LinkButton
+    <Button
       appearance={inverse ? 'inverseOutline' : 'outline'}
       size="medium"
       isLink
       href={link.href}
     >
       {link.label}
-    </LinkButton>
+    </Button>
     <Stat
       size="small"
       count={stat.count}
