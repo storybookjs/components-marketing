@@ -1,3 +1,15 @@
+# v2.3.2 (Mon Mar 11 2024)
+
+#### 🐛 Bug Fix
+
+- Update Github button link [#76](https://github.com/storybookjs/components-marketing/pull/76) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
 # v2.3.1 (Mon Mar 11 2024)
 
 #### 🐛 Bug Fix
