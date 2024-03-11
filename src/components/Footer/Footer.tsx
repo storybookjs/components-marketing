@@ -1,5 +1,5 @@
 import React, { FC, useContext, useMemo } from 'react';
-import { Button, Icon } from '@storybook/design-system';
+import { GithubIcon, DiscordIcon, YoutubeIcon, XIcon } from '@storybook/icons';
 import {
   Title,
   Upper,
@@ -64,25 +64,25 @@ export const Footer: FC<FooterProps> = ({ onSubscribe, subscriberCount, inverse,
             appearance={inverse ? 'inverseOutline' : 'outline'}
             href="http://github.com/storybookjs"
           >
-            <Icon aria-label="Github" icon="github" />
+            <GithubIcon aria-label="Github" />
           </IconLink>
           <IconLink
             appearance={inverse ? 'inverseOutline' : 'outline'}
             href="https://twitter.com/storybookjs"
           >
-            <Icon aria-label="Twitter" icon="twitter" />
+            <XIcon aria-label="Twitter" />
           </IconLink>
           <IconLink
             appearance={inverse ? 'inverseOutline' : 'outline'}
             href="https://discord.gg/storybook"
           >
-            <Icon aria-label="Discord" icon="discord" />
+            <DiscordIcon aria-label="Discord" />
           </IconLink>
           <IconLink
             appearance={inverse ? 'inverseOutline' : 'outline'}
             href="https://www.youtube.com/channel/UCr7Quur3eIyA_oe8FNYexfg"
           >
-            <Icon aria-label="YouTube" icon="youtube" />
+            <YoutubeIcon aria-label="YouTube" />
           </IconLink>
         </SocialLinks>
       </Upper>

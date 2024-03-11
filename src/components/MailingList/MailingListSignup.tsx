@@ -2,7 +2,7 @@ import React, { useRef, useEffect, FC } from 'react';
 import { styled } from '@storybook/theming';
 import { Formik, FormikValues } from 'formik';
 import { useId } from '@floating-ui/react-dom-interactions';
-import { Button, Input, styles } from '@storybook/design-system';
+import { Input, styles } from '@storybook/design-system';
 import { useMailingListForm } from './useMailingListForm';
 
 const MailingListFormUIWrapper = styled.div`
@@ -20,11 +20,41 @@ const EmailInput = styled(Input)`
   }
 `;
 
-const SendButton = styled(Button)`
+const SendButton = styled.button`
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 150ms ease-out;
+  user-select: none;
+  opacity: 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  background: #1ea7fd;
+  transform: translate3d(0, 0, 0);
+  color: #fff;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border-top-right-radius: ${styles.spacing.borderRadius.small}px;
   border-bottom-right-radius: ${styles.spacing.borderRadius.small}px;
+
+  &:hover {
+    background-color: rgb(5, 157, 253);
+    transform: translate3d(0px, -2px, 0px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px 0px;
+  }
+
+  &:active {
+    transform: translate3d(0px, 0px, 0px);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 3em inset;
+  }
 `;
 
 interface MailingListFormUIProps {
@@ -62,9 +92,7 @@ const MailingListFormUI: FC<MailingListFormUIProps> = ({
         hideLabel
       />
 
-      <SendButton appearance="secondary" type="submit" isUnclickable={isSubmitting}>
-        Subscribe
-      </SendButton>
+      <SendButton type="submit">Subscribe</SendButton>
     </MailingListFormUIWrapper>
   );
 };
