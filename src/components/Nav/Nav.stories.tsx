@@ -82,7 +82,7 @@ export const FullStack = () => (
       link="https://storybook.js.org/blog/storybook-lazy-compilation-for-webpack/"
       githubStarCount={73724}
     />
-    <Nav apiKey="ALGOLIA_API_KEY" version="6.5" activeSection="showcase" />
+    <Nav apiKey="ALGOLIA_API_KEY" version="6.5" activeSection="showcase" githubStarCount={82000} />
     <SubNav>
       <SubNavBreadcrumb tertiary href="/back">
         <Icon icon="arrowleft" />

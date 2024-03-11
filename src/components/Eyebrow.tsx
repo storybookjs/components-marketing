@@ -33,10 +33,12 @@ const EyebrowCallout = styled(Link)<{ inverse?: boolean }>`
 const EyebrowContainer = styled.div<{
   inverse?: boolean;
 }>`
+  position: relative;
+  z-index: 20;
   display: none;
   align-items: center;
   padding: ${spacing.padding.small}px ${spacing.padding.medium}px;
-  background-color: ${(props) => (props.inverse ? 'rgba(0, 0, 0, 0.3)' : color.blueLight)};
+  background-color: ${(props) => (props.inverse ? 'rgba(0, 0, 0, 0.1)' : color.blueLight)};
   box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 -1px 0px 0px
     inset;
 
@@ -83,7 +85,7 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
       Visual test with Chromatic
     </EyebrowCallout>
     <GithubButtonWrapper>
-      <GithubButton starCount={githubStarCount} />
+      <GithubButton starCount={githubStarCount} inverse={inverse} />
     </GithubButtonWrapper>
   </EyebrowContainer>
 );
