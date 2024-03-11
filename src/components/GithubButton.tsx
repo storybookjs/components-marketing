@@ -93,10 +93,10 @@ export const GithubButton = ({ starCount, inverse }: { starCount: number; invers
       </Svg>
     </Star>
     <Count
-      href="https://github.com/storybookjs/storybook/stargazers"
+      href="https://github.com/storybookjs/storybook"
       rel="noopener"
       target="_blank"
-      aria-label={`${starCount} stargazers on GitHub`}
+      aria-label="Storybook on GitHub"
       inverse={inverse}
     >
       {starCount.toLocaleString()}
