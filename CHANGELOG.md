@@ -1,3 +1,15 @@
+# v3.0.0 (Mon Mar 11 2024)
+
+#### 💥 Breaking Change
+
+- Small fixes after Storybook 8 launch [#77](https://github.com/storybookjs/components-marketing/pull/77) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
 # v2.3.2 (Mon Mar 11 2024)
 
 #### 🐛 Bug Fix
