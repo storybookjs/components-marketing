@@ -3133,10 +3133,10 @@
   dependencies:
     "@types/jest" ">=26.0.0"
 
-"@storybook/icons@^1.2.8":
-  version "1.2.8"
-  resolved "https://registry.npmjs.org/@storybook/icons/-/icons-1.2.8.tgz#f530688ee000b487783f2d9cf7bced92e2c32915"
-  integrity sha512-YMF5DiBvMiAVH6qd6Cf6WCwZq3D1OZNxsKtZVFBlzJXqlZb1CLEuCHy5MwL4WI5mzb6q8MJsLYpVMoH84OzUpQ==
+"@storybook/icons@^1.2.9":
+  version "1.2.9"
+  resolved "https://registry.npmjs.org/@storybook/icons/-/icons-1.2.9.tgz#bb4a51a79e186b62e2dd0e04928b8617ac573838"
+  integrity sha512-cOmylsz25SYXaJL/gvTk/dl3pyk7yBFRfeXTsHvTA3dfhoU/LWSq0NKL9nM7WBasJyn6XPSGnLS4RtKXLw5EUg==
 
 "@storybook/instrumenter@6.5.9", "@storybook/instrumenter@^6.4.0":
   version "6.5.9"
