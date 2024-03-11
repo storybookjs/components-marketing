@@ -92,9 +92,7 @@ const MailingListFormUI: FC<MailingListFormUIProps> = ({
         hideLabel
       />
 
-      <SendButton appearance="secondary" type="submit" isUnclickable={isSubmitting}>
-        Subscribe
-      </SendButton>
+      <SendButton type="submit">Subscribe</SendButton>
     </MailingListFormUIWrapper>
   );
 };
