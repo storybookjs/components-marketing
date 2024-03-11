@@ -1,3 +1,15 @@
+# v2.3.1 (Mon Mar 11 2024)
+
+#### 🐛 Bug Fix
+
+- Fix global navigation for the new homepage for SB8 [#74](https://github.com/storybookjs/components-marketing/pull/74) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
 # v2.3.0 (Fri Feb 23 2024)
 
 #### 🚀 Enhancement
