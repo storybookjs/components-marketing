@@ -1,3 +1,15 @@
+# v3.0.2 (Tue Mar 12 2024)
+
+#### 🐛 Bug Fix
+
+- Bring back footer icons [#79](https://github.com/storybookjs/components-marketing/pull/79) ([@cdedreuille](https://github.com/cdedreuille))
+
+#### Authors: 1
+
+- Charles de Dreuille ([@cdedreuille](https://github.com/cdedreuille))
+
+---
+
 # v3.0.1 (Mon Mar 11 2024)
 
 #### 🐛 Bug Fix
