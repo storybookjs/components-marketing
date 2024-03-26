@@ -115,7 +115,7 @@ interface NavProps {
   monochrome?: boolean;
   version: string;
   apiKey: string;
-  activeSection?: 'home' | 'docs' | 'showcase' | 'blog';
+  activeSection?: 'home' | 'docs' | 'integrations' | 'showcase' | 'blog';
   githubStarCount: number;
 }
 
@@ -151,7 +151,7 @@ const GithubButtonWrapper = styled.div`
 
   display: none;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1224px) {
     display: block;
   }
 `;
@@ -190,6 +190,15 @@ export const Nav: FunctionComponent<NavProps> = ({
               LinkWrapper={navLinks.showcase.linkWrapper}
             >
               Docs
+            </NavItem>
+            <NavItem
+              active={activeSection === 'integrations'}
+              monochrome={monochrome}
+              variant={inverse ? 'inverse' : 'default'}
+              href={navLinks.integrations.url}
+              LinkWrapper={navLinks.integrations.linkWrapper}
+            >
+              Addons
             </NavItem>
             <NavItem
               active={activeSection === 'showcase'}
