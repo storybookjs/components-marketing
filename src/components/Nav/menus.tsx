@@ -117,7 +117,7 @@ export const mobileGroups = (links: Links) => [
     label: 'Community',
     items: [
       {
-        label: 'Integrations',
+        label: 'Addons',
         link: links.integrations,
         icon: <ColoredIcon icon="grid" color="seafoam" />,
       },
