@@ -1,3 +1,15 @@
+# v3.1.0 (Mon Apr 01 2024)
+
+#### 🚀 Enhancement
+
+- Add Addons (Integrations) nav item [#80](https://github.com/storybookjs/components-marketing/pull/80) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v3.0.2 (Tue Mar 12 2024)
 
 #### 🐛 Bug Fix
