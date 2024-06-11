@@ -1,3 +1,15 @@
+# v3.1.1 (Tue Jun 11 2024)
+
+#### 🐛 Bug Fix
+
+- Remove status page link from Footer [#81](https://github.com/storybookjs/components-marketing/pull/81) ([@kylegach](https://github.com/kylegach))
+
+#### Authors: 1
+
+- Kyle Gach ([@kylegach](https://github.com/kylegach))
+
+---
+
 # v3.1.0 (Mon Apr 01 2024)
 
 #### 🚀 Enhancement
