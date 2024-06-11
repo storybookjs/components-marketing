@@ -31,7 +31,6 @@ const links = {
   tutorials: { url: 'https://storybook.js.org/tutorials' },
   changelog: { url: '/releases', linkWrapper: FakeGatsbyLink },
   telemetry: { url: '/telemetry', linkWrapper: FakeGatsbyLink },
-  status: { url: 'https://storybook.js.org/status' },
   showcase: { url: 'https://storybook.js.org/showcase' },
   projects: { url: 'https://storybook.js.org/showcase/projects' },
   componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
@@ -39,6 +38,12 @@ const links = {
   getInvolved: { url: '/community', linkWrapper: FakeGatsbyLink },
   blog: { url: 'https://storybook.js.org/blog' },
   hiring: { url: 'https://www.chromatic.com/company/jobs' },
+  enterprise: {
+    url: 'https://www.chromatic.com/sales?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
+  },
+  chromatic: {
+    url: 'https://www.chromatic.com/storybook?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
+  },
 };
 
 const Template = (args) => (

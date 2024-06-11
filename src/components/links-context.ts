@@ -13,7 +13,6 @@ export interface Links {
   tutorials: LinkItem;
   changelog: LinkItem;
   telemetry: LinkItem;
-  status: LinkItem;
   showcase: LinkItem;
   projects: LinkItem;
   componentGlossary: LinkItem;
@@ -33,7 +32,6 @@ export const defaultLinks = {
   tutorials: { url: 'https://storybook.js.org/tutorials' },
   changelog: { url: 'https://storybook.js.org/releases' },
   telemetry: { url: 'https://storybook.js.org/telemetry' },
-  status: { url: 'https://storybook.js.org/status' },
   showcase: { url: 'https://storybook.js.org/showcase' },
   projects: { url: 'https://storybook.js.org/showcase/projects' },
   componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
