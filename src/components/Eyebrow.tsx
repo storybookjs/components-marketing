@@ -79,7 +79,7 @@ export const Eyebrow = ({ label, link, inverse, githubStarCount }: EyebrowProps)
     <EyebrowCallout
       inverse={inverse}
       secondary={!inverse}
-      href="https://www.chromatic.com/storybook?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook"
+      href="https://www.chromatic.com/storybook?utm_source=storybook_website&utm_medium=eyebrow&utm_campaign=storybook"
     >
       <Icon icon="chromatic" aria-hidden />
       Visual test with Chromatic

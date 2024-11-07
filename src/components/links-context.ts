@@ -40,10 +40,10 @@ export const defaultLinks = {
   blog: { url: 'https://storybook.js.org/blog' },
   hiring: { url: 'https://www.chromatic.com/company/jobs' },
   enterprise: {
-    url: 'https://www.chromatic.com/sales?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
+    url: 'https://www.chromatic.com/enterprise?utm_source=storybook_website&utm_medium=global_nav&utm_campaign=storybook',
   },
   chromatic: {
-    url: 'https://www.chromatic.com/storybook?utm_source=storybook_website&utm_medium=link&utm_campaign=storybook',
+    url: 'https://www.chromatic.com/storybook?utm_source=storybook_website&utm_medium=global_nav&utm_campaign=storybook',
   },
 };
 
