@@ -1,3 +1,15 @@
+# v3.1.2 (Sun Nov 10 2024)
+
+#### 🐛 Bug Fix
+
+- update enterprise link [#82](https://github.com/storybookjs/components-marketing/pull/82) ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+#### Authors: 1
+
+- Varun Vachhar ([@winkerVSbecks](https://github.com/winkerVSbecks))
+
+---
+
 # v3.1.1 (Tue Jun 11 2024)
 
 #### 🐛 Bug Fix
