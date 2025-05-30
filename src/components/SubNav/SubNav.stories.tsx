@@ -57,9 +57,14 @@ const supportItems: SubNavLinkItem[] = [
 const communityItems: SubNavLinkItem[] = [
   ...supportItems,
   {
-    icon: 'twitter',
-    href: 'https://twitter.com/storybookjs/',
-    label: 'Twitter',
+    icon: 'x',
+    href: 'https://x.com/storybookjs',
+    label: 'X',
+  },
+  {
+    icon: 'bluesky',
+    href: 'https://bsky.app/profile/storybook.js.org',
+    label: 'Bluesky',
   },
 ];
 
