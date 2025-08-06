@@ -1,3 +1,15 @@
+# v3.2.0 (Wed Aug 06 2025)
+
+#### 🚀 Enhancement
+
+- Fix: Showcase Nav links [#84](https://github.com/storybookjs/components-marketing/pull/84) ([@jonniebigodes](https://github.com/jonniebigodes))
+
+#### Authors: 1
+
+- [@jonniebigodes](https://github.com/jonniebigodes)
+
+---
+
 # v3.1.2 (Sun Nov 10 2024)
 
 #### 🐛 Bug Fix
