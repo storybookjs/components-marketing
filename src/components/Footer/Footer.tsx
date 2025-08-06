@@ -33,8 +33,7 @@ const footerGroups = (links: Links) => ({
   ],
   showcase: [
     { label: 'Explore', link: links.showcase },
-    { label: 'Projects', link: links.projects },
-    { label: 'Component glossary', link: links.componentGlossary },
+    { label: 'About', link: links.about },
   ],
 });
 

@@ -10,27 +10,27 @@ const integrations = [
   {
     name: 'React',
     image: '/logo-react.svg',
-    href: 'https://storybook.js.org/docs/react/get-started/introduction',
+    href: 'https://storybook.js.org/docs/get-started/install?renderer=react',
   },
   {
     name: 'Vue',
     image: '/logo-vue.svg',
-    href: 'https://storybook.js.org/docs/web-components/get-started/introduction',
+    href: 'https://storybook.js.org/docs/get-started/install?renderer=vue',
   },
   {
     name: 'Angular',
     image: '/logo-angular.svg',
-    href: 'https://storybook.js.org/docs/vue/get-started/introduction',
+    href: 'https://storybook.js.org/docs/get-started/install?renderer=angular',
   },
   {
     name: 'Web Components',
     image: '/logo-web-components.svg',
-    href: 'https://storybook.js.org/docs/angular/get-started/introduction',
+    href: 'https://storybook.js.org/docs/get-started/install?renderer=web-components',
   },
   {
     name: 'HTML',
     image: '/logo-html.svg',
-    href: 'https://storybook.js.org/docs/html/get-started/introduction',
+    href: 'https://storybook.js.org/docs/get-started/install?renderer=html',
   },
 ];
 
