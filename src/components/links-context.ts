@@ -14,8 +14,7 @@ export interface Links {
   changelog: LinkItem;
   telemetry: LinkItem;
   showcase: LinkItem;
-  projects: LinkItem;
-  componentGlossary: LinkItem;
+  about: LinkItem;
   integrations: LinkItem;
   getInvolved: LinkItem;
   blog: LinkItem;
@@ -26,16 +25,15 @@ export interface Links {
 
 export const defaultLinks = {
   home: { url: 'https://storybook.js.org/' },
-  whyStorybook: { url: 'https://storybook.js.org/docs/react/get-started/why-storybook' },
+  whyStorybook: { url: 'https://storybook.js.org/docs/get-started/why-storybook' },
   componentDriven: { url: 'https://componentdriven.org' },
   guides: { url: 'https://storybook.js.org/docs' },
   tutorials: { url: 'https://storybook.js.org/tutorials' },
   changelog: { url: 'https://storybook.js.org/releases' },
   telemetry: { url: 'https://storybook.js.org/telemetry' },
   showcase: { url: 'https://storybook.js.org/showcase' },
-  projects: { url: 'https://storybook.js.org/showcase/projects' },
-  componentGlossary: { url: 'https://storybook.js.org/showcase/glossary' },
-  integrations: { url: 'https://storybook.js.org/integrations' },
+  about: { url: 'https://storybook.js.org/showcase/about' },
+  integrations: { url: 'https://storybook.js.org/addons' },
   getInvolved: { url: 'https://storybook.js.org/community' },
   blog: { url: 'https://storybook.js.org/blog' },
   hiring: { url: 'https://www.chromatic.com/company/jobs' },

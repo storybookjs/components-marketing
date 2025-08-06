@@ -102,14 +102,9 @@ export const mobileGroups = (links: Links) => [
         icon: <ColoredIcon icon="admin" color="green" />,
       },
       {
-        label: 'Projects',
-        link: links.projects,
+        label: 'About',
+        link: links.about,
         icon: <ColoredIcon icon="book" color="primary" />,
-      },
-      {
-        label: 'Component glossary',
-        link: links.componentGlossary,
-        icon: <ColoredIcon icon="component" color="secondary" />,
       },
     ],
   },
