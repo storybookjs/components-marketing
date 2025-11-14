@@ -45,7 +45,8 @@
     ]
   },
   "dependencies": {
-    "@docsearch/react": "^3.1.0",
+    "@docsearch/css": "^3.9.0",
+    "@docsearch/react": "^3.9.0",
     "@emotion/weak-memoize": "^0.2.5",
     "@floating-ui/react-dom-interactions": "^0.6.5",
     "@storybook/api": "^6.5.9",
@@ -116,6 +117,7 @@
       "released"
     ]
   },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
   "storybook": {
     "title": "Storybook Components Marketing",
     "url": "https://main--62acb38c42e6ab9f79be20d5.chromatic.com"

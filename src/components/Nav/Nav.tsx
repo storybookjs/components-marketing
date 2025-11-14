@@ -9,6 +9,7 @@ import { TabletMenu } from './TabletMenu';
 import { MobileMenu } from './MobileMenu';
 import { LinksContext } from '../links-context';
 import { GithubButton } from '../GithubButton';
+import { GetStartedCTA } from '../GetStartedCTA';
 
 const navBreakpoints = {
   desktop: 978,
@@ -156,6 +157,14 @@ const GithubButtonWrapper = styled.div`
   }
 `;
 
+const GetStartedButtonWrapper = styled.div`
+  display: none;
+
+  @media (min-width: 1080px) {
+    display: block;
+  }
+`;
+
 export const Nav: FunctionComponent<NavProps> = ({
   inverse,
   monochrome,
@@ -249,6 +258,9 @@ export const Nav: FunctionComponent<NavProps> = ({
             version={version}
             inverse={inverse}
           />
+          <GetStartedButtonWrapper>
+            <GetStartedCTA inverse={inverse} />
+          </GetStartedButtonWrapper>
         </Right>
         {/* Collapsed navs for tablet and mobile */}
         <TabletNav navLinks={navLinks} inverse={inverse} monochrome={monochrome} />
