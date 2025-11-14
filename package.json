@@ -13,13 +13,13 @@
     "dist"
   ],
   "scripts": {
-    "patch-package": "patch-package",
     "build": "yarn patch-package && babel src -d dist --extensions \".js,.jsx,.ts,.tsx\" --ignore \"**/*.stories.tsx\" --ignore \"**/*.stories.js\"",
     "build-storybook": "yarn patch-package && build-storybook",
     "clean": "rm -rf dist",
     "lint": "yarn lint:js && yarn lint:package",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.html,.ts,.tsx,.mjs --report-unused-disable-directives",
     "lint:package": "sort-package-json",
+    "patch-package": "patch-package",
     "release": "dotenv yarn build & yarn typescript:generate && auto shipit",
     "storybook": "yarn patch-package && start-storybook -p 6006",
     "typescript:check": "tsc --project ./tsconfig.json --noEmit",
@@ -48,7 +48,7 @@
     "@docsearch/css": "^3.9.0",
     "@docsearch/react": "^3.9.0",
     "@emotion/weak-memoize": "^0.2.5",
-    "@floating-ui/react-dom-interactions": "^0.6.5",
+    "@floating-ui/react-dom-interactions": "=0.6.5",
     "@storybook/api": "^6.5.9",
     "@storybook/design-system": "^7.15.19",
     "@storybook/icons": "1.2.8",
@@ -87,7 +87,7 @@
     "dotenv-cli": "^3.1.0",
     "eslint": "^7.1.0",
     "eslint-plugin-storybook": "^0.5.12",
-    "framer-motion": "^7.0.0",
+    "framer-motion": "=7.0.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
     "patch-package": "^6.4.7",
@@ -106,6 +106,7 @@
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0",
     "react-dom": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
   "engines": {
     "node": ">=10",
     "npm": ">=5"
@@ -117,7 +118,6 @@
       "released"
     ]
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610",
   "storybook": {
     "title": "Storybook Components Marketing",
     "url": "https://main--62acb38c42e6ab9f79be20d5.chromatic.com"

@@ -49,7 +49,9 @@ export const NavMenu = forwardRef<HTMLButtonElement, NavMenuProps>(
     const listItemsRef = useRef<Array<HTMLButtonElement | null>>([]);
     const listContentRef = useRef(
       Children.map(children, (child) =>
-        isValidElement(child) ? child.props.label : null
+        isValidElement(child) && typeof child.props === 'object' && 'label' in child.props
+          ? child.props.label
+          : null
       ) as Array<string | null>
     );
 

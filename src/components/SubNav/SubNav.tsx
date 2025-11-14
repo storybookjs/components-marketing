@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React, { ComponentProps, FC, FunctionComponent, ReactNode } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Link } from '@storybook/design-system';
 import { typography, text, pageMargins, color, breakpoints } from '../shared/styles';
@@ -35,7 +35,7 @@ export const SubNavDivider = styled.hr<{ inverse?: boolean }>`
   }
 `;
 
-export const SubNavBreadcrumb = styled(Link)`
+const StyledLink = styled(Link)`
   ${text.regularBold};
   margin-top: 10px;
   margin-bottom: 10px;
@@ -44,9 +44,10 @@ export const SubNavBreadcrumb = styled(Link)`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-SubNavBreadcrumb.defaultProps = {
-  tertiary: true,
-};
+
+export const SubNavBreadcrumb: FC<ComponentProps<typeof StyledLink>> = ({ tertiary, ...props }) => (
+  <StyledLink tertiary={tertiary} {...props} />
+);
 
 export const SubNavCTA = styled(Link)`
   ${text.regularBold};

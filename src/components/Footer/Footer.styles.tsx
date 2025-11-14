@@ -1,5 +1,6 @@
 import { styled } from '@storybook/theming';
 import { Button, Link, Subheading } from '@storybook/design-system';
+import React, { ComponentProps, FC } from 'react';
 import {
   background,
   color,
@@ -73,7 +74,7 @@ export const Subscribe = styled.div`
   }
 `;
 
-export const IconLink = styled(Button)`
+const StyledButton = styled(Button)`
   &:not(:last-child) {
     margin-right: 15px;
   }
@@ -96,10 +97,11 @@ export const IconLink = styled(Button)`
         }
     `};
 `;
-IconLink.defaultProps = {
-  isLink: true,
-  containsIcon: true,
-};
+export const IconLink: FC<ComponentProps<typeof StyledButton>> = ({
+  isLink = true,
+  containsIcon = true,
+  ...props
+}) => <StyledButton isLink={isLink} containsIcon={containsIcon} {...props} />;
 
 export const SocialLinks = styled.div`
   flex: none;
@@ -140,9 +142,10 @@ export const Lower = styled.div`
   }
 `;
 
-export const FooterLink = styled(Link)`
+const StyledLink = styled(Link)`
   font-size: ${typography.size.s2}px;
 `;
-FooterLink.defaultProps = {
-  tertiary: true,
-};
+export const FooterLink: FC<ComponentProps<typeof StyledLink>> = ({
+  tertiary = true,
+  ...props
+}) => <StyledLink tertiary={tertiary} {...props} />;
