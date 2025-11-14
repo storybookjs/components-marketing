@@ -17,6 +17,7 @@ export const NavItem = styled(LinkWithWrapper, { shouldForwardProp: (prop) => pr
   display: inline-flex;
   align-items: center;
   text-align: center;
+  white-space: nowrap;
   padding: 6px 8px;
   color: ${(props) => (props.monochrome ? color.lightest : colorMap[props.variant])};
   text-decoration: none;
