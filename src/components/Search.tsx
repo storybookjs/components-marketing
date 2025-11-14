@@ -90,6 +90,7 @@ const docSearchStyles = (inverse: boolean) => css`
     line-height: 18px;
     margin: 0;
     padding: 7px 59px 7px 12px;
+    width: 100%;
     border-radius: 40px;
     box-sizing: border-box;
     border: 1px solid ${inverse ? 'rgba(255, 255, 255, 0.2)' : styles.color.border};
@@ -103,6 +104,7 @@ const docSearchStyles = (inverse: boolean) => css`
     &:hover {
       ${idleButtonStyles}
       border-color: ${styles.color.mediumdark};
+      box-shadow: none;
     }
 
     &:focus-visible {
