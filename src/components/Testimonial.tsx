@@ -61,9 +61,9 @@ const Name = styled.div<{ inverse?: boolean }>`
   color: ${(props) => (props.inverse ? color.lightest : color.darkest)};
 `;
 
-const JobTitle = styled.div`
+const JobTitle = styled.div<{ inverse?: boolean }>`
   font-size: ${typography.size.s1}px;
-  color: ${color.mediumdark};
+  color: ${(props) => (props.inverse ? color.medium : color.mediumdark)};
 `;
 
 const Logo = styled.div<{ inverse?: boolean }>`
@@ -114,7 +114,7 @@ export const Testimonial = ({
           <Avatar size="large" username={name} src={avatarUrl} />
           <Meta>
             <Name inverse={inverse}>{name}</Name>
-            <JobTitle>{jobTitle}</JobTitle>
+            <JobTitle inverse={inverse}>{jobTitle}</JobTitle>
           </Meta>
         </Author>
         <Logo inverse={inverse}>

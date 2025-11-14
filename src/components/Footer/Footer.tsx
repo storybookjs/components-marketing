@@ -66,9 +66,15 @@ export const Footer: FC<FooterProps> = ({ onSubscribe, subscriberCount, inverse,
           </IconLink>
           <IconLink
             appearance={inverse ? 'inverseOutline' : 'outline'}
-            href="https://twitter.com/storybookjs"
+            href="https://x.com/storybookjs"
           >
-            <Icon aria-label="Twitter" icon="twitter" />
+            <Icon aria-label="X" icon="x" />
+          </IconLink>
+          <IconLink
+            appearance={inverse ? 'inverseOutline' : 'outline'}
+            href="https://bsky.app/profile/storybook.js.org"
+          >
+            <Icon aria-label="Bluesky" icon="bluesky" />
           </IconLink>
           <IconLink
             appearance={inverse ? 'inverseOutline' : 'outline'}
