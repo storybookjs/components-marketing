@@ -12,6 +12,8 @@ import { GithubButton } from '../GithubButton';
 import { GetStartedCTA } from '../GetStartedCTA';
 
 const navBreakpoints = {
+  githubButton: 1224,
+  getStartedButton: 1080,
   desktop: 978,
   tablet: breakpoints[1],
   mobile: breakpoints[0],
@@ -152,7 +154,7 @@ const GithubButtonWrapper = styled.div`
 
   display: none;
 
-  @media (min-width: 1224px) {
+  @media (min-width: ${navBreakpoints.githubButton}px) {
     display: block;
   }
 `;
@@ -160,7 +162,7 @@ const GithubButtonWrapper = styled.div`
 const GetStartedButtonWrapper = styled.div`
   display: none;
 
-  @media (min-width: 1080px) {
+  @media (min-width: ${navBreakpoints.getStartedButton}px) {
     display: block;
   }
 `;
