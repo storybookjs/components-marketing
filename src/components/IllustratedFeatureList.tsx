@@ -139,7 +139,7 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
   display: none;
   height: 100%;
   overflow: hidden;
-  min-height: ${(props) => props.lockUpHeight}px;
+  min-height: ${(props) => props.lockUpHeight ?? 640}px;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: block;
