@@ -16,16 +16,6 @@ jobs:
         shell: bash
         run: npm install -g npm@latest
 
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.yarn/berry/cache
-          key: yarn-v1-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-v1-${{ hashFiles('yarn.lock') }}
-            yarn-v1
-
       - name: Install dependencies
         shell: bash
         run: yarn install
