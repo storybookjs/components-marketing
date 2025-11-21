@@ -1,5 +1,5 @@
 import React, { ComponentProps, FC, FunctionComponent, ReactNode } from 'react';
-import { styled, css } from '@storybook/theming';
+import { styled, StyledComponent, Theme } from '@storybook/theming';
 import { Link } from '@storybook/design-system';
 import { typography, text, pageMargins, color, breakpoints } from '../shared/styles';
 
@@ -7,12 +7,12 @@ const NavContainer = styled.div`
   ${pageMargins}
   display: flex;
   align-items: center;
-`;
+` as StyledComponent<any, any, Theme>;
 
 const Wrapper = styled.div<{ inverse?: boolean }>`
   box-shadow: ${(props) => (props.inverse ? 'rgba(255, 255, 255, 0.1)' : color.tr10)} 0 -1px 0px 0px
     inset;
-`;
+` as StyledComponent<any, { inverse?: boolean }, Theme>;
 
 interface SubNavProps {
   inverse?: boolean;
@@ -73,7 +73,8 @@ export const SubNavMenus = styled.div`
       margin-right: 12px;
     }
   }
-`;
+` as StyledComponent<any, any, Theme>;
+
 export const SubNavMenuLabel = styled.div<{ hidden?: boolean }>`
   font-size: ${typography.size.s2}px;
   line-height: 20px;
@@ -83,7 +84,7 @@ export const SubNavMenuLabel = styled.div<{ hidden?: boolean }>`
   @media (min-width: ${breakpoints[2]}px) {
     display: block;
   }
-`;
+` as StyledComponent<any, { hidden?: boolean }, Theme>;
 
 export const SubNavRight = styled.div`
   flex: none;
@@ -93,7 +94,7 @@ export const SubNavRight = styled.div`
   @media (min-width: ${breakpoints[1]}px) {
     display: block;
   }
-`;
+` as StyledComponent<any, any, Theme>;
 
 export const SubNav: FunctionComponent<SubNavProps> = ({ children, inverse }) => {
   return (
