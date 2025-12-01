@@ -36,7 +36,6 @@ const Wrapper = styled.a<{ inverse?: boolean }>`
 
 export const GetStartedCTA = ({ inverse }: { inverse: boolean }) => (
   <Wrapper
-    className="chromatic-ignore"
     inverse={inverse}
     href="https://storybook.js.org/docs"
     rel="noopener"
