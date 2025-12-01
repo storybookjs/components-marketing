@@ -1,3 +1,21 @@
+# v3.3.0 (Mon Dec 01 2025)
+
+#### 🚀 Enhancement
+
+- Feat: Updates footer items with new socials [#83](https://github.com/storybookjs/components-marketing/pull/83) ([@jonniebigodes](https://github.com/jonniebigodes) [@Sidnioulz](https://github.com/Sidnioulz))
+
+#### 🐛 Bug Fix
+
+- feat: Add Get Started CTA and harmonize Nav button styles [#85](https://github.com/storybookjs/components-marketing/pull/85) ([@Sidnioulz](https://github.com/Sidnioulz) [@ndelangen](https://github.com/ndelangen))
+
+#### Authors: 3
+
+- [@jonniebigodes](https://github.com/jonniebigodes)
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+- Steve Dodier-Lazaro ([@Sidnioulz](https://github.com/Sidnioulz))
+
+---
+
 # v3.2.0 (Wed Aug 06 2025)
 
 #### 🚀 Enhancement
