@@ -139,7 +139,7 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
   display: none;
   height: 100%;
   overflow: hidden;
-  min-height: ${(props) => props.lockUpHeight}px;
+  min-height: ${(props) => props.lockUpHeight ?? 640}px;
 
   @media (min-width: ${breakpoints[2]}px) {
     display: block;
@@ -170,7 +170,7 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
         : css`
             margin-right: calc(-${pageMargin * 2}vw - 20px);
           `};
-    max-height: ${(props) => props.lockUpHeight}px;
+    max-height: ${(props) => props.lockUpHeight ?? 640}px;
   }
 
   @media (min-width: 1416px) {
@@ -179,9 +179,6 @@ const FeatureMediaLarge = styled(FeatureMedia)<{ alignment?: Alignment; lockUpHe
     border-radius: ${spacing.borderRadius.default}px;
   }
 `;
-FeatureMediaLarge.defaultProps = {
-  lockUpHeight: 640,
-};
 
 const FeatureMediaSmall = styled(FeatureMedia)`
   display: block;
@@ -362,6 +359,9 @@ export const IllustratedFeatureList = ({
                         href={feature.link.href}
                         ButtonWrapper={feature.link.LinkWrapper}
                         isLink
+                        onPointerEnterCapture={undefined}
+                        onPointerLeaveCapture={undefined}
+                        placeholder={undefined}
                       >
                         {feature.link.label} <Icon icon="arrowright" />
                       </Button>

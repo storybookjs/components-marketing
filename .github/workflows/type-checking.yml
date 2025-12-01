@@ -5,9 +5,25 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js from nvm RC
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Update npm to latest
+        shell: bash
+        run: npm install -g npm@latest
+
+      - name: Install dependencies
+        shell: bash
+        run: yarn install
+
       - run: |
           yarn
+      - run: |
+          yarn build
       - run: |
           yarn lint
       - run: |

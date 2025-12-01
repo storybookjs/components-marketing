@@ -7,18 +7,23 @@ jobs:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Prepare repository
         run: git fetch --unshallow --tags
 
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
+      - name: Use Node.js from nvm RC
+        uses: actions/setup-node@v4
         with:
-          node-version: 14.x
+          node-version-file: '.nvmrc'
+
+      - name: Update npm to latest
+        shell: bash
+        run: npm install -g npm@latest
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        shell: bash
+        run: yarn install
 
       - name: Create Release
         env:

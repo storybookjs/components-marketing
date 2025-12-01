@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import { css, styled } from '@storybook/theming';
 import { breakpoints, text, color, spacing } from './shared/styles';
 
@@ -61,13 +61,13 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-interface SupportFeatureProps {
+type SupportFeatureProps = PropsWithChildren<{
   image: React.ReactNode;
   title: string;
   desc: string;
   link?: React.ReactNode;
   layout?: 'vertical' | 'horizontal';
-}
+}>;
 
 export const SupportFeature: FC<SupportFeatureProps> = ({
   image,

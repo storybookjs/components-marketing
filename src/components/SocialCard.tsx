@@ -68,6 +68,11 @@ export const SocialCard = ({
       size="medium"
       isLink
       href={link.href}
+      // There are issues with the underlying component's types, but as we aim
+      // to EOL this here package, it is not worth fixing them right now.
+      onPointerEnterCapture={undefined}
+      onPointerLeaveCapture={undefined}
+      placeholder={undefined}
     >
       {link.label}
     </Button>

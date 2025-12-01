@@ -1,4 +1,4 @@
-import React, { useState, ComponentProps, ReactNode, useEffect, useRef } from 'react';
+import React, { useState, ComponentProps, ReactNode, useEffect, useRef, FC } from 'react';
 import { styled, css } from '@storybook/theming';
 import { Button } from '@storybook/design-system';
 import { color, spacing, text } from './shared/styles';
@@ -14,7 +14,7 @@ const Media = styled.figure`
   margin: 0;
 `;
 
-const Integration = styled(Button)<{ inverse?: boolean; active?: boolean; color: string }>`
+const StyledButton = styled(Button)<{ inverse?: boolean; active?: boolean; color: string }>`
   border-radius: ${spacing.borderRadius.small}px;
   padding: 8px;
   background-color: ${(props) => props.color || 'transparent'};
@@ -52,10 +52,12 @@ const Integration = styled(Button)<{ inverse?: boolean; active?: boolean; color:
     object-fit: contain;
   }
 `;
-Integration.defaultProps = {
-  appearance: 'outline',
-  containsIcon: true,
-};
+
+const Integration: FC<ComponentProps<typeof StyledButton>> = ({
+  appearance = 'outline',
+  containsIcon = true,
+  ...props
+}) => <StyledButton appearance={appearance} containsIcon={containsIcon} {...props} />;
 
 const OverflowLabel = styled.div<{ inverse?: boolean }>`
   ${text.regular};

@@ -41,7 +41,6 @@ export const classNames = {
 
 const idleButtonStyles = css`
   background: transparent;
-  box-shadow: var(--search-button-border) 0 0 0 1px inset;
   color: var(--search-button-color);
   height: 32px;
 `;
@@ -79,7 +78,7 @@ const Key = styled.kbd`
 `;
 
 // Designed to match Input from @storybook/design-system
-const docSearchStyles = css`
+const docSearchStyles = (inverse: boolean) => css`
   :root {
     --docsearch-primary-color: ${styles.color.secondary};
     --docsearch-muted-color: ${styles.color.dark};
@@ -92,6 +91,9 @@ const docSearchStyles = css`
     margin: 0;
     padding: 7px 59px 7px 12px;
     width: 100%;
+    border-radius: 40px;
+    box-sizing: border-box;
+    border: 1px solid ${inverse ? 'rgba(255, 255, 255, 0.2)' : styles.color.border};
 
     &:focus,
     &:focus:hover {
@@ -101,6 +103,13 @@ const docSearchStyles = css`
 
     &:hover {
       ${idleButtonStyles}
+      border-color: ${styles.color.mediumdark};
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      box-shadow: inset 0 0 0 2px #0d64ca;
+      outline: none;
     }
   }
 
@@ -145,7 +154,7 @@ const label = 'Search docs';
 export const Search: FunctionComponent<SearchProps> = ({ version, inverse, className, apiKey }) => (
   <>
     {/* <GlobalStyle />  why do we need this? */}
-    <Global styles={docSearchStyles} />
+    <Global styles={docSearchStyles(inverse)} />
     {apiKey ? (
       <Wrapper className={className} inverse={inverse}>
         <DocSearch
